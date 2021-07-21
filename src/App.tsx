@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import ParentContainer from "./HOC/ParentContainer";
+import Landing from "./Landing/Landing";
 
 function App() {
 	return (
 		<div className="App">
-			<ParentContainer />
+			<Landing />
 		</div>
 	);
 }

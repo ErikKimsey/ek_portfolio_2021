@@ -1,12 +1,10 @@
 .App {
-    max-width: 1400px;
     width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: blueviolet;
   height:1000px;
 }
 
