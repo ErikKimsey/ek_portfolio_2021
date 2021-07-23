@@ -1,19 +1,14 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import * as COLORS from "../styles/colors";
-import { MARGINS, PADDINGS } from "../styles/paddingAndMargins";
+import { PADDINGS } from "../styles/paddingAndMargins";
 import LinkArrow from "../assets/images/link_arrow.png";
-
-// let pic = "../assets/images/pic3.png";
-let pic = "https://i.imgur.com/EXLnuKq.png";
-
-const IPSUM =
-	"It was quite by accident I discovered this incredible invasion of Earth by lifeforms from another planet. As yet, I haven't done anything about it; I can't think of anything to do. I wrote to the Government, and they sent back a pamphlet on the repair and maintenance of frame houses. Anyhow, the whole thing is known; I'm not the first to discover it. Maybe it's even under control.";
 
 interface Data {
 	name: string | undefined;
 	description: string | undefined;
 	image: string | undefined;
+	link?: string | undefined;
 }
 
 interface PageProps {
@@ -31,11 +26,13 @@ const PageTemplate: FC<PageProps> = (props) => {
 	let [projName, setProjName] = useState<string | undefined>();
 	let [projDesc, setProjDesc] = useState<string | undefined>();
 	let [projImg, setProjImg] = useState<string | undefined>();
+	let [projLink, setProjLink] = useState<string | undefined>();
 
 	useEffect(() => {
 		if (data && data.name) setProjName(data.name);
 		if (data && data.description) setProjDesc(data.description);
 		if (data && data.image) setProjImg(data.image);
+		if (data && data.link) setProjLink(data.link);
 	}, []);
 
 	if (index && index % 2) {
@@ -49,7 +46,12 @@ const PageTemplate: FC<PageProps> = (props) => {
 					<div className="projectText projectTextRight">
 						<h3>{projName}</h3>
 						<p>{projDesc}</p>
-						<a href="erikkimsey.com" className="projectLink">
+						<a
+							href={projLink}
+							target="_blank"
+							className="projectLink"
+							rel="noreferrer"
+						>
 							<img
 								alt="project link"
 								src={LinkArrow}
@@ -72,7 +74,12 @@ const PageTemplate: FC<PageProps> = (props) => {
 					<div className="projectText projectTextLeft">
 						<h3>{projName}</h3>
 						<p>{projDesc}</p>
-						<a href="erikkimsey.com" className="projectLink">
+						<a
+							href={projLink}
+							target="_blank"
+							className="projectLink"
+							rel="noreferrer"
+						>
 							<img
 								alt="project link"
 								src={LinkArrow}
