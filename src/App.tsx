@@ -5,13 +5,17 @@ import Banner from "./Banner/Banner";
 import Grid from "./Grid.tsx/Grid";
 import { ListFormat } from "typescript";
 
-let LandingZ = [<Landing />, <Landing />, <Landing />];
+import { PROJECTS } from "./_data/Projects";
+
+interface Data {
+	name: string | undefined;
+	description: string | undefined;
+	image: string | undefined;
+}
 
 function ForLOOOP() {
-	return LandingZ.map((e, i) => {
-		console.log(i);
-
-		return <Landing index={i} />;
+	return PROJECTS.map((e, i) => {
+		return <Landing index={i} data={e} />;
 	});
 }
 
