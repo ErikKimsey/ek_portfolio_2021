@@ -9,8 +9,6 @@ body {
   background-color: #151517;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 code {

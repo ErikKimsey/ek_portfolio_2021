@@ -1,10 +1,10 @@
 const MARGINS = {
-    pageContainer:'10px',
-    childContainer:'5px'
+    pageContainer:'20px',
+    childContainer:'10px'
 };
 const PADDINGS = {
     pageContainer:'20px',
-    childContainer:'5px'
+    childContainer:'10px'
 };
 
 export {MARGINS, PADDINGS};
