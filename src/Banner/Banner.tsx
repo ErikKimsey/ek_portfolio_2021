@@ -12,7 +12,7 @@ const Banner: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<h1>BANNER</h1>
+			<h1>Erik Kimsey's 3D Playground</h1>
 		</StyledContainer>
 	);
 };
