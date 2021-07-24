@@ -14,6 +14,7 @@ const Menu: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<a href="http://erikkimsey" target="_blank" className="link">
+				{/* <h3 className="label skillsetLabel">skill set</h3> */}
 				<div
 					className="menuItem skillSet"
 					style={{ backgroundImage: `url(${CAPSULES})` }}
@@ -22,6 +23,7 @@ const Menu: FC<Props> = (props) => {
 				</div>
 			</a>
 			<a href="http://erikkimsey" target="_blank" className="link">
+				{/* <h3 className="label workHistoryLabel">work hist.</h3> */}
 				<div
 					className="menuItem workHistory"
 					style={{ backgroundImage: `url(${SATELLITE})` }}
@@ -44,7 +46,9 @@ const StyledContainer = styled.div<StyledProps>`
 	transform: rotate(-13deg);
 	background-color: rgba(0, 0, 0, 0);
 
-	.link {
+	a.link {
+		text-decoration: none;
+		color: #fff;
 		display: flex;
 		justify-content: center;
 		height: 100px;
@@ -75,6 +79,20 @@ const StyledContainer = styled.div<StyledProps>`
 		&:hover {
 			transform: scale(1.1);
 		}
+	}
+
+	.label {
+		width: 100px;
+		line-height: 1.5;
+		font-family: "Wipeout";
+		text-decoration: none;
+		font-size: 1.2em;
+	}
+
+	.skillsetLabel {
+	}
+
+	.workHistoryLabel {
 	}
 
 	.iconImg {

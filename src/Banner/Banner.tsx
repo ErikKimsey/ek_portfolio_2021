@@ -19,10 +19,13 @@ const Banner: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	border-bottom: solid 1px ${OUTER_LINES_COLOR};
-	padding: ${PADDINGS.childContainer};
+	padding: 0px 0 0 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 	.wipeout {
 		font-family: "Wipeout";
-		font-size: 5em;
+		font-size: 2em;
 	}
 `;
 
