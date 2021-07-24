@@ -15,3 +15,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+    font-family: "Wipeout";
+    src: local("./assets/fonts"),
+     url("./assets/fonts/SilverStream.ttf") format("truetype");
+    font-weight: bold;
+    }

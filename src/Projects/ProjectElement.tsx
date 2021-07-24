@@ -21,7 +21,7 @@ interface StyleProps {
 	height?: number;
 }
 
-const PageTemplate: FC<PageProps> = (props) => {
+const ProjectElement: FC<PageProps> = (props) => {
 	const { index, data } = props;
 	let [projName, setProjName] = useState<string | undefined>();
 	let [projDesc, setProjDesc] = useState<string | undefined>();
@@ -34,6 +34,13 @@ const PageTemplate: FC<PageProps> = (props) => {
 		if (data && data.image) setProjImg(data.image);
 		if (data && data.link) setProjLink(data.link);
 	}, []);
+
+	useEffect(() => {
+		if (data && data.name) setProjName(data.name);
+		if (data && data.description) setProjDesc(data.description);
+		if (data && data.image) setProjImg(data.image);
+		if (data && data.link) setProjLink(data.link);
+	}, [data]);
 
 	if (index && index % 2) {
 		return (
@@ -107,6 +114,11 @@ const StyledContainer = styled.div<StyleProps>`
 	h1 {
 	}
 
+	h3 {
+		font-family: "Wipeout";
+		font-size: 2em;
+	}
+
 	.halvesContainer {
 		position: relative;
 		display: flex;
@@ -161,4 +173,4 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 `;
 
-export default PageTemplate;
+export default ProjectElement;

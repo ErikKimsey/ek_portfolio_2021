@@ -3,6 +3,7 @@ import "./App.css";
 import Landing from "./Landing/Landing";
 import Banner from "./Banner/Banner";
 import { PROJECTS } from "./_data/Projects";
+import Menu from "./Menu/Menu";
 
 function ForLOOOP() {
 	return PROJECTS.map((e, i) => {
@@ -18,6 +19,7 @@ function App() {
 		<div className="App">
 			<Banner />
 			{ForLOOOP()}
+			<Menu />
 		</div>
 	);
 }

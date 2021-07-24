@@ -12,7 +12,7 @@ const Banner: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<h1>Erik Kimsey's 3D Playground</h1>
+			<h1 className="wipeout">Erik Kimsey 3D Playground</h1>
 		</StyledContainer>
 	);
 };
@@ -20,6 +20,10 @@ const Banner: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	border-bottom: solid 1px ${OUTER_LINES_COLOR};
 	padding: ${PADDINGS.childContainer};
+	.wipeout {
+		font-family: "Wipeout";
+		font-size: 5em;
+	}
 `;
 
 export default Banner;

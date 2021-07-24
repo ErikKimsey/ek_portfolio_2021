@@ -11,17 +11,12 @@ const Grid: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			{/* <div className="gridElem"></div>
 			<div className="gridElem"></div>
 			<div className="gridElem"></div>
 			<div className="gridElem"></div>
 			<div className="gridElem"></div>
 			<div className="gridElem"></div>
 			<div className="gridElem"></div>
-			<div className="gridElem"></div>
-			<div className="gridElem"></div>
-			<div className="gridElem"></div>
-			<div className="gridElem"></div> */}
 		</StyledContainer>
 	);
 };
