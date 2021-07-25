@@ -118,7 +118,9 @@ const StyledContainer = styled.div<StyleProps>`
 
 	h3 {
 		font-family: "Wipeout";
-		font-size: 2em;
+		font-size: 3em;
+		padding: 0;
+		margin: 0;
 	}
 
 	.halvesContainer {
@@ -130,7 +132,6 @@ const StyledContainer = styled.div<StyleProps>`
 		border-bottom: solid 1px ${COLORS.OUTER_LINES_COLOR};
 		@media (max-width: 990px) {
 			background-size: cover;
-			background-attachment: fixed;
 			padding: 0px;
 			margin: 0px;
 			flex-direction: column;
@@ -144,8 +145,9 @@ const StyledContainer = styled.div<StyleProps>`
 		flex-direction: column;
 		top: 50px;
 		width: 30vw;
-		background-color: rgba(0, 0, 0, 0.4);
+		background-color: rgba(0, 0, 0, 0.5);
 		padding: ${PADDINGS.childContainer};
+		padding-bottom: 30px;
 		@media (max-width: 990px) {
 			width: 80%;
 			right: 0px;
