@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { OUTER_LINES_COLOR } from "../styles/colors";
 import { PADDINGS } from "../styles/paddingAndMargins";
+import Menu from "../Menu/Menu";
 
 type Props = {};
 
@@ -12,17 +13,20 @@ const Banner: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<h1 className="wipeout">Erik Kimsey 3D Playground</h1>
+			<h1 className="wipeout">Erik Kimsey ... Digital Playground</h1>
+			{/* <Menu /> */}
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
 	border-bottom: solid 1px ${OUTER_LINES_COLOR};
-	padding: 0px 0 0 40px;
+	padding: 10px 0 0 40px;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: flex-start;
+	/* width: 100%; */
+	align-items: flex-end;
 	.wipeout {
 		font-family: "Wipeout";
 		font-size: 2em;

@@ -47,6 +47,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 			<StyledContainer
 				style={{
 					backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)), url(${projImg})`,
+					backgroundSize: "cover",
 				}}
 			>
 				<div className="halvesContainer">
@@ -76,6 +77,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 					className="halvesContainer"
 					style={{
 						backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)), url(${projImg})`,
+						backgroundSize: "cover",
 					}}
 				>
 					<div className="projectText projectTextLeft">
@@ -124,9 +126,11 @@ const StyledContainer = styled.div<StyleProps>`
 		display: flex;
 		flex-direction: row;
 		height: 500px;
-		background-repeat: none;
+		background-repeat: no-repeat;
 		border-bottom: solid 1px ${COLORS.OUTER_LINES_COLOR};
 		@media (max-width: 990px) {
+			background-size: cover;
+			background-attachment: fixed;
 			padding: 0px;
 			margin: 0px;
 			flex-direction: column;
