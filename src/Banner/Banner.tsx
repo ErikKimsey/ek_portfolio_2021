@@ -12,7 +12,12 @@ const Banner: FC<Props> = (props) => {
 	const {} = props;
 
 	return (
-		<StyledContainer>
+		<StyledContainer
+			style={{
+				backgroundImage: `url(https://i.imgur.com/QISJdLz.png)`,
+				backgroundSize: "cover",
+			}}
+		>
 			<h1 className="wipeout">Erik Kimsey ... Digital Playground</h1>
 			{/* <Menu /> */}
 		</StyledContainer>
