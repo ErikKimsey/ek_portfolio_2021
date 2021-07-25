@@ -25,7 +25,6 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	/* width: 100%; */
 	align-items: flex-end;
 	.wipeout {
 		font-family: "Wipeout";

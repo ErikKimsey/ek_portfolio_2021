@@ -32,15 +32,12 @@ const Menu: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-direction: row;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-ms-transform: rotate(-13deg);
+	justify-content: space-evenly;
+	align-items: flex-end;
 	background-color: rgba(0, 0, 0, 0);
 	margin-right: 100px;
 	padding: 10px;
 	width: 12%;
-	justify-content: space-evenly;
-	align-items: flex-end;
 	@media (max-width: 900px) {
 		width: 20%;
 	}
