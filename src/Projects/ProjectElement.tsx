@@ -46,7 +46,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 		return (
 			<StyledContainer
 				style={{
-					backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)), url(${projImg})`,
+					backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url(${projImg})`,
 					backgroundSize: "cover",
 				}}
 			>
@@ -76,7 +76,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 				<div
 					className="halvesContainer"
 					style={{
-						backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)), url(${projImg})`,
+						backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url(${projImg})`,
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 					}}
@@ -118,7 +118,7 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 
 	h3 {
-		font-family: "Desib";
+		font-family: "Wipeout";
 		font-size: 3em;
 		padding: 0;
 		margin: 0;

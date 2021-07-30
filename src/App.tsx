@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import Landing from "./Landing/Landing";
+import TrueLanding from "./TrueLanding/TrueLanding";
 import Banner from "./Banner/Banner";
 import { PROJECTS } from "./_data/Projects";
 import Menu from "./Menu/Menu";
@@ -17,8 +18,10 @@ function App() {
 	}, [window.innerWidth]);
 	return (
 		<div className="App">
-			<Banner />
-			{ForLOOOP()}
+			<TrueLanding />
+			{/* <Banner /> */}
+			{/* {ForLOOOP()} */}
+			{/* <Banner /> */}
 		</div>
 	);
 }

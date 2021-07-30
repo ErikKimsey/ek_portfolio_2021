@@ -14,12 +14,13 @@ const Banner: FC<Props> = (props) => {
 	return (
 		<StyledContainer
 			style={{
-				backgroundImage: `url(https://i.imgur.com/QISJdLz.png)`,
+				backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url(https://i.imgur.com/QISJdLz.png)`,
 				backgroundSize: "cover",
+				backgroundPosition: "center",
 			}}
 		>
-			<h1 className="wipeout">Erik Kimsey </h1>
-			<h1 className="wipeout"> Digital Playground</h1>
+			<h1 className="wipeout">Erik Kimsey's </h1>
+			<h1 className="wipeout">Digital Playground</h1>
 			{/* <Menu /> */}
 		</StyledContainer>
 	);
@@ -33,19 +34,23 @@ const StyledContainer = styled.div<StyledProps>`
 	justify-content: flex-start;
 	align-items: flex-end;
 	.wipeout {
-		font-family: "Desib";
+		font-family: "Wipeout";
 		font-size: 2em;
+		padding: 0px 30px;
 	}
+
 	@media (max-width: 990px) {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		margin: 1px;
-		padding: 10px 10px 10px 20px;
+		padding: 10px 20px;
+		padding-bottom: 1px;
+
 		.wipeout {
-			font-family: "Desib";
-			font-size: 1.5em;
-			margin: 0;
+			font-family: "Wipeout";
+			font-size: 2em;
+			margin: 2px;
 		}
 	}
 `;
