@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/fonts/SilverStream.ttf";
+import "./assets/fonts/DESIB.ttf";
 
 ReactDOM.render(
 	<React.StrictMode>

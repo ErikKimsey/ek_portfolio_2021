@@ -21,4 +21,10 @@ code {
     src: local("./assets/fonts"),
      url("./assets/fonts/SilverStream.ttf") format("truetype");
     font-weight: bold;
-    }
+}
+@font-face {
+    font-family: "Desib";
+    src: local("./assets/fonts"),
+     url("./assets/fonts/DESIB.ttf") format("truetype");
+    font-weight: bold;
+}

@@ -18,7 +18,8 @@ const Banner: FC<Props> = (props) => {
 				backgroundSize: "cover",
 			}}
 		>
-			<h1 className="wipeout">Erik Kimsey ... Digital Playground</h1>
+			<h1 className="wipeout">Erik Kimsey </h1>
+			<h1 className="wipeout"> Digital Playground</h1>
 			{/* <Menu /> */}
 		</StyledContainer>
 	);
@@ -32,8 +33,20 @@ const StyledContainer = styled.div<StyledProps>`
 	justify-content: flex-start;
 	align-items: flex-end;
 	.wipeout {
-		font-family: "Wipeout";
+		font-family: "Desib";
 		font-size: 2em;
+	}
+	@media (max-width: 990px) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin: 1px;
+		padding: 10px 10px 10px 20px;
+		.wipeout {
+			font-family: "Desib";
+			font-size: 1.5em;
+			margin: 0;
+		}
 	}
 `;
 

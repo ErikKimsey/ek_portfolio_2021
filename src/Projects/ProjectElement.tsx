@@ -78,6 +78,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 					style={{
 						backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)), url(${projImg})`,
 						backgroundSize: "cover",
+						backgroundPosition: "center",
 					}}
 				>
 					<div className="projectText projectTextLeft">
@@ -117,7 +118,7 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 
 	h3 {
-		font-family: "Wipeout";
+		font-family: "Desib";
 		font-size: 3em;
 		padding: 0;
 		margin: 0;
@@ -172,10 +173,16 @@ const StyledContainer = styled.div<StyleProps>`
 		align-self: flex-end;
 		width: 100px;
 		height: 100px;
-	}
-	.linkImage {
-		width: 100px;
-		height: 100px;
+		.linkImage {
+			width: 100%;
+			height: 100%;
+		}
+		@media (max-width: 990px) {
+			.linkImage {
+				width: 70%;
+				height: 70%;
+			}
+		}
 	}
 `;
 
