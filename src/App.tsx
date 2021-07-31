@@ -5,24 +5,22 @@ import TrueLanding from "./TrueLanding/TrueLanding";
 import Banner from "./Banner/Banner";
 import { PROJECTS } from "./_data/Projects";
 import Menu from "./Menu/Menu";
-
-function ForLOOOP() {
-	return PROJECTS.map((e, i) => {
-		return <Landing index={i} data={e} />;
-	});
-}
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
-	useEffect(() => {
-		console.log("WIDTH CHANGE");
-	}, [window.innerWidth]);
 	return (
-		<div className="App">
-			{/* <TrueLanding /> */}
-			{/* <Banner /> */}
-			{ForLOOOP()}
-			{/* <Banner /> */}
-		</div>
+		<BrowserRouter>
+			<div className="App">
+				<Switch>
+					<Route exact path="/">
+						<TrueLanding />
+					</Route>
+					<Route path="/playground">
+						<Landing />
+					</Route>
+				</Switch>
+			</div>
+		</BrowserRouter>
 	);
 }
 

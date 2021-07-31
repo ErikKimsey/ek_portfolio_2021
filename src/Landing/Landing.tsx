@@ -1,6 +1,8 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import ProjectElement from "../Projects/ProjectElement";
+import Banner from "../Banner/Banner";
+import { PROJECTS } from "../_data/Projects";
 
 interface LandingProps {
 	index?: number;
@@ -13,11 +15,22 @@ interface LandingProps {
 
 type StyledProps = {};
 
+function ForLOOOP() {
+	return PROJECTS.map((e, i) => {
+		return <ProjectElement index={i} data={e} />;
+	});
+}
+
 const Landing: FC<LandingProps> = (props) => {
 	const { index, data } = props;
 	console.log(data);
 
-	return <ProjectElement data={data} index={index}></ProjectElement>;
+	return (
+		<div>
+			<Banner />
+			{ForLOOOP()}
+		</div>
+	);
 };
 
 const StyledContainer = styled.div<StyledProps>``;

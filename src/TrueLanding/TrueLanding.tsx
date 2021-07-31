@@ -1,5 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
+import { Switch, Route, Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Landing from "../Landing/Landing";
 
 type Props = {};
 
@@ -11,14 +13,14 @@ const TrueLanding: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<div className="screenHalf">
-				<a href="">
+				<NavLink to="https://www.erikkimsey.com" target="_blank">
 					<h1 className="halfLabel">Portfolio Site</h1>
-				</a>
+				</NavLink>
 			</div>
 			<div className="screenHalf">
-				<a href="">
+				<NavLink to="/playground">
 					<h1 className="halfLabel">Digital Playground</h1>
-				</a>
+				</NavLink>
 			</div>
 		</StyledContainer>
 	);
