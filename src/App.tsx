@@ -15,6 +15,13 @@ function App() {
 					<Route exact path="/">
 						<TrueLanding />
 					</Route>
+					<Route
+						path="/portfolio"
+						component={() => {
+							window.location.href = "http://erikkimsey.com";
+							return null;
+						}}
+					/>
 					<Route path="/playground">
 						<Landing />
 					</Route>
