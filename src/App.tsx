@@ -18,9 +18,9 @@ function App() {
 	}, [window.innerWidth]);
 	return (
 		<div className="App">
-			<TrueLanding />
+			{/* <TrueLanding /> */}
 			{/* <Banner /> */}
-			{/* {ForLOOOP()} */}
+			{ForLOOOP()}
 			{/* <Banner /> */}
 		</div>
 	);
