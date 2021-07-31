@@ -160,7 +160,9 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 
 	.projectTextLeft {
+		top: auto;
 		left: 50px;
+		bottom: 20px;
 	}
 
 	.image {
