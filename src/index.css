@@ -26,5 +26,17 @@ code {
     font-family: "Desib";
     src: local("./assets/fonts"),
      url("./assets/fonts/DESIB.ttf") format("truetype");
-    font-weight: bold;
+    font-weight:600;
+}
+@font-face {
+    font-family: "Nasal";
+    src: local("./assets/fonts"),
+     url("./assets/fonts/nasalization.otf") format("opentype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Robot";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/NeonRobot.ttf") format("truetype");
+    font-weight: 600;
 }

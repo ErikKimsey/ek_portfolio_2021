@@ -106,6 +106,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 const StyledContainer = styled.div<StyleProps>`
 	display: flex;
 	flex-direction: column;
+	margin: 0;
 	@media (max-width: 990px) {
 		padding: 0px;
 		margin: 0px;
@@ -125,18 +126,21 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 
 	.halvesContainer {
+		margin: 0px;
 		position: relative;
 		display: flex;
 		flex-direction: row;
 		height: 500px;
 		background-repeat: no-repeat;
-		border-bottom: solid 1px ${COLORS.OUTER_LINES_COLOR};
+
+		/* border-bottom: solid 1px ${COLORS.OUTER_LINES_COLOR}; */
 		@media (max-width: 990px) {
 			background-size: cover;
 			padding: 0px;
 			margin: 0px;
 			flex-direction: column;
 			align-items: center;
+			border-width: 0px;
 		}
 	}
 
@@ -146,9 +150,10 @@ const StyledContainer = styled.div<StyleProps>`
 		flex-direction: column;
 		top: 50px;
 		width: 30vw;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.8);
 		padding: ${PADDINGS.childContainer};
 		padding-bottom: 30px;
+		border-radius: 3px;
 		@media (max-width: 990px) {
 			width: 80%;
 			right: 0px;
@@ -169,6 +174,7 @@ const StyledContainer = styled.div<StyleProps>`
 		height: 500px;
 		width: 100%;
 		padding: 0;
+		margin: 0;
 	}
 
 	a.projectLink {

@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
-import "./App.css";
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Landing from "./Landing/Landing";
 import TrueLanding from "./TrueLanding/TrueLanding";
-import Banner from "./Banner/Banner";
-import { PROJECTS } from "./_data/Projects";
-import Menu from "./Menu/Menu";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+// import Menu from "./Menu/Menu";
+import "./App.css";
 
 function App() {
 	return (

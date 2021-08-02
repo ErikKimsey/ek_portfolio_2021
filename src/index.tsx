@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/fonts/SilverStream.ttf";
 import "./assets/fonts/DESIB.ttf";
+import "./assets/fonts/nasalization.otf";
 
 ReactDOM.render(
 	<React.StrictMode>
