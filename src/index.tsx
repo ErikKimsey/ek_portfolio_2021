@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import "./assets/fonts/SilverStream.ttf";
 import "./assets/fonts/DESIB.ttf";
 import "./assets/fonts/nasalization.otf";
+import "./assets/fonts/padomela.ttf";
+import "./assets/fonts/HelloAngel.ttf";
 
 ReactDOM.render(
 	<React.StrictMode>

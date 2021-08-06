@@ -3,6 +3,7 @@ import styled from "styled-components";
 import * as COLORS from "../styles/colors";
 import { PADDINGS } from "../styles/paddingAndMargins";
 import LinkArrow from "../assets/images/link_arrow.png";
+import "../Banner/Banner.scss";
 
 interface Data {
 	name: string | undefined;
@@ -52,7 +53,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 			>
 				<div className="halvesContainer">
 					<div className="projectText projectTextRight">
-						<h3>{projName}</h3>
+						<h3 data-text={`${projName}`}>{projName}</h3>
 						<p>{projDesc}</p>
 						<a
 							href={projLink}
@@ -82,7 +83,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 					}}
 				>
 					<div className="projectText projectTextLeft">
-						<h3>{projName}</h3>
+						<h3 data-text={`${projName}`}>{projName}</h3>
 						<p>{projDesc}</p>
 						<a
 							href={projLink}
@@ -107,6 +108,8 @@ const StyledContainer = styled.div<StyleProps>`
 	display: flex;
 	flex-direction: column;
 	margin: 0;
+	/* clip-path: polygon(5% 0%, 0% 100%, 100% 80%, 100% 10%); */
+	transform: rotate(3deg);
 	@media (max-width: 990px) {
 		padding: 0px;
 		margin: 0px;
@@ -116,11 +119,13 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 
 	h1 {
+		color: #fff;
 	}
 
 	h3 {
 		font-family: "Wipeout";
 		font-size: 3em;
+		color: #fff;
 		padding: 0;
 		margin: 0;
 	}
@@ -132,8 +137,6 @@ const StyledContainer = styled.div<StyleProps>`
 		flex-direction: row;
 		height: 500px;
 		background-repeat: no-repeat;
-
-		/* border-bottom: solid 1px ${COLORS.OUTER_LINES_COLOR}; */
 		@media (max-width: 990px) {
 			background-size: cover;
 			padding: 0px;
@@ -154,6 +157,7 @@ const StyledContainer = styled.div<StyleProps>`
 		padding: ${PADDINGS.childContainer};
 		padding-bottom: 30px;
 		border-radius: 3px;
+		transform: rotate(-3deg);
 		@media (max-width: 990px) {
 			width: 80%;
 			right: 0px;

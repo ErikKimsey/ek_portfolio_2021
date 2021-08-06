@@ -6,7 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:#e8fff2;
-  background-color: #151517;
+  /* background-color: #151517; */
+  background-color: #000;
   display: flex;
   flex-direction: column;
 }
@@ -38,5 +39,17 @@ code {
     font-family: "Robot";   
     src: local("./assets/fonts"),
      url("./assets/fonts/NeonRobot.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Angel";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/HelloAngel.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Pado";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/padomela.ttf") format("truetype");
     font-weight: 600;
 }
