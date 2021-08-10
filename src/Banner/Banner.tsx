@@ -9,33 +9,6 @@ type StyledProps = {
 	scrollTop: boolean;
 };
 
-function Comp() {
-	let monContr = 1300,
-		total = 0;
-	for (let i = 1; i < 13; i++) {
-		total += (total + monContr) * 1.11;
-		console.log(total + " / month");
-	}
-	console.log("total total");
-	console.log(total);
-}
-
-const Slogan = () => {
-	// Comp();
-	let pElems = [];
-	for (let i = 0; i < 5; i++) {
-		pElems.push(
-			<p
-				className="slogan"
-				style={{ color: `rgba(255,255,255, 0.${4 + i})` }}
-			>
-				the digital art and play-things, of a restless, creative soul.
-			</p>
-		);
-	}
-	return pElems;
-};
-
 const Banner: FC<Props> = (props) => {
 	const {} = props;
 	let [scrollTop, setScrollTop] = useState<boolean>(true);
@@ -70,14 +43,7 @@ const Banner: FC<Props> = (props) => {
 					Digital Playground
 				</h1>
 			</div>
-			<div className="sloganContainer">
-				{/* {() => {
-					Slogan().map((e) => {
-						console.log(e);
-						return e;
-					});
-				}} */}
-			</div>
+			<div className="sloganContainer"></div>
 			{/* <Menu /> */}
 		</StyledContainer>
 	);
