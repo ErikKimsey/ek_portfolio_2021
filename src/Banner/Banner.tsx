@@ -1,11 +1,13 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 // import Menu from "../Menu/Menu";
 // import "./Banner.scss";
 
 type Props = {};
 
-type StyledProps = {};
+type StyledProps = {
+	scrollTop: boolean;
+};
 
 function Comp() {
 	let monContr = 1300,
@@ -36,16 +38,20 @@ const Slogan = () => {
 
 const Banner: FC<Props> = (props) => {
 	const {} = props;
-	let monContr = 1300,
-		total = 0;
-	for (let i = 0; i < 12; i++) {
-		// console.log(`total pre: ${total}`);
-		let added = monContr + total;
-		total = added * 1.11;
-		console.log(`total post: ${added * 0.11}`);
-	}
-	console.log("total total");
-	console.log(total);
+	let [scrollTop, setScrollTop] = useState<boolean>(true);
+
+	window.addEventListener("scroll", () => {
+		handleScroll();
+	});
+
+	const handleScroll = () => {
+		if (window.scrollY !== 0) {
+			setScrollTop(false);
+		}
+		if (window.scrollY === 0) {
+			setScrollTop(true);
+		}
+	};
 
 	return (
 		<StyledContainer
@@ -54,8 +60,12 @@ const Banner: FC<Props> = (props) => {
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 			}}
+			scrollTop={scrollTop}
 		>
-			<div className="h1s" style={{}}>
+			<div
+				className="h1s"
+				style={scrollTop ? { fontSize: "2em" } : { fontSize: "1em" }}
+			>
 				<h1 className="wipeout" data-text="Erik Kimsey's">
 					Erik Kimsey's{" "}
 				</h1>
@@ -77,7 +87,6 @@ const Banner: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	position: sticky;
 	top: 0px;
 	padding: 0 0 0 0px;
 	margin: 0;
@@ -90,7 +99,6 @@ const StyledContainer = styled.div<StyledProps>`
 	.wipeout {
 		color: rgba(255, 255, 255, 1);
 		font-family: "Angel";
-		font-size: 4em;
 		padding: 20px 20px;
 		margin: 0px;
 		margin-top: 20px;

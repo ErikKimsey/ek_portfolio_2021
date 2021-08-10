@@ -108,8 +108,6 @@ const StyledContainer = styled.div<StyleProps>`
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	/* clip-path: polygon(5% 0%, 0% 100%, 100% 80%, 100% 10%); */
-	transform: rotate(3deg);
 	@media (max-width: 990px) {
 		padding: 0px;
 		margin: 0px;
@@ -157,7 +155,6 @@ const StyledContainer = styled.div<StyleProps>`
 		padding: ${PADDINGS.childContainer};
 		padding-bottom: 30px;
 		border-radius: 3px;
-		transform: rotate(-3deg);
 		@media (max-width: 990px) {
 			width: 80%;
 			right: 0px;
