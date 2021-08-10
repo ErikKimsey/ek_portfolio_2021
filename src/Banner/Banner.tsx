@@ -62,14 +62,11 @@ const Banner: FC<Props> = (props) => {
 			}}
 			scrollTop={scrollTop}
 		>
-			<div
-				className="h1s"
-				style={scrollTop ? { fontSize: "2em" } : { fontSize: "1em" }}
-			>
+			<div className={"h1s " + (scrollTop === true ? "" : "scrolling")}>
 				<h1 className="wipeout" data-text="Erik Kimsey's">
 					Erik Kimsey's{" "}
 				</h1>
-				<h1 className="wipeout" data-text="Digital">
+				<h1 className="wipeout digitalPlayground" data-text="Digital">
 					Digital Playground
 				</h1>
 			</div>
@@ -87,7 +84,6 @@ const Banner: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	top: 0px;
 	padding: 0 0 0 0px;
 	margin: 0;
 	display: flex;
@@ -106,38 +102,61 @@ const StyledContainer = styled.div<StyledProps>`
 	.h1s {
 		display: flex;
 		flex-direction: row;
+		font-size: 2em;
 	}
-	.slogan {
-		paddingleft: "0px";
-		paddingtop: "10px";
-		margin: "0px";
-		fontsize: "1em";
-		letterspacing: "0.3em";
+
+	.scrolling {
+		color: #f0f;
+		animation-duration: 1s;
+		animation-name: shrinkBanner;
 	}
 
 	@media (max-width: 990px) {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		padding: 30px 20px 0px 20px;
-		.wipeout {
-			font-family: "Wipeout";
-			font-size: 2em;
-			margin: 2px;
-			.digitalPlayground {
-				font-size: 3em;
-			}
-		}
+		padding: 10px 10px 0px 30px;
 		.h1s {
 			display: flex;
 			flex-direction: column;
+			font-size: 1em;
 		}
-		.slogan {
-			width: 80vw;
-			paddingleft: 0px;
-			paddingtop: 5px;
-			margin: 0px;
-			fontsize: 0.8em;
+
+		.scrolling {
+			animation-name: none;
+		}
+		.wipeout {
+			font-family: "Angel";
+			margin: 0;
+			padding: 0px;
+		}
+	}
+	@media (max-width: 600px) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 10px 10px 0px 30px;
+		.h1s {
+			display: flex;
+			flex-direction: column;
+			font-size: 0.7em;
+		}
+		.scrolling {
+			animation-name: none;
+		}
+		.wipeout {
+			font-family: "Angel";
+			margin: 0;
+			padding: 0px;
+		}
+	}
+
+	@keyframes shrinkBanner {
+		0% {
+			font-size: 100%;
+		}
+		100% {
+			font-size: calc(50%);
 		}
 	}
 `;
