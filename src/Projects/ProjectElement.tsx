@@ -199,6 +199,46 @@ const StyledContainer = styled.div<StyleProps>`
 		}
 	}
 
+	@media (max-width: 600px) {
+		.halvesContainer {
+			margin: 0px;
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			height: 500px;
+			background-repeat: no-repeat;
+			@media (max-width: 990px) {
+				background-size: cover;
+				padding: 0px;
+				margin: 0px;
+				flex-direction: column;
+				align-items: flex-start;
+				border-width: 0px;
+			}
+		}
+		.projectText {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			top: 50px;
+			width: 100vw;
+			background-color: rgba(0, 0, 0, 0.8);
+			padding: ${PADDINGS.childContainer};
+			padding-bottom: 30px;
+			border-radius: 3px;
+		}
+
+		.projectTextRight {
+			right: 0;
+		}
+
+		.projectTextLeft {
+			top: auto;
+			left: 0;
+			bottom: 20px;
+		}
+	}
+
 	@keyframes iconHover {
 		0% {
 		}

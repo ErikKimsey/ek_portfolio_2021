@@ -102,7 +102,7 @@ const StyledContainer = styled.div<StyledProps>`
 	.h1s {
 		display: flex;
 		flex-direction: row;
-		font-size: 2em;
+		font-size: 1.7em;
 	}
 
 	.scrolling {
@@ -111,7 +111,7 @@ const StyledContainer = styled.div<StyledProps>`
 		animation-name: shrinkBanner;
 	}
 
-	@media (max-width: 990px) {
+	@media (max-width: 1040px) {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -139,15 +139,10 @@ const StyledContainer = styled.div<StyledProps>`
 		.h1s {
 			display: flex;
 			flex-direction: column;
-			font-size: 0.7em;
+			font-size: 0.8em;
 		}
 		.scrolling {
 			animation-name: none;
-		}
-		.wipeout {
-			font-family: "Angel";
-			margin: 0;
-			padding: 0px;
 		}
 	}
 
