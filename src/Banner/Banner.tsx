@@ -92,6 +92,7 @@ const StyledContainer = styled.div<StyledProps>`
 	align-items: center;
 	background-color: #000;
 	color: rgba(255, 255, 255, 0.5);
+
 	.wipeout {
 		color: rgba(255, 255, 255, 1);
 		font-family: "Angel";
@@ -111,15 +112,15 @@ const StyledContainer = styled.div<StyledProps>`
 		animation-name: shrinkBanner;
 	}
 
-	@media (max-width: 1040px) {
+	@media (max-width: 1102px) {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		/* align-items: space-between; */
 		padding: 10px 10px 0px 30px;
 		.h1s {
-			display: flex;
-			flex-direction: column;
-			font-size: 1em;
+			width: 100%;
+			justify-content: space-around;
+			font-size: 1.2em;
 		}
 
 		.scrolling {
@@ -131,6 +132,7 @@ const StyledContainer = styled.div<StyledProps>`
 			padding: 0px;
 		}
 	}
+
 	@media (max-width: 600px) {
 		display: flex;
 		flex-direction: column;
