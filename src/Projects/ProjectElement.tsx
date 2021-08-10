@@ -185,12 +185,25 @@ const StyledContainer = styled.div<StyleProps>`
 		.linkImage {
 			width: 100%;
 			height: 100%;
+			transform: scale(1);
+			&:hover {
+				animation: 500ms ease-in iconHover;
+			}
 		}
+
 		@media (max-width: 990px) {
 			.linkImage {
 				width: 70%;
 				height: 70%;
 			}
+		}
+	}
+
+	@keyframes iconHover {
+		0% {
+		}
+		100% {
+			transform: scale(1.1);
 		}
 	}
 `;
