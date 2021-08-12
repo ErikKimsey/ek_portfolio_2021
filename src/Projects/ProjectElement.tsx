@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import * as COLORS from "../styles/colors";
+import { BreakPoint } from "../styles/breakpoints";
 import { PADDINGS } from "../styles/paddingAndMargins";
 import LinkArrow from "../assets/images/link_arrow.png";
 import "../Banner/Banner.scss";
@@ -108,13 +109,6 @@ const StyledContainer = styled.div<StyleProps>`
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	@media (max-width: 990px) {
-		padding: 0px;
-		margin: 0px;
-		flex-direction: column;
-		align-content: center;
-		justify-content: center;
-	}
 
 	h1 {
 		color: #fff;
@@ -127,7 +121,6 @@ const StyledContainer = styled.div<StyleProps>`
 		padding: 0;
 		margin: 0;
 	}
-
 	.halvesContainer {
 		margin: 0px;
 		position: relative;
@@ -135,14 +128,6 @@ const StyledContainer = styled.div<StyleProps>`
 		flex-direction: row;
 		height: 500px;
 		background-repeat: no-repeat;
-		@media (max-width: 990px) {
-			background-size: cover;
-			padding: 0px;
-			margin: 0px;
-			flex-direction: column;
-			align-items: center;
-			border-width: 0px;
-		}
 	}
 
 	.projectText {
@@ -150,15 +135,11 @@ const StyledContainer = styled.div<StyleProps>`
 		display: flex;
 		flex-direction: column;
 		top: 50px;
-		width: 30vw;
+		width: 40vw;
 		background-color: rgba(0, 0, 0, 0.8);
 		padding: ${PADDINGS.childContainer};
 		padding-bottom: 30px;
 		border-radius: 3px;
-		@media (max-width: 990px) {
-			width: 80%;
-			right: 0px;
-		}
 	}
 
 	.projectTextRight {
@@ -190,16 +171,40 @@ const StyledContainer = styled.div<StyleProps>`
 				animation: 500ms ease-in iconHover;
 			}
 		}
+	}
 
-		@media (max-width: 990px) {
-			.linkImage {
-				width: 70%;
-				height: 70%;
-			}
+	@media ${BreakPoint.xl} {
+		padding: 0px;
+		margin: 0px;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		.projectText {
+			width: 50vw;
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media ${BreakPoint.lg} {
+		.halvesContainer {
+			background-size: cover;
+			padding: 0px;
+			margin: 0px;
+			flex-direction: column;
+			align-items: center;
+			border-width: 0px;
+		}
+		.projectText {
+			width: 70vw;
+			right: 0px;
+		}
+
+		.linkImage {
+			width: 70%;
+			height: 70%;
+		}
+	}
+
+	@media ${BreakPoint.md} {
 		.halvesContainer {
 			margin: 0px;
 			position: relative;
@@ -207,21 +212,12 @@ const StyledContainer = styled.div<StyleProps>`
 			flex-direction: row;
 			height: 500px;
 			background-repeat: no-repeat;
-			@media (max-width: 990px) {
-				background-size: cover;
-				padding: 0px;
-				margin: 0px;
-				flex-direction: column;
-				align-items: flex-start;
-				border-width: 0px;
-			}
 		}
 		.projectText {
 			position: absolute;
 			display: flex;
 			flex-direction: column;
 			top: 50px;
-			width: 100vw;
 			background-color: rgba(0, 0, 0, 0.8);
 			padding: ${PADDINGS.childContainer};
 			padding-bottom: 30px;
@@ -236,6 +232,11 @@ const StyledContainer = styled.div<StyleProps>`
 			top: auto;
 			left: 0;
 			bottom: 20px;
+		}
+	}
+	@media ${BreakPoint.sm} {
+		.projectText {
+			width: 90vw;
 		}
 	}
 
