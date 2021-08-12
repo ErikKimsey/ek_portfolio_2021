@@ -109,6 +109,7 @@ const StyledContainer = styled.div<StyleProps>`
 	display: flex;
 	flex-direction: column;
 	margin: 0;
+	padding-left: 50px;
 
 	h1 {
 		color: #fff;
@@ -123,6 +124,7 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 	.halvesContainer {
 		margin: 0px;
+		padding-left: 50px;
 		position: relative;
 		display: flex;
 		flex-direction: row;
@@ -181,6 +183,7 @@ const StyledContainer = styled.div<StyleProps>`
 		justify-content: center;
 		.projectText {
 			width: 50vw;
+			padding-left: 50px;
 		}
 	}
 
@@ -207,6 +210,7 @@ const StyledContainer = styled.div<StyleProps>`
 	@media ${BreakPoint.md} {
 		.halvesContainer {
 			margin: 0px;
+			padding-left: 50px;
 			position: relative;
 			display: flex;
 			flex-direction: row;
@@ -221,6 +225,7 @@ const StyledContainer = styled.div<StyleProps>`
 			background-color: rgba(0, 0, 0, 0.8);
 			padding: ${PADDINGS.childContainer};
 			padding-bottom: 30px;
+			padding-left: 40px;
 			border-radius: 3px;
 		}
 
@@ -234,9 +239,15 @@ const StyledContainer = styled.div<StyleProps>`
 			bottom: 20px;
 		}
 	}
+
 	@media ${BreakPoint.sm} {
+		.halvesContainer {
+			width: 100vw;
+			padding-left: 50px;
+		}
 		.projectText {
 			width: 90vw;
+			padding-left: 50px;
 		}
 	}
 

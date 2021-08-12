@@ -50,7 +50,7 @@ const Banner: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	padding: 0 0 0 0px;
+	padding: 0 0 0 50px;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
@@ -86,13 +86,12 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: column;
 		align-items: space-between;
-		padding: 10px 10px 0px 0px;
+		padding: 10px 10px 0px 50px;
 		.h1s {
 			width: 100%;
 			display: flex;
 			flex-direction: column;
-			/* justify-content: space-around; */
-			font-size: 1.2em;
+			font-size: 1.5em;
 			transition: font-size 1s;
 			will-change: font-size;
 		}
@@ -100,9 +99,6 @@ const StyledContainer = styled.div<StyledProps>`
 			font-family: "Angel";
 			margin: 0;
 			padding: 0px;
-		}
-		.digitalPlayground {
-			padding-left: 10%;
 		}
 		.scrolling {
 			font-size: 1em;
@@ -117,7 +113,8 @@ const StyledContainer = styled.div<StyledProps>`
 		.h1s {
 			display: flex;
 			flex-direction: column;
-			font-size: 0.8em;
+			font-size: 1em;
+			padding-left: 30px;
 		}
 		.scrolling {
 			animation-name: none;

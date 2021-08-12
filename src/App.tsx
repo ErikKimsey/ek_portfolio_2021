@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
 	return (
 		<BrowserRouter>
-			<div className="App">
+			<div className="App" style={{ padding: "0 0px" }}>
 				<Switch>
 					<Route exact path="/">
 						<TrueLanding />
