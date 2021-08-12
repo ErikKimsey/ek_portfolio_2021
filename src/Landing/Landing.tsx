@@ -26,13 +26,15 @@ const Landing: FC<LandingProps> = (props) => {
 	console.log(data);
 
 	return (
-		<div>
+		<StyledContainer>
 			<Banner />
 			{ForLOOOP()}
-		</div>
+		</StyledContainer>
 	);
 };
 
-const StyledContainer = styled.div<StyledProps>``;
+const StyledContainer = styled.div<StyledProps>`
+	padding: 0 40px;
+`;
 
 export default Landing;

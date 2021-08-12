@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
+import { BreakPoint } from "../styles/breakpoints";
 // import Menu from "../Menu/Menu";
 // import "./Banner.scss";
 
@@ -29,7 +30,6 @@ const Banner: FC<Props> = (props) => {
 	return (
 		<StyledContainer
 			style={{
-				backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(https://i.imgur.com/QISJdLz.png)`,
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 			}}
@@ -66,44 +66,54 @@ const StyledContainer = styled.div<StyledProps>`
 		margin: 0px;
 		margin-top: 20px;
 	}
+
+	.digitalPlayground {
+		padding-left: 20px;
+	}
 	.h1s {
 		display: flex;
 		flex-direction: row;
 		font-size: 1.7em;
+		transition: font-size 1s;
+		will-change: font-size;
 	}
 
 	.scrolling {
-		color: #f0f;
-		animation-duration: 1s;
-		animation-name: shrinkBanner;
+		font-size: 1.2em;
 	}
 
-	@media (max-width: 1102px) {
+	@media ${BreakPoint.xl} {
 		display: flex;
 		flex-direction: column;
-		/* align-items: space-between; */
-		padding: 10px 10px 0px 30px;
+		align-items: space-between;
+		padding: 10px 10px 0px 0px;
 		.h1s {
 			width: 100%;
-			justify-content: space-around;
+			display: flex;
+			flex-direction: column;
+			/* justify-content: space-around; */
 			font-size: 1.2em;
-		}
-
-		.scrolling {
-			animation-name: none;
+			transition: font-size 1s;
+			will-change: font-size;
 		}
 		.wipeout {
 			font-family: "Angel";
 			margin: 0;
 			padding: 0px;
 		}
+		.digitalPlayground {
+			padding-left: 10%;
+		}
+		.scrolling {
+			font-size: 1em;
+		}
 	}
 
-	@media (max-width: 600px) {
+	@media ${BreakPoint.md} {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		padding: 10px 10px 0px 30px;
+		padding: 10px 10px 0px 0px;
 		.h1s {
 			display: flex;
 			flex-direction: column;
