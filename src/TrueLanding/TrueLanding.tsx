@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import { Switch, Route, Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { BreakPoint } from "../styles/breakpoints";
 import Landing from "../Landing/Landing";
 
 type Props = {};
@@ -17,6 +18,7 @@ const TrueLanding: FC<Props> = (props) => {
 					<h1 className="halfLabel">Portfolio Site</h1>
 				</NavLink>
 			</div>
+			<div className="line"></div>
 			<div className="screenHalf">
 				<NavLink to="/playground">
 					<h1 className="halfLabel">Digital Playground</h1>
@@ -38,7 +40,12 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border: solid 1px #333;
+		/* border: solid 1px #333; */
+	}
+	.line {
+		background-color: #333;
+		width: 2px;
+		margin: 10vh 0;
 	}
 
 	a {
@@ -48,6 +55,43 @@ const StyledContainer = styled.div<StyledProps>`
 	.halfLabel {
 		&:hover {
 			font-size: 210%;
+		}
+	}
+
+	@media ${BreakPoint.lg} {
+		.line {
+			margin: 20vh 0;
+		}
+	}
+
+	@media ${BreakPoint.md} {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		h1 {
+			font-size: 1.5em;
+		}
+		.screenHalf {
+			height: auto;
+			padding: 20px 0;
+		}
+		.line {
+			margin: 0;
+			width: 80vw;
+			height: 2px;
+		}
+	}
+
+	@media ${BreakPoint.sm} {
+		.screenHalf {
+			width: 100%;
+		}
+		h1 {
+			font-size: 1.3em;
+		}
+		.line {
+			margin: 0;
 		}
 	}
 `;
