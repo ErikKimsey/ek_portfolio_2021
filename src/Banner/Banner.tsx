@@ -120,15 +120,6 @@ const StyledContainer = styled.div<StyledProps>`
 			animation-name: none;
 		}
 	}
-
-	@keyframes shrinkBanner {
-		0% {
-			font-size: 100%;
-		}
-		100% {
-			font-size: calc(50%);
-		}
-	}
 `;
 
 export default Banner;

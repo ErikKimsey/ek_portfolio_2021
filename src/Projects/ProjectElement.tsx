@@ -165,12 +165,14 @@ const StyledContainer = styled.div<StyleProps>`
 		align-self: flex-end;
 		width: 100px;
 		height: 100px;
+
 		.linkImage {
 			width: 100%;
 			height: 100%;
 			transform: scale(1);
+			transition: transform 500ms;
 			&:hover {
-				animation: 500ms ease-in iconHover;
+				transform: scale(1.1);
 			}
 		}
 	}
@@ -248,14 +250,6 @@ const StyledContainer = styled.div<StyleProps>`
 		.projectText {
 			width: 90vw;
 			padding-left: 50px;
-		}
-	}
-
-	@keyframes iconHover {
-		0% {
-		}
-		100% {
-			transform: scale(1.1);
 		}
 	}
 `;
