@@ -2,7 +2,8 @@ import React, { FC, useState, useEffect } from "react";
 import { Switch, Route, Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { BreakPoint } from "../styles/breakpoints";
-import Landing from "../Landing/Landing";
+import PlaygroundLanding from "../PlaygroundLanding/PlaygroundLanding";
+import PortfolioLanding from "../PortfolioSite/PortfolioLanding";
 
 type Props = {};
 
@@ -14,7 +15,7 @@ const TrueLanding: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<div className="screenHalf">
-				<NavLink to="portfolio" target="_blank">
+				<NavLink to="portfolio">
 					<h1 className="halfLabel">Portfolio Site</h1>
 				</NavLink>
 			</div>

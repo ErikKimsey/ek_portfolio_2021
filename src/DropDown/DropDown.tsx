@@ -10,6 +10,7 @@ const DropDown: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
+			{/* <div className="menuIndicator"></div> */}
 			<div className="spinParent">
 				<div className="spinObj"></div>
 				<div className="spinObj"></div>
@@ -21,31 +22,53 @@ const DropDown: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
-	left: 200px;
-	top: 200px;
+	left: 20px;
+	top: 100px;
 	z-index: 1001;
-	.spinParent {
-		transition-property: height, width, background, transform, padding;
-		transition-duration: 1s;
-	}
 
-	.spinObj {
-		color: #fff;
-		text-align: center;
-		position: relative;
-		width: 77px;
-		height: 77px;
-		background-color: rgba(0, 0, 0, 0);
-		z-index: 1001;
-		border: solid 5px rgb(255, 255, 255);
-		border-radius: 5px;
-		margin: 5px;
-		transition-property: transform, width, height, border-color;
-		transition-duration: 1s;
+	.menuIndicator {
+		position: absolute;
+		display: flex;
+		top: 50%;
+		left: 20px;
+		width: 410px;
+		height: 33px;
+		border: solid 1px #333;
+		transform: rotateZ(-90deg);
+	}
+	.spinParent {
+		width: 100px;
+		height: 700px;
+		opacity: 0.3;
+		transition-property: height, width, background, transform, padding,
+			opacity, left;
+		transition-duration: 0.7s;
 		&:hover {
-			transform: ${() => `rotateY(25deg)`};
-			width: 220px;
-			border-color: #ff00ff;
+			width: 212px;
+			opacity: 1;
+		}
+		.spinObj {
+			margin: 15px 5px;
+			color: #fff;
+			text-align: center;
+			position: relative;
+			width: 77px;
+			height: 77px;
+			background-color: rgba(0, 0, 0, 0);
+			z-index: 1001;
+			/* margin: 5px; */
+			transition-property: transform, width, height, border-color,
+				box-shadow;
+			transition-duration: 1s;
+			border: solid 2px rgba(255, 0, 255, 0.4);
+			border-radius: 5px;
+			box-shadow: 0px 0px 4px rgba(0, 110, 255, 0.8);
+			&:hover {
+				transform: ${() => `rotateY(25deg)`};
+				width: 220px;
+				border: solid 2px rgba(0, 153, 255, 0.4);
+				box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.4);
+			}
 		}
 	}
 `;

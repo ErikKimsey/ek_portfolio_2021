@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Landing from "./Landing/Landing";
+import PlaygroundLanding from "./PlaygroundLanding/PlaygroundLanding";
 import TrueLanding from "./TrueLanding/TrueLanding";
+import PortfolioLanding from "./PortfolioSite/PortfolioLanding";
 // import Menu from "./Menu/Menu";
 import "./App.css";
 
@@ -13,15 +14,11 @@ function App() {
 					<Route exact path="/">
 						<TrueLanding />
 					</Route>
-					<Route
-						path="/portfolio"
-						component={() => {
-							window.location.href = "http://erikkimsey.com";
-							return null;
-						}}
-					/>
+					<Route path="/portfolio">
+						<PortfolioLanding />
+					</Route>
 					<Route path="/playground">
-						<Landing />
+						<PlaygroundLanding />
 					</Route>
 				</Switch>
 			</div>

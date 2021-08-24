@@ -23,7 +23,7 @@ function ForLOOOP() {
 	});
 }
 
-const Landing: FC<LandingProps> = (props) => {
+const PlaygroundLanding: FC<LandingProps> = (props) => {
 	const { index, data } = props;
 	console.log(data);
 
@@ -40,4 +40,4 @@ const StyledContainer = styled.div<StyledProps>`
 	padding: 0;
 `;
 
-export default Landing;
+export default PlaygroundLanding;
