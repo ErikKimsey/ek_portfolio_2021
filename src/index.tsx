@@ -8,10 +8,13 @@ import "./assets/fonts/DESIB.ttf";
 import "./assets/fonts/nasalization.otf";
 import "./assets/fonts/padomela.ttf";
 import "./assets/fonts/HelloAngel.ttf";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById("app")
 );

@@ -2,8 +2,6 @@ import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { BreakPoint } from "../styles/breakpoints";
-// import PlaygroundLanding from "../PlaygroundLanding/PlaygroundLanding";
-// import PortfolioLanding from "../PortfolioSite/PortfolioLanding";
 
 type Props = {};
 
