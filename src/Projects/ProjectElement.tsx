@@ -1,6 +1,5 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, Suspense } from "react";
 import styled from "styled-components";
-import * as COLORS from "../styles/colors";
 import { BreakPoint } from "../styles/breakpoints";
 import { PADDINGS } from "../styles/paddingAndMargins";
 import LinkArrow from "../assets/images/link_arrow.png";
@@ -35,13 +34,6 @@ const ProjectElement: FC<PageProps> = (props) => {
 		if (data && data.description) setProjDesc(data.description);
 		if (data && data.image) setProjImg(data.image);
 		if (data && data.link) setProjLink(data.link);
-	}, []);
-
-	useEffect(() => {
-		if (data && data.name) setProjName(data.name);
-		if (data && data.description) setProjDesc(data.description);
-		if (data && data.image) setProjImg(data.image);
-		if (data && data.link) setProjLink(data.link);
 	}, [data]);
 
 	if (index && index % 2) {
@@ -52,54 +44,58 @@ const ProjectElement: FC<PageProps> = (props) => {
 					backgroundSize: "cover",
 				}}
 			>
-				<div className="halvesContainer">
-					<div className="projectText projectTextRight">
-						<h3 data-text={`${projName}`}>{projName}</h3>
-						<p>{projDesc}</p>
-						<a
-							href={projLink}
-							target="_blank"
-							className="projectLink"
-							rel="noreferrer"
-						>
-							<img
-								alt="project link"
-								src={LinkArrow}
-								className="linkImage"
-							/>
-						</a>
+				<Suspense fallback={<div>Loading...</div>}>
+					<div className="halvesContainer">
+						<div className="projectText projectTextRight">
+							<h3 data-text={`${projName}`}>{projName}</h3>
+							<p>{projDesc}</p>
+							<a
+								href={projLink}
+								target="_blank"
+								className="projectLink"
+								rel="noreferrer"
+							>
+								<img
+									alt="project link"
+									src={LinkArrow}
+									className="linkImage"
+								/>
+							</a>
+						</div>
 					</div>
-				</div>
+				</Suspense>
 			</StyledContainer>
 		);
 	} else {
 		return (
 			<StyledContainer>
-				<div
-					className="halvesContainer"
-					style={{
-						backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url(${projImg})`,
-						backgroundSize: "cover",
-						backgroundPosition: "center",
-					}}
-				>
-					<div className="projectText projectTextLeft">
-						<h3 data-text={`${projName}`}>{projName}</h3>
-						<p>{projDesc}</p>
-						<a
-							href={projLink}
-							target="_blank"
-							className="projectLink"
-							rel="noreferrer"
-						>
-							<img
-								alt="project link"
-								src={LinkArrow}
-								className="linkImage"
-							/>
-						</a>
+				<Suspense fallback={<div>Loading...</div>}>
+					<div
+						className="halvesContainer"
+						style={{
+							backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url(${projImg})`,
+							backgroundSize: "cover",
+							backgroundPosition: "center",
+						}}
+					>
+						<div className="projectText projectTextLeft">
+							<h3 data-text={`${projName}`}>{projName}</h3>
+							<p>{projDesc}</p>
+							<a
+								href={projLink}
+								target="_blank"
+								className="projectLink"
+								rel="noreferrer"
+							>
+								<img
+									alt="project link"
+									src={LinkArrow}
+									className="linkImage"
+								/>
+							</a>
+						</div>
 					</div>
-				</div>
+				</Suspense>
 			</StyledContainer>
 		);
 	}
@@ -177,6 +173,7 @@ const StyledContainer = styled.div<StyleProps>`
 		}
 	}
 
+	/** BREAKPOINT: XL */
 	@media ${BreakPoint.xl} {
 		padding: 0px;
 		margin: 0px;
@@ -189,6 +186,7 @@ const StyledContainer = styled.div<StyleProps>`
 		}
 	}
 
+	/** BREAKPOINT: LG */
 	@media ${BreakPoint.lg} {
 		.halvesContainer {
 			background-size: cover;
@@ -209,6 +207,7 @@ const StyledContainer = styled.div<StyleProps>`
 		}
 	}
 
+	/** BREAKPOINT: MD */
 	@media ${BreakPoint.md} {
 		.halvesContainer {
 			margin: 0px;
@@ -242,6 +241,7 @@ const StyledContainer = styled.div<StyleProps>`
 		}
 	}
 
+	/** BREAKPOINT: SM */
 	@media ${BreakPoint.sm} {
 		.halvesContainer {
 			width: 100vw;

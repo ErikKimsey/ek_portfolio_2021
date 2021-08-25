@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import ProjectElement from "../Projects/ProjectElement";
 import Banner from "../Banner/Banner";
@@ -24,7 +24,7 @@ function ForLOOOP() {
 }
 
 const PlaygroundLanding: FC<LandingProps> = (props) => {
-	const { index, data } = props;
+	const { data } = props;
 	console.log(data);
 
 	return (
@@ -38,6 +38,8 @@ const PlaygroundLanding: FC<LandingProps> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	padding: 0;
+	@media (${BreakPoint.md}) {
+	}
 `;
 
 export default PlaygroundLanding;

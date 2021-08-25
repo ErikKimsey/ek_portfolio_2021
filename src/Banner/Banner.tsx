@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { BreakPoint } from "../styles/breakpoints";
 // import Menu from "../Menu/Menu";
@@ -11,7 +11,6 @@ type StyledProps = {
 };
 
 const Banner: FC<Props> = (props) => {
-	const {} = props;
 	let [scrollTop, setScrollTop] = useState<boolean>(true);
 
 	window.addEventListener("scroll", () => {

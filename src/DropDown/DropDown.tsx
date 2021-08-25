@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 type Props = {};
@@ -6,8 +6,6 @@ type Props = {};
 type StyledProps = {};
 
 const DropDown: FC<Props> = (props) => {
-	const {} = props;
-
 	return (
 		<StyledContainer>
 			{/* <div className="menuIndicator"></div> */}

@@ -1,17 +1,15 @@
-import React, { FC, useState, useEffect } from "react";
-import { Switch, Route, Link, NavLink } from "react-router-dom";
+import { FC } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { BreakPoint } from "../styles/breakpoints";
-import PlaygroundLanding from "../PlaygroundLanding/PlaygroundLanding";
-import PortfolioLanding from "../PortfolioSite/PortfolioLanding";
+// import PlaygroundLanding from "../PlaygroundLanding/PlaygroundLanding";
+// import PortfolioLanding from "../PortfolioSite/PortfolioLanding";
 
 type Props = {};
 
 type StyledProps = {};
 
 const TrueLanding: FC<Props> = (props) => {
-	const {} = props;
-
 	return (
 		<StyledContainer>
 			<div className="screenHalf">
