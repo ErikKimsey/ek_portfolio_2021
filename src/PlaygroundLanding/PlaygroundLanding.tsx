@@ -31,7 +31,7 @@ const PlaygroundLanding: FC<LandingProps> = (props) => {
 
 	return (
 		<StyledContainer>
-			<DropDown />
+			{/* <DropDown /> */}
 			<Banner />
 			<div className="slidesContainer">{ForLOOOP()}</div>
 		</StyledContainer>
@@ -39,19 +39,20 @@ const PlaygroundLanding: FC<LandingProps> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	width: 100%;
+	/* width: 100vw; */
 	padding: 0;
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
-	align-items: center;
+	align-content: space-between;
+	align-items: space-between;
 	.slidesContainer {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
 		height: 60vh;
-		width: 100vw;
+		width: 70%;
 		/* background-color: #333; */
 	}
 	@media (${BreakPoint.md}) {

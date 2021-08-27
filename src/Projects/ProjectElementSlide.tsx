@@ -39,24 +39,24 @@ const ProjectElementSlide: FC<PageProps> = (props) => {
 	return (
 		<StyledContainer style={{}}>
 			<Suspense fallback={<div>Loading...</div>}>
-				<div className="halvesContainer">
+				{/* <div className="halvesContainer"> */}
+				<a
+					href={projLink}
+					target="_blank"
+					className="projectLink"
+					rel="noreferrer"
+				>
 					<div className="projectText projectTextRight">
 						<h3 data-text={`${projName}`}>{projName}</h3>
 						<p>{projDesc}</p>
-						<a
-							href={projLink}
-							target="_blank"
-							className="projectLink"
-							rel="noreferrer"
-						>
-							<img
-								alt="project link"
-								src={LinkArrow}
-								className="linkImage"
-							/>
-						</a>
+						<img
+							alt="project link"
+							src={LinkArrow}
+							className="linkImage"
+						/>
 					</div>
-				</div>
+					{/* </div> */}
+				</a>
 			</Suspense>
 		</StyledContainer>
 	);
@@ -66,10 +66,27 @@ const StyledContainer = styled.div<StyleProps>`
 	display: flex;
 	flex-direction: column;
 	margin: 10px;
+	opacity: 0.2;
+	background-color: rgba(0, 0, 0, 1);
+	border: solid 0px #000;
 	transform: rotate3d(0.1, 0.8, -0, 60deg);
-	transition: transform 500ms;
+	transition: all 500ms;
 	&:hover {
 		transform: scale(1.1) rotate3d(0, 0, 0, 0deg);
+		opacity: 1;
+		border: solid 1px #fff;
+		background-color: rgba(55, 55, 55, 1);
+	}
+
+	a.projectLink {
+		align-self: flex-end;
+		width: 100px;
+		height: 100px;
+		text-decoration: none;
+		color: #fff;
+		img {
+			width: 177px;
+		}
 	}
 
 	h1 {
@@ -83,41 +100,31 @@ const StyledContainer = styled.div<StyleProps>`
 		padding: 0;
 		margin: 0;
 	}
-	.halvesContainer {
-		background-color: #f260ff;
-		margin: 20px;
-		position: relative;
-		display: flex;
-		flex-direction: row;
-		height: 500px;
-		background-repeat: no-repeat;
-	}
-
 	.projectText {
 		position: absolute;
 		display: flex;
 		flex-direction: column;
 		top: 50px;
 		width: 40vw;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(70, 70, 70, 1);
 		padding: ${PADDINGS.childContainer};
 		padding-bottom: 30px;
 		border-radius: 3px;
 	}
 
-	.image {
+	/* .image {
 		height: 500px;
 		width: 50%;
 		padding: 0;
 		margin: 0;
-	}
+	} */
 
 	a.projectLink {
-		align-self: flex-end;
+		/* align-self: flex-end;
 		width: 100px;
-		height: 100px;
+		height: 100px; */
 
-		.linkImage {
+		/* .linkImage {
 			width: 100%;
 			height: 100%;
 			transform: scale(1);
@@ -125,87 +132,7 @@ const StyledContainer = styled.div<StyleProps>`
 			&:hover {
 				transform: scale(1.1);
 			}
-		}
-	}
-
-	/** BREAKPOINT: XL */
-	@media ${BreakPoint.xl} {
-		padding: 0px;
-		margin: 0px;
-		flex-direction: column;
-		align-content: center;
-		justify-content: center;
-		.projectText {
-			width: 50vw;
-			padding-left: 50px;
-		}
-	}
-
-	/** BREAKPOINT: LG */
-	@media ${BreakPoint.lg} {
-		.halvesContainer {
-			background-size: cover;
-			padding: 0px;
-			margin: 0px;
-			flex-direction: column;
-			align-items: center;
-			border-width: 0px;
-		}
-		.projectText {
-			width: 70vw;
-			right: 0px;
-		}
-
-		.linkImage {
-			width: 70%;
-			height: 70%;
-		}
-	}
-
-	/** BREAKPOINT: MD */
-	@media ${BreakPoint.md} {
-		.halvesContainer {
-			margin: 0px;
-			padding-left: 50px;
-			position: relative;
-			display: flex;
-			flex-direction: row;
-			height: 500px;
-			background-repeat: no-repeat;
-		}
-		.projectText {
-			position: absolute;
-			display: flex;
-			flex-direction: column;
-			top: 50px;
-			background-color: rgba(0, 0, 0, 0.8);
-			padding: ${PADDINGS.childContainer};
-			padding-bottom: 30px;
-			padding-left: 40px;
-			border-radius: 3px;
-		}
-
-		.projectTextRight {
-			right: 0;
-		}
-
-		.projectTextLeft {
-			top: auto;
-			left: 0;
-			bottom: 20px;
-		}
-	}
-
-	/** BREAKPOINT: SM */
-	@media ${BreakPoint.sm} {
-		.halvesContainer {
-			width: 100vw;
-			padding-left: 50px;
-		}
-		.projectText {
-			width: 90vw;
-			padding-left: 50px;
-		}
+		} */
 	}
 `;
 
