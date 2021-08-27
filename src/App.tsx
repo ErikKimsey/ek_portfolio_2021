@@ -4,12 +4,11 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import PlaygroundLanding from "./PlaygroundLanding/PlaygroundLanding";
 import TrueLanding from "./TrueLanding/TrueLanding";
 import PortfolioLanding from "./PortfolioSite/PortfolioLanding";
-// import Menu from "./Menu/Menu";
 import "./App.css";
 
 function App() {
 	let location = useLocation();
-	console.log("LOCATION" + location);
+	console.log("LOCATION" + location.pathname);
 
 	return (
 		<div className="App" style={{ padding: "0 0px" }}>
