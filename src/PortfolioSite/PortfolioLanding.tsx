@@ -53,15 +53,18 @@ const StyledContainer = styled.div<StyledProps>`
 	margin: auto;
 	max-width: 1200px;
 	width: 100%;
-	height: 500px;
+	height: 100vh;
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-flow: column wrap;
-	padding: 100px;
+	/* padding: 100px; */
 
 	.dot {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		height: 144px;
 		width: 144px;
 		border-radius: 100px;
@@ -69,9 +72,6 @@ const StyledContainer = styled.div<StyledProps>`
 		outline: none;
 		box-shadow: none;
 		border-width: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		animation: breathing 2.5s infinite ease-in-out;
 		transition: all 1s ease-in-out 1.25s;
 		&::after {

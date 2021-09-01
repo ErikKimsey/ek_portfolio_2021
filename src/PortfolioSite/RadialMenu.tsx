@@ -27,6 +27,8 @@ const RadialMenu: FC<Props> = (props) => {
 	useEffect(() => {
 		let midH = window.innerHeight / 2;
 		let midW = window.innerWidth / 2;
+		console.log(midW);
+
 		setCenterPoint([midW, midH]);
 	}, []);
 
@@ -37,7 +39,6 @@ const RadialMenu: FC<Props> = (props) => {
 		if (midW != undefined && midH != undefined) {
 			x = midW + radius * Math.sin(theta * i);
 			y = midH - radius * (1 - Math.cos(theta * i));
-			console.log(y);
 		}
 		return { x, y };
 	};
@@ -46,8 +47,6 @@ const RadialMenu: FC<Props> = (props) => {
 		let theta = (2 * Math.PI) / 5;
 		return menuItemsData.map((e, i) => {
 			let { x, y } = calculatePosition(i, theta);
-			console.log(y);
-
 			return <div className="menuItem" style={{ left: x, top: y }}></div>;
 		});
 	};
@@ -60,17 +59,21 @@ const RadialMenu: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	top: ${(props) => props.midH / 2 - 200}px;
-	left: ${(props) => props.midW / 2 - 200}px;
-	width: 400px;
-	height: 400px;
+	position: fixed;
+	/* flex */
+	width: 100%;
+	height: 100%;
+	/* top: ${(props) => props.midH / 2 - 200}px;
+	left: ${(props) => props.midW / 2 - 200}px; */
+
 	background-color: #222;
 	.menuItem {
-		position: absolute;
+		position: fixed;
 		width: 100px;
 		height: 100px;
 		background-color: #fff;
 		border-radius: 100px;
+		z-index: 1000;
 	}
 `;
 
