@@ -6,6 +6,7 @@ import Banner from "../Banner/Banner";
 import DropDown from "../DropDown/DropDown";
 import { BreakPoint } from "../styles/breakpoints";
 import { PROJECTS } from "../_data/Projects";
+import ProjectElementMenuItem from "../Projects/ProjectElementMenuItem";
 
 interface LandingProps {
 	index?: number;
@@ -18,20 +19,24 @@ interface LandingProps {
 
 type StyledProps = {};
 
-function ForLOOOP() {
-	return PROJECTS.map((e, i) => {
-		return <ProjectElementSlide index={i} data={e} />;
+const ForLOOOP = () => {
+	return PROJECTS.map((e: any, i: number) => {
+		return <ProjectElementMenuItem index={i} data={e} />;
+		// return <ProjectElementSlide index={i} data={e} />;
 		// return <ProjectElement index={i} data={e} />;
 	});
-}
+};
 
 const PlaygroundLanding: FC<LandingProps> = (props) => {
 	const { data } = props;
 	console.log(data);
 
+	const onDragEnd = () => {};
+	const onDragUpdate = () => {};
+	const onDrag = () => {};
+
 	return (
 		<StyledContainer>
-			{/* <DropDown /> */}
 			<Banner />
 			<div className="slidesContainer">{ForLOOOP()}</div>
 		</StyledContainer>
@@ -44,15 +49,16 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
-	align-content: space-between;
-	align-items: space-between;
+	align-items: center;
+	/* align-content: space-between;
+	align-items: space-between; */
 	.slidesContainer {
 		display: flex;
-		flex-direction: row;
+		flex-flow: row wrap;
 		align-items: center;
 		justify-content: space-between;
-		height: 60vh;
 		width: 70%;
+		/* height: 60vh;
 		/* background-color: #333; */
 	}
 	@media (${BreakPoint.md}) {

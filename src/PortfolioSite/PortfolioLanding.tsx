@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import RadialMenu from "./RadialMenu";
 import styled from "styled-components";
 import IMG from "./IMG_1.png";
 import axios from "axios";
@@ -26,9 +27,20 @@ const PortfolioLanding: FC<Props> = (props) => {
 	return (
 		<>
 			{isLoading === false ? (
-				<StyledContainer bkgrd={IMG} style={{}}>
-					<h1>Erik Kimsey</h1>
-					<h1>UI Dev</h1>
+				<StyledContainer style={{}}>
+					<div
+						className="dot"
+						onClick={() => {
+							console.log("PRESSED");
+						}}
+					></div>
+					{/* <button
+						className="dot"
+						onClick={() => {
+							console.log("PRESSED");
+						}}
+					></button> */}
+					<RadialMenu />
 				</StyledContainer>
 			) : (
 				<LoadingScreen />
@@ -38,21 +50,61 @@ const PortfolioLanding: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	margin: auto;
+	max-width: 1200px;
 	width: 100%;
-	height: 100vh;
-	background-image: url(${() => (IMG !== undefined ? IMG : "")});
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: #fbf;
+	height: 500px;
+	color: #fff;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	flex-flow: column wrap;
 	padding: 100px;
-	margin: 0;
+
+	.dot {
+		height: 144px;
+		width: 144px;
+		border-radius: 100px;
+		background-color: #fff;
+		outline: none;
+		box-shadow: none;
+		border-width: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: breathing 2.5s infinite ease-in-out;
+		transition: all 1s ease-in-out 1.25s;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 72px;
+			height: 72px;
+			border-radius: 100px;
+			background-color: #000;
+			transition: all 1s ease-in-out;
+		}
+		&:hover {
+			transform: scale(1.3);
+			animation: none;
+			&::after {
+				content: "";
+				position: absolute;
+				transform: scale(0.5);
+				border-radius: 100px;
+				background-color: #000;
+			}
+		}
+		&:focus {
+			outline: none;
+		}
+
+		&:click {
+			background-color: #f0f;
+		}
+	}
 
 	h1 {
-		font-size: 8em;
+		font-size: 4em;
 		font-weight: 900;
 		font-family: "Desib";
 		padding: 0;
@@ -93,6 +145,18 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 	@media (max-width: ${BREAKPOINTS.sm}) {
 		/* background: #f0f; */
+	}
+
+	@keyframes breathing {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.2);
+		}
+		100% {
+			transform: scale(1);
+		}
 	}
 `;
 

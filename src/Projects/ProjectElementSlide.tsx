@@ -40,23 +40,23 @@ const ProjectElementSlide: FC<PageProps> = (props) => {
 		<StyledContainer style={{}}>
 			<Suspense fallback={<div>Loading...</div>}>
 				{/* <div className="halvesContainer"> */}
-				<a
-					href={projLink}
-					target="_blank"
-					className="projectLink"
-					rel="noreferrer"
-				>
-					<div className="projectText projectTextRight">
-						<h3 data-text={`${projName}`}>{projName}</h3>
-						<p>{projDesc}</p>
+				<div className="projectText projectTextRight">
+					<h3 data-text={`${projName}`}>{projName}</h3>
+					<p>{projDesc}</p>
+					<a
+						href={projLink}
+						target="_blank"
+						className="projectLink"
+						rel="noreferrer"
+					>
 						<img
 							alt="project link"
 							src={LinkArrow}
 							className="linkImage"
 						/>
-					</div>
-					{/* </div> */}
-				</a>
+					</a>
+				</div>
+				{/* </div> */}
 			</Suspense>
 		</StyledContainer>
 	);
@@ -80,8 +80,6 @@ const StyledContainer = styled.div<StyleProps>`
 
 	a.projectLink {
 		align-self: flex-end;
-		width: 100px;
-		height: 100px;
 		text-decoration: none;
 		color: #fff;
 		img {
