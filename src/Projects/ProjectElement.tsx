@@ -102,6 +102,7 @@ const ProjectElement: FC<PageProps> = (props) => {
 };
 
 const StyledContainer = styled.div<StyleProps>`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	margin: 0;
