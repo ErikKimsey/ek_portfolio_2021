@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import CAPSULES from "../assets/images/capsules.svg";

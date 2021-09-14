@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import ProjectElement from "../Projects/ProjectElement";
 import Banner from "../Banner/Banner";
-import DropDown from "../DropDown/DropDown";
 import { BreakPoint } from "../styles/breakpoints";
 import { PROJECTS } from "../_data/Projects";
 
@@ -24,8 +23,6 @@ const ForLOOOP = () => {
 };
 
 const PlaygroundLanding: FC<LandingProps> = (props) => {
-	const { data } = props;
-
 	return (
 		<StyledContainer>
 			<Banner />
