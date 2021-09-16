@@ -1,6 +1,10 @@
 import React, { FC, useEffect, useState } from "react";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import styled from "styled-components";
+import ContentDisplay from "./ContentDisplay";
+import PortfolioMenu from "./PortfolioMenu";
+import Banner from "./Banner";
+import MiddleSpace from "./MiddleSpace";
 
 const BREAKPOINTS = {
 	lg: 1024,
@@ -24,8 +28,13 @@ const PortfolioLanding: FC<Props> = (props) => {
 	return (
 		<>
 			{isLoading === false ? (
-				<StyledContainer style={{}}>
-					<h1>PORTFOLIO</h1>
+				<StyledContainer>
+					<Banner />
+					<PortfolioMenu />
+					<div className="contentContainer">
+						<MiddleSpace />
+						<ContentDisplay />
+					</div>
 				</StyledContainer>
 			) : (
 				<LoadingScreen />
@@ -36,15 +45,14 @@ const PortfolioLanding: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	margin: auto;
-	max-width: 1200px;
+	max-width: 1600px;
 	width: 100%;
-	height: 100vh;
+	height: 80vh;
 	color: #fff;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-flow: column wrap;
-	/* padding: 100px; */
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: space-between;
 
 	h1 {
 		font-size: 4em;
@@ -53,6 +61,13 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 0;
 		margin: 0;
 		line-height: 0.8;
+	}
+
+	.contentContainer {
+		width: 80%;
+		margin-left: 40px;
+		display: flex;
+		flex-flow: column wrap;
 	}
 
 	/* .subContainer {
