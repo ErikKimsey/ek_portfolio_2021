@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
+import Resume from "./Resume/Resume";
 
 type Props = {};
 
@@ -10,6 +11,7 @@ const ContentDisplay: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
+			<Resume />
 			{/* <Switch>
 					<Route path={}>
                         <h1>1</h1>
@@ -21,13 +23,6 @@ const ContentDisplay: FC<Props> = (props) => {
                         <h1>3</h1>
                     </Route>
 			</Switch> */}
-			<div>
-				Leverage agile frameworks to provide a robust synopsis for high
-				level overviews. Iterative approaches to corporate strategy
-				foster collaborative thinking to further the overall value
-				proposition. Organically grow the holistic world view of
-				disruptive innovation via workplace diversity and empowerment.
-			</div>
 		</StyledContainer>
 	);
 };
@@ -35,7 +30,7 @@ const ContentDisplay: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	width: 70%;
 	height: auto;
-	padding: 20px;
+	/* padding: 20px; */
 	/* border: solid 1px #fff; */
 `;
 
