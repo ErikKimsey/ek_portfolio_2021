@@ -65,23 +65,10 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.contentContainer {
 		width: 80%;
-		margin-left: 40px;
+		height: 100%;
 		display: flex;
 		flex-flow: column wrap;
 	}
-
-	/* .subContainer {
-		padding-left: 10px;
-		width: 100%;
-		height: 100%;
-	}
-
-	.header {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-content: center;
-	} */
 
 	@media (max-width: ${BREAKPOINTS.lg}px) {
 		/* background: #f0f; */

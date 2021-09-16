@@ -11,8 +11,16 @@ const PortfolioMenu: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<div className="menuItem">SUMPIN 1</div>
-			<div className="menuItem">2 SUMPIN</div>
+			<div className="menuItem">
+				<NavLink to="/resume" className="navLink">
+					Resume
+				</NavLink>
+			</div>
+			<div className="menuItem">
+				<NavLink to="/work" className="navLink">
+					SUMPIN 1
+				</NavLink>
+			</div>
 			<div className="menuItem">SUMPINS UMPIN 3</div>
 			<div className="menuItem">4 SUMPIN</div>
 			<div className="menuItem">SUMPIN 5</div>
@@ -21,16 +29,26 @@ const PortfolioMenu: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	position: fixed;
+	left: 20px;
 	width: 80px;
-	height: 100%;
+	height: 80%;
 	display: flex;
 	flex-flow: row wrap;
 	align-content: space-evenly;
 	justify-content: space-between;
+	align-self: flex-start;
+	justify-self: flex-start;
 	.menuItem {
 		transform: rotateZ(-90deg);
-		background-color: #222;
 		padding: 2px;
+	}
+	.navLink {
+		text-decoration: none;
+		/* padding: 5px; */
+		margin: 0;
+		text-align: center;
+		color: #fff;
 	}
 `;
 

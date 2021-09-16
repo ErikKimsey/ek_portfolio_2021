@@ -19,9 +19,9 @@ const Banner: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-flow: row wrap;
+	justify-self: flex-end;
 	width: 100%;
-	margin-left: 5%;
-	margin-top: 5%;
+	margin-top: 2%;
 	height: 100px;
 	font-family: "Desib";
 	h2 {

@@ -26,9 +26,11 @@ const StyledContainer = styled.div<StyledProps>`
 	width: 100%;
 	height: 100%;
 	font-family: "Desib";
+	font-weight: 200;
 	p {
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
 			sans-serif;
+		text-transform: uppercase;
 	}
 `;
 
