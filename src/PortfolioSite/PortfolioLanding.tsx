@@ -5,6 +5,7 @@ import ContentDisplay from "./ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
 import MiddleSpace from "./MiddleSpace";
+import Icons from "./Icons";
 
 const BREAKPOINTS = {
 	lg: 1024,
@@ -35,6 +36,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 						<MiddleSpace />
 						<ContentDisplay />
 					</div>
+					<Icons />
 				</StyledContainer>
 			) : (
 				<LoadingScreen />
@@ -45,6 +47,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	margin: auto;
+	padding: 10px;
 	max-width: 1600px;
 	width: 100%;
 	height: 80vh;
