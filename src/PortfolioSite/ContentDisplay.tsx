@@ -1,7 +1,9 @@
 import React, { FC, useState, useEffect } from "react";
-import { NavLink, Router, Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import styled from "styled-components";
+import Education from "./Education/Education";
 import Resume from "./Resume/Resume";
+import Work from "./Work/Work";
 
 type Props = {};
 
@@ -12,21 +14,27 @@ const ContentDisplay: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<Switch>
-				<Route path="/resume">
-					<Resume />
-				</Route>
-				<Route path="/work">
-					<Resume />
-				</Route>
-			</Switch>
+			{/* <Switch> */}
+			<Route path="/portfolio/" component={Resume} />
+			{/* <Resume /> */}
+			{/* </Route> */}
+			<Route path="/portfolio/work/" component={Work} />
+			{/* <Work /> */}
+			{/* </Route> */}
+			{/* <Route path="/portfolio/resume/" component={}>
+				<Resume />
+			</Route> */}
+			<Route path="/portfolio/education/" component={Education} />
+			{/* <Education /> */}
+			{/* </Route> */}
+			{/* </Switch> */}
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	width: 100%;
-	height: 100%;
+	width: 600px;
+	height: 400px;
 	/* padding: 20px; */
 	/* border: solid 1px #fff; */
 `;

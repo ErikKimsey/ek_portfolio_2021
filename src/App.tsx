@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import PlaygroundLanding from "./PlaygroundLanding/PlaygroundLanding";
 import TrueLanding from "./TrueLanding/TrueLanding";
@@ -22,10 +22,10 @@ function App() {
 						<Route exact path="/">
 							<TrueLanding />
 						</Route>
-						<Route path="/portfolio">
+						<Route path="/portfolio/">
 							<PortfolioLanding />
 						</Route>
-						<Route path="/playground">
+						<Route path="/playground/">
 							<PlaygroundLanding />
 						</Route>
 					</Switch>

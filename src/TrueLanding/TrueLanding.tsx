@@ -11,7 +11,7 @@ const TrueLanding: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<div className="screenHalf">
-				<NavLink to="portfolio">
+				<NavLink to="/portfolio/">
 					<h1 className="halfLabel">Portfolio Site</h1>
 				</NavLink>
 			</div>

@@ -13,8 +13,8 @@ jest.mock("react-router-dom", () => ({
 	}),
 }));
 
-describe("App component", () => {
-	test("renders App comp", () => {
-		render(<App />);
-	});
-});
+// describe("App component", () => {
+// 	test("renders App comp", () => {
+// 		render(<App />);
+// 	});
+// });

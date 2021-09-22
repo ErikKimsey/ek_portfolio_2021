@@ -27,21 +27,15 @@ const PortfolioLanding: FC<Props> = (props) => {
 	}, []);
 
 	return (
-		<>
-			{isLoading === false ? (
-				<StyledContainer>
-					<Banner />
-					<PortfolioMenu />
-					<div className="contentContainer">
-						<MiddleSpace />
-						<ContentDisplay />
-					</div>
-					<Icons />
-				</StyledContainer>
-			) : (
-				<LoadingScreen />
-			)}
-		</>
+		<StyledContainer>
+			<Banner />
+			<PortfolioMenu />
+			<div className="contentContainer">
+				<MiddleSpace />
+				<ContentDisplay />
+			</div>
+			<Icons />
+		</StyledContainer>
 	);
 };
 

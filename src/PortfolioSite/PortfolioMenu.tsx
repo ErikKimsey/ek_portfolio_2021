@@ -12,18 +12,30 @@ const PortfolioMenu: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<div className="menuItem">
-				<NavLink to="/resume" className="navLink">
+				<NavLink to="/portfolio/" className="navLink">
 					Resume
 				</NavLink>
 			</div>
 			<div className="menuItem">
-				<NavLink to="/work" className="navLink">
-					SUMPIN 1
+				<NavLink to="/portfolio/work/" className="navLink">
+					Work
 				</NavLink>
 			</div>
-			<div className="menuItem">SUMPINS UMPIN 3</div>
-			<div className="menuItem">4 SUMPIN</div>
-			<div className="menuItem">SUMPIN 5</div>
+			<div className="menuItem">
+				<NavLink to="/portfolio/education/" className="navLink">
+					Edu.
+				</NavLink>
+			</div>
+			<div className="menuItem">
+				<NavLink to="/portfolio/education/" className="navLink">
+					My best friend.
+				</NavLink>
+			</div>
+			<div className="menuItem">
+				<NavLink to="/portfolio/education/" className="navLink">
+					First Contact
+				</NavLink>
+			</div>
 		</StyledContainer>
 	);
 };
@@ -31,12 +43,12 @@ const PortfolioMenu: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	left: 20px;
-	width: 80px;
-	height: 80%;
+	width: 0px;
+	height: 70%;
 	display: flex;
 	flex-flow: row wrap;
-	align-content: space-evenly;
-	justify-content: space-between;
+	align-content: space-around;
+	justify-content: flex-start;
 	align-self: flex-start;
 	justify-self: flex-start;
 	.menuItem {

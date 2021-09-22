@@ -5,19 +5,12 @@ type Props = {};
 
 type StyledProps = {};
 
-const Resume: FC<Props> = (props) => {
+const Work: FC<Props> = (props) => {
 	const {} = props;
 
 	return (
 		<StyledContainer>
-			<h3 className="header">resume</h3>
-			<p>
-				Leverage agile frameworks to provide a robust synopsis for high
-				level overviews. Iterative approaches to corporate strategy
-				foster collaborative thinking to further the overall value
-				proposition. Organically grow the holistic world view of
-				disruptive innovation via workplace diversity and empowerment.
-			</p>
+			<h1>WORK ALL DAY</h1>
 		</StyledContainer>
 	);
 };
@@ -27,7 +20,7 @@ const StyledContainer = styled.div<StyledProps>`
 	height: 100%;
 	font-family: "Desib";
 	font-weight: 200;
-	p {
+	h1 {
 		color: #fff;
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
 			sans-serif;
@@ -35,4 +28,4 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 `;
 
-export default Resume;
+export default Work;
