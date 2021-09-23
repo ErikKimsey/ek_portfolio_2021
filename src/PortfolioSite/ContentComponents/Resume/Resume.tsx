@@ -10,7 +10,7 @@ const Resume: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<h3 className="header">resume</h3>
+			<h1 className="header">resume.</h1>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
 				level overviews. Iterative approaches to corporate strategy
@@ -27,6 +27,12 @@ const StyledContainer = styled.div<StyledProps>`
 	height: 100%;
 	font-family: "Desib";
 	font-weight: 200;
+	h1 {
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+			sans-serif;
+		font-family: "Desib";
+		color: #fff;
+	}
 	p {
 		color: #fff;
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",

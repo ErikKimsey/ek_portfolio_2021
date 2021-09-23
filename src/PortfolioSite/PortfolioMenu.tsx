@@ -43,12 +43,12 @@ const PortfolioMenu: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	left: 20px;
-	width: 0px;
-	height: 70%;
+	width: 100px;
+	height: 100%;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	align-content: space-around;
-	justify-content: flex-start;
+	justify-content: space-around;
 	align-self: flex-start;
 	justify-self: flex-start;
 	.menuItem {
@@ -57,7 +57,6 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 	.navLink {
 		text-decoration: none;
-		/* padding: 5px; */
 		margin: 0;
 		text-align: center;
 		color: #fff;

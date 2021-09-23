@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import styled from "styled-components";
-import ContentDisplay from "./ContentDisplay";
+import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
 import MiddleSpace from "./MiddleSpace";
@@ -31,7 +31,6 @@ const PortfolioLanding: FC<Props> = (props) => {
 			<Banner />
 			<PortfolioMenu />
 			<div className="contentContainer">
-				<MiddleSpace />
 				<ContentDisplay />
 			</div>
 			<Icons />
@@ -62,7 +61,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.contentContainer {
 		width: 80%;
-		height: 100%;
+		/* height: 100%; */
 		display: flex;
 		flex-flow: column wrap;
 	}
@@ -70,6 +69,7 @@ const StyledContainer = styled.div<StyledProps>`
 	@media (max-width: ${BREAKPOINTS.lg}px) {
 		/* background: #f0f; */
 	}
+
 	@media (max-width: ${BREAKPOINTS.md}px) {
 		/* .subContainer {
             padding-left: 10px;

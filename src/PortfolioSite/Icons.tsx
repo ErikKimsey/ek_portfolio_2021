@@ -44,11 +44,15 @@ const Icons: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	width: 100%;
+	position: fixed;
+	width: 70px;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	justify-content: flex-end;
+	bottom: 100px;
+	right: 50px;
 	.iconsContainer {
+		margin-right: 100px;
 	}
 	img {
 		margin: 5px;

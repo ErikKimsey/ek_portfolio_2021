@@ -10,7 +10,14 @@ const Work: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<h1>WORK ALL DAY</h1>
+			<h1>work. </h1>
+			<p>
+				Leverage agile frameworks to provide a robust synopsis for high
+				level overviews. Iterative approaches to corporate strategy
+				foster collaborative thinking to further the overall value
+				proposition. Organically grow the holistic world view of
+				disruptive innovation via workplace diversity and empowerment.
+			</p>
 		</StyledContainer>
 	);
 };
@@ -18,9 +25,14 @@ const Work: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	width: 100%;
 	height: 100%;
-	font-family: "Desib";
 	font-weight: 200;
 	h1 {
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+			sans-serif;
+		font-family: "Desib";
+		color: #fff;
+	}
+	p {
 		color: #fff;
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
 			sans-serif;

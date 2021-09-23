@@ -10,6 +10,7 @@ const Banner: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
+			<div className="leftSpace"></div>
 			<h2>ERIK KIMSEY</h2>
 			<h2>CREATIVE TECHNOLOGIST</h2>
 		</StyledContainer>
@@ -17,6 +18,7 @@ const Banner: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	position: fixed;
 	display: flex;
 	flex-flow: row wrap;
 	justify-self: flex-end;
@@ -24,6 +26,9 @@ const StyledContainer = styled.div<StyledProps>`
 	margin-top: 2%;
 	height: 100px;
 	font-family: "Desib";
+	.leftSpace {
+		width: 100px;
+	}
 	h2 {
 		padding: 0 10px;
 		margin: 0;

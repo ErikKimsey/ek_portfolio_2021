@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import { Route } from "react-router";
 import styled from "styled-components";
-import Work from "./Work/Work";
 
 type Props = {};
 
@@ -14,8 +13,10 @@ const MiddleSpace: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	position: static;
+	margin-top: 100px;
 	width: 300px;
-	height: 100%;
+	height: 80%;
 	border: solid 1px #222;
 	background-color: #fff;
 `;
