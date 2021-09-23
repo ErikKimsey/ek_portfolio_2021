@@ -23,7 +23,7 @@ const Work: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	width: 100%;
+	/* width: 100%; */
 	height: 100%;
 	font-weight: 200;
 	h1 {

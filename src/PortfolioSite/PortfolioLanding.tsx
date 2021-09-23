@@ -76,6 +76,7 @@ const StyledContainer = styled.div<StyledProps>`
 			width: 100%;
 			height: 100vh;
 		} */
+		flex-flow: column;
 		h1 {
 			font-size: 6em;
 			font-weight: 900;

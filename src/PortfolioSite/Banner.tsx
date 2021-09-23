@@ -44,6 +44,20 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 0 10px;
 		margin: 0;
 	}
+
+	@media (max-width: 700px) {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		flex-flow: column;
+		justify-content: flex-end;
+		align-items: flex-start;
+		h2 {
+			padding: 0 10px;
+			margin: 0;
+			padding-left: 100px;
+		}
+	}
 `;
 
 export default Banner;

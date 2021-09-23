@@ -61,6 +61,12 @@ const StyledContainer = styled.div<StyledProps>`
 		text-align: center;
 		color: #fff;
 	}
+
+	@media (max-width: 700px) {
+		left: 10px;
+		width: 50px;
+		height: 100vh;
+	}
 `;
 
 export default PortfolioMenu;

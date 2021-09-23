@@ -52,6 +52,15 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 100%;
 		padding-left: 200px;
 	}
+
+	@media (max-width: 700px) {
+		top: 100px;
+		height: 100vh;
+		width: 100%;
+		.contentContainer {
+			padding-left: 50px;
+		}
+	}
 `;
 
 const ContentBreak = styled.div`

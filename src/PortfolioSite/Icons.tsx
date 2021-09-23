@@ -60,6 +60,22 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 50px;
 		fill: #fff;
 	}
+
+	@media (max-width: 700px) {
+		position: fixed;
+		flex-flow: row;
+		width: 100%;
+		bottom: 40px;
+		.iconsContainer {
+			margin-right: 100px;
+		}
+		img {
+			margin: 5px;
+			height: 50px;
+			width: 50px;
+			fill: #fff;
+		}
+	}
 `;
 
 export default Icons;
