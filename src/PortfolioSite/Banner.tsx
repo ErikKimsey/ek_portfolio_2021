@@ -19,13 +19,24 @@ const Banner: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
+	width: 100%;
 	display: flex;
 	flex-flow: row wrap;
 	justify-self: flex-end;
-	width: 100%;
-	margin-top: 2%;
-	height: 100px;
+	align-items: flex-end;
+	top: 0;
+	margin-top: 0;
+	padding: 10px;
+	height: 133px;
 	font-family: "Desib";
+	border-radius: 100px;
+	background: rgb(255, 0, 200);
+	background: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.5) 0%,
+		rgba(0, 0, 0, 1) 42%
+	);
+	z-index: 1000;
 	.leftSpace {
 		width: 100px;
 	}
