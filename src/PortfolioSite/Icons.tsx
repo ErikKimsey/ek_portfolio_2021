@@ -23,12 +23,15 @@ const Icons: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<div className="iconsContainer">
+				{/* <NavLink to="/playground">
+					<img src={astronaut} />
+				</NavLink> */}
+				<NavLink to="/resume">
+					<img src={astronaut} />
+				</NavLink>
 				<a href="https://www.beatport.com" target="_blank">
 					<img src={github} />
 				</a>
-				<NavLink to="/playground">
-					<img src={astronaut} />
-				</NavLink>
 				<a href="https://www.beatport.com" target="_blank">
 					<img src={soundcloud} />
 				</a>

@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
-import { Work, Resume, Education } from "./index";
+import { Work, Resume, Education, LandingComponent } from "./index";
 
 type Props = {};
 
@@ -25,16 +25,21 @@ const ContentDisplay: FC<Props> = (props) => {
 			const _cont = [Work, Resume, Education];
 			setContent(_cont);
 		}
-		console.log(content);
 	}, []);
 
 	return (
 		<StyledContainer>
 			{content.length > 0 && (
 				<div className="contentContainer">
-					<Work />
+					<LandingComponent />
 					<ContentBreakElement />
+					{/* <Route path="/portfolio/work/"> */}
+					<Work />
+					{/* </Route> */}
+					<ContentBreakElement />
+					{/* <Route path="/portfolio/resume/"> */}
 					<Resume />
+					{/* </Route> */}
 					<ContentBreakElement />
 					<Education />
 				</div>
@@ -45,12 +50,16 @@ const ContentDisplay: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	position: relative;
-	top: 300px;
-	width: 100%;
+	top: 14vh;
+	/* height: 100%; */
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
 
 	.contentContainer {
-		width: 100%;
-		padding-left: 200px;
+		/* width: 80%; */
+		/* padding-left: 200px; */
 	}
 
 	@media (max-width: 700px) {

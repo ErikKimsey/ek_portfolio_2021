@@ -8,6 +8,12 @@ type StyledProps = {};
 
 const PortfolioMenu: FC<Props> = (props) => {
 	const {} = props;
+	const work = document.getElementById("workContainer");
+	console.log(work);
+
+	const handleClick = (elem: string) => {
+		console.log("handling click");
+	};
 
 	return (
 		<StyledContainer>
@@ -24,16 +30,6 @@ const PortfolioMenu: FC<Props> = (props) => {
 			<div className="menuItem">
 				<NavLink to="/portfolio/education/" className="navLink">
 					Edu.
-				</NavLink>
-			</div>
-			<div className="menuItem">
-				<NavLink to="/portfolio/education/" className="navLink">
-					My best friend.
-				</NavLink>
-			</div>
-			<div className="menuItem">
-				<NavLink to="/portfolio/education/" className="navLink">
-					First Contact
 				</NavLink>
 			</div>
 		</StyledContainer>

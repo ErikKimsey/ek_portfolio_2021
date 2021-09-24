@@ -41,12 +41,10 @@ const PortfolioLanding: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	margin: auto;
 	padding: 10px;
-	max-width: 1600px;
 	width: 100%;
-	height: 80vh;
 	color: #fff;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	justify-content: flex-start;
 	align-items: space-between;
 
@@ -61,9 +59,11 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.contentContainer {
 		width: 80%;
-		/* height: 100%; */
 		display: flex;
 		flex-flow: column wrap;
+		justify-content: flex-start;
+		align-items: center;
+		align-self: center;
 	}
 
 	@media (max-width: ${BREAKPOINTS.lg}px) {
