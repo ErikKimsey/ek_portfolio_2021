@@ -23,11 +23,16 @@ const ContentDisplay: FC<Props> = (props) => {
 	const location = useLocation();
 	const history = useHistory();
 	let [content, setContent] = useState([]);
-	let [pathsIndex, setPathsIndex] = useState(0);
-	let [lastScrollPos, setLastScrollPos] = useState("");
+	let [pathsIndex, setPathsIndex] = useState();
+	let [lastScrollPos, setLastScrollPos] = useState(PATHS[0]);
+	let dY = 0;
 
 	useEffect(() => {
+		setPathsIndex(0);
 		setLastScrollPos(PATHS[pathsIndex]);
+		console.log("lastScrollPos");
+		console.log(lastScrollPos);
+
 		if (
 			Work !== undefined &&
 			Resume !== undefined &&
@@ -43,25 +48,34 @@ const ContentDisplay: FC<Props> = (props) => {
 	}, []);
 
 	const handleScroll = (e) => {
-		console.log(e.deltaY);
-		console.log();
-		if (e.deltaY <= -10) {
-			console.log("SCROLLING UP");
-			if (pathsIndex > 0) {
-				setPathsIndex((pathsIndex -= 1));
-				setLastScrollPos(PATHS[pathsIndex]);
-				history.push(lastScrollPos);
-			}
-		}
+		// console.log(e.deltaY);
+		let time = 0;
+
 		if (e.deltaY >= 10) {
-			console.log("SCROLLING DOWN");
-			if (pathsIndex > 0) {
-				setPathsIndex((pathsIndex += 1));
+			console.log("TIME");
+			time++;
+			console.log(time);
+
+			if (pathsIndex < PATHS.length) {
+				pathsIndex = pathsIndex + 1;
+				setPathsIndex(pathsIndex);
 				setLastScrollPos(PATHS[pathsIndex]);
-				history.push(lastScrollPos);
+				// console.log("lastScrollPos");
+				// console.log(PATHS[pathsIndex]);
+				history.push("/portfolio/education");
 			}
 		}
-		// if(e)
+		if (e.deltaY <= -10) {
+			if (pathsIndex > 0) {
+				pathsIndex = pathsIndex - 1;
+				setPathsIndex(pathsIndex);
+				// console.log("lastScrollPos");
+				// console.log(PATHS[pathsIndex]);
+				setLastScrollPos(PATHS[pathsIndex]);
+				history.goBack();
+			}
+		}
+		console.log("SCROLLING");
 	};
 	/**
      * TODO: * make Work.tsx component height/width 
