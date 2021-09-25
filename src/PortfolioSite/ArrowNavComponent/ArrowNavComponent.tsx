@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, DragControls, useDragControls } from "framer-motion";
 
 import UpArrow from "../../assets/images/Icons/arrow_up.svg";
 import DownArrow from "../../assets/images/Icons/arrow_down.svg";
@@ -10,23 +10,54 @@ type Props = {};
 type StyledProps = {
 	xPosition?: number;
 	yPosition?: number;
+	visible?: boolean;
+};
+
+const DRAG_DIRECTIONS = {
+	up: "UP",
+	down: "DOWN",
 };
 
 const ArrowNavComponent: FC<Props> = (props) => {
 	const {} = props;
+	const dragControls = useDragControls();
 	let [yPos, setYPos] = useState(null);
 	let [xPos, setXPos] = useState(null);
+	let [isVisible, setIsVisible] = useState(true);
 
-	useEffect(() => {}, []);
+	const Navigate = (dir: string) => {
+		const upDirection = "UP";
+		const downDirection = "UP";
+		console.log("NAVIGATING ON DRAG: " + dir);
+
+		/**
+		 * NEED TO PREVENT RAPID NAVIGATION ON DRAG:
+		 * --
+		 */
+
+		setTimeout(() => {
+			if (dir === DRAG_DIRECTIONS.up) {
+				// if "UP", use useHistory to navigate to previous screen
+				console.log("NAV BACK");
+			}
+			if (dir === DRAG_DIRECTIONS.down) {
+				// if "DOWN", use useHistory to navigate to next screen
+				console.log("NAV FORWARD");
+			}
+		}, 1000);
+	};
+
+	useEffect(() => {}, [isVisible]);
 
 	return (
-		<StyledContainer>
+		<StyledContainer visible={isVisible}>
 			<motion.img
 				src={UpArrow}
 				alt="navigation arrow up"
 				className="upArrow"
 				drag="y"
 				dragConstraints={{ top: -10, bottom: 10 }}
+				onDragStart={() => Navigate(DRAG_DIRECTIONS.up)}
 			/>
 			<motion.img
 				src={DownArrow}
@@ -34,6 +65,7 @@ const ArrowNavComponent: FC<Props> = (props) => {
 				className="downArrow"
 				drag="y"
 				dragConstraints={{ top: -10, bottom: 10 }}
+				onDragStart={() => Navigate(DRAG_DIRECTIONS.down)}
 			/>
 		</StyledContainer>
 	);
@@ -41,10 +73,11 @@ const ArrowNavComponent: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
-	display: flex;
+	display: ${(props) => (props.visible ? "flex" : "none")};
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
+	justify-self: center;
 	top: ${(props) =>
 		props.yPosition !== undefined
 			? props.yPosition
@@ -55,7 +88,7 @@ const StyledContainer = styled.div<StyledProps>`
 			: window.innerWidth / 2 - 74}px;
 	width: 144px;
 	height: 300px;
-	border: solid 1px #ff00dd;
+	border: solid 1px #3b373b;
 	border-radius: 100px;
 	padding: 20px;
 	z-index: 1001;
@@ -83,6 +116,17 @@ const StyledContainer = styled.div<StyledProps>`
 			props.xPosition !== undefined
 				? props.xPosition
 				: window.innerWidth / 2 - 74}px;
+	}
+
+	@media (max-width: 792px) {
+		width: 100px;
+		height: 150px;
+		display: ${(props) => (props.visible ? "flex" : "none")};
+		/* flex-direction: column;
+		justify-content: space-around; */
+		align-items: center;
+		justify-self: center;
+		bottom: 100px;
 	}
 `;
 

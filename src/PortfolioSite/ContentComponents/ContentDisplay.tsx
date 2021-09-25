@@ -41,42 +41,8 @@ const ContentDisplay: FC<Props> = (props) => {
 			const _cont = [Work, Resume, Education];
 			setContent(_cont);
 		}
-
-		window.addEventListener("wheel", handleScroll);
-
-		// return window.removeEventListener("wheel", handleScroll);
 	}, []);
 
-	const handleScroll = (e) => {
-		// console.log(e.deltaY);
-		let time = 0;
-
-		if (e.deltaY >= 10) {
-			console.log("TIME");
-			time++;
-			console.log(time);
-
-			if (pathsIndex < PATHS.length) {
-				pathsIndex = pathsIndex + 1;
-				setPathsIndex(pathsIndex);
-				setLastScrollPos(PATHS[pathsIndex]);
-				// console.log("lastScrollPos");
-				// console.log(PATHS[pathsIndex]);
-				history.push("/portfolio/education");
-			}
-		}
-		if (e.deltaY <= -10) {
-			if (pathsIndex > 0) {
-				pathsIndex = pathsIndex - 1;
-				setPathsIndex(pathsIndex);
-				// console.log("lastScrollPos");
-				// console.log(PATHS[pathsIndex]);
-				setLastScrollPos(PATHS[pathsIndex]);
-				history.goBack();
-			}
-		}
-		console.log("SCROLLING");
-	};
 	/**
      * TODO: * make Work.tsx component height/width 
                 logic global/util for all content components.
