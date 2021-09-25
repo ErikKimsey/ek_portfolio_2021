@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect, useLayoutEffect } from "react";
 import styled from "styled-components";
-import { motion, DragControls, useDragControls } from "framer-motion";
+import { motion, useDragControls } from "framer-motion";
 
 import UpArrow from "../../assets/images/Icons/arrow_up.svg";
 import DownArrow from "../../assets/images/Icons/arrow_down.svg";
@@ -73,16 +73,12 @@ const StyledContainer = styled.div<StyledProps>`
 	justify-content: space-between;
 	align-items: center;
 	justify-self: center;
-	bottom: 100px;
+	bottom: 200px;
 
 	/* top: ${(props) =>
 		props.yPosition !== undefined
 			? props.yPosition
 			: window.innerHeight - 444}px; */
-	/* left: ${(props) =>
-		props.xPosition !== undefined
-			? props.xPosition
-			: window.innerWidth / 2 - 74}px; */
 	left: ${(props) =>
 		props.xPosition !== undefined
 			? props.xPosition
@@ -121,13 +117,13 @@ const StyledContainer = styled.div<StyledProps>`
 
 	@media (max-width: 769px) {
 		width: 100px;
-		height: 150px;
+		/* height: 150px; */
 		display: ${(props) => (props.visible ? "flex" : "none")};
 		/* flex-direction: column;
 		justify-content: space-around; */
 		align-items: center;
 		justify-self: center;
-		bottom: -100px;
+		bottom: 20px;
 	}
 `;
 
