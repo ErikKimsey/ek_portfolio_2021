@@ -7,30 +7,13 @@ import PortfolioLanding from "./PortfolioSite/PortfolioLanding";
 import "./App.css";
 
 function App() {
-	let location = useLocation();
-	console.log("LOCATION" + location.pathname);
-
 	return (
 		<div className="App" style={{ padding: "0 0px" }}>
-			<TransitionGroup>
-				<CSSTransition
-					timeout={300}
-					classNames="fade"
-					key={location.key}
-				>
-					<Switch>
-						<Route exact path="/">
-							<TrueLanding />
-						</Route>
-						<Route path="/portfolio/">
-							<PortfolioLanding />
-						</Route>
-						<Route path="/playground/">
-							<PlaygroundLanding />
-						</Route>
-					</Switch>
-				</CSSTransition>
-			</TransitionGroup>
+			<Switch>
+				<Route exact path="/" component={TrueLanding} />
+				<Route path="/portfolio" component={PortfolioLanding} />
+				<Route path="/playground" component={PlaygroundLanding} />
+			</Switch>
 		</div>
 	);
 }

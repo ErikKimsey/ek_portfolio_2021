@@ -1,5 +1,5 @@
-import React, { FC, useState, useEffect } from "react";
-import { NavLink, Router, Route, Switch } from "react-router-dom";
+import React, { FC } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 type Props = {};
@@ -8,8 +8,6 @@ type StyledProps = {};
 
 const PortfolioMenu: FC<Props> = (props) => {
 	const {} = props;
-	const work = document.getElementById("workContainer");
-	console.log(work);
 
 	const handleClick = (elem: string) => {
 		console.log("handling click");
@@ -18,17 +16,22 @@ const PortfolioMenu: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<div className="menuItem">
-				<NavLink to="/portfolio/" className="navLink">
+				<NavLink to="/portfolio" className="navLink">
+					Home
+				</NavLink>
+			</div>
+			<div className="menuItem">
+				<NavLink to="/portfolio/resume" className="navLink">
 					Resume
 				</NavLink>
 			</div>
 			<div className="menuItem">
-				<NavLink to="/portfolio/work/" className="navLink">
+				<NavLink to="/portfolio/work" className="navLink">
 					Work
 				</NavLink>
 			</div>
 			<div className="menuItem">
-				<NavLink to="/portfolio/education/" className="navLink">
+				<NavLink to="/portfolio/education" className="navLink">
 					Edu.
 				</NavLink>
 			</div>
@@ -39,8 +42,9 @@ const PortfolioMenu: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	left: 20px;
+	top: 200px;
 	width: 100px;
-	height: 100%;
+	height: 50%;
 	display: flex;
 	flex-flow: column wrap;
 	align-content: space-around;

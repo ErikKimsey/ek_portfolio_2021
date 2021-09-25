@@ -1,6 +1,5 @@
 import React, { FC, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
-import { ListFormat } from "typescript";
 
 type Props = {};
 
@@ -18,13 +17,14 @@ const Work: FC<Props> = (props) => {
 
 	const refContainer = useCallback((node) => {
 		if (node !== null) {
-			console.log(node.getBoundingClientRect());
+			// console.log(node.getBoundingClientRect());
 		}
 	}, []);
 
 	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
+		// console.log("WORK");
 	}, []);
 
 	const setDimens = () => {

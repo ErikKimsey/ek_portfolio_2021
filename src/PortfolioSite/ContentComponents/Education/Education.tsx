@@ -3,13 +3,23 @@ import styled from "styled-components";
 
 type Props = {};
 
-type StyledProps = {};
+type StyledProps = {
+	containerHeight?: number;
+	containerWidth?: number;
+};
 
 const Education: FC<Props> = (props) => {
 	const {} = props;
+	const [winHeight, setWinHeight] = useState(0);
+	const [winWidth, setWinWidth] = useState(0);
+
+	useEffect(() => {
+		setWinHeight(window.innerHeight);
+		setWinWidth(window.innerWidth);
+	}, []);
 
 	return (
-		<StyledContainer>
+		<StyledContainer containerHeight={winHeight} containerWidth={winWidth}>
 			<h1>education.</h1>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
@@ -23,7 +33,9 @@ const Education: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	height: 600px;
+	width: ${(props) => props.containerWidth * 0.7}px;
+	height: ${(props) => props.containerHeight * 0.8}px;
+	background-color: #a0f;
 	h1,
 	p {
 		padding: 10px;

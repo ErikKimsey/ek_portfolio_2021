@@ -1,10 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
-import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import styled from "styled-components";
 import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
-import MiddleSpace from "./MiddleSpace";
 import Icons from "./Icons";
 
 const BREAKPOINTS = {
@@ -20,8 +18,6 @@ interface StyledProps {
 }
 
 const PortfolioLanding: FC<Props> = (props) => {
-	let [isLoading, setIsLoading] = useState(false);
-
 	useEffect(() => {
 		// setTimeout(() => setIsLoading(false), 500);
 	}, []);
@@ -30,7 +26,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 		<StyledContainer>
 			<Banner />
 			<PortfolioMenu />
-			<div className="contentContainer">
+			<div className="container">
 				<ContentDisplay />
 			</div>
 			<Icons />
@@ -57,7 +53,7 @@ const StyledContainer = styled.div<StyledProps>`
 		line-height: 0.8;
 	}
 
-	.contentContainer {
+	.container {
 		width: 80%;
 		display: flex;
 		flex-flow: column wrap;

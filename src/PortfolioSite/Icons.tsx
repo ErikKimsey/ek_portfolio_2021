@@ -26,9 +26,9 @@ const Icons: FC<Props> = (props) => {
 				{/* <NavLink to="/playground">
 					<img src={astronaut} />
 				</NavLink> */}
-				<NavLink to="/resume">
+				{/* <NavLink to="/resume">
 					<img src={astronaut} />
-				</NavLink>
+				</NavLink> */}
 				<a href="https://www.beatport.com" target="_blank">
 					<img src={github} />
 				</a>
