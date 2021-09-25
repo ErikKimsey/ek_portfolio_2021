@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useLayoutEffect } from "react";
 import styled from "styled-components";
 import { motion, DragControls, useDragControls } from "framer-motion";
 
@@ -24,30 +24,25 @@ const ArrowNavComponent: FC<Props> = (props) => {
 	let [yPos, setYPos] = useState(null);
 	let [xPos, setXPos] = useState(null);
 	let [isVisible, setIsVisible] = useState(true);
+	let [screenW, setScreenW] = useState<number>(window.innerWidth);
 
 	const Navigate = (dir: string) => {
-		const upDirection = "UP";
-		const downDirection = "UP";
 		console.log("NAVIGATING ON DRAG: " + dir);
-
 		/**
-		 * NEED TO PREVENT RAPID NAVIGATION ON DRAG:
-		 * --
+		 * - useHistory:
+		 * ---- NAV BACK:
+		 * ---- NAV FORWARD:
 		 */
-
-		setTimeout(() => {
-			if (dir === DRAG_DIRECTIONS.up) {
-				// if "UP", use useHistory to navigate to previous screen
-				console.log("NAV BACK");
-			}
-			if (dir === DRAG_DIRECTIONS.down) {
-				// if "DOWN", use useHistory to navigate to next screen
-				console.log("NAV FORWARD");
-			}
-		}, 1000);
 	};
 
-	useEffect(() => {}, [isVisible]);
+	function handleResize() {
+		setScreenW(window.innerWidth);
+	}
+
+	useLayoutEffect(() => {
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	});
 
 	return (
 		<StyledContainer visible={isVisible}>
@@ -75,50 +70,56 @@ const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	display: ${(props) => (props.visible ? "flex" : "none")};
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	justify-self: center;
-	top: ${(props) =>
+	bottom: 100px;
+
+	/* top: ${(props) =>
 		props.yPosition !== undefined
 			? props.yPosition
-			: window.innerHeight - 444}px;
+			: window.innerHeight - 444}px; */
+	/* left: ${(props) =>
+		props.xPosition !== undefined
+			? props.xPosition
+			: window.innerWidth / 2 - 74}px; */
 	left: ${(props) =>
 		props.xPosition !== undefined
 			? props.xPosition
 			: window.innerWidth / 2 - 74}px;
-	width: 144px;
-	height: 300px;
+	width: 100px;
+	height: 222px;
 	border: solid 1px #3b373b;
 	border-radius: 100px;
 	padding: 20px;
 	z-index: 1001;
 
 	img {
-		width: 100px;
+		width: 77px;
 	}
 
 	.upArrow {
-		top: ${(props) =>
+		/* top: ${(props) =>
 			props.yPosition !== undefined
 				? props.yPosition
 				: window.innerHeight - 444}px;
 		left: ${(props) =>
 			props.xPosition !== undefined
 				? props.xPosition
-				: window.innerWidth / 2 - 74}px;
+				: window.innerWidth / 2 - 74}px; */
 	}
 	.downArrow {
-		top: ${(props) =>
+		/* top: ${(props) =>
 			props.yPosition !== undefined
 				? props.yPosition
 				: window.innerHeight - 444}px;
 		left: ${(props) =>
 			props.xPosition !== undefined
 				? props.xPosition
-				: window.innerWidth / 2 - 74}px;
+				: window.innerWidth / 2 - 74}px; */
 	}
 
-	@media (max-width: 792px) {
+	@media (max-width: 769px) {
 		width: 100px;
 		height: 150px;
 		display: ${(props) => (props.visible ? "flex" : "none")};
@@ -126,7 +127,7 @@ const StyledContainer = styled.div<StyledProps>`
 		justify-content: space-around; */
 		align-items: center;
 		justify-self: center;
-		bottom: 100px;
+		bottom: -100px;
 	}
 `;
 

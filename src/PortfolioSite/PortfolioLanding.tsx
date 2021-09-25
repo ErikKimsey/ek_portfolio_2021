@@ -37,6 +37,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	position: relative;
 	margin: auto;
 	padding: 10px;
 	width: 100%;
