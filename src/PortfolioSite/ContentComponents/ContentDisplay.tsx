@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
 import { Route, Switch, useLocation, useHistory } from "react-router-dom";
 import styled from "styled-components";
@@ -51,7 +52,7 @@ const ContentDisplay: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			{content.length > 0 && (
-				<div className="contentContainer">
+				<motion.div className="contentContainer">
 					{/* <Switch> */}
 					{/* <LandingComponent /> */}
 					{/* <ContentBreakElement /> */}
@@ -75,7 +76,7 @@ const ContentDisplay: FC<Props> = (props) => {
 					<ContentBreakElement />
 					<Education /> */}
 					{/* </Switch> */}
-				</div>
+				</motion.div>
 			)}
 		</StyledContainer>
 	);

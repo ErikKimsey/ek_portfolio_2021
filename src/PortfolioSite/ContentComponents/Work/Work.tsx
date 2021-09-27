@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { FC, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
@@ -34,6 +35,11 @@ const Work: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer
+			as={motion.div}
+			animate={{
+				scale: [0.7, 1, 0.9, 1],
+			}}
+			transition={{ duration: 0.5 }}
 			ref={refContainer}
 			containerHeight={winHeight}
 			containerWidth={winWidth}

@@ -5,6 +5,7 @@ import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
 import Icons from "./Icons";
 import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
+import { motion } from "framer-motion";
 
 const BREAKPOINTS = {
 	lg: 1024,
