@@ -5,11 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 200;
   color:#e8fff2;
   /* background-color: #151517; */
   background-color: #000;
   /* display: flex;
   flex-direction: column; */
+}
+h1 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-family: "Desib";
+    color: #fff;
+}
+p {
+    color: #fff;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    text-transform: uppercase;
 }
 
 

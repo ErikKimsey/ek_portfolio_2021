@@ -28,7 +28,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 		<StyledContainer>
 			<Banner />
 			<PortfolioMenu />
-			{/* <ArrowNavComponent /> */}
+			<ArrowNavComponent />
 			<div className="container">
 				<ContentDisplay />
 			</div>
@@ -49,7 +49,6 @@ const StyledContainer = styled.div<StyledProps>`
 	align-items: space-between;
 
 	h1 {
-		font-size: 4em;
 		font-weight: 900;
 		font-family: "Desib";
 		padding: 0;
@@ -78,7 +77,6 @@ const StyledContainer = styled.div<StyledProps>`
 		} */
 		flex-flow: column;
 		h1 {
-			font-size: 6em;
 			font-weight: 900;
 			font-family: "Desib";
 			padding: 0;

@@ -51,7 +51,7 @@ const ArrowNavComponent: FC<Props> = (props) => {
 				alt="navigation arrow up"
 				className="upArrow"
 				drag="y"
-				dragConstraints={{ top: -10, bottom: 10 }}
+				dragConstraints={{ top: 4, bottom: -4 }}
 				onDragStart={() => Navigate(DRAG_DIRECTIONS.up)}
 			/>
 			<motion.img
@@ -59,7 +59,7 @@ const ArrowNavComponent: FC<Props> = (props) => {
 				alt="navigation arrow down"
 				className="downArrow"
 				drag="y"
-				dragConstraints={{ top: -10, bottom: 10 }}
+				dragConstraints={{ top: -4, bottom: 4 }}
 				onDragStart={() => Navigate(DRAG_DIRECTIONS.down)}
 			/>
 		</StyledContainer>
@@ -70,11 +70,11 @@ const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	display: ${(props) => (props.visible ? "flex" : "none")};
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
 	justify-self: center;
 	bottom: 200px;
-
+	background-color: #111;
 	/* top: ${(props) =>
 		props.yPosition !== undefined
 			? props.yPosition
@@ -83,15 +83,15 @@ const StyledContainer = styled.div<StyledProps>`
 		props.xPosition !== undefined
 			? props.xPosition
 			: window.innerWidth / 2 - 74}px;
-	width: 100px;
-	height: 222px;
-	border: solid 1px #3b373b;
+	width: 60px;
+	height: 126px;
+	border: solid 1px #fff;
 	border-radius: 100px;
-	padding: 20px;
+	padding: 0px;
 	z-index: 1001;
 
 	img {
-		width: 77px;
+		width: 50px;
 	}
 
 	.upArrow {

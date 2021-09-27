@@ -77,11 +77,17 @@ const StyledContainer = styled.div<StyledProps>`
 		transform: rotateZ(-90deg);
 		padding: 2px;
 	}
-	.navLink {
+	a.navLink {
 		text-decoration: none;
 		margin: 0;
 		text-align: center;
 		color: #fff;
+		text-transform: uppercase;
+		transition: 0.5s;
+		&:hover {
+			color: #ccc;
+			font-weight: 400;
+		}
 	}
 
 	@media (max-width: 700px) {
