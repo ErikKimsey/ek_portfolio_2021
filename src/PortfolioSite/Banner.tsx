@@ -11,7 +11,7 @@ const Banner: FC<Props> = (props) => {
 	const [hasLoaded, setHasLoaded] = useState(false);
 
 	const variants = {
-		visible: { opacity: 1, scale: 1 },
+		visible: { opacity: 0.7, scale: 1 },
 		hidden: {
 			opacity: 0,
 			scale: 1,
