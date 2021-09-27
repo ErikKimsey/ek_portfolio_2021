@@ -44,7 +44,6 @@ const Education: FC<Props> = (props) => {
 			variants={variants}
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 0.5 }}
-			// ref={refContainer}
 			id="workContainer"
 			containerHeight={winHeight}
 			containerWidth={winWidth}
@@ -64,6 +63,8 @@ const Education: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	width: ${(props) => props.containerWidth * 0.7}px;
 	height: ${(props) => props.containerHeight * 0.8}px;
+	font-weight: 200;
+	padding: 15px;
 	h1 {
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
 			sans-serif;

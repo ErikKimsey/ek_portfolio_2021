@@ -66,6 +66,7 @@ const StyledContainer = styled.div<StyledProps>`
 	font-family: "Desib";
 	font-weight: 200;
 	color: #fff;
+	padding: 15px;
 	.iFrame {
 		width: 100%;
 		height: 100%;
