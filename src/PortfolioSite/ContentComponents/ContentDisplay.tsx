@@ -31,8 +31,6 @@ const ContentDisplay: FC<Props> = (props) => {
 	useEffect(() => {
 		setPathsIndex(0);
 		setLastScrollPos(PATHS[pathsIndex]);
-		console.log("lastScrollPos");
-		console.log(lastScrollPos);
 
 		if (
 			Work !== undefined &&

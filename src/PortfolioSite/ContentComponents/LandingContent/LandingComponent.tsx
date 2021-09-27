@@ -21,10 +21,17 @@ const LandingComponent: FC<Props> = (props) => {
 		hidden: { opacity: 0, scale: 0.99 },
 	};
 
+	const handleResize = () => {
+		setWinWidth(window.innerWidth);
+		setWinHeight(window.innerHeight);
+	};
+
 	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
 	return (

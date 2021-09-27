@@ -23,22 +23,18 @@ const Work: FC<Props> = (props) => {
 		hidden: { opacity: 0, scale: 0.99 },
 	};
 
-	const refContainer = useCallback((node) => {
-		if (node !== null) {
-			// console.log(node.getBoundingClientRect());
-		}
-	}, []);
+	const handleResize = () => {
+		setWinWidth(window.innerWidth);
+		setWinHeight(window.innerHeight);
+	};
 
 	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
 	}, []);
-
-	const setDimens = () => {
-		console.log("height: " + height);
-		console.log("width: " + width);
-	};
 
 	return (
 		<StyledContainer
@@ -50,7 +46,6 @@ const Work: FC<Props> = (props) => {
 			variants={variants}
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 0.5 }}
-			ref={refContainer}
 			id="workContainer"
 		>
 			<h1>work. </h1>

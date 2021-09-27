@@ -23,10 +23,17 @@ const Education: FC<Props> = (props) => {
 		},
 	};
 
+	const handleResize = () => {
+		setWinWidth(window.innerWidth);
+		setWinHeight(window.innerHeight);
+	};
+
 	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
 	return (

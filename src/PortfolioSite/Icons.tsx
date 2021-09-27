@@ -6,6 +6,7 @@ import soundcloud from "../assets/images/Icons/soundcloud.svg";
 import astronaut from "../assets/images/Icons/astronaut.svg";
 import linkedin from "../assets/images/Icons/linkedin.svg";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -29,18 +30,50 @@ const Icons: FC<Props> = (props) => {
 				{/* <NavLink to="/resume">
 					<img src={astronaut} />
 				</NavLink> */}
-				<a href="https://www.beatport.com" target="_blank">
-					<img src={github} />
-				</a>
-				<a href="https://www.beatport.com" target="_blank">
-					<img src={soundcloud} />
-				</a>
-				<a href="https://www.beatport.com" target="_blank">
-					<img src={behance} />
-				</a>
-				<a href="https://www.beatport.com" target="_blank">
-					<img src={linkedin} />
-				</a>
+				<motion.a
+					href="https://www.beatport.com"
+					target="_blank"
+					animate={{ opacity: [0, 0.7] }}
+				>
+					<motion.img
+						src={github}
+						animate={{ y: [-400, 0] }}
+						transition={{ ease: "easeInOut", duration: 0.8 }}
+					/>
+				</motion.a>
+				<motion.a
+					href="https://www.beatport.com"
+					target="_blank"
+					animate={{ opacity: [0, 0.7] }}
+				>
+					<motion.img
+						src={soundcloud}
+						animate={{ y: [-350, 0] }}
+						transition={{ ease: "easeInOut", duration: 0.6 }}
+					/>
+				</motion.a>
+				<motion.a
+					href="https://www.beatport.com"
+					target="_blank"
+					animate={{ opacity: [0, 0.7] }}
+				>
+					<motion.img
+						src={behance}
+						animate={{ y: [-300, 0] }}
+						transition={{ ease: "easeInOut", duration: 0.4 }}
+					/>
+				</motion.a>
+				<motion.a
+					href="https://www.beatport.com"
+					target="_blank"
+					animate={{ opacity: [0, 0.7] }}
+				>
+					<motion.img
+						src={linkedin}
+						animate={{ y: [-250, 0] }}
+						transition={{ ease: "easeInOut", duration: 0.2 }}
+					/>
+				</motion.a>
 			</div>
 		</StyledContainer>
 	);
