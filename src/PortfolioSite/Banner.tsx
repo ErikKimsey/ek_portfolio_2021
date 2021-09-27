@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -7,9 +8,28 @@ type StyledProps = {};
 
 const Banner: FC<Props> = (props) => {
 	const {} = props;
+	const [hasLoaded, setHasLoaded] = useState(false);
 
+	const variants = {
+		visible: { opacity: 1, scale: 1 },
+		hidden: {
+			opacity: 0,
+			scale: 1,
+		},
+	};
+
+	useEffect(() => {
+		setHasLoaded(true);
+	}, []);
 	return (
-		<StyledContainer>
+		<StyledContainer
+			as={motion.div}
+			isVisible={hasLoaded}
+			initial="hidden"
+			variants={variants}
+			animate={hasLoaded ? "visible" : "hidden"}
+			transition={{ duration: 5 }}
+		>
 			<div className="leftSpace"></div>
 			<h2>ERIK KIMSEY</h2>
 			<h2>CREATIVE TECHNOLOGIST</h2>
