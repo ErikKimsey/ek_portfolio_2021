@@ -15,6 +15,13 @@ const Work: FC<Props> = (props) => {
 	const [width, setWidth] = useState(0);
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
+	const [hasLoaded, setHasLoaded] = useState(false);
+	const [h1HasLoaded, setH1HasLoaded] = useState(false);
+
+	const variants = {
+		visible: { opacity: 1, scale: 1 },
+		hidden: { opacity: 0, scale: 0.99 },
+	};
 
 	const refContainer = useCallback((node) => {
 		if (node !== null) {
@@ -25,7 +32,7 @@ const Work: FC<Props> = (props) => {
 	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
-		// console.log("WORK");
+		setHasLoaded(true);
 	}, []);
 
 	const setDimens = () => {
@@ -35,14 +42,15 @@ const Work: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer
-			as={motion.div}
-			animate={{
-				scale: [0.7, 1, 0.9, 1],
-			}}
-			transition={{ duration: 0.5 }}
-			ref={refContainer}
 			containerHeight={winHeight}
 			containerWidth={winWidth}
+			as={motion.div}
+			isVisible={hasLoaded}
+			initial="hidden"
+			variants={variants}
+			animate={hasLoaded ? "visible" : "hidden"}
+			transition={{ duration: 0.5 }}
+			ref={refContainer}
 			id="workContainer"
 		>
 			<h1>work. </h1>
@@ -60,7 +68,6 @@ const Work: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	width: ${(props) => props.containerWidth * 0.7}px;
 	height: ${(props) => props.containerHeight * 0.8}px;
-	background-color: #f0f;
 	font-weight: 200;
 	h1 {
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",

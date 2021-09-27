@@ -15,28 +15,16 @@ const LandingComponent: FC<Props> = (props) => {
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
-	const [h1HasLoaded, setH1HasLoaded] = useState(false);
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
 		hidden: { opacity: 0, scale: 0.99 },
 	};
-	const h1Variants = {
-		visible: {
-			opacity: 1,
-		},
-		hidden: {
-			opacity: 0,
-		},
-	};
 
 	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
-		// console.log("RESUME");
-		window.setTimeout(() => {
-			setHasLoaded(true);
-		}, 0.5);
+		setHasLoaded(true);
 	}, []);
 
 	return (

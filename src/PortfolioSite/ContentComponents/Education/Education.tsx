@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 
@@ -12,14 +13,35 @@ const Education: FC<Props> = (props) => {
 	const {} = props;
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
+	const [hasLoaded, setHasLoaded] = useState(false);
+
+	const variants = {
+		visible: { opacity: 1, scale: 1 },
+		hidden: {
+			opacity: 0,
+			scale: 0.99,
+		},
+	};
 
 	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
+		setHasLoaded(true);
 	}, []);
 
 	return (
-		<StyledContainer containerHeight={winHeight} containerWidth={winWidth}>
+		<StyledContainer
+			as={motion.div}
+			isVisible={hasLoaded}
+			initial="hidden"
+			variants={variants}
+			animate={hasLoaded ? "visible" : "hidden"}
+			transition={{ duration: 0.5 }}
+			// ref={refContainer}
+			id="workContainer"
+			containerHeight={winHeight}
+			containerWidth={winWidth}
+		>
 			<h1>education.</h1>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
@@ -35,20 +57,13 @@ const Education: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	width: ${(props) => props.containerWidth * 0.7}px;
 	height: ${(props) => props.containerHeight * 0.8}px;
-	background-color: #a0f;
-	h1,
-	p {
-		padding: 10px;
+	h1 {
+		width: 100%;
 		color: #fff;
-		font-family: "Desib";
-		font-weight: 200;
 	}
 	p {
+		width: 100%;
 		color: #fff;
-		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-			sans-serif;
-		font-weight: 200;
-		text-transform: uppercase;
 	}
 `;
 

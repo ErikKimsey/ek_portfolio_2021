@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Document, Page } from "react-pdf";
+import { motion } from "framer-motion";
 
 const resume =
 	"src/PortfolioSite/ContentComponents/Resume/erikkimsey_resume.pdf";
@@ -16,17 +17,32 @@ const Resume: FC<Props> = (props) => {
 	const {} = props;
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
+	const [hasLoaded, setHasLoaded] = useState(false);
 
-	function DocumentLoadSuccess() {}
+	const variants = {
+		visible: { opacity: 1, scale: 1 },
+		hidden: { opacity: 0, scale: 0.99 },
+	};
 
 	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
-		// console.log("RESUME");
+		setHasLoaded(true);
 	}, []);
 
 	return (
-		<StyledContainer containerHeight={winHeight} containerWidth={winWidth}>
+		<StyledContainer
+			containerHeight={winHeight}
+			containerWidth={winWidth}
+			as={motion.div}
+			isVisible={hasLoaded}
+			initial="hidden"
+			variants={variants}
+			animate={hasLoaded ? "visible" : "hidden"}
+			transition={{ duration: 0.5 }}
+			// ref={refContainer}
+			id="workContainer"
+		>
 			<h1 className="header">resume.</h1>
 			{/* <iframe
 				src={resume}
@@ -43,7 +59,6 @@ const StyledContainer = styled.div<StyledProps>`
 	font-family: "Desib";
 	font-weight: 200;
 	color: #fff;
-	background-color: #fab;
 	.iFrame {
 		width: 100%;
 		height: 100%;
