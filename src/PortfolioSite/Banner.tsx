@@ -65,6 +65,21 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 0 30px;
 		margin: 0;
 		font-size: 4em;
+		color: #fff;
+		/* &::before {
+			position: absolute;
+			left: 98px;
+			top: 6px;
+			content: "ERIK KIMSEY";
+			color: rgba(0, 255, 76, 0.5);
+		}
+		&::after {
+			position: absolute;
+			left: 95px;
+			top: 10px;
+			content: "ERIK KIMSEY";
+			color: rgba(255, 0, 255, 0.5);
+		} */
 	}
 	.diagonalLine {
 		width: 50px;
@@ -79,8 +94,6 @@ const StyledContainer = styled.div<StyledProps>`
 		align-self: flex-end;
 		flex-flow: row;
 		.rightLine {
-			/* transform: rotate(-45deg); */
-			/* right: 0; */
 			padding: 0;
 			margin: 0;
 			width: 50px;
