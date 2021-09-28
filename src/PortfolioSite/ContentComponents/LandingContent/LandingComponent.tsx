@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
+import init from "../../3DContent/3d";
 
 type Props = {};
 
@@ -30,6 +31,9 @@ const LandingComponent: FC<Props> = (props) => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
+		console.log(init);
+		init(window.innerWidth * 0.7, window.innerHeight * 0.8);
+
 		window.addEventListener("resize", handleResize);
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
@@ -44,8 +48,9 @@ const LandingComponent: FC<Props> = (props) => {
 			variants={variants}
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 0.5 }}
+			id="landingComponent"
 		>
-			<h1>WHA_WHAAAT!!</h1>
+			<h1>.... d-_-b ....</h1>
 		</StyledContainer>
 	);
 };
@@ -56,8 +61,13 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-flow: column;
 	align-items: center;
-	/* justify-content: center; */
 	padding: 15px;
+	z-index: -1000;
+	h1 {
+		position: absolute;
+		align-self: center;
+		top: ${(props) => props.containerHeight * 0.4}px;
+	}
 `;
 
 export default LandingComponent;

@@ -66,20 +66,6 @@ const StyledContainer = styled.div<StyledProps>`
 		margin: 0;
 		font-size: 4em;
 		color: #fff;
-		/* &::before {
-			position: absolute;
-			left: 98px;
-			top: 6px;
-			content: "ERIK KIMSEY";
-			color: rgba(0, 255, 76, 0.5);
-		}
-		&::after {
-			position: absolute;
-			left: 95px;
-			top: 10px;
-			content: "ERIK KIMSEY";
-			color: rgba(255, 0, 255, 0.5);
-		} */
 	}
 	.diagonalLine {
 		width: 50px;
