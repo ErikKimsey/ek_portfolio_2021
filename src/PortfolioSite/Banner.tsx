@@ -70,7 +70,7 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 50px;
 		padding: 10px;
 		transform: rotate(45deg);
-		border-top: solid 3px #fff;
+		border-top: solid 3px #f0f;
 	}
 
 	.rightSpace {
@@ -84,7 +84,7 @@ const StyledContainer = styled.div<StyledProps>`
 			padding: 0;
 			margin: 0;
 			width: 50px;
-			border: solid 2px #fff;
+			border: solid 2px #f0f;
 		}
 	}
 
