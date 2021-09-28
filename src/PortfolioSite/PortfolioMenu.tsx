@@ -64,7 +64,7 @@ const PortfolioMenu: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	left: 20px;
-	top: 200px;
+	top: 100px;
 	width: 100px;
 	height: 80%;
 	display: flex;

@@ -30,9 +30,11 @@ const Banner: FC<Props> = (props) => {
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 1 }}
 		>
-			<div className="leftSpace"></div>
-			<h2>ERIK KIMSEY</h2>
-			<h2>CREATIVE TECHNOLOGIST</h2>
+			<div className="leftSpace">
+				<div className="diagonalLine"></div>
+			</div>
+			<h1>ERIK KIMSEY</h1>
+			{/* <h2>CREATIVE TECHNOLOGIST</h2> */}
 		</StyledContainer>
 	);
 };
@@ -43,8 +45,9 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-flow: row wrap;
 	justify-self: flex-end;
-	align-items: flex-end;
+	align-items: center;
 	top: 0;
+	left: 50px;
 	margin-top: 0;
 	padding: 10px;
 	height: 133px;
@@ -55,12 +58,17 @@ const StyledContainer = styled.div<StyledProps>`
 		rgba(0, 0, 0, 1) 42%
 	);
 	z-index: 1000;
-	.leftSpace {
-		width: 100px;
-	}
-	h2 {
-		padding: 0 10px;
+	h1 {
+		padding: 30px;
 		margin: 0;
+		font-size: 4em;
+	}
+	.leftSpace {
+		width: 50px;
+		.diagonalLine {
+			transform: rotate(45deg);
+			border-top: solid 3px #fff;
+		}
 	}
 
 	@media (max-width: 768px) {
