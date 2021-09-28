@@ -28,10 +28,8 @@ const PortfolioLanding: FC<Props> = (props) => {
 		<StyledContainer>
 			<Banner />
 			<PortfolioMenu />
-			<ArrowNavComponent />
-			<div className="container">
-				<ContentDisplay />
-			</div>
+			{/* <ArrowNavComponent /> */}
+			<div className="container">{/* <ContentDisplay /> */}</div>
 			<Icons />
 		</StyledContainer>
 	);

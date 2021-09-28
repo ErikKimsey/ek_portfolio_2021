@@ -74,7 +74,7 @@ const StyledContainer = styled.div<StyledProps>`
 	align-items: center;
 	justify-self: center;
 	bottom: 200px;
-	background-color: #111;
+	background-color: #222;
 	/* top: ${(props) =>
 		props.yPosition !== undefined
 			? props.yPosition
@@ -82,10 +82,10 @@ const StyledContainer = styled.div<StyledProps>`
 	left: ${(props) =>
 		props.xPosition !== undefined
 			? props.xPosition
-			: window.innerWidth / 2 - 74}px;
+			: window.innerWidth / 2 - 30}px;
 	width: 60px;
 	height: 126px;
-	border: solid 1px #fff;
+	border: solid 1px #555;
 	border-radius: 100px;
 	padding: 0px;
 	z-index: 1001;
@@ -94,36 +94,13 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 50px;
 	}
 
-	.upArrow {
-		/* top: ${(props) =>
-			props.yPosition !== undefined
-				? props.yPosition
-				: window.innerHeight - 444}px;
-		left: ${(props) =>
-			props.xPosition !== undefined
-				? props.xPosition
-				: window.innerWidth / 2 - 74}px; */
-	}
-	.downArrow {
-		/* top: ${(props) =>
-			props.yPosition !== undefined
-				? props.yPosition
-				: window.innerHeight - 444}px;
-		left: ${(props) =>
-			props.xPosition !== undefined
-				? props.xPosition
-				: window.innerWidth / 2 - 74}px; */
-	}
-
 	@media (max-width: 769px) {
-		width: 100px;
-		/* height: 150px; */
 		display: ${(props) => (props.visible ? "flex" : "none")};
 		/* flex-direction: column;
 		justify-content: space-around; */
 		align-items: center;
 		justify-self: center;
-		bottom: 20px;
+		bottom: 100px;
 	}
 `;
 

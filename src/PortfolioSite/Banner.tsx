@@ -28,7 +28,7 @@ const Banner: FC<Props> = (props) => {
 			initial="hidden"
 			variants={variants}
 			animate={hasLoaded ? "visible" : "hidden"}
-			transition={{ duration: 5 }}
+			transition={{ duration: 1 }}
 		>
 			<div className="leftSpace"></div>
 			<h2>ERIK KIMSEY</h2>
@@ -49,8 +49,6 @@ const StyledContainer = styled.div<StyledProps>`
 	padding: 10px;
 	height: 133px;
 	font-family: "Desib";
-	border-radius: 100px;
-	background: rgb(255, 0, 200);
 	background: linear-gradient(
 		0deg,
 		rgba(0, 0, 0, 0.5) 0%,
@@ -65,17 +63,18 @@ const StyledContainer = styled.div<StyledProps>`
 		margin: 0;
 	}
 
-	@media (max-width: 700px) {
+	@media (max-width: 768px) {
 		padding: 0;
 		margin: 0;
 		width: 100%;
+		height: 100px;
+		right: 0;
 		flex-flow: column;
-		justify-content: flex-end;
-		align-items: flex-start;
+		justify-content: center;
+		align-items: flex-end;
 		h2 {
-			padding: 0 10px;
+			padding-right: 20px;
 			margin: 0;
-			padding-left: 100px;
 		}
 	}
 `;

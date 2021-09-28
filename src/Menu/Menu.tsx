@@ -37,9 +37,6 @@ const StyledContainer = styled.div<StyledProps>`
 	margin-right: 100px;
 	padding: 10px;
 	width: 12%;
-	@media (max-width: 900px) {
-		width: 20%;
-	}
 
 	a.link {
 		text-decoration: none;

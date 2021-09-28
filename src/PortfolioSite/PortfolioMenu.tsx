@@ -35,7 +35,7 @@ const PortfolioMenu: FC<Props> = (props) => {
 			initial="hidden"
 			variants={variants}
 			animate={hasLoaded ? "visible" : "hidden"}
-			transition={{ duration: 7 }}
+			transition={{ duration: 1 }}
 		>
 			<div className="menuItem">
 				<NavLink to="/portfolio" className="navLink">
@@ -90,10 +90,11 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 	}
 
-	@media (max-width: 700px) {
+	@media (max-width: 768px) {
 		left: 10px;
 		width: 50px;
-		height: 100vh;
+		height: 50%;
+		top: 100px;
 	}
 `;
 
