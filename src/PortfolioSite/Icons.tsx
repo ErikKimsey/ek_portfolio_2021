@@ -96,15 +96,31 @@ const StyledContainer = styled.div<StyledProps>`
 		position: fixed;
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: space-around;
-		align-items: space-around;
+		/* justify-content: space-around; */
+		/* align-items: space-around; */
 		width: 70%;
 		bottom: 40px;
-		right: 0;
+		right: 20px;
+
+		img {
+			width: 44px;
+			fill: #fff;
+		}
+	}
+	@media (max-width: 568px) {
+		position: fixed;
+		display: flex;
+		flex-flow: row wrap;
+		/* justify-content: space-around; */
+		/* align-items: space-around; */
+		width: 70%;
+		bottom: 40px;
+		right: 20px;
 
 		img {
 			width: 33px;
 			fill: #fff;
+			margin: 10px;
 		}
 	}
 `;

@@ -66,13 +66,16 @@ const StyledContainer = styled.div<StyledProps>`
 	left: 20px;
 	top: 200px;
 	width: 100px;
-	height: 50%;
+	height: 80%;
 	display: flex;
 	flex-flow: column wrap;
 	align-content: space-around;
 	justify-content: space-around;
 	align-self: flex-start;
 	justify-self: flex-start;
+	font-weight: 100;
+	font-size: 1.3em;
+	/* font-weight: 200; */
 	.menuItem {
 		transform: rotateZ(-90deg);
 		padding: 2px;
