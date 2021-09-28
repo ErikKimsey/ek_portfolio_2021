@@ -31,43 +31,60 @@ const Banner: FC<Props> = (props) => {
 			transition={{ duration: 1 }}
 		>
 			<div className="leftSpace">
-				<div className="diagonalLine"></div>
+				<motion.div className="diagonalLine"></motion.div>
+				<h1>ERIK KIMSEY</h1>
 			</div>
-			<h1>ERIK KIMSEY</h1>
 			{/* <h2>CREATIVE TECHNOLOGIST</h2> */}
+			<div className="rightSpace">
+				<div className="rightLine"></div>
+			</div>
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
-	width: 100%;
+	width: 90%;
 	display: flex;
-	flex-flow: row wrap;
-	justify-self: flex-end;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 	top: 0;
 	left: 50px;
-	margin-top: 0;
+	margin-top: 40px;
 	padding: 10px;
-	height: 133px;
 	font-family: "Desib";
-	background: linear-gradient(
-		0deg,
-		rgba(0, 0, 0, 0.5) 0%,
-		rgba(0, 0, 0, 1) 42%
-	);
 	z-index: 1000;
+
+	.leftSpace {
+		display: flex;
+		flex-direction: row;
+		width: 50%;
+	}
 	h1 {
-		padding: 30px;
+		padding: 0 30px;
 		margin: 0;
 		font-size: 4em;
 	}
-	.leftSpace {
+	.diagonalLine {
 		width: 50px;
-		.diagonalLine {
-			transform: rotate(45deg);
-			border-top: solid 3px #fff;
+		padding: 10px;
+		transform: rotate(45deg);
+		border-top: solid 3px #fff;
+	}
+
+	.rightSpace {
+		width: auto;
+		display: flex;
+		align-self: flex-end;
+		flex-flow: row;
+		.rightLine {
+			/* transform: rotate(-45deg); */
+			/* right: 0; */
+			padding: 0;
+			margin: 0;
+			width: 50px;
+			border: solid 2px #fff;
 		}
 	}
 

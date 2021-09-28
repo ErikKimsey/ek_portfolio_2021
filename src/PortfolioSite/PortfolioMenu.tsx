@@ -2,6 +2,10 @@ import React, { FC, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import astronaut from "../assets/images/Icons/astronaut.svg";
+import book from "../assets/images/Icons/book-dead-solid.svg";
+import DNA from "../assets/images/Icons/dna.svg";
+import brain from "../assets/images/Icons/brain.svg";
 
 type Props = {};
 
@@ -35,28 +39,53 @@ const PortfolioMenu: FC<Props> = (props) => {
 			initial="hidden"
 			variants={variants}
 			animate={hasLoaded ? "visible" : "hidden"}
-			transition={{ duration: 1 }}
 		>
-			<div className="menuItem">
+			<motion.div
+				className="menuItem"
+				whileHover={{ rotate: "15deg", duration: 0.1 }}
+				animate={{ y: [-300, 0] }}
+				transition={{ ease: "easeInOut", duration: 0.3 }}
+			>
 				<NavLink to="/portfolio" className="navLink">
-					Home
+					<motion.img
+						src={astronaut}
+						alt="home or me"
+						whileHover={{ rotate: "15deg", duration: 0.1 }}
+					/>
 				</NavLink>
-			</div>
-			<div className="menuItem">
+			</motion.div>
+			{/* <motion.div className="menuItem">
 				<NavLink to="/portfolio/resume" className="navLink">
-					Resume
+                Resume
 				</NavLink>
-			</div>
-			<div className="menuItem">
+			</motion.div> */}
+			<motion.div
+				className="menuItem"
+				animate={{ y: [-300, 0] }}
+				transition={{ ease: "easeInOut", duration: 0.5 }}
+				whileHover={{ rotate: "15deg", duration: 0.1 }}
+			>
 				<NavLink to="/portfolio/work" className="navLink">
-					Work
+					<motion.img
+						src={DNA}
+						alt="my work"
+						whileHover={{ rotate: "15deg", duration: 0.1 }}
+					/>
 				</NavLink>
-			</div>
-			<div className="menuItem">
+			</motion.div>
+			<motion.div
+				className="menuItem"
+				animate={{ y: [-300, 0] }}
+				transition={{ ease: "easeInOut", duration: 0.7 }}
+			>
 				<NavLink to="/portfolio/education" className="navLink">
-					Edu.
+					<motion.img
+						src={brain}
+						alt="my digital playground"
+						whileHover={{ rotate: "15deg", duration: 0.1 }}
+					/>
 				</NavLink>
-			</div>
+			</motion.div>
 		</StyledContainer>
 	);
 };
@@ -64,9 +93,9 @@ const PortfolioMenu: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	left: 20px;
-	top: 100px;
+	top: 200px;
 	width: 100px;
-	height: 80%;
+	height: 30%;
 	display: flex;
 	flex-flow: column wrap;
 	align-content: space-around;
@@ -77,8 +106,12 @@ const StyledContainer = styled.div<StyledProps>`
 	font-size: 1.3em;
 	/* font-weight: 200; */
 	.menuItem {
-		transform: rotateZ(-90deg);
-		padding: 2px;
+		/* transform: rotateZ(-90deg); */
+		margin: 14px 10px;
+		width: 50px;
+	}
+	img {
+		fill: #fff;
 	}
 	a.navLink {
 		text-decoration: none;
@@ -86,11 +119,6 @@ const StyledContainer = styled.div<StyledProps>`
 		text-align: center;
 		color: #fff;
 		text-transform: uppercase;
-		transition: 0.5s;
-		&:hover {
-			color: #ccc;
-			font-weight: 400;
-		}
 	}
 
 	@media (max-width: 768px) {

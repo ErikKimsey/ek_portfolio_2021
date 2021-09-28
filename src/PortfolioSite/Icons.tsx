@@ -23,54 +23,52 @@ const Icons: FC<Props> = (props) => {
      */
 	return (
 		<StyledContainer>
-			{/* <NavLink to="/playground">
-					<img src={astronaut} />
-				</NavLink> */}
-			{/* <NavLink to="/resume">
-					<img src={astronaut} />
-				</NavLink> */}
 			<motion.a
 				href="https://www.beatport.com"
 				target="_blank"
 				animate={{ opacity: [0, 0.7] }}
+				whileHover={{ rotate: "-15deg" }}
 			>
 				<motion.img
 					src={github}
 					animate={{ y: [-400, 0] }}
-					transition={{ ease: "easeInOut", duration: 0.8 }}
+					transition={{ ease: "easeInOut", duration: 1 }}
 				/>
 			</motion.a>
 			<motion.a
 				href="https://www.beatport.com"
 				target="_blank"
 				animate={{ opacity: [0, 0.7] }}
+				whileHover={{ rotate: "-15deg" }}
 			>
 				<motion.img
 					src={soundcloud}
 					animate={{ y: [-350, 0] }}
-					transition={{ ease: "easeInOut", duration: 0.6 }}
+					transition={{ ease: "easeInOut", duration: 1.2 }}
 				/>
 			</motion.a>
 			<motion.a
 				href="https://www.beatport.com"
 				target="_blank"
 				animate={{ opacity: [0, 0.7] }}
+				whileHover={{ rotate: "-15deg" }}
 			>
 				<motion.img
 					src={behance}
 					animate={{ y: [-300, 0] }}
-					transition={{ ease: "easeInOut", duration: 0.4 }}
+					transition={{ ease: "easeInOut", duration: 1.4 }}
 				/>
 			</motion.a>
 			<motion.a
 				href="https://www.beatport.com"
 				target="_blank"
 				animate={{ opacity: [0, 0.7] }}
+				whileHover={{ rotate: "-15deg" }}
 			>
 				<motion.img
 					src={linkedin}
 					animate={{ y: [-250, 0] }}
-					transition={{ ease: "easeInOut", duration: 0.2 }}
+					transition={{ ease: "easeInOut", duration: 1.6 }}
 				/>
 			</motion.a>
 		</StyledContainer>
@@ -85,7 +83,10 @@ const StyledContainer = styled.div<StyledProps>`
 	justify-content: flex-end;
 	bottom: 100px;
 	right: 50px;
-	img {
+	.menuItem {
+	}
+
+	a {
 		margin: 5px;
 		height: 50px;
 		width: 50px;
