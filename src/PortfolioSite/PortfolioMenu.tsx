@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import astronaut from "../assets/images/Icons/astronaut.svg";
-import book from "../assets/images/Icons/book-dead-solid.svg";
 import DNA from "../assets/images/Icons/dna.svg";
 import brain from "../assets/images/Icons/brain.svg";
 
@@ -50,7 +49,7 @@ const PortfolioMenu: FC<Props> = (props) => {
 				<NavLink
 					exact
 					to="/portfolio"
-					// className="navLink"
+					className="navLink"
 					activeClassName="activeNavLink"
 				>
 					<motion.img
@@ -60,11 +59,6 @@ const PortfolioMenu: FC<Props> = (props) => {
 					/>
 				</NavLink>
 			</motion.div>
-			{/* <motion.div className="menuItem">
-				<NavLink to="/portfolio/resume" className="navLink">
-                Resume
-				</NavLink>
-			</motion.div> */}
 			<motion.div
 				className="menuItem"
 				animate={{ y: [-300, 0] }}
@@ -118,9 +112,8 @@ const StyledContainer = styled.div<StyledProps>`
 	font-size: 1.3em;
 
 	.menuItem {
-		/* margin: 20px;
-		margin-left: 50px; */
 	}
+
 	img {
 		width: 50px;
 		margin: 10px;
@@ -130,14 +123,9 @@ const StyledContainer = styled.div<StyledProps>`
 		text-decoration: none;
 	}
 
-	/* .navLink {
-		height: 60px;
-		width: 60px;
-		margin: 10px;
-		text-align: center;
-		color: #fff;
-		text-transform: uppercase;
-	} */
+	.navLink {
+	}
+
 	.activeNavLink {
 		height: 60px;
 		border-right: solid 10px #f0f;

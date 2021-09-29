@@ -50,7 +50,10 @@ const Resume: FC<Props> = (props) => {
 			// ref={refContainer}
 			id="workContainer"
 		>
-			<h1 className="header">resume.</h1>
+			<div className="headerContainer">
+				<div className="leftLine"></div>
+				<h1>education.</h1>
+			</div>
 			{/* <iframe
 				src={resume}
 				title=" Erik Kimsey - Resume"
@@ -69,6 +72,20 @@ const StyledContainer = styled.div<StyledProps>`
 	.iFrame {
 		width: 100%;
 		height: 100%;
+	}
+
+	.headerContainer {
+		display: flex;
+		flex-direction: row;
+		width: auto;
+		border-radius: 0 10px 0 0;
+	}
+	.leftLine {
+		width: 1px;
+		border: solid 20px #f0f;
+	}
+	h1 {
+		padding: 5px;
 	}
 `;
 

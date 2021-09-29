@@ -2,6 +2,7 @@ import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { BreakPoint } from "../styles/breakpoints";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -10,17 +11,25 @@ type StyledProps = {};
 const TrueLanding: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
-			<div className="screenHalf">
+			<motion.div
+				className="screenHalf"
+				animate={{ y: [-300, 0] }}
+				transition={{ ease: "easeOut", duration: 0.5 }}
+			>
 				<NavLink to="/portfolio/">
 					<h1 className="halfLabel">Portfolio Site</h1>
 				</NavLink>
-			</div>
+			</motion.div>
 			<div className="line"></div>
-			<div className="screenHalf">
+			<motion.div
+				className="screenHalf"
+				animate={{ y: [-300, 0] }}
+				transition={{ ease: "easeInOut", duration: 1 }}
+			>
 				<NavLink to="/playground">
 					<h1 className="halfLabel">Digital Playground</h1>
 				</NavLink>
-			</div>
+			</motion.div>
 		</StyledContainer>
 	);
 };
@@ -50,8 +59,10 @@ const StyledContainer = styled.div<StyledProps>`
 		color: #fff;
 	}
 	.halfLabel {
+		transform: scale(1);
+		transition: all 0.5s ease-out;
 		&:hover {
-			font-size: 210%;
+			transform: scale(1.1);
 		}
 	}
 

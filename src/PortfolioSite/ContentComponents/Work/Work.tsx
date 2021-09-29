@@ -48,7 +48,10 @@ const Work: FC<Props> = (props) => {
 			transition={{ duration: 0.5 }}
 			id="workContainer"
 		>
-			<h1>work. </h1>
+			<div className="headerContainer">
+				<div className="leftLine"></div>
+				<h1>work.</h1>
+			</div>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
 				level overviews. Iterative approaches to corporate strategy
@@ -63,6 +66,20 @@ const Work: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	width: ${(props) => props.containerWidth * 0.7}px;
 	height: ${(props) => props.containerHeight * 0.8}px;
+
+	.headerContainer {
+		display: flex;
+		flex-direction: row;
+		width: auto;
+		border-radius: 0 10px 0 0;
+	}
+	.leftLine {
+		width: 1px;
+		border: solid 20px #f0f;
+	}
+	h1 {
+		padding: 5px;
+	}
 `;
 
 export default Work;
