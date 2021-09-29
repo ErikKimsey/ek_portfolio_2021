@@ -110,6 +110,7 @@ const StyledContainer = styled.div<StyledProps>`
 	justify-self: flex-start;
 	font-weight: 100;
 	font-size: 1.3em;
+	z-index: 1001;
 
 	.menuItem {
 	}
@@ -133,7 +134,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 	@media (max-width: 768px) {
 		left: 10px;
-		width: 50px;
+		width: 35px;
 		top: 100px;
 		display: flex;
 		flex-flow: column wrap;
@@ -141,6 +142,10 @@ const StyledContainer = styled.div<StyledProps>`
 
 		.menuItem {
 			margin: 10px;
+			width: 35px;
+		}
+
+		img {
 			width: 35px;
 		}
 	}

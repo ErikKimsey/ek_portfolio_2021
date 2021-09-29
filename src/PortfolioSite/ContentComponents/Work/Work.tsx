@@ -53,16 +53,16 @@ const Work: FC<Props> = (props) => {
 					<motion.div
 						key="leftLine"
 						className="leftLine"
-						animate={{ x: [200, 0] }}
-						exit={{ x: 200 }}
-						// transition={{ ease: "easeOut", duration: 0.7 }}
+						animate={{ x: [200, 0], opacity: [0, 1] }}
+						exit={{ opacity: [1, 0] }}
+						transition={{ ease: "easeOut", duration: 0.7 }}
 					></motion.div>
 				</AnimatePresence>
 				<motion.h1
 					key="h1"
 					animate={{ x: [-200, 0] }}
 					exit={{ x: [0, -200] }}
-					// transition={{ ease: "easeOut", duration: 0.5 }}
+					transition={{ ease: "easeOut", duration: 0.5 }}
 				>
 					work.
 				</motion.h1>
