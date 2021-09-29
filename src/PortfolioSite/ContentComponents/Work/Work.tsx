@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import React, { FC, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
@@ -49,8 +49,23 @@ const Work: FC<Props> = (props) => {
 			id="workContainer"
 		>
 			<div className="headerContainer">
-				<div className="leftLine"></div>
-				<h1>work.</h1>
+				<AnimatePresence>
+					<motion.div
+						key="leftLine"
+						className="leftLine"
+						animate={{ x: [200, 0] }}
+						exit={{ x: 200 }}
+						// transition={{ ease: "easeOut", duration: 0.7 }}
+					></motion.div>
+				</AnimatePresence>
+				<motion.h1
+					key="h1"
+					animate={{ x: [-200, 0] }}
+					exit={{ x: [0, -200] }}
+					// transition={{ ease: "easeOut", duration: 0.5 }}
+				>
+					work.
+				</motion.h1>
 			</div>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high

@@ -49,8 +49,17 @@ const Education: FC<Props> = (props) => {
 			containerWidth={winWidth}
 		>
 			<div className="headerContainer">
-				<div className="leftLine"></div>
-				<h1>education.</h1>
+				<motion.div
+					className="leftLine"
+					animate={{ x: [200, 0] }}
+					transition={{ ease: "easeOut", duration: 0.7 }}
+				></motion.div>
+				<motion.h1
+					animate={{ x: [-200, 0] }}
+					transition={{ ease: "easeOut", duration: 0.5 }}
+				>
+					education.
+				</motion.h1>
 			</div>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
