@@ -9,7 +9,9 @@ import brain from "../assets/images/Icons/brain.svg";
 
 type Props = {};
 
-type StyledProps = {};
+type StyledProps = {
+	displayMenu?: boolean;
+};
 
 const PortfolioMenu: FC<Props> = (props) => {
 	const {} = props;
@@ -42,11 +44,15 @@ const PortfolioMenu: FC<Props> = (props) => {
 		>
 			<motion.div
 				className="menuItem"
-				whileHover={{ rotate: "15deg", duration: 0.1 }}
 				animate={{ y: [-300, 0] }}
 				transition={{ ease: "easeInOut", duration: 0.3 }}
 			>
-				<NavLink to="/portfolio" className="navLink">
+				<NavLink
+					exact
+					to="/portfolio"
+					// className="navLink"
+					activeClassName="activeNavLink"
+				>
 					<motion.img
 						src={astronaut}
 						alt="home or me"
@@ -63,9 +69,12 @@ const PortfolioMenu: FC<Props> = (props) => {
 				className="menuItem"
 				animate={{ y: [-300, 0] }}
 				transition={{ ease: "easeInOut", duration: 0.5 }}
-				whileHover={{ rotate: "15deg", duration: 0.1 }}
 			>
-				<NavLink to="/portfolio/work" className="navLink">
+				<NavLink
+					to="/portfolio/work"
+					className="navLink"
+					activeClassName="activeNavLink"
+				>
 					<motion.img
 						src={DNA}
 						alt="my work"
@@ -78,7 +87,11 @@ const PortfolioMenu: FC<Props> = (props) => {
 				animate={{ y: [-300, 0] }}
 				transition={{ ease: "easeInOut", duration: 0.7 }}
 			>
-				<NavLink to="/portfolio/education" className="navLink">
+				<NavLink
+					to="/portfolio/education"
+					className="navLink"
+					activeClassName="activeNavLink"
+				>
 					<motion.img
 						src={brain}
 						alt="my digital playground"
@@ -95,7 +108,6 @@ const StyledContainer = styled.div<StyledProps>`
 	left: 20px;
 	top: 200px;
 	width: 100px;
-	height: 30%;
 	display: flex;
 	flex-flow: column wrap;
 	align-content: space-around;
@@ -104,28 +116,45 @@ const StyledContainer = styled.div<StyledProps>`
 	justify-self: flex-start;
 	font-weight: 100;
 	font-size: 1.3em;
-	/* font-weight: 200; */
+
 	.menuItem {
-		/* transform: rotateZ(-90deg); */
-		margin: 14px 10px;
-		width: 50px;
+		/* margin: 20px;
+		margin-left: 50px; */
 	}
 	img {
-		fill: #fff;
+		width: 50px;
+		margin: 10px;
 	}
-	a.navLink {
+
+	a {
 		text-decoration: none;
-		margin: 0;
+	}
+
+	/* .navLink {
+		height: 60px;
+		width: 60px;
+		margin: 10px;
 		text-align: center;
 		color: #fff;
 		text-transform: uppercase;
+	} */
+	.activeNavLink {
+		height: 60px;
+		border-right: solid 10px #f0f;
 	}
 
 	@media (max-width: 768px) {
 		left: 10px;
 		width: 50px;
-		height: 50%;
 		top: 100px;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: flex-start;
+
+		.menuItem {
+			margin: 10px;
+			width: 35px;
+		}
 	}
 `;
 

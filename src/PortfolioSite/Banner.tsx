@@ -33,11 +33,13 @@ const Banner: FC<Props> = (props) => {
 			<div className="leftSpace">
 				<motion.div className="diagonalLine"></motion.div>
 				<h1>ERIK KIMSEY</h1>
+				<h1 style={{ marginTop: "10px", alignSelf: "flex-end" }}>
+					FRONTEND ENGINEER
+				</h1>
 			</div>
-			{/* <h2>CREATIVE TECHNOLOGIST</h2> */}
-			<div className="rightSpace">
+			{/* <div className="rightSpace">
 				<div className="rightLine"></div>
-			</div>
+			</div> */}
 		</StyledContainer>
 	);
 };
@@ -46,7 +48,7 @@ const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	width: 90%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	top: 0;
@@ -54,24 +56,23 @@ const StyledContainer = styled.div<StyledProps>`
 	margin-top: 40px;
 	padding: 10px;
 	font-family: "Desib";
-	z-index: 1000;
+	z-index: -1000;
 
 	.leftSpace {
-		display: flex;
-		flex-direction: row;
-		width: 50%;
+		/* display: flex; */
+		/* flex-direction: row; */
 	}
+
 	h1 {
 		padding: 0 30px;
 		margin: 0;
-		font-size: 4em;
-		color: #fff;
+		font-size: 12em;
+		color: #3f3f3f60;
 	}
 	.diagonalLine {
 		width: 50px;
 		padding: 10px;
 		transform: rotate(45deg);
-		border-top: solid 3px #f0f;
 	}
 
 	.rightSpace {
@@ -83,22 +84,51 @@ const StyledContainer = styled.div<StyledProps>`
 			padding: 0;
 			margin: 0;
 			width: 50px;
-			border: solid 2px #f0f;
+			/* border: solid 2px #f0f; */
+		}
+	}
+
+	@media (max-width: 1025px) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		width: 80%;
+		left: 100px;
+		h1 {
+			margin: 0;
+			margin-top: 0;
+			top: 100px;
+			left: 0;
+			font-size: 8em;
 		}
 	}
 
 	@media (max-width: 768px) {
+		width: 100%;
+		height: 300px;
 		padding: 0;
 		margin: 0;
-		width: 100%;
-		height: 100px;
-		right: 0;
-		flex-flow: column;
+		/* margin-left: 50px; */
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		/* flex-flow: column;
 		justify-content: center;
-		align-items: flex-end;
-		h2 {
-			padding-right: 20px;
+		align-items: flex-end; */
+		.leftSpace {
+			width: 100%;
+			.diagonalLine {
+				display: none;
+			}
+		}
+		h1 {
 			margin: 0;
+			margin-top: 0;
+			top: 100px;
+			left: 0;
+			font-size: 4em;
 		}
 	}
 `;

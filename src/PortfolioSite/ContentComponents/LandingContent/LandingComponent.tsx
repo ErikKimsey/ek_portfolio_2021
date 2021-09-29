@@ -32,7 +32,7 @@ const LandingComponent: FC<Props> = (props) => {
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
 		console.log(init);
-		init(window.innerWidth * 0.7, window.innerHeight * 0.8);
+		// init(window.innerWidth * 0.7, window.innerHeight * 0.8);
 
 		window.addEventListener("resize", handleResize);
 		return () => window.removeEventListener("resize", handleResize);
