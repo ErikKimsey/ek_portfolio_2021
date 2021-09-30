@@ -65,15 +65,9 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: ${BREAKPOINTS.md}px) {
-		/* .subContainer {
-            padding-left: 10px;
-			width: 100%;
-			height: 100vh;
-		} */
 		flex-flow: column;
 	}
 	@media (max-width: ${BREAKPOINTS.sm}) {
-		/* background: #f0f; */
 	}
 
 	@keyframes breathing {

@@ -87,10 +87,15 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	a {
-		margin: 5px;
+		/* margin: 5px;
 		height: 50px;
 		width: 50px;
-		fill: #fff;
+		fill: #fff; */
+	}
+
+	img {
+		width: 45px;
+		margin: 10px;
 	}
 
 	@media (max-width: 768px) {
@@ -121,6 +126,18 @@ const StyledContainer = styled.div<StyledProps>`
 		img {
 			width: 33px;
 			fill: #fff;
+			margin: 10px;
+		}
+	}
+	@media (max-width: 568px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 35px;
+		bottom: 50px;
+		left: 10px;
+		img {
+			width: 25px;
 			margin: 10px;
 		}
 	}

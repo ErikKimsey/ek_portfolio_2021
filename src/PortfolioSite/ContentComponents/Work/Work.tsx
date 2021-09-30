@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { FC, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
+import Footer from "../../Footer/Footer";
 import { ListFormat } from "typescript";
 import { WORK_DATA } from "./work_data";
 
@@ -91,11 +92,13 @@ const Work: FC<Props> = (props) => {
 				proposition. Organically grow the holistic world view of
 				disruptive innovation via workplace diversity and empowerment.
 			</p>
+
 			<div className="workContainer">
 				{WORK_DATA.map((e) => {
 					return <WorkComponent props={e} />;
 				})}
 			</div>
+			<Footer />
 		</StyledContainer>
 	);
 };
@@ -103,13 +106,19 @@ const Work: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	width: ${(props) => props.containerWidth * 0.7}px;
 	height: ${(props) => props.containerHeight * 0.8}px;
+	.rotatedContainer {
+		/* transform: rotate(90deg); */
+	}
 
 	.headerContainer {
+		position: sticky;
+		top: 50px;
 		display: flex;
 		flex-direction: row;
 		width: auto;
 		border-radius: 0 10px 0 0;
 	}
+
 	.leftLine {
 		width: 1px;
 		border: solid 20px #f0f;
@@ -121,9 +130,8 @@ const StyledContainer = styled.div<StyledProps>`
 	.workContainer {
 		width: 50vw;
 		display: flex;
-		flex-direction: row wrap;
+		flex-direction: row;
 		flex-wrap: wrap;
-		/* overflow-x: ; */
 	}
 
 	.workComponentContainer {
