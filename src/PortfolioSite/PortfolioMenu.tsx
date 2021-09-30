@@ -13,8 +13,6 @@ type StyledProps = {
 };
 
 const PortfolioMenu: FC<Props> = (props) => {
-	const {} = props;
-
 	const [hasLoaded, setHasLoaded] = useState(false);
 
 	const variants = {
@@ -28,10 +26,6 @@ const PortfolioMenu: FC<Props> = (props) => {
 	useEffect(() => {
 		setHasLoaded(true);
 	}, []);
-
-	const handleClick = (elem: string) => {
-		console.log("handling click");
-	};
 
 	return (
 		<StyledContainer

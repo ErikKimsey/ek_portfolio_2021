@@ -1,11 +1,9 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import github from "../assets/images/Icons/github.svg";
 import behance from "../assets/images/Icons/behance.svg";
 import soundcloud from "../assets/images/Icons/soundcloud.svg";
-import astronaut from "../assets/images/Icons/astronaut.svg";
 import linkedin from "../assets/images/Icons/linkedin.svg";
-import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 type Props = {};
@@ -13,14 +11,6 @@ type Props = {};
 type StyledProps = {};
 
 const Icons: FC<Props> = (props) => {
-	const {} = props;
-
-	/**
-        - Github,
-        - Linkedin,
-        - Soundcloud,
-        - Behance,
-     */
 	return (
 		<StyledContainer>
 			<motion.a
@@ -86,13 +76,6 @@ const StyledContainer = styled.div<StyledProps>`
 	.menuItem {
 	}
 
-	a {
-		/* margin: 5px;
-		height: 50px;
-		width: 50px;
-		fill: #fff; */
-	}
-
 	img {
 		width: 45px;
 		margin: 10px;
@@ -102,8 +85,6 @@ const StyledContainer = styled.div<StyledProps>`
 		position: fixed;
 		display: flex;
 		flex-flow: row wrap;
-		/* justify-content: space-around; */
-		/* align-items: space-around; */
 		width: 70%;
 		bottom: 40px;
 		right: 20px;
@@ -117,8 +98,6 @@ const StyledContainer = styled.div<StyledProps>`
 		position: fixed;
 		display: flex;
 		flex-flow: row wrap;
-		/* justify-content: space-around; */
-		/* align-items: space-around; */
 		width: 70%;
 		bottom: 40px;
 		right: 20px;

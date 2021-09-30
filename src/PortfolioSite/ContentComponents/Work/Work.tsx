@@ -1,8 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import React, { FC, useState, useEffect, useCallback } from "react";
+import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import Footer from "../../Footer/Footer";
-import { ListFormat } from "typescript";
 import { WORK_DATA } from "./work_data";
 
 type Props = {};
@@ -29,12 +28,10 @@ const WorkComponent: FC<WorkComponentProps> = (props) => {
 
 const Work: FC<Props> = (props) => {
 	const {} = props;
-	const [height, setHeight] = useState(0);
-	const [width, setWidth] = useState(0);
+
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
-	const [h1HasLoaded, setH1HasLoaded] = useState(false);
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
