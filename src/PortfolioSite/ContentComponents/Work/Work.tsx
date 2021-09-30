@@ -118,13 +118,19 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 5px;
 	}
 	.workContainer {
+		width: 50vw;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row wrap;
+		flex-wrap: wrap;
+		/* overflow-x: ; */
 	}
 
 	.workComponentContainer {
+		width: 200px;
 		margin: 10px;
 		padding-left: 10px;
+		display: flex;
+		flex-direction: column;
 		border-left: solid 3px #333;
 	}
 
