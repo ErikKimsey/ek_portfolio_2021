@@ -55,7 +55,7 @@ const StyledContainer = styled.div<StyledProps>`
 	left: 50px;
 	margin-top: 40px;
 	padding: 10px;
-	font-family: "Desib";
+	font-family: "Nasal";
 	z-index: -1000;
 
 	.leftSpace {
@@ -68,6 +68,7 @@ const StyledContainer = styled.div<StyledProps>`
 		margin: 0;
 		font-size: 12em;
 		color: #3f3f3f60;
+		font-family: "Angel";
 	}
 	.diagonalLine {
 		width: 50px;

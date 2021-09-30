@@ -1,12 +1,29 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { FC, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
+import { ListFormat } from "typescript";
+import { WORK_DATA } from "./work_data";
 
 type Props = {};
+
+type WorkComponentProps = {
+	data?: {};
+};
 
 type StyledProps = {
 	containerHeight?: number;
 	containerWidth?: number;
+};
+
+const WorkComponent: FC<WorkComponentProps> = (props) => {
+	console.log(props.props.positionTitle);
+
+	return (
+		<div className="workComponentContainer">
+			<h3 className="workTitle">{props.props.positionTitle}</h3>
+			<h5 className="employerName">{props.props.employer}</h5>
+		</div>
+	);
 };
 
 const Work: FC<Props> = (props) => {
@@ -74,6 +91,11 @@ const Work: FC<Props> = (props) => {
 				proposition. Organically grow the holistic world view of
 				disruptive innovation via workplace diversity and empowerment.
 			</p>
+			<div className="workContainer">
+				{WORK_DATA.map((e) => {
+					return <WorkComponent props={e} />;
+				})}
+			</div>
 		</StyledContainer>
 	);
 };
@@ -94,6 +116,27 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 	h1 {
 		padding: 5px;
+	}
+	.workContainer {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.workComponentContainer {
+		margin: 10px;
+		padding-left: 10px;
+		border-left: solid 3px #333;
+	}
+
+	.workTitle {
+		padding: 0;
+		margin: 0;
+	}
+
+	.employerName {
+		margin: 10px;
+		padding: 0;
+		padding-left: 20px;
 	}
 `;
 
