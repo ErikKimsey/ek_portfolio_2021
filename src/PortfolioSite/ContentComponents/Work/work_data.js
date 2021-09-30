@@ -1,8 +1,9 @@
 const WORK_DATA = [
 	{
 		employer: "Sartography / UVa - Curry School of Education",
+		product: "SkillStar",
 		positionTitle: "Principal UI/UX Engineer",
-		URL: "",
+		URL: "https://github.com/sartography/SkillSTAR",
 		techStack: "React Native, TypeScript",
 		projectDescription:
 			"Prototype a mobile application intended to teach,using the 'chaining forward' educational technique, essential skills to persons with mental disabilities . ",
@@ -10,6 +11,7 @@ const WORK_DATA = [
 	},
 	{
 		employer: "OddTreatment",
+		product: "Milq",
 		positionTitle: "Founder / Designer / Engineer",
 		URL: "",
 		techStack: "Unity3d, Blender",
@@ -19,6 +21,7 @@ const WORK_DATA = [
 	},
 	{
 		employer: "Chatwise",
+		product: "Chatwise",
 		positionTitle: "FullStack Engineer",
 		URL: "",
 		techStack: "",
@@ -28,8 +31,9 @@ const WORK_DATA = [
 	},
 	{
 		employer: "Realm (prev., 'RealmChain')",
+		product: "Realm Mobile App",
 		positionTitle: "Mobile Application Engineer",
-		URL: "",
+		URL: "https://therealm.gg/",
 		techStack: "React-Native, Redux, JavaScript",
 		projectDescription:
 			"Developed features of the Realm mobile applications.",
@@ -37,8 +41,9 @@ const WORK_DATA = [
 	},
 	{
 		employer: "Connect Our Kids",
+		product: "Connect Our Kids - Social-worker field application",
 		positionTitle: "Mobile Application Engineer",
-		URL: "",
+		URL: "https://www.connectourkids.org/tools",
 		techStack: "React-Native, Redux, JavaScript",
 		projectDescription:
 			"I contributed to both UI design and engineering of features pertaining to database recall and creation.",
@@ -46,6 +51,7 @@ const WORK_DATA = [
 	},
 	{
 		employer: "NextLevelSh!t",
+		product: "B612 Design - public-facing website",
 		positionTitle: "Frontend Engineer",
 		URL: "",
 		techStack: "JavaScript, HTML, CSS, Bootstrap",
@@ -55,8 +61,9 @@ const WORK_DATA = [
 	},
 	{
 		employer: "Raincrow Studios",
+		product: "Covens",
 		positionTitle: "NodeJS Engineer",
-		URL: "",
+		URL: "https://www.raincrowstudios.com/",
 		techStack: "NodeJS, Redis, Python",
 		projectDescription:
 			"Using NodeJS, I implemented backend functionality for GPS-based, real-time data flow.",
@@ -64,8 +71,9 @@ const WORK_DATA = [
 	},
 	{
 		employer: "NextLevelSh!t",
+		product: "B612 Guilloche",
 		positionTitle: "Angular / D3.js Engineer",
-		URL: "",
+		URL: "https://www.npmjs.com/package/nls-guilloche",
 		techStack: "Angular, TypeScript, D3.js",
 		projectDescription:
 			"Using D3.js, I contributed to the development of a real-time, dynamic 'guilloche' design application.",
@@ -73,8 +81,9 @@ const WORK_DATA = [
 	},
 	{
 		employer: "ChartIQ (and eToro)",
+		product: "ChartIQ Library / eToro's ProCharts",
 		positionTitle: "JavaScript Engineer",
-		URL: "",
+		URL: "https://cosaic.io/chartiq/",
 		techStack: "Angular, JavaScript, CSS, HTML",
 		projectDescription:
 			"Using ES5, contributed to the debugging and refinement of ChartIQ's flagship financial chartting library.  Further, using Angular, I implemented ChartIQ's charting library in eToro's new online 'ProCharts' feature.",
@@ -82,6 +91,7 @@ const WORK_DATA = [
 	},
 	// {
 	// 	employer: "",
+	// product:"",
 	// 	positionTitle: "",
 	// 	URL: "",
 	// 	techStack: "",

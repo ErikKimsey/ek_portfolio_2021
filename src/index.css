@@ -15,14 +15,14 @@ body {
 h1 {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
-    font-family: "Desib";
+    font-family: "Angel";
     color: #fff;
 }
 p {
     color: #fff;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-        text-transform: uppercase;
+    sans-serif;
+    font-family: "Comfortaa";
 }
 
 
@@ -66,5 +66,47 @@ code {
     font-family: "Pado";   
     src: local("./assets/fonts"),
      url("./assets/fonts/padomela.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Silver";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/SilverStream.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Comfortaa";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/Comfortaa.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "ComfortaaBold";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/ComfortaaBold.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Caviar";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/Caviar.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Cafe";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/Cafe.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Elegant";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/Elegant.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Quick";   
+    src: local("./assets/fonts"),
+     url("./assets/fonts/Quick.otf") format("opentype");
     font-weight: 600;
 }

@@ -46,8 +46,6 @@ const StyledContainer = styled.div<StyledProps>`
 	align-items: space-between;
 
 	h1 {
-		font-weight: 900;
-		font-family: "Desib";
 		padding: 0;
 		margin: 0;
 		line-height: 0.8;
@@ -73,13 +71,6 @@ const StyledContainer = styled.div<StyledProps>`
 			height: 100vh;
 		} */
 		flex-flow: column;
-		h1 {
-			font-weight: 900;
-			font-family: "Desib";
-			padding: 0;
-			margin: 0;
-			line-height: 0.8;
-		}
 	}
 	@media (max-width: ${BREAKPOINTS.sm}) {
 		/* background: #f0f; */

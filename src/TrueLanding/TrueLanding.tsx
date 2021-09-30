@@ -39,7 +39,7 @@ const StyledContainer = styled.div<StyledProps>`
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	font-family: "Wipeout";
+	font-family: "Angel";
 	.screenHalf {
 		width: 50%;
 		height: 100%;

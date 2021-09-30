@@ -20,8 +20,8 @@ const WorkComponent: FC<WorkComponentProps> = (props) => {
 
 	return (
 		<div className="workComponentContainer">
-			<h3 className="workTitle">{props.props.positionTitle}</h3>
-			<h5 className="employerName">{props.props.employer}</h5>
+			<h2 className="workTitle">{props.props.positionTitle}</h2>
+			<h3 className="employerName">{props.props.employer}</h3>
 		</div>
 	);
 };
@@ -116,6 +116,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 	h1 {
 		padding: 5px;
+		font-family: "Angel";
 	}
 	.workContainer {
 		width: 50vw;
@@ -137,12 +138,16 @@ const StyledContainer = styled.div<StyledProps>`
 	.workTitle {
 		padding: 0;
 		margin: 0;
+		color: #f0f;
+		font-family: "ComfortaaBold";
 	}
 
 	.employerName {
 		margin: 10px;
 		padding: 0;
 		padding-left: 20px;
+		color: #eee;
+		font-family: "Comfortaa";
 	}
 `;
 

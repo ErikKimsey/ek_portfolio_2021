@@ -55,7 +55,7 @@ const StyledContainer = styled.div<StyledProps>`
 	left: 50px;
 	margin-top: 40px;
 	padding: 10px;
-	font-family: "Nasal";
+	font-family: "Angel";
 	z-index: -1000;
 
 	.leftSpace {
