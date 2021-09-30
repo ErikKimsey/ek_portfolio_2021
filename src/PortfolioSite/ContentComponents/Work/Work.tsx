@@ -154,6 +154,17 @@ const StyledContainer = styled.div<StyledProps>`
 		color: #eee;
 		font-family: "Comfortaa";
 	}
+	@media (max-width: 768px) {
+		/* height: 100px; */
+		display: flex;
+		flex-direction: column;
+	}
+	@media (max-width: 568px) {
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		/* height: 100px; */
+	}
 `;
 
 export default Work;

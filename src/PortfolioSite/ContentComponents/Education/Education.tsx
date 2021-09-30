@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
+import Footer from "../../Footer/Footer";
 
 type Props = {};
 
@@ -68,6 +69,7 @@ const Education: FC<Props> = (props) => {
 				proposition. Organically grow the holistic world view of
 				disruptive innovation via workplace diversity and empowerment.
 			</p>
+			{/* <Footer /> */}
 		</StyledContainer>
 	);
 };

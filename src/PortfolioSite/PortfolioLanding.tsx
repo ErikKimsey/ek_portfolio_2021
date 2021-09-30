@@ -4,6 +4,7 @@ import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
 import Icons from "./Icons";
+import Footer from "./Footer/Footer";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
 const BREAKPOINTS = {
@@ -30,6 +31,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 			{/* <ArrowNavComponent /> */}
 			<div className="container">{<ContentDisplay />}</div>
 			<Icons />
+			<Footer />
 		</StyledContainer>
 	);
 };
@@ -39,6 +41,7 @@ const StyledContainer = styled.div<StyledProps>`
 	margin: auto;
 	padding: 10px;
 	width: 100%;
+	height: 100%;
 	color: #fff;
 	display: flex;
 	flex-flow: column wrap;
@@ -53,8 +56,9 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.container {
 		width: 80%;
+		height: 100%;
 		display: flex;
-		flex-flow: column wrap;
+		flex-flow: column;
 		justify-content: flex-start;
 		align-items: center;
 		align-self: center;

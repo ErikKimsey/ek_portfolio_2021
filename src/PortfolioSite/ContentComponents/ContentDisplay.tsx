@@ -76,13 +76,14 @@ const StyledContainer = styled.div<StyledProps>`
 	align-items: flex-start;
 
 	.contentContainer {
+		height: 100%;
 		/* width: 80%; */
 		/* padding-left: 200px; */
 	}
 
 	@media (max-width: 700px) {
 		top: 100px;
-		height: 100vh;
+		height: 100%;
 		width: 100%;
 		.contentContainer {
 			padding-left: 50px;
