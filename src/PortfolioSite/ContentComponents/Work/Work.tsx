@@ -48,25 +48,25 @@ const Work: FC<Props> = (props) => {
 			transition={{ duration: 0.5 }}
 			id="workContainer"
 		>
-			<div className="headerContainer">
-				<AnimatePresence>
+			<AnimatePresence exitBeforeEnter>
+				<div className="headerContainer">
 					<motion.div
 						key="leftLine"
 						className="leftLine"
-						animate={{ x: [200, 0], opacity: [0, 1] }}
-						exit={{ opacity: [1, 0] }}
+						animate={{ x: [200, 0] }}
+						exit={{ x: [0, 200] }}
 						transition={{ ease: "easeOut", duration: 0.7 }}
 					></motion.div>
-				</AnimatePresence>
-				<motion.h1
-					key="h1"
-					animate={{ x: [-200, 0] }}
-					exit={{ x: [0, -200] }}
-					transition={{ ease: "easeOut", duration: 0.5 }}
-				>
-					work.
-				</motion.h1>
-			</div>
+					<motion.h1
+						key="h1"
+						animate={{ x: [-200, 0] }}
+						exit={{ x: [0, -200] }}
+						transition={{ ease: "easeOut", duration: 0.5 }}
+					>
+						work.
+					</motion.h1>
+				</div>
+			</AnimatePresence>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
 				level overviews. Iterative approaches to corporate strategy

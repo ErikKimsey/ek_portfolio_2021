@@ -4,8 +4,7 @@ import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
 import Icons from "./Icons";
-import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
-import { motion } from "framer-motion";
+// import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
 const BREAKPOINTS = {
 	lg: 1024,

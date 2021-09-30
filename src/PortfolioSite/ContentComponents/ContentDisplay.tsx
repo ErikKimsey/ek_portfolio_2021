@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
 import { Route, Switch, useLocation, useHistory } from "react-router-dom";
 import styled from "styled-components";
@@ -42,38 +42,24 @@ const ContentDisplay: FC<Props> = (props) => {
 		}
 	}, []);
 
-	/**
-     * TODO: * make Work.tsx component height/width 
-                logic global/util for all content components.
-     */
-
 	return (
 		<StyledContainer>
 			{content.length > 0 && (
 				<motion.div className="contentContainer">
-					{/* <Switch> */}
-					{/* <LandingComponent /> */}
-					{/* <ContentBreakElement /> */}
-					<Route exact path="/portfolio">
-						<LandingComponent />
-					</Route>
-					<Route path="/portfolio/work">
-						<Work />
-					</Route>
-					<Route path="/portfolio/resume">
-						<Resume />
-					</Route>
-					<Route path="/portfolio/education">
-						<Education />
-					</Route>
-					{/* <LandingComponent />
-					<ContentBreakElement />
-					<Work />
-					<ContentBreakElement />
-					<Resume />
-					<ContentBreakElement />
-					<Education /> */}
-					{/* </Switch> */}
+					<Switch>
+						<Route exact path="/portfolio">
+							<LandingComponent />
+						</Route>
+						<Route path="/portfolio/work">
+							<Work />
+						</Route>
+						<Route path="/portfolio/resume">
+							<Resume />
+						</Route>
+						<Route path="/portfolio/education">
+							<Education />
+						</Route>
+					</Switch>
 				</motion.div>
 			)}
 		</StyledContainer>
