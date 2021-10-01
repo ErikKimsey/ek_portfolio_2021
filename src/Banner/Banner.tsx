@@ -51,12 +51,26 @@ const Banner: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	padding: 0 0 0 50px;
 	margin: 0;
+	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	background-color: #000;
 	color: rgba(255, 255, 255, 0.5);
+	z-index: 1001;
+
+	h1 {
+		line-height: 0.8;
+	}
+
+	.h1s {
+		display: flex;
+		flex-direction: row;
+		font-size: 1.7em;
+		transition: font-size 1s;
+		will-change: font-size;
+	}
 
 	.wipeout {
 		color: rgba(255, 255, 255, 1);
@@ -64,17 +78,13 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 20px 20px;
 		margin: 0px;
 		margin-top: 20px;
+		color: rgba(187, 187, 187, 0.6);
 	}
 
 	.digitalPlayground {
 		padding-left: 20px;
-	}
-	.h1s {
-		display: flex;
-		flex-direction: row;
-		font-size: 1.7em;
-		transition: font-size 1s;
-		will-change: font-size;
+		color: rgba(187, 187, 187, 0.6);
+		z-index: -1;
 	}
 
 	.scrolling {
@@ -109,6 +119,9 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: column;
 		align-items: flex-start;
 		padding: 10px 10px 0px 0px;
+		padding: 0;
+		margin-bottom: 20px;
+		line-height: 0.8;
 		.h1s {
 			display: flex;
 			flex-direction: column;

@@ -1,10 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect } from "react";
 import styled from "styled-components";
 import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
 import Icons from "./Icons";
-import Footer from "./Footer/Footer";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
 const BREAKPOINTS = {
@@ -20,10 +19,6 @@ interface StyledProps {
 }
 
 const PortfolioLanding: FC<Props> = (props) => {
-	useEffect(() => {
-		// setTimeout(() => setIsLoading(false), 500);
-	}, []);
-
 	return (
 		<StyledContainer>
 			<Banner />
@@ -31,7 +26,6 @@ const PortfolioLanding: FC<Props> = (props) => {
 			{/* <ArrowNavComponent /> */}
 			<div className="container">{<ContentDisplay />}</div>
 			<Icons />
-			<Footer />
 		</StyledContainer>
 	);
 };
@@ -56,7 +50,6 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.container {
 		width: 80%;
-		height: 100%;
 		display: flex;
 		flex-flow: column;
 		justify-content: flex-start;

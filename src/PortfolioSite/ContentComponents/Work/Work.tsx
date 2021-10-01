@@ -20,8 +20,8 @@ const WorkComponent: FC<WorkComponentProps> = (props) => {
 
 	return (
 		<div className="workComponentContainer">
-			<h2 className="workTitle">{props.props.positionTitle}</h2>
-			<h3 className="employerName">{props.props.employer}</h3>
+			<h3 className="workTitle">{props.props.positionTitle}</h3>
+			<h4 className="employerName">{props.props.employer}</h4>
 		</div>
 	);
 };
@@ -95,7 +95,6 @@ const Work: FC<Props> = (props) => {
 					return <WorkComponent props={e} />;
 				})}
 			</div>
-			<Footer />
 		</StyledContainer>
 	);
 };

@@ -76,7 +76,7 @@ const StyledContainer = styled.div<StyledProps>`
 	align-items: flex-start;
 
 	.contentContainer {
-		height: 100%;
+		/* height: 100%; */
 		/* width: 80%; */
 		/* padding-left: 200px; */
 	}

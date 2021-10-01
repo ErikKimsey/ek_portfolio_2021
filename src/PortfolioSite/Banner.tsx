@@ -85,7 +85,6 @@ const StyledContainer = styled.div<StyledProps>`
 			padding: 0;
 			margin: 0;
 			width: 50px;
-			/* border: solid 2px #f0f; */
 		}
 	}
 
@@ -106,18 +105,15 @@ const StyledContainer = styled.div<StyledProps>`
 
 	@media (max-width: 768px) {
 		width: 100%;
-		height: 300px;
 		padding: 0;
 		margin: 0;
-		/* margin-left: 50px; */
+		margin-top: 40px;
 		left: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
-		/* flex-flow: column;
-		justify-content: center;
-		align-items: flex-end; */
+
 		.leftSpace {
 			width: 100%;
 			.diagonalLine {
