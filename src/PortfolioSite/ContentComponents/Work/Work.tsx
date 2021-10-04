@@ -95,6 +95,16 @@ const Work: FC<Props> = (props) => {
 				{WORK_DATA.map((e, i) => {
 					return <WorkComponent props={e} index={i} />;
 				})}
+				<h3
+					style={{
+						height: "100px",
+						textAlign: "end",
+						width: "100%",
+						marginRight: "33px",
+					}}
+				>
+					end.
+				</h3>
 			</div>
 		</StyledContainer>
 	);
@@ -114,6 +124,7 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: row;
 		width: auto;
 		border-radius: 0 10px 0 0;
+		background-color: rgba(0, 0, 0, 0.3);
 	}
 
 	.leftLine {
@@ -124,9 +135,10 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 5px;
 		font-family: "Angel";
 	}
+
 	.workContainer {
 		width: 100%;
-		height: 10vh;
+		height: 20vh;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
