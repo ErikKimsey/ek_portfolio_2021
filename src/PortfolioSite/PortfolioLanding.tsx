@@ -25,7 +25,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 			<PortfolioMenu />
 			{/* <ArrowNavComponent /> */}
 			<div className="container">{<ContentDisplay />}</div>
-			<Icons />
+			{/* <Icons /> */}
 		</StyledContainer>
 	);
 };

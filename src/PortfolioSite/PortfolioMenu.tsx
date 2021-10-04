@@ -1,4 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
+import Icons from "./Icons";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";
@@ -87,6 +88,7 @@ const PortfolioMenu: FC<Props> = (props) => {
 					/>
 				</NavLink>
 			</motion.div>
+			<Icons />
 		</StyledContainer>
 	);
 };
@@ -127,20 +129,33 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 768px) {
-		left: 10px;
-		width: 35px;
+		width: auto;
+		left: 0px;
 		top: 100px;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: flex-start;
+		align-items: center;
 
 		.menuItem {
-			margin: 10px;
+			padding: 10px;
 			width: 35px;
 		}
 
 		img {
 			width: 35px;
+		}
+	}
+
+	@media (max-width: 568px) {
+		top: 50px;
+		/* display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 35px;
+		bottom: 50px;
+		left: 10px; */
+		img {
 		}
 	}
 `;

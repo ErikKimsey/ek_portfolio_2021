@@ -8,6 +8,7 @@ type Props = {};
 
 type WorkComponentProps = {
 	data?: {};
+	index?: number;
 };
 
 type StyledProps = {
@@ -16,12 +17,12 @@ type StyledProps = {
 };
 
 const WorkComponent: FC<WorkComponentProps> = (props) => {
-	console.log(props.props.positionTitle);
+	const { positionTitle, employer } = props.props;
 
 	return (
 		<div className="workComponentContainer">
-			<h3 className="workTitle">{props.props.positionTitle}</h3>
-			<h4 className="employerName">{props.props.employer}</h4>
+			<h3 className="workTitle">{positionTitle}</h3>
+			<h4 className="employerName">{employer}</h4>
 		</div>
 	);
 };
@@ -91,8 +92,8 @@ const Work: FC<Props> = (props) => {
 			</p>
 
 			<div className="workContainer">
-				{WORK_DATA.map((e) => {
-					return <WorkComponent props={e} />;
+				{WORK_DATA.map((e, i) => {
+					return <WorkComponent props={e} index={i} />;
 				})}
 			</div>
 		</StyledContainer>
@@ -124,10 +125,13 @@ const StyledContainer = styled.div<StyledProps>`
 		font-family: "Angel";
 	}
 	.workContainer {
-		width: 50vw;
+		width: 100%;
+		height: 10vh;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
+		/* align-items: center; */
+		gap: 10px;
 	}
 
 	.workComponentContainer {
@@ -137,6 +141,11 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: column;
 		border-left: solid 3px #333;
+		/* padding: 30px; */
+		transition: all 0.5s;
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 
 	.workTitle {
