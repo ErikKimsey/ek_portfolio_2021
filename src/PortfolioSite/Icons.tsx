@@ -77,7 +77,7 @@ const Icons: FC<Props> = (props) => {
 					src={blackhole}
 					animate={{ y: [-250, 0] }}
 					transition={{ ease: "easeInOut", duration: 1.6 }}
-					whileHover={{ scale: 1.3, duration: 2 }}
+					whileHover={{ rotate: "15deg" }}
 				/>
 			</div>
 		</StyledContainer>
@@ -89,24 +89,27 @@ const StyledContainer = styled.div<StyledProps>`
 	width: 100px;
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: flex-end;
+	justify-content: center;
+	align-items: center;
 	bottom: 100px;
 
 	align-items: center;
 
 	.menuContainer {
-		width: 100%;
-		display: ${(props) => (props.isActive === true ? "flex" : "none")};
-		flex-flow: column wrap;
-		justify-content: flex-end;
-		margin: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		max-height: ${(props) => (props.isActive === true ? "400px" : "0px")};
+		transition: all 1s ease-in-out;
+		overflow: hidden;
 	}
 
 	.menuItem {
 	}
 
 	button {
-		width: 45px;
+		width: 50px;
 		background-color: rgba(0, 0, 0, 0);
 	}
 
