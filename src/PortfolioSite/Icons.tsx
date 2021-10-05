@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import github from "../assets/images/Icons/github.svg";
 import behance from "../assets/images/Icons/behance.svg";
@@ -9,12 +9,19 @@ import { motion } from "framer-motion";
 
 type Props = {};
 
-type StyledProps = {};
+type StyledProps = {
+	isActive?: boolean;
+};
 
 const Icons: FC<Props> = (props) => {
+	let [menuActive, setMenuActive] = useState<boolean>(false);
+
+	const handleMenuExpand = () => {
+		setMenuActive(!menuActive);
+	};
+
 	return (
-		<StyledContainer>
-			<div className="menuButton"></div>
+		<StyledContainer isActive={menuActive}>
 			<div className="menuContainer">
 				<motion.a
 					href="https://www.beatport.com"
@@ -64,19 +71,14 @@ const Icons: FC<Props> = (props) => {
 						transition={{ ease: "easeInOut", duration: 1.6 }}
 					/>
 				</motion.a>
-				<motion.a
-					href="https://www.beatport.com"
-					target="_blank"
-					animate={{ opacity: [0, 0.7] }}
+			</div>
+			<div className="menuButton blackHole" onClick={handleMenuExpand}>
+				<motion.img
+					src={blackhole}
+					animate={{ y: [-250, 0] }}
+					transition={{ ease: "easeInOut", duration: 1.6 }}
 					whileHover={{ scale: 1.3, duration: 2 }}
-					className="blackhole"
-				>
-					<motion.img
-						src={blackhole}
-						animate={{ y: [-250, 0] }}
-						transition={{ ease: "easeInOut", duration: 1.6 }}
-					/>
-				</motion.a>
+				/>
 			</div>
 		</StyledContainer>
 	);
@@ -94,7 +96,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.menuContainer {
 		width: 100%;
-		display: flex;
+		display: ${(props) => (props.isActive === true ? "flex" : "none")};
 		flex-flow: column wrap;
 		justify-content: flex-end;
 		margin: 10px;
@@ -108,7 +110,8 @@ const StyledContainer = styled.div<StyledProps>`
 		background-color: rgba(0, 0, 0, 0);
 	}
 
-	.blackhole {
+	.blackHole {
+		animation: blackhole 4s infinite ease-in-out;
 	}
 
 	img {
@@ -137,16 +140,18 @@ const StyledContainer = styled.div<StyledProps>`
 		img {
 			width: 33px;
 			fill: #fff;
-			/* margin: 10px; */
 		}
 	}
 
 	@keyframes blackhole {
 		0% {
-			transform: rotate(0deg);
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.2);
 		}
 		100% {
-			transform: rotate(360deg);
+			transform: scale(1);
 		}
 	}
 `;
