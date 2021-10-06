@@ -3,6 +3,7 @@ import React, { FC, useState, useEffect } from "react";
 import { Route, Switch, useLocation, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Work, Resume, Education, LandingComponent } from "./index";
+import { InView, useInView } from "react-intersection-observer";
 
 type Props = {};
 
@@ -18,6 +19,24 @@ const PATHS = [
 	"/portfolio/resume",
 	"/portfolio/education",
 ];
+
+// const SomeComp = () => {
+// 	const { ref, inView, entry } = useInView({
+// 		/* Optional options */
+// 		threshold: 0.5,
+// 	});
+
+// 	console.log(`In View: ${inView}`);
+
+// 	return (
+// 		<div
+// 			ref={ref}
+// 			style={{ height: "400px", width: "600px", background: "#f0f" }}
+// 		>
+// 			<h2>{`Header inside viewport ${inView}.`}</h2>
+// 		</div>
+// 	);
+// };
 
 const ContentDisplay: FC<Props> = (props) => {
 	const {} = props;
@@ -79,6 +98,12 @@ const StyledContainer = styled.div<StyledProps>`
 		/* height: 100%; */
 		/* width: 80%; */
 		/* padding-left: 200px; */
+	}
+
+	.inViewContainer {
+		width: 500px;
+		display: flex;
+		flex-direction: column;
 	}
 
 	@media (max-width: 700px) {

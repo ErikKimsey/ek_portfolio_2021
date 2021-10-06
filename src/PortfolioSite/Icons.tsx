@@ -101,7 +101,8 @@ const StyledContainer = styled.div<StyledProps>`
 		justify-content: space-around;
 		align-items: center;
 		max-height: ${(props) => (props.isActive === true ? "400px" : "0px")};
-		transition: all 1s ease-in-out;
+		opacity: ${(props) => (props.isActive === true ? 1 : 0)};
+		transition: all 0.3s ease-in-out;
 		overflow: hidden;
 	}
 

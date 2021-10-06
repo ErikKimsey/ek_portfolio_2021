@@ -67,7 +67,7 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 0 30px;
 		margin: 0;
 		font-size: 12em;
-		color: #3f3f3f60;
+		color: #3f3f3f2f;
 		font-family: "Angel";
 	}
 	.diagonalLine {

@@ -4,6 +4,7 @@ import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
 import Icons from "./Icons";
+import { InView, useInView } from "react-intersection-observer";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
 const BREAKPOINTS = {
@@ -19,6 +20,7 @@ interface StyledProps {
 }
 
 const PortfolioLanding: FC<Props> = (props) => {
+	const [inView, setInView] = React.useState(false);
 	return (
 		<StyledContainer>
 			<Banner />
