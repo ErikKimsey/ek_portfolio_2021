@@ -32,8 +32,11 @@ const Banner: FC<Props> = (props) => {
 		>
 			<div className="leftSpace">
 				<motion.div className="diagonalLine"></motion.div>
-				<h1>ERIK KIMSEY</h1>
-				<h1 style={{ marginTop: "10px", alignSelf: "flex-end" }}>
+				<h1 className="erikKimseyH1">ERIK KIMSEY</h1>
+				<h1
+					className="feEngH1"
+					style={{ marginTop: "10px", alignSelf: "flex-end" }}
+				>
 					FRONTEND ENGINEER
 				</h1>
 			</div>
@@ -53,6 +56,7 @@ const StyledContainer = styled.div<StyledProps>`
 	align-items: center;
 	top: 0;
 	left: 50px;
+	right: 0;
 	margin-top: 40px;
 	padding: 10px;
 	font-family: "Angel";
@@ -67,8 +71,45 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 0 30px;
 		margin: 0;
 		font-size: 12em;
-		color: #3f3f3f2f;
+		color: #3f3f3f61;
 		font-family: "Angel";
+	}
+
+	.erikKimseyH1 {
+		/* transform: rotate(-22deg);
+		margin-left: -10px;
+		&::after {
+			position: absolute;
+			left: 100px;
+			top: 10px;
+			content: "ERIK KIMSEY";
+			color: #ff00ff30;
+		}
+		&::before {
+			position: absolute;
+			left: 95px;
+			top: 15px;
+			content: "ERIK KIMSEY";
+			color: #006eff36;
+		} */
+	}
+
+	.feEngH1 {
+		/* transform: rotate(-22deg);
+		&::after {
+			position: absolute;
+			left: 100px;
+			top: 10px;
+			content: "FRONTEND ENGINEER";
+			color: #ff00ff30;
+		}
+		&::before {
+			position: absolute;
+			left: 95px;
+			top: 15px;
+			content: "FRONTEND ENGINEER";
+			color: #006eff36;
+		} */
 	}
 	.diagonalLine {
 		width: 50px;
@@ -89,6 +130,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 1025px) {
+		text-align: end;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
@@ -121,11 +163,17 @@ const StyledContainer = styled.div<StyledProps>`
 			}
 		}
 		h1 {
+			text-align: end;
 			margin: 0;
 			margin-top: 0;
 			top: 100px;
 			left: 0;
 			font-size: 4em;
+		}
+	}
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 3em;
 		}
 	}
 `;
