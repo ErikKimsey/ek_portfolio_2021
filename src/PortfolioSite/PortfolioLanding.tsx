@@ -1,10 +1,8 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
-import Icons from "./Icons";
-import { InView, useInView } from "react-intersection-observer";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
 const BREAKPOINTS = {
@@ -27,7 +25,6 @@ const PortfolioLanding: FC<Props> = (props) => {
 			<PortfolioMenu />
 			{/* <ArrowNavComponent /> */}
 			<div className="container">{<ContentDisplay />}</div>
-			{/* <Icons /> */}
 		</StyledContainer>
 	);
 };
