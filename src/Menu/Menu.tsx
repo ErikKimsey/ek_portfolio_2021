@@ -12,13 +12,23 @@ const Menu: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<a href="http://erikkimsey" target="_blank" className="link">
+			<a
+				href="http://erikkimsey"
+				target="_blank"
+				rel="noreferrer"
+				className="link"
+			>
 				<div
 					className="menuItem skillSet"
 					style={{ backgroundImage: `url(${CAPSULES})` }}
 				></div>
 			</a>
-			<a href="http://erikkimsey" target="_blank" className="link">
+			<a
+				href="http://erikkimsey"
+				target="_blank"
+				rel="noreferrer"
+				className="link"
+			>
 				<div
 					className="menuItem workHistory"
 					style={{ backgroundImage: `url(${SATELLITE})` }}

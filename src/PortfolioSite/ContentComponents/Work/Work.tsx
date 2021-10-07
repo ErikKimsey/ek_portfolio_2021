@@ -26,7 +26,12 @@ const WorkComponent: FC<WorkComponentProps> = (props) => {
 			<h3 className="workTitle">{positionTitle}</h3>
 			<h4 className="employerName">{employer}</h4>
 			{URL ? (
-				<a href={URL} target="_blank" className="employerURL">
+				<a
+					href={URL}
+					target="_blank"
+					rel="noreferrer"
+					className="employerURL"
+				>
 					{URL}
 				</a>
 			) : (
