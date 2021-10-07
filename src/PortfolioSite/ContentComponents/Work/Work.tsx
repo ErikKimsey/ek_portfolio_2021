@@ -1,7 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 import { WORK_DATA } from "./work_data";
+import Education from "../Education/Education";
+import Contact from "../Contact/Contact";
 
 type Props = {};
 
@@ -101,17 +104,11 @@ const Work: FC<Props> = (props) => {
 				{WORK_DATA.map((e, i) => {
 					return <WorkComponent props={e} index={i} />;
 				})}
-				<h3
-					style={{
-						height: "100px",
-						textAlign: "end",
-						width: "100%",
-						marginRight: "33px",
-					}}
-				>
-					end.
-				</h3>
 			</div>
+			<div style={{ height: "100px" }}></div>
+			<Education />
+			<div style={{ height: "100px" }}></div>
+			<Contact />
 		</StyledContainer>
 	);
 };

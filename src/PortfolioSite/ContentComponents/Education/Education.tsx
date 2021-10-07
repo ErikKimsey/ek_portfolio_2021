@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 
 type Props = {};
 
@@ -14,6 +15,7 @@ const Education: FC<Props> = (props) => {
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
+	const { inView, entry, ref } = useInView({ threshold: 0.2 });
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
@@ -47,19 +49,24 @@ const Education: FC<Props> = (props) => {
 			id="workContainer"
 			containerHeight={winHeight}
 			containerWidth={winWidth}
+			ref={ref}
 		>
 			<div className="headerContainer">
-				<motion.div
-					className="leftLine"
-					animate={{ x: [200, 0] }}
-					transition={{ ease: "easeOut", duration: 0.7 }}
-				></motion.div>
-				<motion.h1
-					animate={{ x: [-200, 0] }}
-					transition={{ ease: "easeOut", duration: 0.5 }}
-				>
-					education.
-				</motion.h1>
+				{inView && (
+					<motion.div
+						className="leftLine"
+						animate={{ x: [200, 0] }}
+						transition={{ ease: "easeOut", duration: 0.7 }}
+					></motion.div>
+				)}
+				{inView && (
+					<motion.h1
+						animate={{ x: [-200, 0] }}
+						transition={{ ease: "easeOut", duration: 0.5 }}
+					>
+						{`education.`}
+					</motion.h1>
+				)}
 			</div>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
