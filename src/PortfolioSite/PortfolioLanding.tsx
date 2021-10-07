@@ -48,10 +48,10 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.container {
-		width: 80%;
+		/* width: 80%; */
 		display: flex;
 		flex-flow: column;
-		justify-content: flex-start;
+		justify-content: flex-end;
 		align-items: center;
 		align-self: center;
 	}
@@ -63,7 +63,11 @@ const StyledContainer = styled.div<StyledProps>`
 	@media (max-width: ${BREAKPOINTS.md}px) {
 		flex-flow: column;
 	}
-	@media (max-width: ${BREAKPOINTS.sm}) {
+	@media (max-width: 568px) {
+		width: auto;
+		margin-left: 50px;
+		.container {
+		}
 	}
 
 	@keyframes breathing {

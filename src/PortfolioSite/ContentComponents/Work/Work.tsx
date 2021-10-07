@@ -143,7 +143,8 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.workContainer {
-		width: 500px;
+		max-width: 500px;
+		width: 100%;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -158,33 +159,39 @@ const StyledContainer = styled.div<StyledProps>`
 		padding-left: 10px;
 		display: flex;
 		flex-direction: column;
-		border-left: solid 3px #333;
+		/* border-left: solid 3px #333; */
 		/* padding: 30px; */
 		transition: all 0.5s;
 		&:hover {
-			/* transform: scale(1.1) ; */
+			transform: scale(1.05);
 		}
 	}
 
 	.workTitle {
 		padding: 0;
+		padding-left: 10px;
 		margin: 0;
 		color: #f0f;
 		font-family: "ComfortaaBold";
+		border-left: solid 2px #ccc;
 	}
 
 	.employerName {
+		margin: 0;
 		margin: 10px;
+		padding: 0;
 		padding-left: 20px;
 		padding: 0;
-		color: #eee;
 		font-family: "Comfortaa";
+		color: #fff;
 	}
 
 	.employerURL {
 		text-decoration: none;
-		color: #fff;
+		padding: 0;
 		padding-left: 20px;
+		margin: 0;
+		color: #ddff81;
 	}
 	@media (max-width: 768px) {
 		/* height: 100px; */
@@ -192,6 +199,18 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: column;
 	}
 	@media (max-width: 568px) {
+		.workTitle {
+			font-size: 1em;
+		}
+
+		.employerName {
+			margin: 0;
+			margin-left: 10px;
+			font-size: 0.8em;
+		}
+		.employerURL {
+			font-size: 0.8em;
+		}
 		height: auto;
 		display: flex;
 		flex-direction: column;

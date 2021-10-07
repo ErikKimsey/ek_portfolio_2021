@@ -97,7 +97,7 @@ const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	left: 20px;
 	top: 200px;
-	width: 100px;
+	/* width: 100px; */
 	display: flex;
 	flex-flow: column wrap;
 	align-content: space-around;
@@ -129,7 +129,9 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 768px) {
-		width: auto;
+		/* width: 100px; */
+		padding: 0;
+		padding-right: 10px;
 		left: 0px;
 		top: 100px;
 		display: flex;
@@ -149,6 +151,8 @@ const StyledContainer = styled.div<StyledProps>`
 
 	@media (max-width: 568px) {
 		top: 50px;
+		padding: 0;
+		padding-right: 10px;
 		/* display: flex;
 		flex-direction: column;
 		justify-content: center;
