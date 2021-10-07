@@ -76,7 +76,7 @@ const StyledContainer = styled.div<StyledProps>`
 		color: rgba(255, 255, 255, 1);
 		font-family: "Angel";
 		padding: 20px 20px;
-		margin: 0px;
+		/* margin: 0px; */
 		margin-top: 20px;
 		color: rgba(187, 187, 187, 0.6);
 	}
@@ -96,6 +96,7 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: column;
 		align-items: space-between;
 		padding: 10px 10px 0px 50px;
+		margin-left: 50px;
 		.h1s {
 			width: 100%;
 			display: flex;

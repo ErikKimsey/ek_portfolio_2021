@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
-import Footer from "../../Footer/Footer";
 import { WORK_DATA } from "./work_data";
 
 type Props = {};
@@ -17,12 +16,19 @@ type StyledProps = {
 };
 
 const WorkComponent: FC<WorkComponentProps> = (props) => {
-	const { positionTitle, employer } = props.props;
+	const { positionTitle, employer, URL } = props.props;
 
 	return (
 		<div className="workComponentContainer">
 			<h3 className="workTitle">{positionTitle}</h3>
 			<h4 className="employerName">{employer}</h4>
+			{URL ? (
+				<a href={URL} target="_blank" className="employerURL">
+					{URL}
+				</a>
+			) : (
+				<div></div>
+			)}
 		</div>
 	);
 };
@@ -137,8 +143,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.workContainer {
-		width: 100%;
-		height: 20vh;
+		width: 500px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -147,7 +152,8 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.workComponentContainer {
-		width: 200px;
+		width: 100%;
+		height: 100px;
 		margin: 10px;
 		padding-left: 10px;
 		display: flex;
@@ -156,7 +162,7 @@ const StyledContainer = styled.div<StyledProps>`
 		/* padding: 30px; */
 		transition: all 0.5s;
 		&:hover {
-			transform: scale(1.1);
+			/* transform: scale(1.1) ; */
 		}
 	}
 
@@ -169,10 +175,16 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.employerName {
 		margin: 10px;
-		padding: 0;
 		padding-left: 20px;
+		padding: 0;
 		color: #eee;
 		font-family: "Comfortaa";
+	}
+
+	.employerURL {
+		text-decoration: none;
+		color: #fff;
+		padding-left: 20px;
 	}
 	@media (max-width: 768px) {
 		/* height: 100px; */

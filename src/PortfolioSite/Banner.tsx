@@ -55,7 +55,7 @@ const StyledContainer = styled.div<StyledProps>`
 	justify-content: space-between;
 	align-items: center;
 	top: 0;
-	left: 50px;
+	left: 100px;
 	right: 0;
 	margin-top: 40px;
 	padding: 10px;
