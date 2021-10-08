@@ -19,12 +19,12 @@ type StyledProps = {
 };
 
 const WorkComponent: FC<WorkComponentProps> = (props) => {
-	const { positionTitle, employer, URL } = props.props;
+	const { positionTitle, employer, URL, techStack } = props.props;
 
 	return (
 		<div className="workComponentContainer">
-			<h3 className="workTitle">{positionTitle}</h3>
-			<h4 className="employerName">{employer}</h4>
+			<h4 className="workTitle">{positionTitle}</h4>
+			{/* <h4 className="employerName">{employer}</h4> */}
 			{URL ? (
 				<a
 					href={URL}
@@ -32,11 +32,12 @@ const WorkComponent: FC<WorkComponentProps> = (props) => {
 					rel="noreferrer"
 					className="employerURL"
 				>
-					{URL}
+					<h5 className="employerName">{employer}</h5>
 				</a>
 			) : (
-				<div></div>
+				<h5 className="employerName">{employer}</h5>
 			)}
+			<h5 className="techStack">{techStack}</h5>
 		</div>
 	);
 };
@@ -47,6 +48,7 @@ const Work: FC<Props> = (props) => {
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
+	const { inView, entry, ref } = useInView({ threshold: 0.2 });
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
@@ -77,25 +79,28 @@ const Work: FC<Props> = (props) => {
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 0.5 }}
 			id="workContainer"
+			ref={ref}
 		>
 			<AnimatePresence exitBeforeEnter>
-				<div className="headerContainer">
-					<motion.div
-						key="leftLine"
-						className="leftLine"
-						animate={{ x: [200, 0] }}
-						exit={{ x: [0, 200] }}
-						transition={{ ease: "easeOut", duration: 0.7 }}
-					></motion.div>
-					<motion.h1
-						key="h1"
-						animate={{ x: [-200, 0] }}
-						exit={{ x: [0, -200] }}
-						transition={{ ease: "easeOut", duration: 0.5 }}
-					>
-						work.
-					</motion.h1>
-				</div>
+				{inView && (
+					<div className="headerContainer">
+						<motion.div
+							key="leftLine"
+							className="leftLine"
+							animate={{ x: [200, 0] }}
+							exit={{ x: [0, 200] }}
+							transition={{ ease: "easeOut", duration: 0.7 }}
+						></motion.div>
+						<motion.h1
+							key="h1"
+							animate={{ x: [-200, 0] }}
+							exit={{ x: [0, -200] }}
+							transition={{ ease: "easeOut", duration: 0.5 }}
+						>
+							work.
+						</motion.h1>
+					</div>
+				)}
 			</AnimatePresence>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
@@ -110,23 +115,37 @@ const Work: FC<Props> = (props) => {
 					return <WorkComponent props={e} index={i} />;
 				})}
 			</div>
-			<div style={{ height: "100px" }}></div>
+			<div
+				style={{
+					height: "100px",
+					margin: 0,
+					padding: 0,
+					width: "100%",
+				}}
+			></div>
 			<Education />
-			<div style={{ height: "100px" }}></div>
-			<Contact />
+			<div
+				style={{
+					height: "100px",
+					margin: 0,
+					padding: 0,
+					width: "100%",
+				}}
+			></div>
+			{/* <Contact /> */}
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
 	width: ${(props) => props.containerWidth * 0.7}px;
-	height: ${(props) => props.containerHeight * 0.8}px;
+	/* height: ${(props) => props.containerHeight * 0.8}px; */
 	.rotatedContainer {
 		/* transform: rotate(90deg); */
 	}
 
 	.headerContainer {
-		position: sticky;
+		/* position: sticky; */
 		top: 50px;
 		display: flex;
 		flex-direction: row;
@@ -138,7 +157,17 @@ const StyledContainer = styled.div<StyledProps>`
 	.leftLine {
 		width: 1px;
 		border: solid 20px #f0f;
+		border-radius: 10px;
 	}
+
+	h1,
+	h3,
+	h4,
+	h5,
+	h6 {
+		padding: 5px;
+	}
+
 	h1 {
 		padding: 5px;
 		font-family: "Angel";
@@ -152,15 +181,19 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-wrap: wrap;
 		/* align-items: center; */
 		gap: 10px;
+		max-width: 500px;
+		width: 100%;
+		gap: 10px;
+		padding-top: 30px;
 	}
 
 	.workComponentContainer {
 		width: 100%;
 		height: 100px;
-		margin: 10px;
-		padding-left: 10px;
+		margin: 15px 0px;
 		display: flex;
 		flex-direction: column;
+		padding-left: 100px;
 		/* border-left: solid 3px #333; */
 		/* padding: 30px; */
 		transition: all 0.5s;
@@ -171,35 +204,48 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.workTitle {
 		padding: 0;
-		padding-left: 10px;
+		padding-left: 20px;
 		margin: 0;
 		color: #f0f;
 		font-family: "ComfortaaBold";
 		border-left: solid 2px #ccc;
 	}
 
+	.employerURL {
+		text-decoration: none;
+		padding: 0;
+		/* margin: 10px; */
+		/* padding-left: 10px; */
+		font-family: "Comfortaa";
+	}
+
 	.employerName {
 		margin: 0;
-		margin: 10px;
-		padding: 0;
+		/* margin: 10px; */
+		/* padding: 10px; */
 		padding-left: 20px;
-		padding: 0;
 		font-family: "Comfortaa";
 		color: #fff;
 	}
 
-	.employerURL {
-		text-decoration: none;
-		padding: 0;
-		padding-left: 20px;
+	.techStack {
 		margin: 0;
+		/* margin: 10px; */
+		/* padding: 10px; */
+		padding-left: 30px;
+		font-family: "Comfortaa";
 		color: #ddff81;
 	}
+
 	@media (max-width: 768px) {
 		/* height: 100px; */
 		display: flex;
 		flex-direction: column;
+		.workComponentContainer {
+			height: 60px;
+		}
 	}
+
 	@media (max-width: 568px) {
 		.workTitle {
 			font-size: 1em;
@@ -208,10 +254,10 @@ const StyledContainer = styled.div<StyledProps>`
 		.employerName {
 			margin: 0;
 			margin-left: 10px;
-			font-size: 0.8em;
+			/* font-size: 0.8em; */
 		}
 		.employerURL {
-			font-size: 0.8em;
+			/* font-size: 0.8em; */
 		}
 		height: auto;
 		display: flex;

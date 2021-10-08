@@ -72,12 +72,12 @@ const ContentDisplay: FC<Props> = (props) => {
 						<Route path="/portfolio/work">
 							<Work />
 						</Route>
-						<Route path="/portfolio/resume">
+						{/* <Route path="/portfolio/resume">
 							<Resume />
 						</Route>
 						<Route path="/portfolio/education">
 							<Education />
-						</Route>
+						</Route> */}
 					</Switch>
 				</motion.div>
 			)}
@@ -88,7 +88,7 @@ const ContentDisplay: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: relative;
 	top: 14vh;
-	height: 100%;
+	/* height: 100%; */
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: flex-start;
@@ -96,7 +96,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.contentContainer {
 		/* height: 100%; */
-		/* width: 80%; */
+		width: 80%;
 		/* padding-left: 200px; */
 	}
 
@@ -111,7 +111,7 @@ const StyledContainer = styled.div<StyledProps>`
 		height: 100%;
 		width: 100%;
 		.contentContainer {
-			padding-left: 50px;
+			/* padding-left: 50px; */
 		}
 	}
 `;

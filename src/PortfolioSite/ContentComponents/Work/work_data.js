@@ -12,7 +12,7 @@ const WORK_DATA = [
 	{
 		employer: "OddTreatment",
 		product: "Milq",
-		positionTitle: "Founder / Designer / Engineer",
+		positionTitle: "Founder / Designer / Engineer / Janitor / ",
 		URL: "",
 		techStack: "Unity3d, Blender",
 		projectDescription:
@@ -20,7 +20,7 @@ const WORK_DATA = [
 		image: "",
 	},
 	{
-		employer: "Chatwise",
+		employer: "Chatwise (from TruePill founder)",
 		product: "Chatwise",
 		positionTitle: "FullStack Engineer",
 		URL: "",
