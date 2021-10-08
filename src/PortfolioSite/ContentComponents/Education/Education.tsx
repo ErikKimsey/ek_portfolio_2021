@@ -110,9 +110,6 @@ const Education: FC<Props> = (props) => {
 				{EDUCATION_DATA.map((e, i) => {
 					return <EducationComponent data={e} index={i} />;
 				})}
-				{/* <div className="buttonDisplay" onClick={handleListDisplay}>
-					Expand
-				</div> */}
 			</div>
 		</StyledContainer>
 	);

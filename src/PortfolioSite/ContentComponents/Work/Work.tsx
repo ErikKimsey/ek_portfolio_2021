@@ -4,8 +4,6 @@ import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { WORK_DATA } from "./work_data";
 import Education from "../Education/Education";
-import Contact from "../Contact/Contact";
-import { NamedTupleMember } from "typescript";
 
 type Props = {};
 
@@ -123,14 +121,10 @@ const Work: FC<Props> = (props) => {
 			<div className="buttonDisplay" onClick={handleListDisplay}>
 				Expand
 			</div>
-			{/* <div className="components"> */}
 			<div className="workContainer">
 				{WORK_DATA.map((e, i) => {
 					return <WorkComponent props={e} index={i} />;
 				})}
-				{/* <div className="buttonDisplay" onClick={handleListDisplay}>
-					Expand
-				</div> */}
 			</div>
 			<div
 				style={{
@@ -149,7 +143,6 @@ const Work: FC<Props> = (props) => {
 					width: "100%",
 				}}
 			></div>
-			{/* </div> */}
 		</StyledContainer>
 	);
 };
