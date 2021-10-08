@@ -9,6 +9,8 @@ type Props = {};
 type StyledProps = {
 	containerHeight?: number;
 	containerWidth?: number;
+	listActive?: boolean;
+	numOfItems?: number;
 };
 
 type EducationComponentProps = {
@@ -36,6 +38,8 @@ const Education: FC<Props> = (props) => {
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
 	const { inView, entry, ref } = useInView({ threshold: 0.1 });
+	const [listActive, setListActive] = useState(false);
+	const [numOfItems, setNumOfItems] = useState(EDUCATION_DATA.length);
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
@@ -48,6 +52,10 @@ const Education: FC<Props> = (props) => {
 	const handleResize = () => {
 		setWinWidth(window.innerWidth);
 		setWinHeight(window.innerHeight);
+	};
+
+	const handleListDisplay = () => {
+		setListActive(!listActive);
 	};
 
 	useEffect(() => {
@@ -69,6 +77,8 @@ const Education: FC<Props> = (props) => {
 			id="workContainer"
 			containerHeight={winHeight}
 			containerWidth={winWidth}
+			listActive={listActive}
+			numOfItems={numOfItems}
 			ref={ref}
 		>
 			{inView && (
@@ -93,10 +103,16 @@ const Education: FC<Props> = (props) => {
 				proposition. Organically grow the holistic world view of
 				disruptive innovation via workplace diversity and empowerment.
 			</p>
+			<div className="buttonDisplay" onClick={handleListDisplay}>
+				Expand
+			</div>
 			<div className="educationContainer">
 				{EDUCATION_DATA.map((e, i) => {
 					return <EducationComponent data={e} index={i} />;
 				})}
+				<div className="buttonDisplay" onClick={handleListDisplay}>
+					Expand
+				</div>
 			</div>
 		</StyledContainer>
 	);
@@ -112,7 +128,6 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.headerContainer {
 		width: auto;
-		/* position: sticky; */
 		top: 50px;
 		display: flex;
 		flex-direction: row;
@@ -131,12 +146,26 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 5px;
 	}
 
+	.buttonDisplay {
+		width: 200px;
+		height: 100px;
+		background-color: #ddff81;
+	}
+
 	.educationContainer {
 		max-width: 500px;
 		width: 100%;
+		max-height: ${(props) =>
+			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 		gap: 10px;
 		padding-top: 30px;
+		overflow-y: hidden;
+		transition: all 0.3s ease-in-out;
 	}
+
 	.educationComponentContainer {
 		width: 100%;
 		height: 100px;
