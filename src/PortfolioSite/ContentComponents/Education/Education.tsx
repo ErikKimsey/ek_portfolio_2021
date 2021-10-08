@@ -110,9 +110,9 @@ const Education: FC<Props> = (props) => {
 				{EDUCATION_DATA.map((e, i) => {
 					return <EducationComponent data={e} index={i} />;
 				})}
-				<div className="buttonDisplay" onClick={handleListDisplay}>
+				{/* <div className="buttonDisplay" onClick={handleListDisplay}>
 					Expand
-				</div>
+				</div> */}
 			</div>
 		</StyledContainer>
 	);
@@ -160,7 +160,6 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		gap: 10px;
 		padding-top: 30px;
 		overflow-y: hidden;
 		transition: all 0.3s ease-in-out;

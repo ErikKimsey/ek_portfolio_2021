@@ -128,9 +128,9 @@ const Work: FC<Props> = (props) => {
 				{WORK_DATA.map((e, i) => {
 					return <WorkComponent props={e} index={i} />;
 				})}
-				<div className="buttonDisplay" onClick={handleListDisplay}>
+				{/* <div className="buttonDisplay" onClick={handleListDisplay}>
 					Expand
-				</div>
+				</div> */}
 			</div>
 			<div
 				style={{
