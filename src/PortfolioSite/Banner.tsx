@@ -50,19 +50,20 @@ const Banner: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	width: 90%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
 	top: 0;
 	left: 100px;
 	right: 0;
 	margin-top: 40px;
-	padding: 10px;
 	font-family: "Angel";
 	z-index: -1000;
 
 	.leftSpace {
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		z-index: -100000;
 		/* display: flex; */
 		/* flex-direction: row; */
 	}
@@ -72,7 +73,7 @@ const StyledContainer = styled.div<StyledProps>`
 		margin: 0;
 		font-size: 12em;
 		color: #3f3f3f61;
-		font-family: "Angel";
+		/* font-family: "Angel"; */
 	}
 
 	.erikKimseyH1 {
@@ -129,51 +130,12 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 	}
 
-	@media (max-width: 1025px) {
-		text-align: end;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		width: 80%;
-		left: 100px;
+	@media (min-width: 300px) {
 		h1 {
-			margin: 0;
-			margin-top: 0;
-			top: 100px;
-			left: 0;
-			font-size: 8em;
-		}
-	}
-
-	@media (max-width: 768px) {
-		width: 100%;
-		padding: 0;
-		margin: 0;
-		margin-top: 40px;
-		left: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
-
-		.leftSpace {
-			width: 100%;
-			.diagonalLine {
-				display: none;
-			}
-		}
-		h1 {
-			text-align: end;
-			margin: 0;
-			margin-top: 0;
-			top: 100px;
-			left: 0;
 			font-size: 4em;
-		}
-	}
-	@media (max-width: 768px) {
-		h1 {
-			font-size: 3em;
+			padding: 0;
+			margin: 0;
+			line-height: 1;
 		}
 	}
 `;

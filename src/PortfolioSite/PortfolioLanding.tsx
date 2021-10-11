@@ -33,7 +33,12 @@ const PortfolioLanding: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	width: 100%;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+	padding-left: 100px;
+
 	/* position: relative;
 	margin: auto;
 	padding: 10px;
@@ -65,9 +70,9 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 	} */
 
-	@media (max-width: 320px) {
+	@media (max-width: 520px) {
 		width: 100%;
-		background-color: #586c8a;
+		padding: 0;
 	}
 
 	@keyframes breathing {

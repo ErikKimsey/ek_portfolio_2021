@@ -118,8 +118,9 @@ const Education: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-direction: column;
+	max-width: 720px;
+	width: 100%;
 	padding: 10px;
-
 	.headerContainer {
 		width: auto;
 		top: 50px;
