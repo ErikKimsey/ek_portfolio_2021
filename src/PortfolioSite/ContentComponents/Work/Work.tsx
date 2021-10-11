@@ -134,7 +134,7 @@ const Work: FC<Props> = (props) => {
 					width: "100%",
 				}}
 			></div>
-			<Education />
+			{/* <Education /> */}
 			<div
 				style={{
 					height: "100px",
@@ -148,13 +148,9 @@ const Work: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	width: ${(props) => props.containerWidth * 0.7}px;
-	/* height: ${(props) => props.containerHeight * 0.8}px; */
+	/* width: ${(props) => props.containerWidth * 0.7}px; */
 	display: flex;
 	flex-direction: column;
-	.rotatedContainer {
-		/* transform: rotate(90deg); */
-	}
 
 	.headerContainer {
 		width: auto;
@@ -165,7 +161,8 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.leftLine {
-		width: 1px;
+		height: 0px;
+		width: 0px;
 		border: solid 20px #f0f;
 		border-radius: 10px;
 	}
@@ -204,7 +201,6 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		gap: 10px;
 		padding-top: 30px;
 		overflow-y: hidden;
 		transition: all 0.3s ease-in-out;
@@ -216,7 +212,7 @@ const StyledContainer = styled.div<StyledProps>`
 		margin: 15px 0px;
 		display: flex;
 		flex-direction: column;
-		padding-left: 100px;
+		padding-left: 30px;
 		transition: all 0.5s;
 		&:hover {
 			transform: scale(1.05);
@@ -225,7 +221,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.workTitle {
 		padding: 0;
-		padding-left: 20px;
+		padding-left: 10px;
 		margin: 0;
 		color: #f0f;
 		font-family: "ComfortaaBold";
@@ -235,55 +231,49 @@ const StyledContainer = styled.div<StyledProps>`
 	.employerURL {
 		text-decoration: none;
 		padding: 0;
-		/* margin: 10px; */
-		/* padding-left: 10px; */
 		font-family: "Comfortaa";
 	}
 
 	.employerName {
 		margin: 0;
-		/* margin: 10px; */
-		/* padding: 10px; */
-		padding-left: 20px;
+		padding-left: 10px;
 		font-family: "Comfortaa";
 		color: #fff;
 	}
 
 	.techStack {
 		margin: 0;
-		/* margin: 10px; */
-		/* padding: 10px; */
-		padding-left: 30px;
+		padding-left: 20px;
 		font-family: "Comfortaa";
 		color: #ddff81;
 	}
 
 	@media (max-width: 768px) {
-		/* height: 100px; */
-		display: flex;
+		/* display: flex;
 		flex-direction: column;
 		.workComponentContainer {
-			height: 60px;
-		}
+            height: 60px;
+		} */
 	}
 
 	@media (max-width: 568px) {
-		.workTitle {
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+		/* .workTitle {
 			font-size: 1em;
 		}
 
 		.employerName {
 			margin: 0;
 			margin-left: 10px;
-			/* font-size: 0.8em; */
 		}
 		.employerURL {
-			/* font-size: 0.8em; */
 		}
 		height: auto;
 		display: flex;
 		flex-direction: column;
-		/* height: 100px; */
+	} */
 	}
 `;
 

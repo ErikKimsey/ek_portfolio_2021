@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
+import { Education, Work } from "./ContentComponents";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
 const BREAKPOINTS = {
@@ -22,15 +23,18 @@ const PortfolioLanding: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<Banner />
-			<PortfolioMenu />
+			{/* <PortfolioMenu /> */}
 			{/* <ArrowNavComponent /> */}
-			<div className="container">{<ContentDisplay />}</div>
+			<Work />
+			<Education />
+			{/* <div className="container">{<ContentDisplay />}</div> */}
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	position: relative;
+	margin: 0;
+	/* position: relative;
 	margin: auto;
 	padding: 10px;
 	width: 100%;
@@ -48,26 +52,22 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.container {
-		/* width: 80%; */
 		display: flex;
 		flex-flow: column;
 		justify-content: flex-end;
 		align-items: center;
 		align-self: center;
 	}
-
-	@media (max-width: ${BREAKPOINTS.lg}px) {
-		/* background: #f0f; */
-	}
-
-	@media (max-width: ${BREAKPOINTS.md}px) {
-		flex-flow: column;
-	}
 	@media (max-width: 568px) {
 		width: auto;
 		margin-left: 50px;
 		.container {
 		}
+	} */
+
+	@media (max-width: 320px) {
+		width: 100%;
+		background-color: #586c8a;
 	}
 
 	@keyframes breathing {

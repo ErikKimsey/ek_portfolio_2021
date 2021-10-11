@@ -116,12 +116,9 @@ const Education: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	width: ${(props) => props.containerWidth * 0.7}px;
-	height: ${(props) => props.containerHeight * 0.8}px;
-	padding: 15px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	padding: 10px;
 
 	.headerContainer {
 		width: auto;
@@ -130,8 +127,10 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: row;
 		background-color: rgba(0, 0, 0, 0.3);
 	}
+
 	.leftLine {
-		width: 1px;
+		height: 0px;
+		width: 0px;
 		border: solid 20px #f0f;
 		border-radius: 10px;
 	}
@@ -163,27 +162,30 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.educationComponentContainer {
-		width: 100%;
 		height: 100px;
-		margin: 10px;
-		margin-left: 10px;
-		padding-left: 100px;
+		margin: 15px 0px;
+		display: flex;
+		flex-direction: column;
+		padding-left: 30px;
+		transition: all 0.5s;
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 
 	.areaOfStudy {
-		font-family: "ComfortaaBold";
 		padding: 0;
+		padding-left: 10px;
 		margin: 0;
 		color: #f0f;
-		padding-left: 20px;
+		font-family: "ComfortaaBold";
 		border-left: solid 2px #ccc;
 	}
 	.schoolName {
-		padding: 0;
-		margin: 10px;
-		padding-left: 20px;
-		color: #ddff81;
+		margin: 0;
+		padding-left: 10px;
 		font-family: "Comfortaa";
+		color: #fff;
 	}
 
 	.dateAttended {
