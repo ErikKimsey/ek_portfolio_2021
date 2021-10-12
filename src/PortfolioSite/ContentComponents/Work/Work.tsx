@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { WORK_DATA } from "./work_data";
 import Education from "../Education/Education";
+import UpChevron from "../../../assets/images/Icons/chevron-up.svg";
+import DownChevron from "../../../assets/images/Icons/chevron-down.svg";
 
 type Props = {};
 
@@ -119,7 +121,11 @@ const Work: FC<Props> = (props) => {
 				disruptive innovation via workplace diversity and empowerment.
 			</p>
 			<div className="buttonDisplay" onClick={handleListDisplay}>
-				Expand
+				{listActive === true ? (
+					<img src={UpChevron} alt="close list" />
+				) : (
+					<img src={DownChevron} alt="show list" />
+				)}
 			</div>
 			<div className="workContainer">
 				{WORK_DATA.map((e, i) => {
@@ -191,9 +197,13 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.buttonDisplay {
-		width: 200px;
-		height: 100px;
-		background-color: #ddff81;
+		align-self: flex-end;
+		width: 100px;
+		height: 50px;
+		img {
+			width: 100px;
+			height: 50px;
+		}
 	}
 
 	.workContainer {

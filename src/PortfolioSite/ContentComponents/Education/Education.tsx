@@ -3,6 +3,8 @@ import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import EDUCATION_DATA from "./education_data";
+import UpChevron from "../../../assets/images/Icons/chevron-up.svg";
+import DownChevron from "../../../assets/images/Icons/chevron-down.svg";
 
 type Props = {};
 
@@ -104,7 +106,11 @@ const Education: FC<Props> = (props) => {
 				disruptive innovation via workplace diversity and empowerment.
 			</p>
 			<div className="buttonDisplay" onClick={handleListDisplay}>
-				Expand
+				{listActive === true ? (
+					<img src={UpChevron} alt="hide list" />
+				) : (
+					<img src={DownChevron} alt="show list" />
+				)}
 			</div>
 			<div className="educationContainer">
 				{EDUCATION_DATA.map((e, i) => {
@@ -135,6 +141,7 @@ const StyledContainer = styled.div<StyledProps>`
 		border: solid 20px #f0f;
 		border-radius: 10px;
 	}
+
 	h1,
 	h3,
 	h4,
@@ -144,9 +151,13 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.buttonDisplay {
-		width: 200px;
-		height: 100px;
-		background-color: #ddff81;
+		align-self: flex-end;
+		width: 100px;
+		height: 50px;
+		img {
+			width: 100px;
+			height: 50px;
+		}
 	}
 
 	.educationContainer {
