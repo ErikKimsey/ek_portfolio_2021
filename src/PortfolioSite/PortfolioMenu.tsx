@@ -129,7 +129,6 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 768px) {
-		/* width: 100px; */
 		padding: 0;
 		padding-right: 10px;
 		left: 0px;
@@ -150,17 +149,15 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 568px) {
-		top: 50px;
+		position: relative;
+		width: 90%;
+		height: auto;
+		top: 0px;
 		padding: 0;
-		padding-right: 10px;
-		/* display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: 35px;
-		bottom: 50px;
-		left: 10px; */
-		img {
-		}
+		margin-right: 20px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
 	}
 `;
 

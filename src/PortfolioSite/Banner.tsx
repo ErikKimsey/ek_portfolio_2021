@@ -30,109 +30,70 @@ const Banner: FC<Props> = (props) => {
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 1 }}
 		>
-			<div className="leftSpace">
-				<motion.div className="diagonalLine"></motion.div>
-				<h1 className="erikKimseyH1">ERIK KIMSEY</h1>
-				<h1
-					className="feEngH1"
-					style={{ marginTop: "10px", alignSelf: "flex-end" }}
-				>
-					FRONTEND ENGINEER
-				</h1>
-			</div>
-			{/* <div className="rightSpace">
-				<div className="rightLine"></div>
-			</div> */}
+			<h1 className="erikKimseyH1">ERIK KIMSEY</h1>
+			<h1 className="feEngH1">FRONTEND ENGINEER</h1>
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	position: fixed;
-	width: 90%;
+	position: relative;
+	width: 80%;
 	top: 0;
-	left: 100px;
-	right: 0;
-	margin-top: 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+	/* margin-top: 40px; */margin-right:50px;
 	font-family: "Angel";
-	z-index: -1000;
 
-	.leftSpace {
-		padding: 10px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		z-index: -100000;
-		/* display: flex; */
-		/* flex-direction: row; */
-	}
 
 	h1 {
-		padding: 0 30px;
+		/* padding: 0 30px; */
 		margin: 0;
-		font-size: 12em;
+		font-size: 4em;
 		color: #3f3f3f61;
-		/* font-family: "Angel"; */
+        line-height:1;
 	}
 
-	.erikKimseyH1 {
-		/* transform: rotate(-22deg);
-		margin-left: -10px;
-		&::after {
-			position: absolute;
-			left: 100px;
-			top: 10px;
-			content: "ERIK KIMSEY";
-			color: #ff00ff30;
+	@media (max-width: 768px) {
+		margin-top: 0px;
+		position: relative;
+		left: 10px;
+		top: 0px;
+		height: auto;
+		.leftSpace {
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			z-index: -100000;
 		}
-		&::before {
-			position: absolute;
-			left: 95px;
-			top: 15px;
-			content: "ERIK KIMSEY";
-			color: #006eff36;
-		} */
-	}
-
-	.feEngH1 {
-		/* transform: rotate(-22deg);
-		&::after {
-			position: absolute;
-			left: 100px;
-			top: 10px;
-			content: "FRONTEND ENGINEER";
-			color: #ff00ff30;
-		}
-		&::before {
-			position: absolute;
-			left: 95px;
-			top: 15px;
-			content: "FRONTEND ENGINEER";
-			color: #006eff36;
-		} */
-	}
-	.diagonalLine {
-		width: 50px;
-		padding: 10px;
-		transform: rotate(45deg);
-	}
-
-	.rightSpace {
-		width: auto;
-		display: flex;
-		align-self: flex-end;
-		flex-flow: row;
-		.rightLine {
+		h1 {
+			font-size: 3em;
 			padding: 0;
 			margin: 0;
-			width: 50px;
+			line-height: 1;
 		}
 	}
+	}
 
-	@media (min-width: 300px) {
+	@media (max-width: 568px) {
+		margin-top: 0px;
+		position: relative;
+		left: 10px;
+		top: 0px;
+		height: auto;
+		.leftSpace {
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			z-index: -100000;
+		}
 		h1 {
-			font-size: 4em;
+			font-size: 3em;
 			padding: 0;
 			margin: 0;
 			line-height: 1;
