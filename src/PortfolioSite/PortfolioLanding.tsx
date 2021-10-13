@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
 import Banner from "./Banner";
-import { Education, Work } from "./ContentComponents";
+import { Education, LandingComponent, Work } from "./ContentComponents";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
 const BREAKPOINTS = {
@@ -26,7 +26,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 			{/* <PortfolioMenu /> */}
 			<Banner />
 			<Switch>
-				{/* <Route exact path="/" component={} /> */}
+				<Route exact path="/portfolio/" component={LandingComponent} />
 				<Route exact path="/portfolio/work" component={Work} />
 				<Route
 					exact
@@ -42,21 +42,19 @@ const PortfolioLanding: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	/* max-width: 1400px; */
-	width: 100%;
-	/* margin: 0; */
+	width: 96vw;
+	height: 96vh;
 	display: flex;
 	flex-direction: column;
-	/* padding-left: 100px; */
-	/* margin-top: 0px; */
-	/* margin: 20px 100px; */
-	margin: auto;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
 	align-self: center;
 
 	@media (max-width: 568px) {
-		width: 100%;
-		padding: 0;
-		margin: 0;
+		width: 96vw;
+		height: 96vh;
+		/* width: 100%; */
 	}
 `;
 
