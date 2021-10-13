@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { YELLOW } from "../styles/colors";
 
 type Props = {};
 
@@ -21,6 +22,7 @@ const Banner: FC<Props> = (props) => {
 	useEffect(() => {
 		setHasLoaded(true);
 	}, []);
+
 	return (
 		<StyledContainer
 			as={motion.div}
@@ -30,29 +32,27 @@ const Banner: FC<Props> = (props) => {
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 1 }}
 		>
-			<h1 className="erikKimseyH1">ERIK KIMSEY</h1>
-			<h1 className="feEngH1">FRONTEND ENGINEER</h1>
+			<h1>ERIK KIMSEY</h1>
+			<h1>FRONTEND ENGINEER</h1>
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
 	position: relative;
-	width: 80%;
 	top: 0;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-	/* margin-top: 40px; */margin-right:50px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-right: 50px;
 	font-family: "Angel";
-
+	padding: 20px;
 
 	h1 {
-		/* padding: 0 30px; */
 		margin: 0;
 		font-size: 4em;
-		color: #3f3f3f61;
-        line-height:1;
+		color: #333;
+		line-height: 1;
 	}
 
 	@media (max-width: 768px) {
@@ -76,7 +76,6 @@ const StyledContainer = styled.div<StyledProps>`
 			line-height: 1;
 		}
 	}
-	}
 
 	@media (max-width: 568px) {
 		margin-top: 0px;
@@ -84,16 +83,18 @@ const StyledContainer = styled.div<StyledProps>`
 		left: 10px;
 		top: 0px;
 		height: auto;
+		padding: 0;
+		margin: 0;
 		.leftSpace {
-			padding: 10px;
+			padding: 0px;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: flex-start;
-			z-index: -100000;
+			display: none;
 		}
 		h1 {
-			font-size: 3em;
+			font-size: 2em;
 			padding: 0;
 			margin: 0;
 			line-height: 1;

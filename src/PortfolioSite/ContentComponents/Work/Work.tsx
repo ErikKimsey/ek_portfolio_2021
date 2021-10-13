@@ -3,9 +3,9 @@ import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { WORK_DATA } from "./work_data";
-import Education from "../Education/Education";
 import UpChevron from "../../../assets/images/Icons/chevron-up.svg";
 import DownChevron from "../../../assets/images/Icons/chevron-down.svg";
+import WorkIcon from "../../../assets/images/Icons/work.png";
 
 type Props = {};
 
@@ -19,6 +19,7 @@ type StyledProps = {
 	containerWidth?: number;
 	listActive?: boolean;
 	numOfItems?: number;
+	displayButton?: string;
 };
 
 const WorkComponent: FC<WorkComponentProps> = (props) => {
@@ -91,6 +92,7 @@ const Work: FC<Props> = (props) => {
 			ref={ref}
 			listActive={listActive}
 			numOfItems={numOfItems}
+			displayButton={WorkIcon}
 		>
 			<AnimatePresence exitBeforeEnter>
 				{inView && (
@@ -128,9 +130,10 @@ const Work: FC<Props> = (props) => {
 				)}
 			</div>
 			<div className="workContainer">
-				{WORK_DATA.map((e, i) => {
-					return <WorkComponent props={e} index={i} />;
-				})}
+				{WORK_DATA &&
+					WORK_DATA.map((e, i) => {
+						return <WorkComponent props={e} index={i} />;
+					})}
 			</div>
 			<div
 				style={{
@@ -170,10 +173,11 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.leftLine {
-		height: 0px;
-		width: 0px;
-		border: solid 20px #f0f;
+		height: 10px;
+		width: 10px;
+		background: #f0f;
 		border-radius: 10px;
+		align-self: center;
 	}
 
 	h1,
@@ -200,6 +204,10 @@ const StyledContainer = styled.div<StyledProps>`
 		align-self: flex-end;
 		width: 100px;
 		height: 50px;
+		cursor: ns-resize;
+		/* cursor: url(displayButton), auto; */
+		&:hover {
+		}
 		img {
 			width: 100px;
 			height: 50px;

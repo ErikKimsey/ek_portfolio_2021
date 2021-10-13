@@ -97,7 +97,7 @@ const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	left: 20px;
 	top: 200px;
-	/* width: 100px; */
+	width: 100px;
 	display: flex;
 	flex-flow: column wrap;
 	align-content: space-around;

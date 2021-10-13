@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import ContentDisplay from "./ContentComponents/ContentDisplay";
 import PortfolioMenu from "./PortfolioMenu";
@@ -22,18 +23,26 @@ const PortfolioLanding: FC<Props> = (props) => {
 	const [inView, setInView] = React.useState(false);
 	return (
 		<StyledContainer>
-			<PortfolioMenu />
+			{/* <PortfolioMenu /> */}
 			<Banner />
+			<Switch>
+				{/* <Route exact path="/" component={} /> */}
+				<Route exact path="/portfolio/work" component={Work} />
+				<Route
+					exact
+					path="/portfolio/education"
+					component={Education}
+				/>
+			</Switch>
 			{/* <ArrowNavComponent /> */}
-			<Work />
-			<Education />
+			{/* <Education /> */}
 			{/* <div className="container">{<ContentDisplay />}</div> */}
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	max-width: 1400px;
+	/* max-width: 1400px; */
 	width: 100%;
 	/* margin: 0; */
 	display: flex;

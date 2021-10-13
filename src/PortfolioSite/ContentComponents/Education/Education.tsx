@@ -23,10 +23,10 @@ type EducationComponentProps = {
 };
 
 const EducationComponent: FC<EducationComponentProps> = (props) => {
-	const { school, areaOfStudy, date } = props.data;
+	const { school, areaOfStudy, date, index } = props.data;
 
 	return (
-		<div className="educationComponentContainer">
+		<div className="educationComponentContainer" key={index}>
 			<h4 className="areaOfStudy">{areaOfStudy}</h4>
 			<h5 className="schoolName">{school}</h5>
 			{date ? <div className="dateAttended">{date}</div> : <div></div>}
@@ -136,10 +136,11 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.leftLine {
-		height: 0px;
-		width: 0px;
-		border: solid 20px #f0f;
+		height: 10px;
+		width: 10px;
+		background: #f0f;
 		border-radius: 10px;
+		align-self: center;
 	}
 
 	h1,
@@ -154,6 +155,7 @@ const StyledContainer = styled.div<StyledProps>`
 		align-self: flex-end;
 		width: 100px;
 		height: 50px;
+		cursor: ns-resize;
 		img {
 			width: 100px;
 			height: 50px;
@@ -174,8 +176,8 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.educationComponentContainer {
-		height: 100px;
-		margin: 15px 0px;
+		/* height: 100px; */
+		margin: 10px 0px;
 		display: flex;
 		flex-direction: column;
 		padding-left: 30px;
