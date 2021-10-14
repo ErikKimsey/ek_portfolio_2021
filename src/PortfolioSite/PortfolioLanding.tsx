@@ -53,6 +53,11 @@ const PortfolioLanding: FC<Props> = (props) => {
 					path="/portfolio/education"
 					component={Education}
 				/>
+				{/* <Route
+                        exact
+                        path="/portfolio/education"
+                        component={Education}
+                    /> */}
 			</Switch>
 			{/* <ArrowNavComponent /> */}
 			{/* <Education /> */}
@@ -104,9 +109,9 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 568px) {
-		width: 100%;
-		padding: 0;
-		margin: 0;
+		width: 96vw;
+		height: 96vh;
+		/* width: 100%; */
 	}
 `;
 

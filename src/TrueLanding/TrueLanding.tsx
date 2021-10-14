@@ -12,10 +12,14 @@ type StyledProps = {};
 const TrueLanding: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
-			<div className="landingBannerContainer">
+			<motion.div
+				className="landingBannerContainer"
+				animate={{ y: [-300, 0] }}
+				transition={{ ease: "easeOut", duration: 0.5 }}
+			>
 				<h1 className="bannerHeader">erik kimsey</h1>
 				<h1 className="bannerHeader">frontend developer</h1>
-			</div>
+			</motion.div>
 			<div className="crossRoadsContainer">
 				<motion.div
 					className="screenHalf"
@@ -42,9 +46,8 @@ const TrueLanding: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	height: 80vh;
-	max-width: 1400px;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	font-family: "Angel";
 	display: flex;
 	flex-direction: column;
@@ -52,12 +55,16 @@ const StyledContainer = styled.div<StyledProps>`
 	align-items: center;
 
 	.landingBannerContainer {
-		width: 100%;
-		padding: 10px;
-		border-bottom: solid 0.5px #2e2e2eb5;
-		padding: 20px 0;
+		width: auto;
+		position: absolute;
+		padding: 0;
+		top: 100px;
+		left: 100px;
+		/* margin: 20px; */
 		h1 {
-			line-height: 0.9;
+			color: #252525;
+			font-size: 1.6em;
+			line-height: 0.8;
 		}
 	}
 
@@ -94,24 +101,36 @@ const StyledContainer = styled.div<StyledProps>`
 		&:hover {
 			color: #000;
 			transform: scale(1.1);
-			text-shadow: 0px 0px 3px #88ff00;
+			text-shadow: 0px 0px 1px #fff;
 		}
 	}
 
-	@media ${BreakPoint.lg} {
-		.line {
-			margin: 20vh 0;
-		}
-	}
-
-	@media ${BreakPoint.md} {
+	@media (max-width: 568px) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		h1 {
-			font-size: 1.5em;
+
+		.landingBannerContainer {
+			width: auto;
+			position: absolute;
+			padding: 0;
+			top: 0px;
+			margin: 20px;
+			h1 {
+				color: #252525;
+				font-size: 1.6em;
+			}
 		}
+
+		.crossRoadsContainer {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		/* h1 {
+			font-size: 1.5em;
+		} */
 		.screenHalf {
 			height: auto;
 			padding: 20px 0;
