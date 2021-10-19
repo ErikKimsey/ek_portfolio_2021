@@ -13,6 +13,7 @@ type StyledProps = {};
 
 const ACTIVE_STYLES = {
 	border: "solid 1px #555",
+	backgroundColor: "#555",
 	borderRadius: "10px",
 };
 
@@ -69,11 +70,12 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.screenHalf {
-		padding: 10px;
+		margin: 10px;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
 		align-items: center;
+		background-color: #000;
 	}
 
 	.line {
