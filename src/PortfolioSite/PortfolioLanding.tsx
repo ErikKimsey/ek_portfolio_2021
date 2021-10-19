@@ -19,22 +19,7 @@ interface StyledProps {
 }
 
 const PortfolioLanding: FC<Props> = (props) => {
-	const [inView, setInView] = React.useState(false);
-	const history = useHistory();
-
-	const [isPrev, setIsPrev] = useState(true);
-	const [isNext, setIsNext] = useState(true);
-
-	useEffect(() => {
-		window.addEventListener("wheel", (e) => {
-			console.log(e);
-		});
-		return () => {
-			window.removeEventListener("wheel", (e) => {
-				console.log(e);
-			});
-		};
-	}, []);
+	useEffect(() => {}, []);
 
 	return (
 		<StyledContainer>
