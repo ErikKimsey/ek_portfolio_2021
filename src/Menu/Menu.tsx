@@ -12,7 +12,7 @@ type Props = {};
 type StyledProps = {};
 
 const ACTIVE_STYLES = {
-	border: "solid 1px #ff00ff",
+	border: "solid 1px #555",
 	borderRadius: "10px",
 };
 
@@ -53,34 +53,33 @@ const Menu: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-        position:fixed;
-        bottom:60px;
-        width:100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-        height:50px;
+	position: fixed;
+	bottom: 60px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	left: 0;
 
-        img {
-            width:50px;
-            height:50px;
-        }
-
-		.screenHalf {
-			padding: 10px;
-            display:flex;
-            flex-flow:row wrap;
-            justify-content:center;
-            align-items:center;
-		}
-
-		.line {
-            width:20px;
-            height:2px;
-            background-color:#555;
-		}
+	img {
+		width: 50px;
+		height: 50px;
 	}
 
+	.screenHalf {
+		padding: 10px;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.line {
+		width: 20px;
+		height: 2px;
+		background-color: #555;
+	}
 `;
 export default Menu;
