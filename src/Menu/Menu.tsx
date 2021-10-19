@@ -5,10 +5,16 @@ import { motion } from "framer-motion";
 import CAPSULES from "../assets/images/Icons/capsules.svg";
 import SATELLITE from "../assets/images/satellite.svg";
 import { BreakPoint } from "../styles/breakpoints";
+import { YELLOW } from "../styles/colors";
 
 type Props = {};
 
 type StyledProps = {};
+
+const ACTIVE_STYLES = {
+	border: "solid 1px #ff00ff",
+	borderRadius: "10px",
+};
 
 const Menu: FC<Props> = (props) => {
 	const {} = props;
@@ -20,7 +26,11 @@ const Menu: FC<Props> = (props) => {
 				animate={{ y: [-300, 0] }}
 				transition={{ ease: "easeOut", duration: 0.5 }}
 			>
-				<NavLink to="/portfolio/">
+				<NavLink
+					to="/portfolio/"
+					style={{ padding: "10px" }}
+					activeStyle={ACTIVE_STYLES}
+				>
 					<img src={CAPSULES} />
 				</NavLink>
 			</motion.div>
@@ -30,7 +40,11 @@ const Menu: FC<Props> = (props) => {
 				animate={{ y: [-300, 0] }}
 				transition={{ ease: "easeInOut", duration: 1 }}
 			>
-				<NavLink to="/playground">
+				<NavLink
+					to="/playground"
+					style={{ padding: "10px" }}
+					activeStyle={ACTIVE_STYLES}
+				>
 					<img src={SATELLITE} />
 				</NavLink>
 			</motion.div>
@@ -39,34 +53,28 @@ const Menu: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-
+        position:fixed;
+        bottom:60px;
+        width:100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+        height:50px;
 
         img {
             width:50px;
+            height:50px;
         }
-        
-		.landingBannerContainer {
-            width: auto;
-			position: absolute;
-			h1 {
-                color: #252525;
-				font-size: 1.6em;
-			}
-		}
-        
+
 		.screenHalf {
-            height: auto;
 			padding: 10px;
-			margin: 10px;
+            display:flex;
+            flex-flow:row wrap;
+            justify-content:center;
+            align-items:center;
 		}
-		img {
-            padding: 0;
-			margin: 0;
-		}
+
 		.line {
             width:20px;
             height:2px;

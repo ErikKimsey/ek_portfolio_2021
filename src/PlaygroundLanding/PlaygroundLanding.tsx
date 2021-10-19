@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import ProjectElement from "../Projects/ProjectElement";
 import Banner from "../Banner/Banner";
+import Menu from "../Menu/Menu";
 import { BreakPoint } from "../styles/breakpoints";
 import { PROJECTS } from "../_data/Projects";
 
@@ -27,6 +28,7 @@ const PlaygroundLanding: FC<LandingProps> = (props) => {
 		<StyledContainer>
 			<Banner />
 			<div className="slidesContainer">{ForLOOOP()}</div>
+			<Menu />
 		</StyledContainer>
 	);
 };
