@@ -94,7 +94,7 @@ const StyledContainer = styled.div<StyledProps>`
 			display: none;
 		}
 		h1 {
-			font-size: 2em;
+			font-size: 1.2em;
 			padding: 0;
 			margin: 0;
 			line-height: 1;

@@ -6,6 +6,7 @@ import { WORK_DATA } from "./work_data";
 import UpChevron from "../../../assets/images/Icons/chevron-up.svg";
 import DownChevron from "../../../assets/images/Icons/chevron-down.svg";
 import WorkIcon from "../../../assets/images/Icons/work.png";
+import Modal from "react-modal";
 
 type Props = {};
 
@@ -26,7 +27,10 @@ const WorkComponent: FC<WorkComponentProps> = (props) => {
 	const { positionTitle, employer, URL, techStack } = props.props;
 
 	return (
-		<div className="workComponentContainer">
+		<div
+			className="workComponentContainer"
+			style={{ paddingTop: "5px", paddingBottom: "10px" }}
+		>
 			<h4 className="workTitle">{positionTitle}</h4>
 			{/* <h4 className="employerName">{employer}</h4> */}
 			{URL ? (
@@ -55,6 +59,22 @@ const Work: FC<Props> = (props) => {
 	const [listActive, setListActive] = useState(false);
 	const { inView, entry, ref } = useInView({ threshold: 0.2 });
 	const [numOfItems, setNumOfItems] = useState(WORK_DATA.length);
+	const [modalIsOpen, setIsOpen] = useState(false);
+
+	const customStyles = {
+		content: {
+			height: "99%",
+			width: "100%",
+			top: "50%",
+			left: "50%",
+			right: "auto",
+			bottom: "auto",
+			marginRight: "-50%",
+			transform: "translate(-50%, -50%)",
+			overflow: "scroll",
+			backgroundColor: "#000",
+		},
+	};
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
@@ -68,6 +88,17 @@ const Work: FC<Props> = (props) => {
 
 	const handleListDisplay = () => {
 		setListActive(!listActive);
+	};
+
+	const openModal = () => {
+		console.log("openModal");
+		setIsOpen(!modalIsOpen);
+		setListActive(true);
+	};
+
+	const closeModal = () => {
+		setListActive(false);
+		setIsOpen(false);
 	};
 
 	useEffect(() => {
@@ -122,36 +153,32 @@ const Work: FC<Props> = (props) => {
 				proposition. Organically grow the holistic world view of
 				disruptive innovation via workplace diversity and empowerment.
 			</p>
+
+			{/* <div className="buttonDisplay" onClick={openModal}>
+				<img src={UpChevron} />
+			</div> */}
 			<div className="buttonDisplay" onClick={handleListDisplay}>
 				{listActive === true ? (
-					<img src={UpChevron} alt="close list" />
+					<img src={UpChevron} alt="hide list" />
 				) : (
 					<img src={DownChevron} alt="show list" />
 				)}
 			</div>
-			<div className="workContainer">
+			<motion.div
+				className="workContainer"
+				onClick={closeModal}
+				animate={{ height: ["0%", "100%"] }}
+				exit={{ x: [0, 200] }}
+				transition={{ ease: "easeOut", duration: 0.7 }}
+			>
+				{/* <div className="workContainer"> */}
+
 				{WORK_DATA &&
 					WORK_DATA.map((e, i) => {
 						return <WorkComponent props={e} index={i} />;
 					})}
-			</div>
-			<div
-				style={{
-					height: "70px",
-					margin: 0,
-					padding: 0,
-					width: "100%",
-				}}
-			></div>
-			{/* <Education /> */}
-			<div
-				style={{
-					height: "100px",
-					margin: 0,
-					padding: 0,
-					width: "100%",
-				}}
-			></div>
+				{/* </div> */}
+			</motion.div>
 		</StyledContainer>
 	);
 };
@@ -184,12 +211,14 @@ const StyledContainer = styled.div<StyledProps>`
 	h5,
 	h6 {
 		padding: 5px;
+		font-family: "Angel";
 	}
 
 	h1 {
 		padding: 5px;
 		font-family: "Angel";
 		color: #555;
+		line-height: 0;
 	}
 
 	.components {
@@ -214,26 +243,28 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.workContainer {
-		/* max-width: 500px; */
 		width: 100%;
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		padding-top: 30px;
-		overflow-y: hidden;
-		transition: all 0.3s ease-in-out;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		/* padding-top: 30px; */
+		overflow-y: scroll;
+		background-color: #000;
+		height: 95vh;
+		transition: all 0.5s ease-in-out;
 	}
 
 	.workComponentContainer {
-		/* width: 100%; */
-		width: 200px;
+		background-color: rgba(0, 0, 0, 0.9);
 		height: 100px;
 		margin: 15px 0px;
+		padding: 10px;
+		border-radius: 10px;
 		display: flex;
 		flex-direction: column;
-		padding-left: 30px;
+		/* padding-left: 30px; */
 		transition: all 0.5s;
 		&:hover {
 			transform: scale(1.05);
@@ -278,9 +309,25 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 568px) {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
+		/* align-items: center; */
 		padding: 10px;
+
+		.workContainer {
+			width: 100%;
+			height: 100%;
+		}
+
+		.workComponentContainer {
+			width: 100%;
+			display: flex;
+			flex-flow: column wrap;
+			margin: 0;
+			padding: 0;
+		}
+
 		/* .workTitle {
 			font-size: 1em;
 		}

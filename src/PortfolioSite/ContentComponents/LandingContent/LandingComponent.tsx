@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
+import { Education, Work } from "..";
 import init from "../../3DContent/3d";
 import Banner from "../../Banner";
 
@@ -54,24 +55,33 @@ const LandingComponent: FC<Props> = (props) => {
 			>
 				{/* {hasLoaded && <h1>.... d-_-b ....</h1>} */}
 				{hasLoaded && <Banner />}
+				<Work />
+				<Education />
+				<div style={{ height: "200px" }}></div>
 			</StyledContainer>
 		</>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	width: ${(props) => props.containerWidth * 0.7}px;
+	width: ${(props) => props.containerWidth * 0.8}px;
 	height: ${(props) => props.containerHeight * 0.8}px;
 	display: flex;
 	flex-flow: column;
 	align-items: center;
 	padding: 15px;
-	z-index: -1000;
+	/* z-index: -1000; */
 	h1 {
 		/* position: absolute;
 		align-self: center;
 		top: ${(props) => props.containerHeight * 0.4}px; */
 		color: #555;
+	}
+
+	@media (max-width: 568px) {
+		width: 100%;
+		padding: 5px;
+		/* justify-content: center; */
 	}
 `;
 

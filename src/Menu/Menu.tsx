@@ -83,5 +83,13 @@ const StyledContainer = styled.div<StyledProps>`
 		height: 2px;
 		background-color: #555;
 	}
+
+	@media (max-width: 568px) {
+		bottom: 20px;
+		img {
+			height: 30px;
+			width: 30px;
+		}
+	}
 `;
 export default Menu;

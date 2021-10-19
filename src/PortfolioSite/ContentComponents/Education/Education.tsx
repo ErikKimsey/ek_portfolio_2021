@@ -128,10 +128,13 @@ const StyledContainer = styled.div<StyledProps>`
 	padding: 10px;
 	.headerContainer {
 		width: auto;
-		top: 50px;
+		/* top: 50px; */
 		display: flex;
 		flex-direction: row;
 		background-color: rgba(0, 0, 0, 0.3);
+		padding: 0;
+		margin: 0;
+		height: auto;
 	}
 
 	.leftLine {
@@ -152,6 +155,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 	h1 {
 		color: #555;
+		line-height: 0;
 	}
 
 	.buttonDisplay {
@@ -173,9 +177,9 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		padding-top: 30px;
+		padding-top: 10px;
 		overflow-y: hidden;
-		transition: all 0.3s ease-in-out;
+		transition: all 0.5s ease-in-out;
 	}
 
 	.educationComponentContainer {
@@ -206,6 +210,14 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.dateAttended {
+	}
+
+	@media (max-width: 568px) {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		/* align-items: center; */
+		padding: 10px;
 	}
 `;
 
