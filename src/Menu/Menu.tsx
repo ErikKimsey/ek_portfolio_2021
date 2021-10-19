@@ -55,14 +55,14 @@ const Menu: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
+	align-self: center;
 	bottom: 60px;
-	width: 100%;
+	width: 200px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	height: 50px;
-	left: 0;
 
 	img {
 		width: 50px;

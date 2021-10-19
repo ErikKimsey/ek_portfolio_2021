@@ -132,13 +132,13 @@ const Work: FC<Props> = (props) => {
 							key="leftLine"
 							className="leftLine"
 							animate={{ x: [200, 0] }}
-							exit={{ x: [0, 200] }}
+							// exit={{ x: [0, 200] }}
 							transition={{ ease: "easeOut", duration: 0.7 }}
 						></motion.div>
 						<motion.h1
 							key="h1"
 							animate={{ x: [-200, 0] }}
-							exit={{ x: [0, -200] }}
+							// exit={{ x: [0, -200] }}
 							transition={{ ease: "easeOut", duration: 0.5 }}
 						>
 							work.

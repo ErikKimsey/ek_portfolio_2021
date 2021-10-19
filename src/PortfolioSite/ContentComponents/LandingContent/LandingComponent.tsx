@@ -57,7 +57,13 @@ const LandingComponent: FC<Props> = (props) => {
 				{hasLoaded && <Banner />}
 				<Work />
 				<Education />
-				<div style={{ height: "200px" }}></div>
+				<div
+					style={{
+						paddingBottom: "100px",
+						background: "#f0f",
+						width: "1px",
+					}}
+				></div>
 			</StyledContainer>
 		</>
 	);
@@ -70,6 +76,7 @@ const StyledContainer = styled.div<StyledProps>`
 	flex-flow: column;
 	align-items: center;
 	padding: 15px;
+	align-self: center;
 	/* z-index: -1000; */
 	h1 {
 		/* position: absolute;

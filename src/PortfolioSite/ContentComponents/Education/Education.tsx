@@ -87,11 +87,11 @@ const Education: FC<Props> = (props) => {
 				<div className="headerContainer">
 					<motion.div
 						className="leftLine"
-						animate={{ x: [200, 0] }}
+						animate={{ x: [-200, 0] }}
 						transition={{ ease: "easeOut", duration: 0.7 }}
 					></motion.div>
 					<motion.h1
-						animate={{ x: [-200, 0] }}
+						animate={{ x: [200, 0] }}
 						transition={{ ease: "easeOut", duration: 0.5 }}
 					>
 						{`education.`}
