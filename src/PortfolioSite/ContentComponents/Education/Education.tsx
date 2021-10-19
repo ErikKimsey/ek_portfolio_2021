@@ -150,6 +150,10 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 5px;
 	}
 
+	h1 {
+		color: #555;
+	}
+
 	.buttonDisplay {
 		align-self: flex-end;
 		width: 100px;
@@ -162,7 +166,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.educationContainer {
-		max-width: 500px;
+		/* max-width: 500px; */
 		width: 100%;
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};

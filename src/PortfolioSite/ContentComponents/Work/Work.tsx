@@ -161,6 +161,7 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
+
 	.headerContainer {
 		width: auto;
 		top: 50px;
@@ -188,6 +189,7 @@ const StyledContainer = styled.div<StyledProps>`
 	h1 {
 		padding: 5px;
 		font-family: "Angel";
+		color: #555;
 	}
 
 	.components {
@@ -212,7 +214,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.workContainer {
-		max-width: 500px;
+		/* max-width: 500px; */
 		width: 100%;
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
@@ -225,7 +227,8 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.workComponentContainer {
-		width: 100%;
+		/* width: 100%; */
+		width: 200px;
 		height: 100px;
 		margin: 15px 0px;
 		display: flex;

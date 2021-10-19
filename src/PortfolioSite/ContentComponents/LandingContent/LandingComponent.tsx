@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import init from "../../3DContent/3d";
+import Banner from "../../Banner";
 
 type Props = {};
 
@@ -39,19 +40,22 @@ const LandingComponent: FC<Props> = (props) => {
 	}, []);
 
 	return (
-		<StyledContainer
-			as={motion.div}
-			isVisible={hasLoaded}
-			containerHeight={winHeight}
-			containerWidth={winWidth}
-			initial="hidden"
-			variants={variants}
-			animate={hasLoaded ? "visible" : "hidden"}
-			transition={{ duration: 0.5 }}
-			id="landingComponent"
-		>
-			<h1>.... d-_-b ....</h1>
-		</StyledContainer>
+		<>
+			<StyledContainer
+				as={motion.div}
+				isVisible={hasLoaded}
+				containerHeight={winHeight}
+				containerWidth={winWidth}
+				initial="hidden"
+				variants={variants}
+				animate={hasLoaded ? "visible" : "hidden"}
+				transition={{ duration: 0.5 }}
+				id="landingComponent"
+			>
+				{/* {hasLoaded && <h1>.... d-_-b ....</h1>} */}
+				{hasLoaded && <Banner />}
+			</StyledContainer>
+		</>
 	);
 };
 
@@ -64,9 +68,10 @@ const StyledContainer = styled.div<StyledProps>`
 	padding: 15px;
 	z-index: -1000;
 	h1 {
-		position: absolute;
+		/* position: absolute;
 		align-self: center;
-		top: ${(props) => props.containerHeight * 0.4}px;
+		top: ${(props) => props.containerHeight * 0.4}px; */
+		color: #555;
 	}
 `;
 

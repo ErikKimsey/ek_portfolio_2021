@@ -1,7 +1,10 @@
 import React, { FC } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import CAPSULES from "../assets/images/capsules.svg";
+import { motion } from "framer-motion";
+import CAPSULES from "../assets/images/Icons/capsules.svg";
 import SATELLITE from "../assets/images/satellite.svg";
+import { BreakPoint } from "../styles/breakpoints";
 
 type Props = {};
 
@@ -12,65 +15,64 @@ const Menu: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			<a
-				href="http://erikkimsey"
-				target="_blank"
-				rel="noreferrer"
-				className="link"
+			<motion.div
+				className="screenHalf"
+				animate={{ y: [-300, 0] }}
+				transition={{ ease: "easeOut", duration: 0.5 }}
 			>
-				<div
-					className="menuItem skillSet"
-					style={{ backgroundImage: `url(${CAPSULES})` }}
-				></div>
-			</a>
-			<a
-				href="http://erikkimsey"
-				target="_blank"
-				rel="noreferrer"
-				className="link"
+				<NavLink to="/portfolio/">
+					<img src={CAPSULES} />
+				</NavLink>
+			</motion.div>
+			<div className="line"></div>
+			<motion.div
+				className="screenHalf"
+				animate={{ y: [-300, 0] }}
+				transition={{ ease: "easeInOut", duration: 1 }}
 			>
-				<div
-					className="menuItem workHistory"
-					style={{ backgroundImage: `url(${SATELLITE})` }}
-				></div>
-			</a>
+				<NavLink to="/playground">
+					<img src={SATELLITE} />
+				</NavLink>
+			</motion.div>
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: flex-end;
-	background-color: rgba(0, 0, 0, 0);
-	margin-right: 100px;
-	padding: 10px;
-	width: 12%;
 
-	a.link {
-		text-decoration: none;
-		color: #fff;
 		display: flex;
+		flex-direction: row;
 		justify-content: center;
-		height: 50px;
-		width: 50px;
-	}
+		align-items: center;
 
-	.menuItem {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-repeat: no-repeat;
-		background-size: contain;
-		@media (max-width: 900px) {
-			/* width: 50%; */
+        img {
+            width:50px;
+        }
+        
+		.landingBannerContainer {
+            width: auto;
+			position: absolute;
+			h1 {
+                color: #252525;
+				font-size: 1.6em;
+			}
+		}
+        
+		.screenHalf {
+            height: auto;
+			padding: 10px;
+			margin: 10px;
+		}
+		img {
+            padding: 0;
+			margin: 0;
+		}
+		.line {
+            width:20px;
+            height:2px;
+            background-color:#555;
 		}
 	}
 
-	.iconImg {
-		fill: #fff;
-	}
 `;
-
 export default Menu;
