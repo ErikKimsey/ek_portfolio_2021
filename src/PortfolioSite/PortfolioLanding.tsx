@@ -1,13 +1,8 @@
-import React, { FC, useEffect, useState, button } from "react";
-import { Switch, Route, NavLink, useHistory } from "react-router-dom";
+import React, { FC, useEffect, useState } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "../Menu/Menu";
-import ContentDisplay from "./ContentComponents/ContentDisplay";
-import PortfolioMenu from "./PortfolioMenu";
-import Banner from "./Banner";
 import { Education, LandingComponent, Work } from "./ContentComponents";
-import UpArrow from "../assets/images/Icons/arrow_up.svg";
-import DownArrow from "../assets/images/Icons/arrow_down.svg";
 import { YELLOW } from "../styles/colors";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
@@ -43,14 +38,6 @@ const PortfolioLanding: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer>
-			{/* <PortfolioMenu /> */}
-			{/* <div className="scrollPrev">
-				{isPrev && (
-					<button>
-						<img src={UpArrow} alt="Scroll to Prev" />
-					</button>
-				)}
-			</div> */}
 			<Switch>
 				<Route exact path="/portfolio/" component={LandingComponent} />
 				<Route exact path="/portfolio/work" component={Work} />
@@ -60,16 +47,6 @@ const PortfolioLanding: FC<Props> = (props) => {
 					component={Education}
 				/>
 			</Switch>
-			{/* <ArrowNavComponent /> */}
-			{/* <Education /> */}
-			{/* <div className="container">{<ContentDisplay />}</div> */}
-			{/* <div className="scrollNext" onClick={() => history.goForward()}>
-				{isNext && (
-					<button>
-						<img src={DownArrow} alt="Scroll to next" />
-					</button>
-				)}
-			</div> */}
 			<Menu />
 		</StyledContainer>
 	);
