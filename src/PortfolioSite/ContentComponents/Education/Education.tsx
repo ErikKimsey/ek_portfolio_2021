@@ -117,7 +117,10 @@ const Education: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	height: 100vh;
 	width: ${(props) => props.containerWidth * 0.7}px;
+
+	/* height: ${(props) => (props.listActive === true ? `100%` : `100vh`)}; */
 	display: flex;
 	flex-direction: column;
 	padding: 10px;

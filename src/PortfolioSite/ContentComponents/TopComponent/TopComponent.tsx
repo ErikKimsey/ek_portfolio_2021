@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { classicNameResolver } from "typescript";
 import Banner from "../../Banner";
 
 type Props = {};
@@ -18,7 +19,6 @@ const TopComponent: FC<Props> = (props) => {
 
 	function setBannerDimens() {
 		let bH = thisRef.current.children[0].clientHeight;
-		console.log(bH);
 		setBannerHeight(bH);
 	}
 
@@ -31,9 +31,11 @@ const TopComponent: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	/* height: calc(
+		100vh - ${(props) => props.bannerHeight && props.bannerHeight}px
+	); */
 	height: 100vh;
 	width: 100%;
-	border: solid 1px #fff;
 `;
 
 export default TopComponent;
