@@ -1,16 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import React, { FC } from "react";
+import { Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "../Menu/Menu";
 import { Education, LandingComponent, Work } from "./ContentComponents";
-import { YELLOW } from "../styles/colors";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
-
-const BREAKPOINTS = {
-	lg: 1024,
-	md: 768,
-	sm: 480,
-};
 
 type Props = {};
 
@@ -19,8 +12,6 @@ interface StyledProps {
 }
 
 const PortfolioLanding: FC<Props> = (props) => {
-	useEffect(() => {}, []);
-
 	return (
 		<StyledContainer>
 			<Switch>

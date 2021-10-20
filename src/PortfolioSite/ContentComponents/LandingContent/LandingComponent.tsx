@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Education, Work } from "..";
-import init from "../../3DContent/3d";
-import Banner from "../../Banner";
+import TopComponent from "../TopComponent/TopComponent";
 
 type Props = {};
 
@@ -14,7 +13,6 @@ type StyledProps = {
 };
 
 const LandingComponent: FC<Props> = (props) => {
-	const {} = props;
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
@@ -33,7 +31,6 @@ const LandingComponent: FC<Props> = (props) => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
-		console.log(init);
 		// init(window.innerWidth * 0.7, window.innerHeight * 0.8);
 
 		window.addEventListener("resize", handleResize);
@@ -54,13 +51,13 @@ const LandingComponent: FC<Props> = (props) => {
 				id="landingComponent"
 			>
 				{/* {hasLoaded && <h1>.... d-_-b ....</h1>} */}
-				{hasLoaded && <Banner />}
+				<TopComponent />
 				<Work />
 				<Education />
 				<div
 					style={{
 						paddingBottom: "100px",
-						background: "#f0f",
+						background: "#000",
 						width: "1px",
 					}}
 				></div>
@@ -70,14 +67,16 @@ const LandingComponent: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	max-width: 1400px;
 	width: ${(props) => props.containerWidth * 0.8}px;
-	height: ${(props) => props.containerHeight * 0.8}px;
+	/* height: ${(props) => props.containerHeight * 0.8}px; */
 	display: flex;
 	flex-flow: column;
 	align-items: center;
 	padding: 15px;
 	align-self: center;
 	/* z-index: -1000; */
+	overflow-y: scroll;
 	h1 {
 		/* position: absolute;
 		align-self: center;

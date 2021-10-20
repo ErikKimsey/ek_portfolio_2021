@@ -35,13 +35,11 @@ const EducationComponent: FC<EducationComponentProps> = (props) => {
 };
 
 const Education: FC<Props> = (props) => {
-	const {} = props;
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
-	const { inView, entry, ref } = useInView({ threshold: 0.1 });
+	const { inView, ref } = useInView({ threshold: 0.1 });
 	const [listActive, setListActive] = useState(false);
-	const [numOfItems, setNumOfItems] = useState(EDUCATION_DATA.length);
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
@@ -80,7 +78,6 @@ const Education: FC<Props> = (props) => {
 			containerHeight={winHeight}
 			containerWidth={winWidth}
 			listActive={listActive}
-			numOfItems={numOfItems}
 			ref={ref}
 		>
 			{inView && (
@@ -101,9 +98,7 @@ const Education: FC<Props> = (props) => {
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high
 				level overviews. Iterative approaches to corporate strategy
-				foster collaborative thinking to further the overall value
-				proposition. Organically grow the holistic world view of
-				disruptive innovation via workplace diversity and empowerment.
+				foster.
 			</p>
 			<div className="buttonDisplay" onClick={handleListDisplay}>
 				{listActive === true ? (
@@ -114,7 +109,7 @@ const Education: FC<Props> = (props) => {
 			</div>
 			<div className="educationContainer">
 				{EDUCATION_DATA.map((e, i) => {
-					return <EducationComponent data={e} index={i} />;
+					return <EducationComponent data={e} index={i} key={i} />;
 				})}
 			</div>
 		</StyledContainer>

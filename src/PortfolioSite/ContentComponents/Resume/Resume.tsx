@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Document, Page } from "react-pdf";
@@ -14,7 +15,6 @@ type StyledProps = {
 };
 
 const Resume: FC<Props> = (props) => {
-	const {} = props;
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);

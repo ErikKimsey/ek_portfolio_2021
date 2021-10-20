@@ -1,14 +1,12 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { YELLOW } from "../styles/colors";
 
 type Props = {};
 
 type StyledProps = {};
 
 const Banner: FC<Props> = (props) => {
-	const {} = props;
 	const [hasLoaded, setHasLoaded] = useState(false);
 
 	const variants = {
@@ -43,7 +41,7 @@ const StyledContainer = styled.div<StyledProps>`
 	top: 0;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: flex-start;
 	margin-right: 50px;
 	font-family: "Angel";
 	padding: 20px;

@@ -4,8 +4,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import CAPSULES from "../assets/images/Icons/capsules.svg";
 import SATELLITE from "../assets/images/satellite.svg";
-import { BreakPoint } from "../styles/breakpoints";
-import { YELLOW } from "../styles/colors";
 
 type Props = {};
 
@@ -18,8 +16,6 @@ const ACTIVE_STYLES = {
 };
 
 const Menu: FC<Props> = (props) => {
-	const {} = props;
-
 	return (
 		<StyledContainer>
 			<motion.div
@@ -32,7 +28,7 @@ const Menu: FC<Props> = (props) => {
 					style={{ padding: "10px" }}
 					activeStyle={ACTIVE_STYLES}
 				>
-					<img src={CAPSULES} />
+					<img src={CAPSULES} alt="capsule icon" />
 				</NavLink>
 			</motion.div>
 			<div className="line"></div>
@@ -46,7 +42,7 @@ const Menu: FC<Props> = (props) => {
 					style={{ padding: "10px" }}
 					activeStyle={ACTIVE_STYLES}
 				>
-					<img src={SATELLITE} />
+					<img src={SATELLITE} alt="satellite icon" />
 				</NavLink>
 			</motion.div>
 		</StyledContainer>
@@ -56,7 +52,7 @@ const Menu: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: fixed;
 	align-self: center;
-	bottom: 60px;
+	bottom: 30px;
 	width: 200px;
 	display: flex;
 	flex-direction: row;
@@ -80,8 +76,8 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.line {
 		width: 20px;
-		height: 2px;
-		background-color: #555;
+		height: 1px;
+		/* background-color: #f0f; */
 	}
 
 	@media (max-width: 568px) {

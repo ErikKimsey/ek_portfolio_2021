@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { BreakPoint } from "../styles/breakpoints";
 import { motion } from "framer-motion";
-import { YELLOW } from "../styles/colors";
 
 type Props = {};
 

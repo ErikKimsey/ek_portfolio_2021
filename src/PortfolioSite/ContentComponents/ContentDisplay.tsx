@@ -1,24 +1,12 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
-import { Route, Switch, useLocation, useHistory } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import { Work, Resume, Education, LandingComponent } from "./index";
-import { InView, useInView } from "react-intersection-observer";
 
 type Props = {};
 
 type StyledProps = {};
-
-const ContentBreakElement = () => {
-	return <ContentBreak></ContentBreak>;
-};
-
-const PATHS = [
-	"/portfolio",
-	"/portfolio/work",
-	"/portfolio/resume",
-	"/portfolio/education",
-];
 
 // const SomeComp = () => {
 // 	const { ref, inView, entry } = useInView({
@@ -39,18 +27,9 @@ const PATHS = [
 // };
 
 const ContentDisplay: FC<Props> = (props) => {
-	const {} = props;
-	const location = useLocation();
-	const history = useHistory();
 	let [content, setContent] = useState([]);
-	let [pathsIndex, setPathsIndex] = useState();
-	let [lastScrollPos, setLastScrollPos] = useState(PATHS[0]);
-	let dY = 0;
 
 	useEffect(() => {
-		setPathsIndex(0);
-		setLastScrollPos(PATHS[pathsIndex]);
-
 		if (
 			Work !== undefined &&
 			Resume !== undefined &&
@@ -72,12 +51,6 @@ const ContentDisplay: FC<Props> = (props) => {
 						<Route path="/portfolio/work">
 							<Work />
 						</Route>
-						{/* <Route path="/portfolio/resume">
-							<Resume />
-						</Route>
-						<Route path="/portfolio/education">
-							<Education />
-						</Route> */}
 					</Switch>
 				</motion.div>
 			)}
@@ -88,16 +61,13 @@ const ContentDisplay: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	position: relative;
 	top: 14vh;
-	/* height: 100%; */
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
 
 	.contentContainer {
-		/* height: 100%; */
 		width: 80%;
-		/* padding-left: 200px; */
 	}
 
 	.inViewContainer {
@@ -111,15 +81,8 @@ const StyledContainer = styled.div<StyledProps>`
 		height: 100%;
 		width: 100%;
 		.contentContainer {
-			/* padding-left: 50px; */
 		}
 	}
-`;
-
-const ContentBreak = styled.div`
-	height: 300px;
-	width: 100%;
-	border-top: solid 1px #333;
 `;
 
 export default ContentDisplay;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { motion, AnimatePresence } from "framer-motion";
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
@@ -6,7 +7,6 @@ import { WORK_DATA } from "./work_data";
 import UpChevron from "../../../assets/images/Icons/chevron-up.svg";
 import DownChevron from "../../../assets/images/Icons/chevron-down.svg";
 import WorkIcon from "../../../assets/images/Icons/work.png";
-import Modal from "react-modal";
 
 type Props = {};
 
@@ -51,13 +51,11 @@ const WorkComponent: FC<WorkComponentProps> = (props) => {
 };
 
 const Work: FC<Props> = (props) => {
-	const {} = props;
-
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
 	const [listActive, setListActive] = useState(false);
-	const { inView, entry, ref } = useInView({ threshold: 0.2 });
+	const { inView, ref } = useInView({ threshold: 0.2 });
 	const [numOfItems, setNumOfItems] = useState(WORK_DATA.length);
 	const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -88,12 +86,6 @@ const Work: FC<Props> = (props) => {
 
 	const handleListDisplay = () => {
 		setListActive(!listActive);
-	};
-
-	const openModal = () => {
-		console.log("openModal");
-		setIsOpen(!modalIsOpen);
-		setListActive(true);
 	};
 
 	const closeModal = () => {
@@ -132,13 +124,11 @@ const Work: FC<Props> = (props) => {
 							key="leftLine"
 							className="leftLine"
 							animate={{ x: [200, 0] }}
-							// exit={{ x: [0, 200] }}
 							transition={{ ease: "easeOut", duration: 0.7 }}
 						></motion.div>
 						<motion.h1
 							key="h1"
 							animate={{ x: [-200, 0] }}
-							// exit={{ x: [0, -200] }}
 							transition={{ ease: "easeOut", duration: 0.5 }}
 						>
 							work.
@@ -147,16 +137,10 @@ const Work: FC<Props> = (props) => {
 				)}
 			</AnimatePresence>
 			<p>
-				Leverage agile frameworks to provide a robust synopsis for high
-				level overviews. Iterative approaches to corporate strategy
-				foster collaborative thinking to further the overall value
-				proposition. Organically grow the holistic world view of
-				disruptive innovation via workplace diversity and empowerment.
+				Organically grow the holistic world view of disruptive
+				innovation via workplace diversity and empowerment.
 			</p>
 
-			{/* <div className="buttonDisplay" onClick={openModal}>
-				<img src={UpChevron} />
-			</div> */}
 			<div className="buttonDisplay" onClick={handleListDisplay}>
 				{listActive === true ? (
 					<img src={UpChevron} alt="hide list" />
@@ -175,7 +159,7 @@ const Work: FC<Props> = (props) => {
 
 				{WORK_DATA &&
 					WORK_DATA.map((e, i) => {
-						return <WorkComponent props={e} index={i} />;
+						return <WorkComponent props={e} index={i} key={i} />;
 					})}
 				{/* </div> */}
 			</motion.div>
