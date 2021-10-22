@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 
 type Props = {};
 
-type StyledProps = {};
+type StyledProps = {
+	isVisible?: boolean;
+};
 
 const Banner: FC<Props> = (props) => {
 	const [hasLoaded, setHasLoaded] = useState(false);

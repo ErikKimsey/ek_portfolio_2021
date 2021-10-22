@@ -1,6 +1,5 @@
 import React, { FC, useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import { classicNameResolver } from "typescript";
 import Banner from "../../Banner";
 
 type Props = {};
@@ -14,11 +13,14 @@ const TopComponent: FC<Props> = (props) => {
 	const [bannerHeight, setBannerHeight] = useState(null);
 
 	useEffect(() => {
-		setBannerDimens();
+		if (thisRef !== undefined) {
+			setBannerDimens(thisRef);
+		}
 	}, []);
 
-	function setBannerDimens() {
-		let bH = thisRef.current.children[0].clientHeight;
+	function setBannerDimens(ref) {
+		let bH;
+		bH = ref.current.children[0].clientHeight;
 		setBannerHeight(bH);
 	}
 

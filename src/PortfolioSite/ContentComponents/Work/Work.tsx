@@ -11,8 +11,15 @@ import WorkIcon from "../../../assets/images/Icons/work.png";
 type Props = {};
 
 type WorkComponentProps = {
-	data?: {};
+	data?: WorkComponentPropsData;
 	index?: number;
+};
+
+type WorkComponentPropsData = {
+	positionTitle?: string;
+	employer?: string;
+	URL?: string;
+	techStack?: string;
 };
 
 type StyledProps = {
@@ -21,10 +28,11 @@ type StyledProps = {
 	listActive?: boolean;
 	numOfItems?: number;
 	displayButton?: string;
+	isVisible?: boolean;
 };
 
 const WorkComponent: FC<WorkComponentProps> = (props) => {
-	const { positionTitle, employer, URL, techStack } = props.props;
+	const { positionTitle, employer, URL, techStack } = props.data;
 
 	return (
 		<div
@@ -159,7 +167,7 @@ const Work: FC<Props> = (props) => {
 
 				{WORK_DATA &&
 					WORK_DATA.map((e, i) => {
-						return <WorkComponent props={e} index={i} key={i} />;
+						return <WorkComponent data={e} index={i} key={i} />;
 					})}
 				{/* </div> */}
 			</motion.div>

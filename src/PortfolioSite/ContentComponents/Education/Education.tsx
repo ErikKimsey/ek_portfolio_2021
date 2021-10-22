@@ -13,13 +13,17 @@ type StyledProps = {
 	containerWidth?: number;
 	listActive?: boolean;
 	numOfItems?: number;
+	isVisible?: boolean;
 };
 
-type EducationComponentProps = {
+type Data = {
 	school?: string;
 	areaOfStudy?: string;
 	date?: string;
 	index?: number;
+};
+type EducationComponentProps = {
+	data?: Data;
 };
 
 const EducationComponent: FC<EducationComponentProps> = (props) => {
@@ -109,7 +113,9 @@ const Education: FC<Props> = (props) => {
 			</div>
 			<div className="educationContainer">
 				{EDUCATION_DATA.map((e, i) => {
-					return <EducationComponent data={e} index={i} key={i} />;
+					console.log(e);
+
+					return <EducationComponent data={e} key={i} />;
 				})}
 			</div>
 		</StyledContainer>
@@ -119,14 +125,11 @@ const Education: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	height: 100vh;
 	width: ${(props) => props.containerWidth * 0.7}px;
-
-	/* height: ${(props) => (props.listActive === true ? `100%` : `100vh`)}; */
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
 	.headerContainer {
 		width: auto;
-		/* top: 50px; */
 		display: flex;
 		flex-direction: row;
 		background-color: rgba(0, 0, 0, 0.3);

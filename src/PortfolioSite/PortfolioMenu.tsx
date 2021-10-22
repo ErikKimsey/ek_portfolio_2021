@@ -11,6 +11,7 @@ type Props = {};
 
 type StyledProps = {
 	displayMenu?: boolean;
+	isVisible?: boolean;
 };
 
 const PortfolioMenu: FC<Props> = (props) => {
@@ -50,7 +51,7 @@ const PortfolioMenu: FC<Props> = (props) => {
 					<motion.img
 						src={astronaut}
 						alt="home or me"
-						whileHover={{ rotate: "15deg", duration: 0.1 }}
+						whileHover={{ rotate: "15deg" }}
 					/>
 				</NavLink>
 			</motion.div>
@@ -67,7 +68,7 @@ const PortfolioMenu: FC<Props> = (props) => {
 					<motion.img
 						src={DNA}
 						alt="my work"
-						whileHover={{ rotate: "15deg", duration: 0.1 }}
+						whileHover={{ rotate: "15deg" }}
 					/>
 				</NavLink>
 			</motion.div>
@@ -84,7 +85,7 @@ const PortfolioMenu: FC<Props> = (props) => {
 					<motion.img
 						src={brain}
 						alt="my digital playground"
-						whileHover={{ rotate: "15deg", duration: 0.1 }}
+						whileHover={{ rotate: "15deg" }}
 					/>
 				</NavLink>
 			</motion.div>

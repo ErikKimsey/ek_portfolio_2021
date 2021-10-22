@@ -12,6 +12,7 @@ type Props = {};
 type StyledProps = {
 	containerHeight?: number;
 	containerWidth?: number;
+	isVisible?: boolean;
 };
 
 const Resume: FC<Props> = (props) => {
