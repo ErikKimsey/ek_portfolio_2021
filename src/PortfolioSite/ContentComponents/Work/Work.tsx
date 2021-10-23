@@ -176,6 +176,7 @@ const Work: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	box-sizing: content-box;
 	width: ${(props) => props.containerWidth * 0.7}px;
 	height: ${(props) => (props.listActive === true ? `100%` : `100vh`)};
 	display: flex;
@@ -183,6 +184,7 @@ const StyledContainer = styled.div<StyledProps>`
 	padding: 10px;
 
 	.headerContainer {
+		box-sizing: content-box;
 		width: auto;
 		top: 50px;
 		display: flex;
@@ -215,6 +217,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.components {
+		box-sizing: content-box;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -236,6 +239,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.workContainer {
+		box-sizing: content-box;
 		width: 100%;
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
@@ -250,6 +254,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.workComponentContainer {
+		box-sizing: content-box;
 		background-color: rgba(0, 0, 0, 0.9);
 		height: 100px;
 		margin: 15px 0px;
@@ -302,23 +307,34 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 568px) {
+		box-sizing: content-box;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		/* align-items: center; */
 		padding: 10px;
 
+		.headerContainer {
+			padding: 10px;
+		}
+
+		p {
+			padding: 10px;
+		}
+
 		.workContainer {
+			box-sizing: content-box;
 			width: 100%;
 			height: 100%;
 		}
 
 		.workComponentContainer {
+			box-sizing: content-box;
 			width: 100%;
 			display: flex;
 			flex-flow: column wrap;
 			margin: 0;
-			padding: 0;
+			padding: 10px;
 		}
 
 		/* .workTitle {

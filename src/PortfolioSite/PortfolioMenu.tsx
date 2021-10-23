@@ -95,6 +95,7 @@ const PortfolioMenu: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	box-sizing: content-box;
 	position: fixed;
 	left: 20px;
 	top: 200px;

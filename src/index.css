@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   scrollbar-width: none;
-  
+  box-sizing: content-box;
   
 }
 body::-webkit-scrollbar {

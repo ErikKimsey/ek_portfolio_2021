@@ -32,13 +32,14 @@ const Banner: FC<Props> = (props) => {
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 1 }}
 		>
-			<h1>ERIK KIMSEY</h1>
-			<h1>FRONTEND ENGINEER</h1>
+			<h1 className="headerName">ERIK KIMSEY</h1>
+			<h1 className="headerTitle">FRONTEND ENGINEER</h1>
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	box-sizing: content-box;
 	position: relative;
 	top: 0;
 	display: flex;
@@ -47,12 +48,17 @@ const StyledContainer = styled.div<StyledProps>`
 	margin-right: 50px;
 	font-family: "Angel";
 	padding: 20px;
+	margin-bottom: 20px;
 
 	h1 {
 		margin: 0;
 		font-size: 4em;
 		color: #333;
 		line-height: 1;
+	}
+
+	.headerTitle {
+		color: rgba(255, 0, 255, 0.8);
 	}
 
 	@media (max-width: 768px) {
@@ -80,7 +86,7 @@ const StyledContainer = styled.div<StyledProps>`
 	@media (max-width: 568px) {
 		margin-top: 0px;
 		position: relative;
-		left: 10px;
+		/* left: 10px; */
 		top: 0px;
 		height: auto;
 		padding: 0;

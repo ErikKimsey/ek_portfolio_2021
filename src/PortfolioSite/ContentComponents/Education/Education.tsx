@@ -63,6 +63,8 @@ const Education: FC<Props> = (props) => {
 	};
 
 	useEffect(() => {
+		console.log(window.innerHeight);
+
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
@@ -113,7 +115,7 @@ const Education: FC<Props> = (props) => {
 			</div>
 			<div className="educationContainer">
 				{EDUCATION_DATA.map((e, i) => {
-					console.log(e);
+					// console.log(e);
 
 					return <EducationComponent data={e} key={i} />;
 				})}
@@ -123,6 +125,7 @@ const Education: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	box-sizing: content-box;
 	height: 100vh;
 	width: ${(props) => props.containerWidth * 0.7}px;
 	display: flex;
@@ -133,7 +136,7 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		background-color: rgba(0, 0, 0, 0.3);
-		padding: 0;
+		padding: 10px;
 		margin: 0;
 		height: auto;
 	}
@@ -172,6 +175,8 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.educationContainer {
 		/* max-width: 500px; */
+		box-sizing: content-box;
+		padding: 10px;
 		width: 100%;
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
@@ -214,11 +219,20 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 568px) {
+		box-sizing: content-box;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		/* align-items: center; */
 		padding: 10px;
+		padding-bottom: 0;
+		.headerContainer {
+			padding-bottom: 0;
+		}
+		p {
+			padding: 10px;
+			padding-top: 0;
+		}
 	}
 `;
 

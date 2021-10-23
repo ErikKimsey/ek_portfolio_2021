@@ -85,8 +85,8 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 568px) {
-		width: 96vw;
-		height: 96vh;
+		/* width: 96vw; */
+		/* height: 96vh; */
 		/* width: 100%; */
 	}
 `;

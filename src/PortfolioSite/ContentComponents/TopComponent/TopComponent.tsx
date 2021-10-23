@@ -26,18 +26,21 @@ const TopComponent: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer ref={thisRef} bannerHeight={bannerHeight}>
-			<Banner />
+			{/* <Banner /> */}
 			<div className="container"></div>
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	/* height: calc(
-		100vh - ${(props) => props.bannerHeight && props.bannerHeight}px
-	); */
-	height: 100vh;
+	height: calc(100vh - ${(props) => props.bannerHeight}px);
 	width: 100%;
+	margin: 0;
+	margin-top: 10px;
+	.container {
+		/* height: 100%; */
+		/* width: 100%; */
+	}
 `;
 
 export default TopComponent;
