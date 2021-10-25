@@ -89,6 +89,67 @@ const WORK_DATA = [
 			"Using ES5, contributed to the debugging and refinement of ChartIQ's flagship financial chartting library.  Further, using Angular, I implemented ChartIQ's charting library in eToro's new online 'ProCharts' feature.",
 		image: "",
 	},
+	{
+		employer: "ChartIQ (and eToro)",
+		product: "ChartIQ Library / eToro's ProCharts",
+		positionTitle: "JavaScript Engineer",
+		URL: "https://cosaic.io/chartiq/",
+		techStack: "Angular, JavaScript, CSS, HTML",
+		projectDescription:
+			"Using ES5, contributed to the debugging and refinement of ChartIQ's flagship financial chartting library.  Further, using Angular, I implemented ChartIQ's charting library in eToro's new online 'ProCharts' feature.",
+		image: "",
+	},
+	{
+		employer: "ChartIQ (and eToro)",
+		product: "ChartIQ Library / eToro's ProCharts",
+		positionTitle: "JavaScript Engineer",
+		URL: "https://cosaic.io/chartiq/",
+		techStack: "Angular, JavaScript, CSS, HTML",
+		projectDescription:
+			"Using ES5, contributed to the debugging and refinement of ChartIQ's flagship financial chartting library.  Further, using Angular, I implemented ChartIQ's charting library in eToro's new online 'ProCharts' feature.",
+		image: "",
+	},
+	{
+		employer: "ChartIQ (and eToro)",
+		product: "ChartIQ Library / eToro's ProCharts",
+		positionTitle: "JavaScript Engineer",
+		URL: "https://cosaic.io/chartiq/",
+		techStack: "Angular, JavaScript, CSS, HTML",
+		projectDescription:
+			"Using ES5, contributed to the debugging and refinement of ChartIQ's flagship financial chartting library.  Further, using Angular, I implemented ChartIQ's charting library in eToro's new online 'ProCharts' feature.",
+		image: "",
+	},
+	{
+		employer: "ChartIQ (and eToro)",
+		product: "ChartIQ Library / eToro's ProCharts",
+		positionTitle: "JavaScript Engineer",
+		URL: "https://cosaic.io/chartiq/",
+		techStack: "Angular, JavaScript, CSS, HTML",
+		projectDescription:
+			"Using ES5, contributed to the debugging and refinement of ChartIQ's flagship financial chartting library.  Further, using Angular, I implemented ChartIQ's charting library in eToro's new online 'ProCharts' feature.",
+		image: "",
+	},
+	{
+		employer: "ChartIQ (and eToro)",
+		product: "ChartIQ Library / eToro's ProCharts",
+		positionTitle: "JavaScript Engineer",
+		URL: "https://cosaic.io/chartiq/",
+		techStack: "Angular, JavaScript, CSS, HTML",
+		projectDescription:
+			"Using ES5, contributed to the debugging and refinement of ChartIQ's flagship financial chartting library.  Further, using Angular, I implemented ChartIQ's charting library in eToro's new online 'ProCharts' feature.",
+		image: "",
+	},
+	{
+		employer: "ChartIQ (and eToro)",
+		product: "ChartIQ Library / eToro's ProCharts",
+		positionTitle: "JavaScript Engineer",
+		URL: "https://cosaic.io/chartiq/",
+		techStack: "Angular, JavaScript, CSS, HTML",
+		projectDescription:
+			"Using ES5, contributed to the debugging and refinement of ChartIQ's flagship financial chartting library.  Further, using Angular, I implemented ChartIQ's charting library in eToro's new online 'ProCharts' feature.",
+		image: "",
+	},
+
 	// {
 	// 	employer: "",
 	// product:"",

@@ -10,9 +10,9 @@ type Props = {};
 type StyledProps = {};
 
 const ACTIVE_STYLES = {
-	border: "solid 1px #555",
-	backgroundColor: "#555",
-	borderRadius: "10px",
+	borderBottom: "solid 2px #555",
+	backgroundColor: "rgba(0,0,0,0)",
+	borderRadius: "0px",
 };
 
 const Menu: FC<Props> = (props) => {
@@ -71,7 +71,6 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-flow: row wrap;
 		justify-content: center;
 		align-items: center;
-		background-color: #000;
 	}
 
 	.line {

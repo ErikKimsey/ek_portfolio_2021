@@ -125,36 +125,43 @@ const Work: FC<Props> = (props) => {
 			numOfItems={numOfItems}
 			displayButton={WorkIcon}
 		>
-			<AnimatePresence exitBeforeEnter>
-				{inView && (
-					<div className="headerContainer">
-						<motion.div
-							key="leftLine"
-							className="leftLine"
-							animate={{ x: [200, 0] }}
-							transition={{ ease: "easeOut", duration: 0.7 }}
-						></motion.div>
-						<motion.h1
-							key="h1"
-							animate={{ x: [-200, 0] }}
-							transition={{ ease: "easeOut", duration: 0.5 }}
-						>
-							work.
-						</motion.h1>
-					</div>
-				)}
-			</AnimatePresence>
-			<p>
-				Organically grow the holistic world view of disruptive
-				innovation via workplace diversity and empowerment.
-			</p>
+			<div
+				className="headerAndButton"
+				style={{
+					display: "flex",
+					flexFlow: "row",
+					justifyContent: "center",
+				}}
+			>
+				<AnimatePresence exitBeforeEnter>
+					{inView && (
+						<div className="headerContainer">
+							<motion.div
+								key="leftLine"
+								className="leftLine"
+								animate={{ x: [200, 0] }}
+								transition={{ ease: "easeOut", duration: 0.7 }}
+							></motion.div>
+							<motion.h1
+								className="workH1"
+								key="h1"
+								animate={{ x: [-200, 0] }}
+								transition={{ ease: "easeOut", duration: 0.5 }}
+								style={{ fontSize: "3em" }}
+							>
+								work.
+							</motion.h1>
+						</div>
+					)}
+				</AnimatePresence>
 
-			<div className="buttonDisplay" onClick={handleListDisplay}>
-				{listActive === true ? (
-					<img src={UpChevron} alt="hide list" />
-				) : (
-					<img src={DownChevron} alt="show list" />
-				)}
+				<div className="buttonDisplay" onClick={handleListDisplay}>
+					{listActive === true ? (
+						<img src={UpChevron} alt="hide list" />
+					) : (
+						<img src={DownChevron} alt="show list" />
+					)}
+				</div>
 			</div>
 			<motion.div
 				className="workContainer"
@@ -163,13 +170,10 @@ const Work: FC<Props> = (props) => {
 				exit={{ x: [0, 200] }}
 				transition={{ ease: "easeOut", duration: 0.7 }}
 			>
-				{/* <div className="workContainer"> */}
-
 				{WORK_DATA &&
 					WORK_DATA.map((e, i) => {
 						return <WorkComponent data={e} index={i} key={i} />;
 					})}
-				{/* </div> */}
 			</motion.div>
 		</StyledContainer>
 	);
@@ -178,7 +182,7 @@ const Work: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
 	width: ${(props) => props.containerWidth * 0.7}px;
-	height: ${(props) => (props.listActive === true ? `100%` : `100vh`)};
+	/* height: ${(props) => (props.listActive === true ? `100%` : `100vh`)}; */
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
@@ -225,27 +229,30 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.buttonDisplay {
-		align-self: flex-end;
-		width: 100px;
-		height: 50px;
-		cursor: ns-resize;
-		/* cursor: url(displayButton), auto; */
-		&:hover {
-		}
+		align-self: flex-start;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		height: 100%;
+		cursor: pointer;
+		align-items: flex-end;
+
 		img {
-			width: 100px;
-			height: 50px;
+			width: 60px;
+			height: 60px;
 		}
 	}
 
 	.workContainer {
 		box-sizing: content-box;
-		width: 100%;
+		/* width: 100%; */
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
 		display: flex;
 		flex-direction: column;
-		flex-wrap: nowrap;
+		flex-direction: row;
+		/* flex-wrap: nowrap; */
+		flex-wrap: wrap;
 		/* padding-top: 30px; */
 		overflow-y: scroll;
 		background-color: #000;
@@ -255,8 +262,9 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.workComponentContainer {
 		box-sizing: content-box;
-		background-color: rgba(0, 0, 0, 0.9);
+		background-color: rgba(0, 0, 0, 0);
 		height: 100px;
+		width: 300px;
 		margin: 15px 0px;
 		padding: 10px;
 		border-radius: 10px;
@@ -324,7 +332,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 		.workContainer {
 			box-sizing: content-box;
-			width: 100%;
+			/* width: 100%; */
 			height: 100%;
 		}
 

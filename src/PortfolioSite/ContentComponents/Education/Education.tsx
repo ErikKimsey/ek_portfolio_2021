@@ -86,31 +86,36 @@ const Education: FC<Props> = (props) => {
 			listActive={listActive}
 			ref={ref}
 		>
-			{inView && (
-				<div className="headerContainer">
-					<motion.div
-						className="leftLine"
-						animate={{ x: [-200, 0] }}
-						transition={{ ease: "easeOut", duration: 0.7 }}
-					></motion.div>
-					<motion.h1
-						animate={{ x: [200, 0] }}
-						transition={{ ease: "easeOut", duration: 0.5 }}
-					>
-						{`education.`}
-					</motion.h1>
+			<div
+				className="headerAndButton"
+				style={{
+					display: "flex",
+					flexFlow: "row",
+					justifyContent: "center",
+				}}
+			>
+				<div className="buttonDisplay" onClick={handleListDisplay}>
+					{listActive === true ? (
+						<img src={UpChevron} alt="hide list" />
+					) : (
+						<img src={DownChevron} alt="show list" />
+					)}
 				</div>
-			)}
-			<p>
-				Leverage agile frameworks to provide a robust synopsis for high
-				level overviews. Iterative approaches to corporate strategy
-				foster.
-			</p>
-			<div className="buttonDisplay" onClick={handleListDisplay}>
-				{listActive === true ? (
-					<img src={UpChevron} alt="hide list" />
-				) : (
-					<img src={DownChevron} alt="show list" />
+				{inView && (
+					<div className="headerContainer">
+						<motion.div
+							className="leftLine"
+							animate={{ x: [-200, 0] }}
+							transition={{ ease: "easeOut", duration: 0.7 }}
+						></motion.div>
+						<motion.h1
+							animate={{ x: [200, 0] }}
+							transition={{ ease: "easeOut", duration: 0.5 }}
+							style={{ fontSize: "3em" }}
+						>
+							education.
+						</motion.h1>
+					</div>
 				)}
 			</div>
 			<div className="educationContainer">
@@ -163,13 +168,17 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.buttonDisplay {
-		align-self: flex-end;
-		width: 100px;
-		height: 50px;
-		cursor: ns-resize;
+		align-self: flex-start;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		height: 100%;
+		cursor: pointer;
+		align-items: flex-end;
+
 		img {
-			width: 100px;
-			height: 50px;
+			width: 60px;
+			height: 60px;
 		}
 	}
 

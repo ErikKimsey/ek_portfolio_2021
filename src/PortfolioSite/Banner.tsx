@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { setTimeout } from "timers";
 
 type Props = {};
 
@@ -10,17 +11,33 @@ type StyledProps = {
 
 const Banner: FC<Props> = (props) => {
 	const [hasLoaded, setHasLoaded] = useState(false);
+	const [shouldMinimize, setShouldMinimize] = useState(false);
 
 	const variants = {
 		visible: { opacity: 0.7, scale: 1 },
 		hidden: {
 			opacity: 0,
-			scale: 1,
+			scale: 5,
 		},
+		// name h1
+		nameFontScaledUp: { scale: [1.5, 1], x: [-100, 0] },
+		nameFontScaledDown: { scale: 1, x: "auto", y: "auto" },
+		// title h1
+		titleFontScaledUp: { scale: [1.5, 1], x: [-100, 50] },
+		titleFontScaledDown: { scale: 1, x: "auto", y: "auto" },
+	};
+
+	const h1Variants = {};
+
+	const minimizeH1s = () => {
+		setTimeout(() => {
+			setShouldMinimize(true);
+		}, 2000);
 	};
 
 	useEffect(() => {
 		setHasLoaded(true);
+		minimizeH1s();
 	}, []);
 
 	return (
@@ -32,8 +49,28 @@ const Banner: FC<Props> = (props) => {
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 1 }}
 		>
-			<h1 className="headerName">ERIK KIMSEY</h1>
-			<h1 className="headerTitle">FRONTEND ENGINEER</h1>
+			<motion.h1
+				initial="fontScaledUp"
+				variants={variants}
+				animate={
+					shouldMinimize ? "nameFontScaledDown" : "nameFontScaledUp"
+				}
+				transition={{ duration: 1 }}
+				className="headerName"
+			>
+				ERIK KIMSEY
+			</motion.h1>
+			<motion.h1
+				initial="fontScaledUp"
+				variants={variants}
+				animate={
+					shouldMinimize ? "titleFontScaledDown" : "titleFontScaledUp"
+				}
+				transition={{ duration: 1.5 }}
+				className="headerTitle"
+			>
+				FRONTEND ENGINEER
+			</motion.h1>
 		</StyledContainer>
 	);
 };
@@ -100,7 +137,7 @@ const StyledContainer = styled.div<StyledProps>`
 			display: none;
 		}
 		h1 {
-			font-size: 1.2em;
+			/* font-size: 1.2em; */
 			padding: 0;
 			margin: 0;
 			line-height: 1;
