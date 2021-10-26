@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -59,7 +59,6 @@ const StyledContainer = styled.div<StyledProps>`
 	justify-content: center;
 	align-items: center;
 	height: 50px;
-
 	img {
 		width: 50px;
 		height: 50px;
@@ -76,7 +75,6 @@ const StyledContainer = styled.div<StyledProps>`
 	.line {
 		width: 20px;
 		height: 1px;
-		/* background-color: #f0f; */
 	}
 
 	@media (max-width: 568px) {

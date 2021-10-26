@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import EDUCATION_DATA from "./education_data";
@@ -86,21 +86,7 @@ const Education: FC<Props> = (props) => {
 			listActive={listActive}
 			ref={ref}
 		>
-			<div
-				className="headerAndButton"
-				style={{
-					display: "flex",
-					flexFlow: "row",
-					justifyContent: "center",
-				}}
-			>
-				<div className="buttonDisplay" onClick={handleListDisplay}>
-					{listActive === true ? (
-						<img src={UpChevron} alt="hide list" />
-					) : (
-						<img src={DownChevron} alt="show list" />
-					)}
-				</div>
+			<div className="headerAndButton">
 				{inView && (
 					<div className="headerContainer">
 						<motion.div
@@ -111,17 +97,22 @@ const Education: FC<Props> = (props) => {
 						<motion.h1
 							animate={{ x: [200, 0] }}
 							transition={{ ease: "easeOut", duration: 0.5 }}
-							style={{ fontSize: "3em" }}
+							style={{ fontSize: "2em" }}
 						>
 							education.
 						</motion.h1>
 					</div>
 				)}
+				<div className="buttonDisplay" onClick={handleListDisplay}>
+					{listActive === true ? (
+						<img src={UpChevron} alt="hide list" />
+					) : (
+						<img src={DownChevron} alt="show list" />
+					)}
+				</div>
 			</div>
 			<div className="educationContainer">
 				{EDUCATION_DATA.map((e, i) => {
-					// console.log(e);
-
 					return <EducationComponent data={e} key={i} />;
 				})}
 			</div>
@@ -136,14 +127,22 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
+
+	.headerAndButton {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		padding-left: 10px;
+	}
+
 	.headerContainer {
 		width: auto;
 		display: flex;
 		flex-direction: row;
 		background-color: rgba(0, 0, 0, 0.3);
-		padding: 10px;
+		/* padding: 10px; */
 		margin: 0;
-		height: auto;
+		/* height: auto; */
 	}
 
 	.leftLine {
@@ -163,6 +162,8 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	h1 {
+		padding: 5px;
+		font-family: "Angel";
 		color: #555;
 		line-height: 0;
 	}
@@ -172,18 +173,17 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
-		height: 100%;
 		cursor: pointer;
 		align-items: flex-end;
+		padding: 15px;
 
 		img {
-			width: 60px;
-			height: 60px;
+			width: 40px;
+			/* height: 60px;pxx; */
 		}
 	}
 
 	.educationContainer {
-		/* max-width: 500px; */
 		box-sizing: content-box;
 		padding: 10px;
 		width: 100%;
@@ -198,8 +198,11 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.educationComponentContainer {
-		/* height: 100px; */
-		margin: 10px 0px;
+		background-color: rgba(0, 0, 0, 0);
+		height: 100px;
+		width: 300px;
+		box-sizing: content-box;
+		margin: 15px 0px;
 		display: flex;
 		flex-direction: column;
 		padding-left: 30px;
@@ -232,11 +235,14 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		/* align-items: center; */
 		padding: 10px;
 		padding-bottom: 0;
+
+		.headerAndButton {
+		}
+
 		.headerContainer {
-			padding-bottom: 0;
+			padding: 10px;
 		}
 		p {
 			padding: 10px;

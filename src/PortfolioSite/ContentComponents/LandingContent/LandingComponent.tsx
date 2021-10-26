@@ -58,11 +58,13 @@ const LandingComponent: FC<Props> = (props) => {
 					transition={{ duration: 0.5 }}
 					id="landingComponent"
 				>
-					<Banner />
+					{/* <Banner /> */}
+					<div className="experienceEducationContainer">
+						<Work />
+						<Education />
+					</div>
 					{/* {hasLoaded && <h1>.... d-_-b ....</h1>} */}
-					<TopComponent />
-					<Work />
-					<Education />
+					{/* <TopComponent /> */}
 					<div
 						style={{
 							paddingBottom: "100px",

@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { setTimeout } from "timers";
@@ -19,15 +19,11 @@ const Banner: FC<Props> = (props) => {
 			opacity: 0,
 			scale: 5,
 		},
-		// name h1
 		nameFontScaledUp: { scale: [1.5, 1], x: [-100, 0] },
 		nameFontScaledDown: { scale: 1, x: "auto", y: "auto" },
-		// title h1
-		titleFontScaledUp: { scale: [1.5, 1], x: [-100, 50] },
+		titleFontScaledUp: { scale: [1.5, 1], x: [-100, 0] },
 		titleFontScaledDown: { scale: 1, x: "auto", y: "auto" },
 	};
-
-	const h1Variants = {};
 
 	const minimizeH1s = () => {
 		setTimeout(() => {
@@ -69,7 +65,7 @@ const Banner: FC<Props> = (props) => {
 				transition={{ duration: 1.5 }}
 				className="headerTitle"
 			>
-				FRONTEND ENGINEER
+				Creative Technologist
 			</motion.h1>
 		</StyledContainer>
 	);
@@ -78,6 +74,7 @@ const Banner: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
 	position: relative;
+	width: 98%;
 	top: 0;
 	display: flex;
 	flex-direction: column;
@@ -123,7 +120,6 @@ const StyledContainer = styled.div<StyledProps>`
 	@media (max-width: 568px) {
 		margin-top: 0px;
 		position: relative;
-		/* left: 10px; */
 		top: 0px;
 		height: auto;
 		padding: 0;
@@ -137,7 +133,7 @@ const StyledContainer = styled.div<StyledProps>`
 			display: none;
 		}
 		h1 {
-			/* font-size: 1.2em; */
+			font-size: 2.4em;
 			padding: 0;
 			margin: 0;
 			line-height: 1;

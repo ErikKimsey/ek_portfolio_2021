@@ -125,35 +125,26 @@ const Work: FC<Props> = (props) => {
 			numOfItems={numOfItems}
 			displayButton={WorkIcon}
 		>
-			<div
-				className="headerAndButton"
-				style={{
-					display: "flex",
-					flexFlow: "row",
-					justifyContent: "center",
-				}}
-			>
-				<AnimatePresence exitBeforeEnter>
-					{inView && (
-						<div className="headerContainer">
-							<motion.div
-								key="leftLine"
-								className="leftLine"
-								animate={{ x: [200, 0] }}
-								transition={{ ease: "easeOut", duration: 0.7 }}
-							></motion.div>
-							<motion.h1
-								className="workH1"
-								key="h1"
-								animate={{ x: [-200, 0] }}
-								transition={{ ease: "easeOut", duration: 0.5 }}
-								style={{ fontSize: "3em" }}
-							>
-								work.
-							</motion.h1>
-						</div>
-					)}
-				</AnimatePresence>
+			<div className="headerAndButton">
+				{inView && (
+					<div className="headerContainer">
+						<motion.div
+							key="leftLine"
+							className="leftLine"
+							animate={{ x: [200, 0] }}
+							transition={{ ease: "easeOut", duration: 0.7 }}
+						></motion.div>
+						<motion.h1
+							className="workH1"
+							key="h1"
+							animate={{ x: [-200, 0] }}
+							transition={{ ease: "easeOut", duration: 0.5 }}
+							style={{ fontSize: "2em" }}
+						>
+							experience.
+						</motion.h1>
+					</div>
+				)}
 
 				<div className="buttonDisplay" onClick={handleListDisplay}>
 					{listActive === true ? (
@@ -187,13 +178,21 @@ const StyledContainer = styled.div<StyledProps>`
 	flex-direction: column;
 	padding: 10px;
 
+	.headerAndButton {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
 	.headerContainer {
+		/* align-self: flex-start; */
 		box-sizing: content-box;
 		width: auto;
-		top: 50px;
 		display: flex;
 		flex-direction: row;
+		background-color: rgba(173, 0, 81, 0.3);
 		background-color: rgba(0, 0, 0, 0.3);
+		padding: 0;
 	}
 
 	.leftLine {
@@ -214,32 +213,32 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	h1 {
-		padding: 5px;
+		padding: 3px;
 		font-family: "Angel";
 		color: #555;
 		line-height: 0;
 	}
 
-	.components {
+	/* .components {
 		box-sizing: content-box;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		height: 100%;
-	}
+	} */
 
 	.buttonDisplay {
 		align-self: flex-start;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
-		height: 100%;
 		cursor: pointer;
 		align-items: flex-end;
+		padding: 15px;
 
 		img {
-			width: 60px;
-			height: 60px;
+			width: 40px;
+			/* height: 60px; */
 		}
 	}
 
@@ -249,11 +248,9 @@ const StyledContainer = styled.div<StyledProps>`
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
 		display: flex;
-		flex-direction: column;
 		flex-direction: row;
-		/* flex-wrap: nowrap; */
 		flex-wrap: wrap;
-		/* padding-top: 30px; */
+		padding-top: 10px;
 		overflow-y: scroll;
 		background-color: #000;
 		height: 95vh;

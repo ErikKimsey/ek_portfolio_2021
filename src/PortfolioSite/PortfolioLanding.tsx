@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "../Menu/Menu";
+import Banner from "./Banner";
 import { Education, LandingComponent, Work } from "./ContentComponents";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
@@ -14,6 +15,7 @@ interface StyledProps {
 const PortfolioLanding: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
+			<Banner />
 			<Switch>
 				<Route exact path="/portfolio/" component={LandingComponent} />
 				<Route exact path="/portfolio/work" component={Work} />
@@ -23,7 +25,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 					component={Education}
 				/>
 			</Switch>
-			<Menu />
+			{/* <Menu /> */}
 		</StyledContainer>
 	);
 };
