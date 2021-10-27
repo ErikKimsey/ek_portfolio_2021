@@ -126,31 +126,29 @@ const Work: FC<Props> = (props) => {
 			displayButton={WorkIcon}
 		>
 			<div className="headerAndButton">
-				{inView && (
-					<div className="headerContainer">
-						<motion.div
-							key="leftLine"
-							className="leftLine"
-							animate={{ x: [200, 0] }}
-							transition={{ ease: "easeOut", duration: 0.7 }}
-						></motion.div>
-						<motion.h1
-							className="workH1"
-							key="h1"
-							animate={{ x: [-200, 0] }}
-							transition={{ ease: "easeOut", duration: 0.5 }}
-							style={{ fontSize: "2em" }}
-						>
-							experience.
-						</motion.h1>
-					</div>
-				)}
-
 				<div className="buttonDisplay" onClick={handleListDisplay}>
 					{listActive === true ? (
 						<img src={UpChevron} alt="hide list" />
 					) : (
 						<img src={DownChevron} alt="show list" />
+					)}
+					{inView && (
+						<div className="headerContainer">
+							<motion.div
+								key="leftLine"
+								className="leftLine"
+								animate={{ x: [200, 0] }}
+								transition={{ ease: "easeOut", duration: 0.7 }}
+							></motion.div>
+							<motion.h1
+								className="workH1"
+								key="h1"
+								animate={{ x: [-200, 0] }}
+								transition={{ ease: "easeOut", duration: 0.5 }}
+							>
+								experience.
+							</motion.h1>
+						</div>
 					)}
 				</div>
 			</div>
@@ -201,6 +199,7 @@ const StyledContainer = styled.div<StyledProps>`
 		background: #f0f;
 		border-radius: 10px;
 		align-self: center;
+		margin: 10px;
 	}
 
 	h1,
@@ -316,8 +315,11 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		/* align-items: center; */
 		padding: 10px;
+
+		h1 {
+			font-size: 1.6em;
+		}
 
 		.headerContainer {
 			padding: 10px;
@@ -329,7 +331,6 @@ const StyledContainer = styled.div<StyledProps>`
 
 		.workContainer {
 			box-sizing: content-box;
-			/* width: 100%; */
 			height: 100%;
 		}
 

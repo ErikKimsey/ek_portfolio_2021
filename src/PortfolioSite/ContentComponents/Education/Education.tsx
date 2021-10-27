@@ -87,27 +87,26 @@ const Education: FC<Props> = (props) => {
 			ref={ref}
 		>
 			<div className="headerAndButton">
-				{inView && (
-					<div className="headerContainer">
-						<motion.div
-							className="leftLine"
-							animate={{ x: [-200, 0] }}
-							transition={{ ease: "easeOut", duration: 0.7 }}
-						></motion.div>
-						<motion.h1
-							animate={{ x: [200, 0] }}
-							transition={{ ease: "easeOut", duration: 0.5 }}
-							style={{ fontSize: "2em" }}
-						>
-							education.
-						</motion.h1>
-					</div>
-				)}
 				<div className="buttonDisplay" onClick={handleListDisplay}>
 					{listActive === true ? (
 						<img src={UpChevron} alt="hide list" />
 					) : (
 						<img src={DownChevron} alt="show list" />
+					)}
+					{inView && (
+						<div className="headerContainer">
+							<motion.div
+								className="leftLine"
+								animate={{ x: [-200, 0] }}
+								transition={{ ease: "easeOut", duration: 0.7 }}
+							></motion.div>
+							<motion.h1
+								animate={{ x: [200, 0] }}
+								transition={{ ease: "easeOut", duration: 0.5 }}
+							>
+								education.
+							</motion.h1>
+						</div>
 					)}
 				</div>
 			</div>
@@ -132,7 +131,6 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: flex-start;
-		padding-left: 10px;
 	}
 
 	.headerContainer {
@@ -140,9 +138,7 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		background-color: rgba(0, 0, 0, 0.3);
-		/* padding: 10px; */
 		margin: 0;
-		/* height: auto; */
 	}
 
 	.leftLine {
@@ -151,6 +147,7 @@ const StyledContainer = styled.div<StyledProps>`
 		background: #f0f;
 		border-radius: 10px;
 		align-self: center;
+		margin: 10px;
 	}
 
 	h1,
@@ -237,6 +234,9 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: column;
 		padding: 10px;
 		padding-bottom: 0;
+		h1 {
+			font-size: 1.6em;
+		}
 
 		.headerAndButton {
 		}

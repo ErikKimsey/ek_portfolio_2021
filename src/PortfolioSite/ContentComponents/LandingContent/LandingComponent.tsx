@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Education, Work } from "..";
-import Banner from "../../Banner";
 import TopComponent from "../TopComponent/TopComponent";
 
 type Props = {};
@@ -58,13 +57,12 @@ const LandingComponent: FC<Props> = (props) => {
 					transition={{ duration: 0.5 }}
 					id="landingComponent"
 				>
-					{/* <Banner /> */}
 					<div className="experienceEducationContainer">
+						<TopComponent />
 						<Work />
 						<Education />
 					</div>
 					{/* {hasLoaded && <h1>.... d-_-b ....</h1>} */}
-					{/* <TopComponent /> */}
 					<div
 						style={{
 							paddingBottom: "100px",
