@@ -75,13 +75,13 @@ const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
 	position: relative;
 	width: 98%;
-	top: 0;
+	top: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	margin-right: 50px;
 	font-family: "Angel";
-	padding: 20px;
+	padding: 0px;
 	margin-bottom: 20px;
 
 	h1 {
@@ -96,10 +96,10 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 768px) {
-		margin-top: 0px;
+		margin-top: 20px;
 		position: relative;
 		left: 10px;
-		top: 0px;
+		top: 20px;
 		height: auto;
 		.leftSpace {
 			padding: 10px;
@@ -124,6 +124,7 @@ const StyledContainer = styled.div<StyledProps>`
 		height: auto;
 		padding: 0;
 		margin: 0;
+		margin-top: 20px;
 		.leftSpace {
 			padding: 0px;
 			display: flex;
