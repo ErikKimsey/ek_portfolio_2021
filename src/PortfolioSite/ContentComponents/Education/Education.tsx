@@ -121,7 +121,6 @@ const Education: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
-	height: 100vh;
 	width: ${(props) => props.containerWidth * 0.7}px;
 	display: flex;
 	flex-direction: column;
