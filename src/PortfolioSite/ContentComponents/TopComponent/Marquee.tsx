@@ -48,18 +48,25 @@ const Marquee: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	width: 100%;
+	background-color: #222;
 	padding: 0;
 	margin: 20px;
 	font-family: "ComfortaaBold";
+	height: 9vw;
 
 	.marquee {
+		overflow: hidden;
+		position: absolute;
 		width: 100%;
+		height: 100%;
+		width: auto;
+		height: 9vw;
 		padding: 0;
 		margin: 0;
 		display: flex;
-		justify-content: space-between;
+		/* justify-content: space-between; */
 		color: ${(props) => props.textColor};
-		font-size: 8vw;
+		font-size: 4vw;
 		font-weight: 100;
 		animation: ${(props) =>
 				props.positiveFlow === true
@@ -68,7 +75,7 @@ const StyledContainer = styled.div<StyledProps>`
 			12s infinite linear;
 	}
 	.marquee-item {
-		margin-right: 20px;
+		margin-right: 4vw;
 		width: auto;
 		white-space: nowrap;
 	}
@@ -83,7 +90,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 	@keyframes MarqueeNegative {
 		0% {
-			transform: translateX(100%);
+			transform: translateX(200%);
 		}
 		100% {
 			transform: translateX(-100%);

@@ -43,15 +43,13 @@ const TopComponent: FC<Props> = (props) => {
 				<Marquee
 					textInput={MARQUEE_DATA}
 					positiveFlow={true}
-					textColor="#f0f"
-					marqueeSpeed={"12s"}
+					textColor="#0099ff"
 				/>
-				<Marquee
+				{/* <Marquee
 					textInput={MARQUEE_DATA}
 					positiveFlow={false}
 					textColor="#fff"
-					marqueeSpeed={"16s"}
-				/>
+				/> */}
 			</div>
 		</StyledContainer>
 	);
