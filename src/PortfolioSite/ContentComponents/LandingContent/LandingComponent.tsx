@@ -57,11 +57,11 @@ const LandingComponent: FC<Props> = (props) => {
 					transition={{ duration: 0.5 }}
 					id="landingComponent"
 				>
-					<div className="experienceEducationContainer">
-						<TopComponent />
-						<Work />
-						<Education />
-					</div>
+					{/* <div className="experienceEducationContainer"> */}
+					<TopComponent />
+					<Work />
+					<Education />
+					{/* </div> */}
 					{/* {hasLoaded && <h1>.... d-_-b ....</h1>} */}
 					<div
 						style={{
@@ -83,6 +83,7 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-flow: column;
 	align-items: center;
+	justify-content: space-around;
 	padding: 15px;
 	align-self: center;
 	/* z-index: -1000; */

@@ -44,11 +44,13 @@ const TopComponent: FC<Props> = (props) => {
 					textInput={MARQUEE_DATA}
 					positiveFlow={true}
 					textColor="#f0f"
+					marqueeSpeed={"12s"}
 				/>
 				<Marquee
 					textInput={MARQUEE_DATA}
 					positiveFlow={false}
 					textColor="#fff"
+					marqueeSpeed={"16s"}
 				/>
 			</div>
 		</StyledContainer>
@@ -56,7 +58,8 @@ const TopComponent: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	height: calc(100vh - ${(props) => props.bannerHeight}px);
+	/* height: calc(100vh - ${(props) => props.bannerHeight}px); */
+
 	width: 100%;
 	margin: 0;
 	margin-top: 10px;

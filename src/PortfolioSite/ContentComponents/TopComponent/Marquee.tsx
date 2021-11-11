@@ -5,28 +5,36 @@ type Props = {
 	textInput?: string[];
 	positiveFlow?: boolean;
 	textColor?: string;
+	marqueeSpeed?: string;
 };
 
 type StyledProps = {
 	positiveFlow?: boolean;
 	textColor?: string;
+	marqueeSpeed?: string;
 };
 
 const Marquee: FC<Props> = (props) => {
-	const { textInput, positiveFlow, textColor } = props;
+	const { textInput, positiveFlow, textColor, marqueeSpeed } = props;
 	let [input, setInput] = useState<string[]>();
 	let [flow, setFlow] = useState<boolean>();
 	let [color, setColor] = useState<string>();
+	let [speed, setSpeed] = useState<string>();
 	console.log(textInput);
 
 	useEffect(() => {
 		if (textInput && textInput.length > 0) setInput(textInput);
 		setFlow(positiveFlow);
 		setColor(textColor);
+		if (marqueeSpeed) setSpeed(marqueeSpeed);
 	}, []);
 
 	return (
-		<StyledContainer positiveFlow={flow} textColor={color}>
+		<StyledContainer
+			positiveFlow={flow}
+			textColor={color}
+			marqueeSpeed={speed}
+		>
 			{input && (
 				<div className="marquee">
 					{input.map((e, i) => {
@@ -57,7 +65,7 @@ const StyledContainer = styled.div<StyledProps>`
 				props.positiveFlow === true
 					? "MarqueePositive"
 					: "MarqueeNegative"}
-			10s infinite linear;
+			12s infinite linear;
 	}
 	.marquee-item {
 		margin-right: 20px;
