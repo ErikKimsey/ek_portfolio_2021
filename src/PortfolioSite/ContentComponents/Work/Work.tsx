@@ -62,7 +62,7 @@ const Work: FC<Props> = (props) => {
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
-	const [listActive, setListActive] = useState(false);
+	const [listActive, setListActive] = useState(true);
 	const { inView, ref } = useInView({ threshold: 0.2 });
 	const [numOfItems, setNumOfItems] = useState(WORK_DATA.length);
 	const [modalIsOpen, setIsOpen] = useState(false);
@@ -127,11 +127,11 @@ const Work: FC<Props> = (props) => {
 		>
 			<div className="headerAndButton">
 				<div className="buttonDisplay" onClick={handleListDisplay}>
-					{listActive === true ? (
+					{/* {listActive === true ? (
 						<img src={UpChevron} alt="hide list" />
 					) : (
 						<img src={DownChevron} alt="show list" />
-					)}
+					)} */}
 					{inView && (
 						<div className="headerContainer">
 							<motion.div
@@ -233,7 +233,7 @@ const StyledContainer = styled.div<StyledProps>`
 		justify-content: flex-end;
 		cursor: pointer;
 		align-items: flex-end;
-		padding: 15px;
+		/* padding: 15px; */
 
 		img {
 			width: 40px;

@@ -1,12 +1,22 @@
 import React, { FC, useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import Banner from "../../Banner";
+import Marquee from "./Marquee";
 
 type Props = {};
 
 type StyledProps = {
 	bannerHeight?: number;
 };
+
+const MARQUEE_DATA = [
+	"P5",
+	"HTML",
+	"Sass",
+	"CSS",
+	"JAvascript",
+	"React",
+	"React-Native",
+];
 
 const TopComponent: FC<Props> = (props) => {
 	const thisRef = useRef();
@@ -21,13 +31,26 @@ const TopComponent: FC<Props> = (props) => {
 	function setBannerDimens(ref) {
 		let bH;
 		bH = ref.current.children[0].clientHeight;
+		console.log("bH");
+		console.log(bH);
+
 		setBannerHeight(bH);
 	}
 
 	return (
 		<StyledContainer ref={thisRef} bannerHeight={bannerHeight}>
-			{/* <Banner /> */}
-			<div className="container"></div>
+			<div className="marquee-container">
+				<Marquee
+					textInput={MARQUEE_DATA}
+					positiveFlow={true}
+					textColor="#f0f"
+				/>
+				<Marquee
+					textInput={MARQUEE_DATA}
+					positiveFlow={false}
+					textColor="#fff"
+				/>
+			</div>
 		</StyledContainer>
 	);
 };

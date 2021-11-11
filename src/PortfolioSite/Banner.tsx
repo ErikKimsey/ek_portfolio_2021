@@ -67,6 +67,17 @@ const Banner: FC<Props> = (props) => {
 			>
 				Creative Technologist
 			</motion.h1>
+			<motion.h1
+				initial="fontScaledUp"
+				variants={variants}
+				animate={
+					shouldMinimize ? "titleFontScaledDown" : "titleFontScaledUp"
+				}
+				transition={{ duration: 1.5 }}
+				className="headerTitle"
+			>
+				Creative Technologist
+			</motion.h1>
 		</StyledContainer>
 	);
 };
@@ -78,20 +89,22 @@ const StyledContainer = styled.div<StyledProps>`
 	top: 20px;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	margin-right: 50px;
+	/* align-items: center; */
+	/* margin-right: 50px; */
 	font-family: "Angel";
 	padding: 0px;
-	margin-bottom: 20px;
+	padding-left: 40px;
+	/* margin-bottom: 20px; */
 
 	h1 {
 		margin: 0;
-		font-size: 4em;
+		font-size: 11vw;
 		color: #333;
 		line-height: 1;
 	}
 
 	.headerTitle {
+		font-size: 8vw;
 		color: rgba(255, 0, 255, 0.8);
 	}
 
@@ -110,10 +123,14 @@ const StyledContainer = styled.div<StyledProps>`
 			z-index: -100000;
 		}
 		h1 {
-			font-size: 3em;
+			/* font-size: 3em; */
 			padding: 0;
 			margin: 0;
 			line-height: 1;
+		}
+		.headerTitle {
+			font-size: 8vw;
+			color: rgba(255, 0, 255, 0.8);
 		}
 	}
 
@@ -134,10 +151,14 @@ const StyledContainer = styled.div<StyledProps>`
 			display: none;
 		}
 		h1 {
-			font-size: 2.4em;
+			/* font-size: 2.4em; */
 			padding: 0;
 			margin: 0;
 			line-height: 1;
+		}
+		.headerTitle {
+			font-size: 5vh;
+			color: rgba(255, 0, 255, 0.8);
 		}
 	}
 `;
