@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-import Icons from "./Icons";
+import Icons from "../Icons";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";

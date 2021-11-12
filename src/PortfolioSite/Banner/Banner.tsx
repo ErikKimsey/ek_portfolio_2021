@@ -67,17 +67,6 @@ const Banner: FC<Props> = (props) => {
 			>
 				Creative Technologist
 			</motion.h1>
-			<motion.h1
-				initial="fontScaledUp"
-				variants={variants}
-				animate={
-					shouldMinimize ? "titleFontScaledDown" : "titleFontScaledUp"
-				}
-				transition={{ duration: 1.5 }}
-				className="headerTitle"
-			>
-				Creative Technologist
-			</motion.h1>
 		</StyledContainer>
 	);
 };
@@ -97,15 +86,34 @@ const StyledContainer = styled.div<StyledProps>`
 	/* margin-bottom: 20px; */
 
 	h1 {
+		position: relative;
 		margin: 0;
 		font-size: 11vw;
-		color: #333;
 		line-height: 1;
 	}
 
+	.headerName {
+		color: rgba(255, 0, 255, 0.6);
+		&::after {
+			content: "ERIK KIMSEY";
+			position: absolute;
+			color: rgba(0, 150, 155, 0.6);
+			left: 3px;
+			top: 3px;
+		}
+	}
+
 	.headerTitle {
+		color: rgba(255, 0, 255, 0.6);
+		color: rgba(70, 70, 70, 0.6);
 		font-size: 8vw;
-		color: rgba(255, 0, 255, 0.8);
+		&::after {
+			content: "Creative Technologist";
+			position: absolute;
+			color: rgba(70, 70, 70, 0.6);
+			left: 3px;
+			top: 3px;
+		}
 	}
 
 	@media (max-width: 768px) {
@@ -130,7 +138,7 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 		.headerTitle {
 			font-size: 8vw;
-			color: rgba(255, 0, 255, 0.8);
+			/* color: rgba(255, 0, 255, 0.8); */
 		}
 	}
 
@@ -151,14 +159,20 @@ const StyledContainer = styled.div<StyledProps>`
 			display: none;
 		}
 		h1 {
-			/* font-size: 2.4em; */
 			padding: 0;
 			margin: 0;
 			line-height: 1;
+			font-size: 15vw;
+			overflow: wrap;
+			white-space: pre-wrap;
+			hyphens: manual;
 		}
 		.headerTitle {
 			font-size: 5vh;
-			color: rgba(255, 0, 255, 0.8);
+			font-size: 12vw;
+			overflow: wrap;
+			white-space: pre-wrap;
+			hyphens: auto;
 		}
 	}
 `;

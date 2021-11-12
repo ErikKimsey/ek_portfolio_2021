@@ -4,9 +4,9 @@ import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { WORK_DATA } from "./work_data";
-import UpChevron from "../../../assets/images/Icons/chevron-up.svg";
-import DownChevron from "../../../assets/images/Icons/chevron-down.svg";
-import WorkIcon from "../../../assets/images/Icons/work.png";
+import UpChevron from "../../assets/images/Icons/chevron-up.svg";
+import DownChevron from "../../assets/images/Icons/chevron-down.svg";
+import WorkIcon from "../../assets/images/Icons/work.png";
 
 type Props = {};
 
@@ -63,13 +63,13 @@ const Work: FC<Props> = (props) => {
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
 	const [listActive, setListActive] = useState(true);
-	const { inView, ref } = useInView({ threshold: 0.2 });
+	const { inView, ref } = useInView({ threshold: 0.4 });
 	const [numOfItems, setNumOfItems] = useState(WORK_DATA.length);
 	const [modalIsOpen, setIsOpen] = useState(false);
 
 	const customStyles = {
 		content: {
-			height: "99%",
+			height: "100%",
 			width: "100%",
 			top: "50%",
 			left: "50%",
@@ -127,19 +127,21 @@ const Work: FC<Props> = (props) => {
 		>
 			<div className="headerAndButton">
 				<div className="buttonDisplay" onClick={handleListDisplay}>
-					{/* {listActive === true ? (
-						<img src={UpChevron} alt="hide list" />
+					{listActive === true ? (
+						<img
+							src={UpChevron}
+							className="chevron"
+							alt="hide list"
+						/>
 					) : (
-						<img src={DownChevron} alt="show list" />
-					)} */}
+						<img
+							src={DownChevron}
+							className="chevron"
+							alt="show list"
+						/>
+					)}
 					{inView && (
 						<div className="headerContainer">
-							<motion.div
-								key="leftLine"
-								className="leftLine"
-								animate={{ x: [200, 0] }}
-								transition={{ ease: "easeOut", duration: 0.7 }}
-							></motion.div>
 							<motion.h1
 								className="workH1"
 								key="h1"
@@ -170,11 +172,10 @@ const Work: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
-	width: ${(props) => props.containerWidth * 0.7}px;
-	/* height: ${(props) => (props.listActive === true ? `100%` : `100vh`)}; */
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
+	align-self: flex-start;
 
 	.headerAndButton {
 		display: flex;
@@ -188,6 +189,7 @@ const StyledContainer = styled.div<StyledProps>`
 		width: auto;
 		display: flex;
 		flex-direction: row;
+		justify-content: flex-start;
 		background-color: rgba(173, 0, 81, 0.3);
 		background-color: rgba(0, 0, 0, 0.3);
 		padding: 0;
@@ -199,7 +201,6 @@ const StyledContainer = styled.div<StyledProps>`
 		background: #f0f;
 		border-radius: 10px;
 		align-self: center;
-		margin: 10px;
 	}
 
 	h1,
@@ -216,6 +217,8 @@ const StyledContainer = styled.div<StyledProps>`
 		font-family: "Angel";
 		color: #555;
 		line-height: 0;
+		&.workH1 {
+		}
 	}
 
 	/* .components {
@@ -227,30 +230,29 @@ const StyledContainer = styled.div<StyledProps>`
 	} */
 
 	.buttonDisplay {
+		width: 100%;
 		align-self: flex-start;
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-end;
+		justify-content: flex-start;
 		cursor: pointer;
 		align-items: flex-end;
 		/* padding: 15px; */
-
-		img {
-			width: 40px;
-			/* height: 60px; */
+	}
+	img {
+		/* width: 40px; */
+		&.chevron {
+			height: 20px;
+			padding-left: 10px;
 		}
 	}
 
 	.workContainer {
 		box-sizing: content-box;
-		/* width: 100%; */
-		max-height: ${(props) =>
-			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		padding-top: 10px;
-		overflow-y: scroll;
 		background-color: #000;
 		height: 95vh;
 		transition: all 0.5s ease-in-out;
@@ -266,7 +268,6 @@ const StyledContainer = styled.div<StyledProps>`
 		border-radius: 10px;
 		display: flex;
 		flex-direction: column;
-		/* padding-left: 30px; */
 		transition: all 0.5s;
 		&:hover {
 			transform: scale(1.05);
@@ -315,7 +316,7 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		padding: 10px;
+		padding: 0;
 
 		h1 {
 			font-size: 1.6em;
@@ -323,6 +324,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 		.headerContainer {
 			padding: 10px;
+			width: 100%;
 		}
 
 		p {
@@ -342,21 +344,6 @@ const StyledContainer = styled.div<StyledProps>`
 			margin: 0;
 			padding: 10px;
 		}
-
-		/* .workTitle {
-			font-size: 1em;
-		}
-
-		.employerName {
-			margin: 0;
-			margin-left: 10px;
-		}
-		.employerURL {
-		}
-		height: auto;
-		display: flex;
-		flex-direction: column;
-	} */
 	}
 `;
 

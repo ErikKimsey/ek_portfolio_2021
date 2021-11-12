@@ -3,8 +3,8 @@ import { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import EDUCATION_DATA from "./education_data";
-import UpChevron from "../../../assets/images/Icons/chevron-up.svg";
-import DownChevron from "../../../assets/images/Icons/chevron-down.svg";
+import UpChevron from "../../assets/images/Icons/chevron-up.svg";
+import DownChevron from "../../assets/images/Icons/chevron-down.svg";
 
 type Props = {};
 
@@ -43,7 +43,7 @@ const Education: FC<Props> = (props) => {
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
 	const { inView, ref } = useInView({ threshold: 0.1 });
-	const [listActive, setListActive] = useState(true);
+	const [listActive, setListActive] = useState(false);
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
@@ -88,18 +88,21 @@ const Education: FC<Props> = (props) => {
 		>
 			<div className="headerAndButton">
 				<div className="buttonDisplay" onClick={handleListDisplay}>
-					{/* {listActive === true ? (
-						<img src={UpChevron} alt="hide list" />
+					{listActive === true ? (
+						<img
+							src={UpChevron}
+							className="chevron"
+							alt="hide list"
+						/>
 					) : (
-						<img src={DownChevron} alt="show list" />
-					)} */}
+						<img
+							src={DownChevron}
+							className="chevron"
+							alt="show list"
+						/>
+					)}
 					{inView && (
 						<div className="headerContainer">
-							<motion.div
-								className="leftLine"
-								animate={{ x: [-200, 0] }}
-								transition={{ ease: "easeOut", duration: 0.7 }}
-							></motion.div>
 							<motion.h1
 								animate={{ x: [200, 0] }}
 								transition={{ ease: "easeOut", duration: 0.5 }}
@@ -125,6 +128,7 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
+	align-self: flex-start;
 
 	.headerAndButton {
 		display: flex;
@@ -165,17 +169,21 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.buttonDisplay {
+		width: 100%;
 		align-self: flex-start;
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-end;
 		cursor: pointer;
 		align-items: flex-end;
+
 		/* padding: 15px; */
 
 		img {
-			width: 40px;
-			/* height: 60px;pxx; */
+			/* width: 40px; */
+			&.chevron {
+				height: 20px;
+				padding-left: 10px;
+			}
 		}
 	}
 
@@ -241,6 +249,8 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 
 		.headerContainer {
+			width: 100%;
+			justify-content: flex-start;
 			padding: 10px;
 		}
 		p {

@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import { Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "../Menu/Menu";
-import Banner from "./Banner";
-import { Education, LandingComponent, Work } from "./ContentComponents";
+import Banner from "./Banner/Banner";
+import { Education, Experience } from "./index.js";
 // import ArrowNavComponent from "./ArrowNavComponent/ArrowNavComponent";
 
 type Props = {};
@@ -16,7 +16,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<Banner />
-			<Switch>
+			{/* <Switch>
 				<Route exact path="/portfolio/" component={LandingComponent} />
 				<Route exact path="/portfolio/work" component={Work} />
 				<Route
@@ -24,7 +24,7 @@ const PortfolioLanding: FC<Props> = (props) => {
 					path="/portfolio/education"
 					component={Education}
 				/>
-			</Switch>
+			</Switch> */}
 			{/* <Menu /> */}
 		</StyledContainer>
 	);
@@ -36,6 +36,8 @@ const StyledContainer = styled.div<StyledProps>`
 	flex-direction: column;
 	margin: auto;
 	align-self: center;
+	background-color: #314;
+	height: 100vh;
 
 	.scrollPrev {
 		position: fixed;
