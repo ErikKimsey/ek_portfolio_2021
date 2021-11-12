@@ -36,7 +36,6 @@ const StyledContainer = styled.div<StyledProps>`
 	flex-direction: column;
 	margin: auto;
 	align-self: center;
-	background-color: #314;
 	height: 100vh;
 
 	.scrollPrev {

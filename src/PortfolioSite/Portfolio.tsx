@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import PortfolioLanding from "./PortfolioLanding";
 import { Experience, Education } from "./index";
+import ExperienceEducationContainer from "./ExperienceEducationContainer/ExperienceEducationContainer";
 
 type Props = {};
 
@@ -13,8 +14,9 @@ const Portfolio: FC<Props> = (props) => {
 	return (
 		<StyledContainer>
 			<PortfolioLanding />
-			<Experience />
-			{/* <Education /> */}
+			<ExperienceEducationContainer />
+			{/* <Experience />
+			<Education /> */}
 		</StyledContainer>
 	);
 };

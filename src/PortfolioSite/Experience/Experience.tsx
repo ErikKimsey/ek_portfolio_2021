@@ -62,10 +62,9 @@ const Work: FC<Props> = (props) => {
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
 	const [hasLoaded, setHasLoaded] = useState(false);
-	const [listActive, setListActive] = useState(true);
-	const { inView, ref } = useInView({ threshold: 0.4 });
+	const [listActive, setListActive] = useState(false);
+	const { inView, ref } = useInView({ threshold: 0.1 });
 	const [numOfItems, setNumOfItems] = useState(WORK_DATA.length);
-	const [modalIsOpen, setIsOpen] = useState(false);
 
 	const customStyles = {
 		content: {
@@ -96,9 +95,8 @@ const Work: FC<Props> = (props) => {
 		setListActive(!listActive);
 	};
 
-	const closeModal = () => {
+	const collapseList = () => {
 		setListActive(false);
-		setIsOpen(false);
 	};
 
 	useEffect(() => {
@@ -106,6 +104,8 @@ const Work: FC<Props> = (props) => {
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
 		window.addEventListener("resize", handleResize);
+		console.log(numOfItems);
+
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
@@ -119,7 +119,6 @@ const Work: FC<Props> = (props) => {
 			variants={variants}
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 0.5 }}
-			id="workContainer"
 			ref={ref}
 			listActive={listActive}
 			numOfItems={numOfItems}
@@ -156,7 +155,7 @@ const Work: FC<Props> = (props) => {
 			</div>
 			<motion.div
 				className="workContainer"
-				onClick={closeModal}
+				onClick={collapseList}
 				animate={{ height: ["0%", "100%"] }}
 				exit={{ x: [0, 200] }}
 				transition={{ ease: "easeOut", duration: 0.7 }}
@@ -172,9 +171,10 @@ const Work: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
+	min-height: 150px;
 	display: flex;
 	flex-direction: column;
-	padding: 10px;
+	padding-top: 10px;
 	align-self: flex-start;
 
 	.headerAndButton {
@@ -190,9 +190,7 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		background-color: rgba(173, 0, 81, 0.3);
-		background-color: rgba(0, 0, 0, 0.3);
-		padding: 0;
+		padding: 10px;
 	}
 
 	.leftLine {
@@ -252,9 +250,11 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		padding-top: 10px;
 		background-color: #000;
-		height: 95vh;
+		max-height: ${(props) =>
+			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
+		height: 100%;
+		overflow-y: hidden;
 		transition: all 0.5s ease-in-out;
 	}
 
@@ -332,7 +332,11 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 
 		.workContainer {
-			box-sizing: content-box;
+			/* box-sizing: content-box; */
+			max-height: ${(props) =>
+				props.listActive === true
+					? props.numOfItems * 200 + "px"
+					: "0px"};
 			height: 100%;
 		}
 

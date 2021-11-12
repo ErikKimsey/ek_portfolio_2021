@@ -125,9 +125,10 @@ const Education: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
 	width: ${(props) => props.containerWidth * 0.7}px;
+	min-height: 150px;
 	display: flex;
 	flex-direction: column;
-	padding: 10px;
+	/* padding: 10px; */
 	align-self: flex-start;
 
 	.headerAndButton {
@@ -140,7 +141,6 @@ const StyledContainer = styled.div<StyledProps>`
 		width: auto;
 		display: flex;
 		flex-direction: row;
-		background-color: rgba(0, 0, 0, 0.3);
 		margin: 0;
 	}
 
@@ -150,7 +150,6 @@ const StyledContainer = styled.div<StyledProps>`
 		background: #f0f;
 		border-radius: 10px;
 		align-self: center;
-		margin: 10px;
 	}
 
 	h1,
@@ -197,7 +196,7 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: row;
 		flex-wrap: wrap;
 		padding-top: 10px;
-		overflow-y: hidden;
+		overflow-y: scroll;
 		transition: all 0.5s ease-in-out;
 	}
 
@@ -239,7 +238,7 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		padding: 10px;
+		/* padding: 10px; */
 		padding-bottom: 0;
 		h1 {
 			font-size: 1.6em;
