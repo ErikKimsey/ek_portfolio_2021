@@ -196,7 +196,6 @@ const StyledContainer = styled.div<StyledProps>`
 	.leftLine {
 		height: 10px;
 		width: 10px;
-		background: #f0f;
 		border-radius: 10px;
 		align-self: center;
 	}
@@ -235,6 +234,7 @@ const StyledContainer = styled.div<StyledProps>`
 		justify-content: flex-start;
 		cursor: pointer;
 		align-items: flex-end;
+		background-color: #fefff8;
 		/* padding: 15px; */
 	}
 	img {
@@ -250,7 +250,7 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		background-color: #000;
+		/* background-color: #000; */
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
 		height: 100%;

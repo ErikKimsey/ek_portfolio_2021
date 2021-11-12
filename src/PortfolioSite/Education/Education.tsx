@@ -124,32 +124,23 @@ const Education: FC<Props> = (props) => {
 
 const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
-	width: ${(props) => props.containerWidth * 0.7}px;
+	/* width: ${(props) => props.containerWidth * 0.7}px; */
 	min-height: 150px;
 	display: flex;
 	flex-direction: column;
-	/* padding: 10px; */
-	align-self: flex-start;
 
 	.headerAndButton {
+		background-color: #f0f;
 		display: flex;
-		flex-flow: row wrap;
-		justify-content: flex-start;
+		flex-direction: row;
+		justify-content: flex-end;
 	}
 
 	.headerContainer {
-		width: auto;
+		/* width: auto;
 		display: flex;
 		flex-direction: row;
-		margin: 0;
-	}
-
-	.leftLine {
-		height: 10px;
-		width: 10px;
-		background: #f0f;
-		border-radius: 10px;
-		align-self: center;
+		margin: 0; */
 	}
 
 	h1,
@@ -169,13 +160,14 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.buttonDisplay {
 		width: 100%;
-		align-self: flex-start;
+		/* align-self: flex-start; */
 		display: flex;
 		flex-direction: row;
 		cursor: pointer;
 		align-items: flex-end;
-
-		/* padding: 15px; */
+		justify-content: flex-end;
+		padding-right: 15px;
+		background-color: #fefff8;
 
 		img {
 			/* width: 40px; */
@@ -244,11 +236,14 @@ const StyledContainer = styled.div<StyledProps>`
 			font-size: 1.6em;
 		}
 
+		.buttonDisplay {
+		}
+
 		.headerAndButton {
 		}
 
 		.headerContainer {
-			width: 100%;
+			/* width: 100%; */
 			justify-content: flex-start;
 			padding: 10px;
 		}

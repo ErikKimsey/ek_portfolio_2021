@@ -21,9 +21,9 @@ const StyledContainer = styled.div<StyledProps>`
 	min-height: 100vh;
 	width: 100%;
 	display: flex;
-	flex-flow: column wrap;
+	flex-direction: column;
 	justify-content: flex-start;
-	background-color: #333;
+	background-color: #555;
 	align-items: center;
 
 	@media (max-width: 568px) {
