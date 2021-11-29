@@ -7,6 +7,8 @@ import dnaIcon from "../../assets/images/Icons/dna.svg";
 import soundcloudIcon from "../../assets/images/Icons/soundcloud.svg";
 import resumeIcon from "../../assets/images/Icons/resume_pdf.svg";
 import planeIcon from "../../assets/images/Icons/paper-plane.svg";
+import bookDeadIcon from "../../assets/images/Icons/book-dead.svg";
+import blackholeIcon from "../../assets/images/Icons/blackhole_i.svg";
 
 type Props = {};
 
@@ -62,11 +64,17 @@ const Contact: FC<Props> = (props) => {
                 -- behance,
 
                  */}
-				<img className="linkIcon" src={githubIcon} />
-				<img className="linkIcon" src={dnaIcon} />
-				<img className="linkIcon" src={soundcloudIcon} />
-				<img className="linkIcon" src={resumeIcon} />
-				<img className="linkIcon" src={planeIcon} />
+				<img className="linkIcon" alt="link icon" src={githubIcon} />
+				<img className="linkIcon" alt="link icon" src={dnaIcon} />
+				<img
+					className="linkIcon"
+					alt="link icon"
+					src={soundcloudIcon}
+				/>
+				<img className="linkIcon" alt="link icon" src={resumeIcon} />
+				<img className="linkIcon" alt="link icon" src={planeIcon} />
+				<img className="linkIcon" alt="link icon" src={bookDeadIcon} />
+				<img className="linkIcon" alt="link icon" src={blackholeIcon} />
 			</div>
 		</StyledContainer>
 	);
