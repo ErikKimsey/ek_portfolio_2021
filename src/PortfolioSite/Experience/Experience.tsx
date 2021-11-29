@@ -126,7 +126,7 @@ const Work: FC<Props> = (props) => {
 		>
 			<div className="headerAndButton">
 				<div className="buttonDisplay" onClick={handleListDisplay}>
-					{listActive === true ? (
+					{/* {listActive === true ? (
 						<img
 							src={UpChevron}
 							className="chevron"
@@ -138,7 +138,7 @@ const Work: FC<Props> = (props) => {
 							className="chevron"
 							alt="show list"
 						/>
-					)}
+					)} */}
 					{inView && (
 						<div className="headerContainer">
 							<motion.h1
@@ -176,7 +176,7 @@ const StyledContainer = styled.div<StyledProps>`
 	flex-direction: column;
 	padding-top: 10px;
 	align-self: flex-start;
-	padding: 0 250px;
+	padding: 0 12vw;
 	background-color: #242424;
 
 	.headerAndButton {
@@ -227,7 +227,7 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: row;
 		justify-content: flex-start;
 		cursor: pointer;
-		align-items: flex-end;
+		/* align-items: flex-end; */
 	}
 	img {
 		&.chevron {
@@ -293,7 +293,12 @@ const StyledContainer = styled.div<StyledProps>`
 		color: #ddff81;
 	}
 
+	@media (max-width: 1400px) {
+		padding: 0 50px;
+	}
+
 	@media (max-width: 768px) {
+		padding: 0 50px;
 	}
 
 	@media (max-width: 568px) {

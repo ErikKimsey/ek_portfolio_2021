@@ -88,7 +88,7 @@ const Education: FC<Props> = (props) => {
 		>
 			<div className="headerAndButton">
 				<div className="buttonDisplay" onClick={handleListDisplay}>
-					{listActive === true ? (
+					{/* {listActive === true ? (
 						<img
 							src={UpChevron}
 							className="chevron"
@@ -100,7 +100,7 @@ const Education: FC<Props> = (props) => {
 							className="chevron"
 							alt="show list"
 						/>
-					)}
+					)} */}
 					{inView && (
 						<div className="headerContainer">
 							<motion.h1
@@ -127,7 +127,7 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-direction: column;
 	color: #fefff8;
-	padding: 0 250px;
+	padding: 0 12vw;
 	background-color: #363636;
 
 	.headerAndButton {
@@ -162,7 +162,6 @@ const StyledContainer = styled.div<StyledProps>`
 		flex-direction: row;
 		cursor: pointer;
 		align-items: flex-end;
-		justify-content: flex-end;
 		padding-right: 15px;
 		color: #fefff8;
 
@@ -218,6 +217,10 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.dateAttended {
+	}
+
+	@media (max-width: 1400px) {
+		padding: 0 50px;
 	}
 
 	@media (max-width: 568px) {
