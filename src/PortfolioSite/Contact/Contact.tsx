@@ -2,6 +2,11 @@ import React, { FC, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import githubIcon from "../../assets/images/Icons/github.svg";
+import dnaIcon from "../../assets/images/Icons/dna.svg";
+import soundcloudIcon from "../../assets/images/Icons/soundcloud.svg";
+import resumeIcon from "../../assets/images/Icons/resume_pdf.svg";
+import planeIcon from "../../assets/images/Icons/paper-plane.svg";
 
 type Props = {};
 
@@ -49,10 +54,19 @@ const Contact: FC<Props> = (props) => {
 			)}
 			<div className="contentContainer">
 				{/* 
+                Icons w/ links:
                 -- email addr,
                 -- github url,
                 -- playground,
+                -- soundcloud,
+                -- behance,
+
                  */}
+				<img className="linkIcon" src={githubIcon} />
+				<img className="linkIcon" src={dnaIcon} />
+				<img className="linkIcon" src={soundcloudIcon} />
+				<img className="linkIcon" src={resumeIcon} />
+				<img className="linkIcon" src={planeIcon} />
 			</div>
 		</StyledContainer>
 	);
@@ -67,6 +81,10 @@ const StyledContainer = styled.div<StyledProps>`
 		border: solid 20px #f0f;
 	}
 	.contentContainer {
+	}
+	.linkIcon {
+		width: 30px;
+		margin: 10px;
 	}
 `;
 
