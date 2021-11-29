@@ -9,6 +9,7 @@ import resumeIcon from "../../assets/images/Icons/resume_pdf.svg";
 import planeIcon from "../../assets/images/Icons/paper-plane.svg";
 import bookDeadIcon from "../../assets/images/Icons/book-dead.svg";
 import blackholeIcon from "../../assets/images/Icons/blackhole_i.svg";
+import behanceIcon from "../../assets/images/Icons/behance.svg";
 
 type Props = {};
 
@@ -58,11 +59,10 @@ const Contact: FC<Props> = (props) => {
 				{/* 
                 Icons w/ links:
                 -- email addr,
-                -- github url,
+                -- github url, github.com/erikkimsey
                 -- playground,
-                -- soundcloud,
-                -- behance,
-
+                -- soundcloud, https://soundcloud.com/roquet-paque
+                -- behance, https://www.behance.net/kimseyerik
                  */}
 				<img className="linkIcon" alt="link icon" src={githubIcon} />
 				<img className="linkIcon" alt="link icon" src={dnaIcon} />
@@ -75,6 +75,7 @@ const Contact: FC<Props> = (props) => {
 				<img className="linkIcon" alt="link icon" src={planeIcon} />
 				<img className="linkIcon" alt="link icon" src={bookDeadIcon} />
 				<img className="linkIcon" alt="link icon" src={blackholeIcon} />
+				<img className="linkIcon" alt="link icon" src={behanceIcon} />
 			</div>
 		</StyledContainer>
 	);
