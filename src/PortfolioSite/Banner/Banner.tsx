@@ -45,28 +45,34 @@ const Banner: FC<Props> = (props) => {
 			animate={hasLoaded ? "visible" : "hidden"}
 			transition={{ duration: 1 }}
 		>
-			<motion.h1
-				initial="fontScaledUp"
-				variants={variants}
-				animate={
-					shouldMinimize ? "nameFontScaledDown" : "nameFontScaledUp"
-				}
-				transition={{ duration: 1 }}
-				className="headerName"
-			>
-				ERIK KIMSEY
-			</motion.h1>
-			<motion.h1
-				initial="fontScaledUp"
-				variants={variants}
-				animate={
-					shouldMinimize ? "titleFontScaledDown" : "titleFontScaledUp"
-				}
-				transition={{ duration: 1.5 }}
-				className="headerTitle"
-			>
-				Creative Technologist
-			</motion.h1>
+			<div className="h1Container">
+				<motion.h1
+					initial="fontScaledUp"
+					variants={variants}
+					animate={
+						shouldMinimize
+							? "nameFontScaledDown"
+							: "nameFontScaledUp"
+					}
+					transition={{ duration: 1 }}
+					className="headerName"
+				>
+					ERIK KIMSEY
+				</motion.h1>
+				<motion.h1
+					initial="fontScaledUp"
+					variants={variants}
+					animate={
+						shouldMinimize
+							? "titleFontScaledDown"
+							: "titleFontScaledUp"
+					}
+					transition={{ duration: 1.5 }}
+					className="headerTitle"
+				>
+					creative developer
+				</motion.h1>
+			</div>
 		</StyledContainer>
 	);
 };
@@ -74,10 +80,12 @@ const Banner: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	box-sizing: content-box;
 	position: relative;
-	width: 98%;
+	width: 100%;
+	height: 80vh;
 	top: 20px;
 	display: flex;
 	flex-direction: column;
+	/* justify-content: center; */
 	/* align-items: center; */
 	/* margin-right: 50px; */
 	font-family: "Angel";
@@ -85,34 +93,50 @@ const StyledContainer = styled.div<StyledProps>`
 	padding-left: 40px;
 	/* margin-bottom: 20px; */
 
+	.h1Container {
+		width: 90%;
+		/* height: 80vh; */
+		position: relative;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 10px;
+		background-color: rgba(0, 0, 0, 0.6);
+		border-radius: 10px;
+		/* border: solid 1px #222; */
+	}
+
 	h1 {
+		width: 100%;
 		position: relative;
 		margin: 0;
-		font-size: 11vw;
+		font-size: 60px;
 		line-height: 1;
+		&::after {
+			color: rgba(0, 150, 155, 0.6);
+		}
 	}
 
 	.headerName {
+		position: relative;
 		color: rgba(255, 0, 255, 0.6);
 		&::after {
 			content: "ERIK KIMSEY";
 			position: absolute;
-			color: rgba(0, 150, 155, 0.6);
-			left: 3px;
-			top: 3px;
+			left: 0.1vw;
+			top: 2px;
 		}
 	}
 
 	.headerTitle {
+		position: relative;
 		color: rgba(255, 0, 255, 0.6);
-		color: rgba(70, 70, 70, 0.6);
-		font-size: 8vw;
 		&::after {
-			content: "Creative Technologist";
+			content: "creative developer";
 			position: absolute;
-			color: rgba(70, 70, 70, 0.6);
-			left: 3px;
-			top: 3px;
+			left: 2px;
+			top: 2px;
 		}
 	}
 
@@ -137,7 +161,7 @@ const StyledContainer = styled.div<StyledProps>`
 			line-height: 1;
 		}
 		.headerTitle {
-			font-size: 8vw;
+			/* font-size: 8vw; */
 			/* color: rgba(255, 0, 255, 0.8); */
 		}
 	}
@@ -162,14 +186,14 @@ const StyledContainer = styled.div<StyledProps>`
 			padding: 0;
 			margin: 0;
 			line-height: 1;
-			font-size: 15vw;
+			/* font-size: 15vw; */
 			overflow: wrap;
 			white-space: pre-wrap;
 			hyphens: manual;
 		}
 		.headerTitle {
-			font-size: 5vh;
-			font-size: 12vw;
+			/* font-size: 5vh; */
+			/* font-size: 12vw; */
 			overflow: wrap;
 			white-space: pre-wrap;
 			hyphens: auto;

@@ -61,8 +61,8 @@ const WorkComponent: FC<WorkComponentProps> = (props) => {
 const Work: FC<Props> = (props) => {
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
-	const [hasLoaded, setHasLoaded] = useState(false);
-	const [listActive, setListActive] = useState(false);
+	const [hasLoaded, setHasLoaded] = useState(true);
+	const [listActive, setListActive] = useState(true);
 	const { inView, ref } = useInView({ threshold: 0.1 });
 	const [numOfItems, setNumOfItems] = useState(WORK_DATA.length);
 
@@ -176,6 +176,8 @@ const StyledContainer = styled.div<StyledProps>`
 	flex-direction: column;
 	padding-top: 10px;
 	align-self: flex-start;
+	padding: 0 250px;
+	background-color: #242424;
 
 	.headerAndButton {
 		display: flex;
@@ -213,6 +215,7 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 3px;
 		font-family: "Angel";
 		color: #555;
+		color: #fefff8;
 		line-height: 0;
 		&.workH1 {
 		}
@@ -234,7 +237,7 @@ const StyledContainer = styled.div<StyledProps>`
 		justify-content: flex-start;
 		cursor: pointer;
 		align-items: flex-end;
-		background-color: #fefff8;
+		/* background-color: #fefff8; */
 		/* padding: 15px; */
 	}
 	img {
@@ -317,6 +320,7 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: column;
 		padding: 0;
+		margin: 0;
 
 		h1 {
 			font-size: 1.6em;

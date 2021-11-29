@@ -18,15 +18,18 @@ const ExperienceEducationContainer: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
+	box-sizing: border-box;
 	min-height: 100vh;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	background-color: #555;
+	/* background-color: #242424; */
 	align-items: center;
+	/* padding: 0 20px; */
 
 	@media (max-width: 568px) {
+		padding: 0;
 	}
 `;
 

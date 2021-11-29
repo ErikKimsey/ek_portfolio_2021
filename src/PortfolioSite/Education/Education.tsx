@@ -41,9 +41,9 @@ const EducationComponent: FC<EducationComponentProps> = (props) => {
 const Education: FC<Props> = (props) => {
 	const [winHeight, setWinHeight] = useState(0);
 	const [winWidth, setWinWidth] = useState(0);
-	const [hasLoaded, setHasLoaded] = useState(false);
+	const [hasLoaded, setHasLoaded] = useState(true);
 	const { inView, ref } = useInView({ threshold: 0.1 });
-	const [listActive, setListActive] = useState(false);
+	const [listActive, setListActive] = useState(true);
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
@@ -123,14 +123,20 @@ const Education: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	box-sizing: content-box;
+	/* box-sizing: content-box; */
 	/* width: ${(props) => props.containerWidth * 0.7}px; */
+	/* width: 100%; */
 	min-height: 150px;
 	display: flex;
 	flex-direction: column;
+	color: #fefff8;
+	padding: 0 250px;
+	background-color: #000;
+	background-color: #505050;
 
 	.headerAndButton {
-		background-color: #f0f;
+		/* background-color: #f0f; */
+		/* background-color: #000; */
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
@@ -155,6 +161,7 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 5px;
 		font-family: "Angel";
 		color: #555;
+		color: #fefff8;
 		line-height: 0;
 	}
 
@@ -167,7 +174,8 @@ const StyledContainer = styled.div<StyledProps>`
 		align-items: flex-end;
 		justify-content: flex-end;
 		padding-right: 15px;
-		background-color: #fefff8;
+		/* background-color: #fefff8; */
+		color: #fefff8;
 
 		img {
 			/* width: 40px; */
@@ -193,7 +201,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.educationComponentContainer {
-		background-color: rgba(0, 0, 0, 0);
+		/* background-color: rgba(0, 0, 0, 0); */
 		height: 100px;
 		width: 300px;
 		box-sizing: content-box;
@@ -230,8 +238,8 @@ const StyledContainer = styled.div<StyledProps>`
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		/* padding: 10px; */
-		padding-bottom: 0;
+		margin: 0;
+		padding: 0;
 		h1 {
 			font-size: 1.6em;
 		}
@@ -250,6 +258,10 @@ const StyledContainer = styled.div<StyledProps>`
 		p {
 			padding: 10px;
 			padding-top: 0;
+		}
+
+		.educationComponentContainer {
+			padding: 0;
 		}
 	}
 `;
