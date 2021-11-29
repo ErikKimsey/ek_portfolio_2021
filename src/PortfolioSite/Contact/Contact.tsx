@@ -32,34 +32,41 @@ const Contact: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer ref={ref}>
-			{inView && (
+			{/* {inView && (
 				<motion.div
 					className="leftLine"
 					animate={{ x: [200, 0] }}
 					transition={{ ease: "easeOut", duration: 0.7 }}
 				></motion.div>
-			)}
+			)} */}
 			{inView && (
 				<motion.h1
 					animate={{ x: [-200, 0] }}
 					transition={{ ease: "easeOut", duration: 0.5 }}
 				>
-					{`contact.`}
+					{`contact / links.`}
 				</motion.h1>
 			)}
+			<div className="contentContainer">
+				{/* 
+                -- email addr,
+                -- github url,
+                -- playground,
+                 */}
+			</div>
 		</StyledContainer>
 	);
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	width: ${(props) => props.containerWidth * 0.7}px;
-	height: ${(props) => props.containerHeight * 0.8}px;
-	padding: 15px;
 	display: flex;
 	flex-direction: column;
+	padding: 0 12vw;
 	.leftLine {
 		width: 1px;
 		border: solid 20px #f0f;
+	}
+	.contentContainer {
 	}
 `;
 
