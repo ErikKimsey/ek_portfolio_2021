@@ -128,7 +128,7 @@ const StyledContainer = styled.div<StyledProps>`
 	flex-direction: column;
 	color: #fefff8;
 	padding: 0 12vw;
-	background-color: #363636;
+	/* background-color: rgb(54, 54, 54); */
 
 	.headerAndButton {
 		display: flex;

@@ -177,7 +177,8 @@ const StyledContainer = styled.div<StyledProps>`
 	padding-top: 10px;
 	align-self: flex-start;
 	padding: 0 12vw;
-	background-color: #242424;
+	/* background-color: rgb(36, 36, 36); */
+	/* background: linear-gradient(0deg, rgb(54, 54, 54) 0%, rgb(27, 27, 27) 100%); */
 
 	.headerAndButton {
 		display: flex;
