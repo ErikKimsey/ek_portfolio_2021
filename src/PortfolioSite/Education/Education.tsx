@@ -123,30 +123,21 @@ const Education: FC<Props> = (props) => {
 };
 
 const StyledContainer = styled.div<StyledProps>`
-	/* box-sizing: content-box; */
-	/* width: ${(props) => props.containerWidth * 0.7}px; */
-	/* width: 100%; */
 	min-height: 150px;
 	display: flex;
 	flex-direction: column;
 	color: #fefff8;
 	padding: 0 250px;
-	background-color: #000;
-	background-color: #505050;
+	background-color: #363636;
 
 	.headerAndButton {
-		/* background-color: #f0f; */
-		/* background-color: #000; */
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
 	}
 
 	.headerContainer {
-		/* width: auto;
-		display: flex;
-		flex-direction: row;
-		margin: 0; */
+		/*  */
 	}
 
 	h1,
@@ -167,18 +158,15 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.buttonDisplay {
 		width: 100%;
-		/* align-self: flex-start; */
 		display: flex;
 		flex-direction: row;
 		cursor: pointer;
 		align-items: flex-end;
 		justify-content: flex-end;
 		padding-right: 15px;
-		/* background-color: #fefff8; */
 		color: #fefff8;
 
 		img {
-			/* width: 40px; */
 			&.chevron {
 				height: 20px;
 				padding-left: 10px;
@@ -201,7 +189,6 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.educationComponentContainer {
-		/* background-color: rgba(0, 0, 0, 0); */
 		height: 100px;
 		width: 300px;
 		box-sizing: content-box;
@@ -251,7 +238,6 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 
 		.headerContainer {
-			/* width: 100%; */
 			justify-content: flex-start;
 			padding: 10px;
 		}

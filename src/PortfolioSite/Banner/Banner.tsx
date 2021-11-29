@@ -85,26 +85,20 @@ const StyledContainer = styled.div<StyledProps>`
 	top: 20px;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
-	/* align-items: center; */
-	/* margin-right: 50px; */
 	font-family: "Angel";
 	padding: 0px;
 	padding-left: 40px;
-	/* margin-bottom: 20px; */
 
 	.h1Container {
 		width: 90%;
-		/* height: 80vh; */
 		position: relative;
 		display: flex;
 		flex-flow: column;
 		justify-content: center;
 		align-items: flex-start;
 		padding: 10px;
-		background-color: rgba(0, 0, 0, 0.6);
+		/* background-color: rgba(0, 0, 0, 0.6); */
 		border-radius: 10px;
-		/* border: solid 1px #222; */
 	}
 
 	h1 {

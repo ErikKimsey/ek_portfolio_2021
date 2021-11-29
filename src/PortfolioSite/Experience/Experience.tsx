@@ -186,7 +186,6 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.headerContainer {
-		/* align-self: flex-start; */
 		box-sizing: content-box;
 		width: auto;
 		display: flex;
@@ -221,14 +220,6 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 	}
 
-	/* .components {
-		box-sizing: content-box;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		height: 100%;
-	} */
-
 	.buttonDisplay {
 		width: 100%;
 		align-self: flex-start;
@@ -237,11 +228,8 @@ const StyledContainer = styled.div<StyledProps>`
 		justify-content: flex-start;
 		cursor: pointer;
 		align-items: flex-end;
-		/* background-color: #fefff8; */
-		/* padding: 15px; */
 	}
 	img {
-		/* width: 40px; */
 		&.chevron {
 			height: 20px;
 			padding-left: 10px;
@@ -253,7 +241,6 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		/* background-color: #000; */
 		max-height: ${(props) =>
 			props.listActive === true ? props.numOfItems * 200 + "px" : "0px"};
 		height: 100%;
@@ -307,11 +294,6 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 768px) {
-		/* display: flex;
-		flex-direction: column;
-		.workComponentContainer {
-            height: 60px;
-		} */
 	}
 
 	@media (max-width: 568px) {
@@ -320,7 +302,6 @@ const StyledContainer = styled.div<StyledProps>`
 		display: flex;
 		flex-direction: column;
 		padding: 0;
-		margin: 0;
 
 		h1 {
 			font-size: 1.6em;
@@ -336,7 +317,6 @@ const StyledContainer = styled.div<StyledProps>`
 		}
 
 		.workContainer {
-			/* box-sizing: content-box; */
 			max-height: ${(props) =>
 				props.listActive === true
 					? props.numOfItems * 200 + "px"

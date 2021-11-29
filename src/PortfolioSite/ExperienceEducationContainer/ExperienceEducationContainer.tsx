@@ -24,9 +24,7 @@ const StyledContainer = styled.div<StyledProps>`
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	/* background-color: #242424; */
 	align-items: center;
-	/* padding: 0 20px; */
 
 	@media (max-width: 568px) {
 		padding: 0;
