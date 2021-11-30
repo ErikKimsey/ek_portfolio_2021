@@ -63,7 +63,6 @@ const Contact: FC<Props> = (props) => {
 						src={githubIcon}
 					/>
 				</a>
-
 				<NavLink to="/playground">
 					<img
 						className="linkIcon"
@@ -96,7 +95,6 @@ const Contact: FC<Props> = (props) => {
 				>
 					<img className="linkIcon" alt="link icon" src={planeIcon} />
 				</a>
-
 				<a
 					href="https://www.behance.net/kimseyerik"
 					target="_blank"
