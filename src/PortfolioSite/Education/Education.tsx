@@ -14,6 +14,7 @@ type StyledProps = {
 	listActive?: boolean;
 	numOfItems?: number;
 	isVisible?: boolean;
+	skillsVisible?: boolean;
 };
 
 type Data = {
@@ -21,19 +22,42 @@ type Data = {
 	areaOfStudy?: string;
 	date?: string;
 	index?: number;
+	skills?: string[];
+	toggleSkills?: () => void;
+	skillsVisible?: boolean;
 };
+
 type EducationComponentProps = {
 	data?: Data;
 };
 
 const EducationComponent: FC<EducationComponentProps> = (props) => {
-	const { school, areaOfStudy, date, index } = props.data;
+	const {
+		school,
+		areaOfStudy,
+		date,
+		index,
+		skills,
+		toggleSkills,
+		skillsVisible,
+	} = props.data;
 
 	return (
 		<div className="educationComponentContainer" key={index}>
 			<h4 className="areaOfStudy">{areaOfStudy}</h4>
 			<h5 className="schoolName">{school}</h5>
 			{date ? <div className="dateAttended">{date}</div> : <div></div>}
+			<div
+				className="skillsContainer"
+				onClick={() => {
+					toggleSkills();
+				}}
+			>
+				{skills &&
+					skills.map((e) => {
+						return <div className="skill">{e}</div>;
+					})}
+			</div>
 		</div>
 	);
 };
@@ -44,6 +68,7 @@ const Education: FC<Props> = (props) => {
 	const [hasLoaded, setHasLoaded] = useState(true);
 	const { inView, ref } = useInView({ threshold: 0.1 });
 	const [listActive, setListActive] = useState(true);
+	const [skillsVisible, setSkillsVisible] = useState(false);
 
 	const variants = {
 		visible: { opacity: 1, scale: 1 },
@@ -62,9 +87,11 @@ const Education: FC<Props> = (props) => {
 		setListActive(!listActive);
 	};
 
-	useEffect(() => {
-		console.log(window.innerHeight);
+	const toggleSkills = () => {
+		setSkillsVisible(!skillsVisible);
+	};
 
+	useEffect(() => {
 		setWinHeight(window.innerHeight);
 		setWinWidth(window.innerWidth);
 		setHasLoaded(true);
@@ -217,6 +244,16 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.dateAttended {
+	}
+
+	.skillsContainer {
+		display: none;
+		height: ${(props) => (props.skillsVisible ? "auto" : "50px")};
+		position: relative;
+		border: solid 1px #333;
+		background-color: #333;
+		padding: 10px;
+		z-index: 1000;
 	}
 
 	@media (max-width: 1400px) {

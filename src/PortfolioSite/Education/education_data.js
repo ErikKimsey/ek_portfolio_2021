@@ -19,6 +19,11 @@ const EDUCATION_DATA = [
 		],
 	},
 	{
+		school: "James Madison University",
+		areaOfStudy: "Philosophy / Creative Writing / Studio Arts",
+		date: "",
+	},
+	{
 		school: "Oregon State U",
 		areaOfStudy: "Accelerated Object-Oriented Programming in C++",
 		date: "",
@@ -31,11 +36,6 @@ const EDUCATION_DATA = [
 	{
 		school: "James Madison University",
 		areaOfStudy: "Writing, Rhetoric, and Technical Communication",
-		date: "",
-	},
-	{
-		school: "James Madison University",
-		areaOfStudy: "Philosophy / Creative Writing / Studio Arts",
 		date: "",
 	},
 ];
