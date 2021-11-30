@@ -24,7 +24,7 @@ const Portfolio: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	.nullFooter {
 		width: 100%;
-		height: 100px;
+		height: 50px;
 	}
 `;
 

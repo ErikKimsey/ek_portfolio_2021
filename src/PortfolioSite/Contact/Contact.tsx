@@ -52,7 +52,11 @@ const Contact: FC<Props> = (props) => {
                 Icons w/ links:
                 -- email addr,
                  */}
-				<a href="https://www.github.com/erikkimsey" target="_blank">
+				<a
+					href="https://www.github.com/erikkimsey"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<img
 						className="linkIcon"
 						alt="link icon"
@@ -67,7 +71,11 @@ const Contact: FC<Props> = (props) => {
 						src={blackholeIcon}
 					/>
 				</NavLink>
-				<a href="https://soundcloud.com/roquet-paque" target="_blank">
+				<a
+					href="https://soundcloud.com/roquet-paque"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<img
 						className="linkIcon"
 						alt="link icon"
@@ -81,11 +89,19 @@ const Contact: FC<Props> = (props) => {
 						src={resumeIcon}
 					/>
 				</a>
-				<a href="https://www.behance.net/kimseyerik" target="_blank">
+				<a
+					href="emailto: kimseyerik@gmail.com"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<img className="linkIcon" alt="link icon" src={planeIcon} />
 				</a>
 
-				<a href="https://www.behance.net/kimseyerik" target="_blank">
+				<a
+					href="https://www.behance.net/kimseyerik"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<img
 						className="linkIcon"
 						alt="link icon"
@@ -108,18 +124,25 @@ const StyledContainer = styled.div<StyledProps>`
 	.contentContainer {
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: space-around;
+		justify-content: flex-start;
 		width: 100%;
 	}
 	.linkIcon {
 		width: 30px;
-		margin: 10px;
+		margin: 20px;
 	}
 
 	@media (max-width: 568px) {
+		.contentContainer {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+			width: 100%;
+		}
 		.linkIcon {
-			width: 20px;
-			margin: 10px;
+			width: 30px;
+			margin: 0 5px;
+			padding: 0;
 		}
 	}
 `;
