@@ -39,13 +39,6 @@ const Contact: FC<Props> = (props) => {
 
 	return (
 		<StyledContainer ref={ref}>
-			{/* {inView && (
-				<motion.div
-					className="leftLine"
-					animate={{ x: [200, 0] }}
-					transition={{ ease: "easeOut", duration: 0.7 }}
-				></motion.div>
-			)} */}
 			{inView && (
 				<motion.h1
 					animate={{ x: [-200, 0] }}
@@ -115,10 +108,21 @@ const StyledContainer = styled.div<StyledProps>`
 		border: solid 20px #f0f;
 	}
 	.contentContainer {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		width: 100%;
 	}
 	.linkIcon {
 		width: 30px;
 		margin: 10px;
+	}
+
+	@media (max-width: 568px) {
+		.linkIcon {
+			width: 20px;
+			margin: 10px;
+		}
 	}
 `;
 
