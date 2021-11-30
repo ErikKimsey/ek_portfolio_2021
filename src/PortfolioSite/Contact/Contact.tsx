@@ -81,12 +81,10 @@ const Contact: FC<Props> = (props) => {
 						src={resumeIcon}
 					/>
 				</a>
-
 				<a href="https://www.behance.net/kimseyerik" target="_blank">
 					<img className="linkIcon" alt="link icon" src={planeIcon} />
 				</a>
 
-				{/* <img className="linkIcon" alt="link icon" src={bookDeadIcon} /> */}
 				<a href="https://www.behance.net/kimseyerik" target="_blank">
 					<img
 						className="linkIcon"
