@@ -118,7 +118,7 @@ const StyledContainer = styled.div<StyledProps>`
 		&::after {
 			content: "ERIK KIMSEY";
 			position: absolute;
-			left: 0.1vw;
+			left: 2px;
 			top: 2px;
 		}
 	}
@@ -135,19 +135,12 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 768px) {
+		width: 100%;
 		margin-top: 20px;
 		position: relative;
-		left: 10px;
+		left: 5px;
 		top: 20px;
 		height: auto;
-		.leftSpace {
-			padding: 10px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-items: flex-start;
-			z-index: -100000;
-		}
 		h1 {
 			/* font-size: 3em; */
 			padding: 0;
@@ -161,26 +154,22 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	@media (max-width: 568px) {
-		margin-top: 0px;
 		position: relative;
 		top: 0px;
 		height: auto;
 		padding: 0;
 		margin: 0;
 		margin-top: 20px;
-		.leftSpace {
-			padding: 0px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-items: flex-start;
-			display: none;
+
+		.h1Container {
+			width: 100%;
+			padding: 0;
 		}
 		h1 {
 			padding: 0;
 			margin: 0;
 			line-height: 1;
-			/* font-size: 15vw; */
+			font-size: 15vw;
 			overflow: wrap;
 			white-space: pre-wrap;
 			hyphens: manual;
