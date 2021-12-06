@@ -160,9 +160,9 @@ const StyledContainer = styled.div<StyledProps>`
 		padding: 0;
 		margin: 0;
 		margin-top: 20px;
+		width: 100%;
 
 		.h1Container {
-			width: 100%;
 			padding: 0;
 		}
 		h1 {
