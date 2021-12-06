@@ -97,7 +97,6 @@ const StyledContainer = styled.div<StyledProps>`
 		justify-content: center;
 		align-items: flex-start;
 		padding: 10px;
-		/* background-color: rgba(0, 0, 0, 0.6); */
 		border-radius: 10px;
 	}
 
@@ -142,14 +141,11 @@ const StyledContainer = styled.div<StyledProps>`
 		top: 20px;
 		height: auto;
 		h1 {
-			/* font-size: 3em; */
 			padding: 0;
 			margin: 0;
 			line-height: 1;
 		}
 		.headerTitle {
-			/* font-size: 8vw; */
-			/* color: rgba(255, 0, 255, 0.8); */
 		}
 	}
 
