@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer";
 import { WORK_DATA } from "./work_data";
 import UpChevron from "../../assets/images/Icons/chevron-up.svg";
 import DownChevron from "../../assets/images/Icons/chevron-down.svg";
-import WorkIcon from "../../assets/images/Icons/work.png";
 
 type Props = {};
 
@@ -122,7 +121,6 @@ const Work: FC<Props> = (props) => {
 			ref={ref}
 			listActive={listActive}
 			numOfItems={numOfItems}
-			displayButton={WorkIcon}
 		>
 			<div className="headerAndButton">
 				<div className="buttonDisplay" onClick={handleListDisplay}>

@@ -114,12 +114,7 @@ code {
      url("./assets/fonts/Cafe.ttf") format("truetype");
     font-weight: 600;
 }
-@font-face {
-    font-family: "Elegant";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/Elegant.ttf") format("truetype");
-    font-weight: 600;
-}
+
 @font-face {
     font-family: "Quick";   
     src: local("./assets/fonts"),
