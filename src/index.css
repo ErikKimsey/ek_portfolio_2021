@@ -1,53 +1,3 @@
-body {
-    width:100%;
-  margin: 0;
-  padding:0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 200;
-  color:#e8fff2;
-  /* background-color: #151517; */
-  background-color: rgb(27, 27, 27);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  scrollbar-width: none;
-  box-sizing: content-box;
-  
-}
-body::-webkit-scrollbar {
-  display: none;
-}
-
-#app {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    width:100%;
-}
-h1 {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-family: "Angel";
-    color: #fff;
-}
-p {
-    color: #fff;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
-    font-family: "Comfortaa";
-}
-
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 @font-face {
     font-family: "Wipeout";
     src: local("./assets/fonts"),
@@ -121,3 +71,53 @@ code {
      url("./assets/fonts/Quick.otf") format("opentype");
     font-weight: 600;
 }
+
+
+body {
+    width:100%;
+  margin: 0;
+  padding:0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 200;
+  color:#e8fff2;
+  /* background-color: #151517; */
+  background-color: rgb(27, 27, 27);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scrollbar-width: none;
+  box-sizing: content-box;
+  
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#app {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+h1 {
+    font-family: "Angel";
+    color: #fff;
+}
+p {
+    color: #fff;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+    font-family: "Comfortaa";
+}
+
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
