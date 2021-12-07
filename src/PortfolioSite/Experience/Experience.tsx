@@ -206,7 +206,6 @@ const StyledContainer = styled.div<StyledProps>`
 	h5,
 	h6 {
 		padding: 5px;
-		/* font-family: "Angel"; */
 	}
 
 	h1 {
