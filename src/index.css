@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'Angel';
+    src:local("./assets/fonts"),
+     url('./fonts/HelloAngel.woff2') format('woff2'),
+        url('./fonts/HelloAngel.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ComfortaaBold';
+    src: local("./assets/fonts"),
+    url('./fonts/Comfortaa-Bold.woff2') format('woff2'),
+        url('./fonts/Comfortaa-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
 
 /* @font-face {
     font-family: "Wipeout";
@@ -18,24 +35,6 @@
     font-weight: 600;
 } */
 
-@font-face {
-    font-family: 'Angel';
-    src:local("./assets/fonts"),
-     url('./fonts/HelloAngel.woff2') format('woff2'),
-        url('./fonts/HelloAngel.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'ComfortaaBold';
-    src: local("./assets/fonts"),
-    url('./fonts/Comfortaa-Bold.woff2') format('woff2'),
-        url('./fonts/Comfortaa-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
 body {
     width:100%;
   margin: 0;
@@ -54,8 +53,7 @@ body {
   align-items: center;
   scrollbar-width: none;
   box-sizing: content-box;
-  font-family: "Angel";
-  
+  font-family: "Comfortaa","Gill Sans Extrabold", sans-serif;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -68,18 +66,13 @@ body::-webkit-scrollbar {
     width:100%;
 }
 h1 {
-    font-family: "Angel";
+    font-family: "Angel","Gill Sans Extrabold", sans-serif;;
     color: #fff;
 }
 p {
-    font-family: "Comfortaa";
+    font-family: "Comfortaa","Gill Sans Extrabold", sans-serif;;
     color: #fff;
 }
 
 
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
