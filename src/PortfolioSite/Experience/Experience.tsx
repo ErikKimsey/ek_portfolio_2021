@@ -268,27 +268,23 @@ const StyledContainer = styled.div<StyledProps>`
 		padding-left: 10px;
 		margin: 0;
 		color: #f0f;
-		font-family: "ComfortaaBold";
 		border-left: solid 2px #ccc;
 	}
 
 	.employerURL {
 		text-decoration: none;
 		padding: 0;
-		font-family: "Comfortaa";
 	}
 
 	.employerName {
 		margin: 0;
 		padding-left: 10px;
-		font-family: "Comfortaa";
 		color: #fff;
 	}
 
 	.techStack {
 		margin: 0;
 		padding-left: 20px;
-		font-family: "Comfortaa";
 		color: #ddff81;
 	}
 

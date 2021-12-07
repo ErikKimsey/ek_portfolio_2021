@@ -233,13 +233,11 @@ const StyledContainer = styled.div<StyledProps>`
 		padding-left: 10px;
 		margin: 0;
 		color: #f0f;
-		font-family: "ComfortaaBold";
 		border-left: solid 2px #ccc;
 	}
 	.schoolName {
 		margin: 0;
 		padding-left: 10px;
-		font-family: "Comfortaa";
 		color: #fff;
 	}
 
