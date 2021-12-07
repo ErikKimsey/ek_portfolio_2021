@@ -1,7 +1,6 @@
 {
     "name": "ek_2021_portfolio",
     "version": "0.1.0",
-    "homepage": "http://erikkimsey.github.io/ek_2021_portfolio",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.4",
