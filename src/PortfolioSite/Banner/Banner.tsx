@@ -85,7 +85,7 @@ const StyledContainer = styled.div<StyledProps>`
 	top: 20px;
 	display: flex;
 	flex-direction: column;
-	font-family: "Angel";
+	/* font-family: "Angel"; */
 	padding: 0px;
 	padding-left: 40px;
 

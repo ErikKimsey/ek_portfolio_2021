@@ -113,7 +113,7 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 
 	h3 {
-		font-family: "Wipeout";
+		/* font-family: "Wipeout"; */
 		font-size: 3em;
 		color: #fff;
 		padding: 0;

@@ -47,7 +47,7 @@ const TrueLanding: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	height: 100vh;
 	width: 100vw;
-	font-family: "Angel";
+	/* font-family: "Angel"; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;

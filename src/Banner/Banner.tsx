@@ -74,7 +74,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 	.wipeout {
 		color: rgba(255, 255, 255, 1);
-		font-family: "Angel";
+		/* font-family: "Angel"; */
 		padding: 20px 20px;
 		/* margin: 0px; */
 		margin-top: 20px;
@@ -106,7 +106,7 @@ const StyledContainer = styled.div<StyledProps>`
 			will-change: font-size;
 		}
 		.wipeout {
-			font-family: "Angel";
+			/* font-family: "Angel"; */
 			margin: 0;
 			padding: 0px;
 		}

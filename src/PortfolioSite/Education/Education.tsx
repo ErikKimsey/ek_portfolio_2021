@@ -177,7 +177,7 @@ const StyledContainer = styled.div<StyledProps>`
 
 	h1 {
 		padding: 5px;
-		font-family: "Angel";
+		/* font-family: "Angel"; */
 		color: #555;
 		color: #fefff8;
 		line-height: 0;

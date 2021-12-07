@@ -67,7 +67,7 @@ const Resume: FC<Props> = (props) => {
 const StyledContainer = styled.div<StyledProps>`
 	width: ${(props) => props.containerWidth * 0.7}px;
 	height: ${(props) => props.containerHeight * 0.8}px;
-	font-family: "Desib";
+	/* font-family: "Desib"; */
 	color: #fff;
 	padding: 15px;
 	.iFrame {
