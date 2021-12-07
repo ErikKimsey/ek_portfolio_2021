@@ -98,7 +98,7 @@ const StyledContainer = styled.div<StyledProps>`
 		transform: scale(1);
 		transition: all 0.5s ease-out;
 		&:hover {
-			color: #000;
+			color: #1b1b1b;
 			transform: scale(1.1);
 			text-shadow: 0px 0px 1px #fff;
 		}

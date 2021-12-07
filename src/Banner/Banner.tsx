@@ -61,6 +61,7 @@ const StyledContainer = styled.div<StyledProps>`
 	z-index: 1001;
 
 	h1 {
+		font-family: "Angel";
 		line-height: 0.8;
 	}
 
@@ -73,7 +74,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.wipeout {
-		color: rgba(255, 255, 255, 1);
+		/* color: rgba(255, 255, 255, 1); */
 		/* font-family: "Angel"; */
 		padding: 20px 20px;
 		/* margin: 0px; */
