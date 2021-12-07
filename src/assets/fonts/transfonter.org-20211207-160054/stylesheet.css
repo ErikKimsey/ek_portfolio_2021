@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Hello Angel';
+    src: url('HelloAngel.woff2') format('woff2'),
+        url('HelloAngel.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('Comfortaa-Bold.woff2') format('woff2'),
+        url('Comfortaa-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+

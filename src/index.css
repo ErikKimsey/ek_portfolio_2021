@@ -1,4 +1,5 @@
-@font-face {
+
+/* @font-face {
     font-family: "Wipeout";
     src: local("./assets/fonts"),
      url("./assets/fonts/SilverStream.ttf") format("truetype");
@@ -15,62 +16,25 @@
     src: local("./assets/fonts"),
      url("./assets/fonts/nasalization.otf") format("opentype");
     font-weight: 600;
-}
+} */
+
 @font-face {
-    font-family: "Robot";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/NeonRobot.ttf") format("truetype");
-    font-weight: 600;
-}
-@font-face {
-    font-family: "Angel";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/HelloAngel.ttf") format("truetype"),
-     url("./assets/fonts/HelloAngel.otf") format("opentype");
-}
-@font-face {
-    font-family: "Pado";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/padomela.ttf") format("truetype");
-    font-weight: 600;
-}
-@font-face {
-    font-family: "Silver";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/SilverStream.ttf") format("truetype");
-    font-weight: 600;
-}
-@font-face {
-    font-family: "Comfortaa";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/Comfortaa.ttf") format("truetype");
-}
-@font-face {
-    font-family: "ComfortaaBold";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/ComfortaaBold.ttf") format("truetype");
-    font-weight: 600;
-}
-@font-face {
-    font-family: "Caviar";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/Caviar.ttf") format("truetype");
-    font-weight: 600;
-}
-@font-face {
-    font-family: "Cafe";   
-    src: local("./assets/fonts"),
-     url("./assets/fonts/Cafe.ttf") format("truetype");
-    font-weight: 600;
+    font-family: 'Angel';
+    src:local("./assets/fonts"),
+     url('./fonts/HelloAngel.woff2') format('woff2'),
+        url('./fonts/HelloAngel.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: "Quick";   
+    font-family: 'ComfortaaBold';
     src: local("./assets/fonts"),
-     url("./assets/fonts/Quick.otf") format("opentype");
-    font-weight: 600;
+    url('./fonts/Comfortaa-Bold.woff2') format('woff2'),
+        url('./fonts/Comfortaa-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
 }
-
 
 body {
     width:100%;
