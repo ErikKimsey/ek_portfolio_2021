@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import CAPSULES from "../assets/images/Icons/capsules.svg";
 import SATELLITE from "../assets/images/satellite.svg";
+import ICECREAM from "../assets/images/Icons/ice-cream-solid.svg";
 
 type Props = {};
 
@@ -28,7 +29,7 @@ const Menu: FC<Props> = (props) => {
 					style={{ padding: "10px" }}
 					activeStyle={ACTIVE_STYLES}
 				>
-					<img src={CAPSULES} alt="capsule icon" />
+					<img src={ICECREAM} alt="capsule icon" />
 				</NavLink>
 			</motion.div>
 			<div className="line"></div>

@@ -106,14 +106,13 @@ const StyledContainer = styled.div<StyleProps>`
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	padding-left: 50px;
 
 	h1 {
 		color: #fff;
 	}
 
 	h3 {
-		/* font-family: "Wipeout"; */
+		font-family: "Angel";
 		font-size: 3em;
 		color: #fff;
 		padding: 0;
@@ -121,7 +120,7 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 	.halvesContainer {
 		margin: 0px;
-		padding-left: 50px;
+		padding-left: 0px;
 		position: relative;
 		display: flex;
 		flex-direction: row;

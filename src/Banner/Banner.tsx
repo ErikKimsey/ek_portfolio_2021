@@ -29,8 +29,10 @@ const Banner: FC<Props> = (props) => {
 	return (
 		<StyledContainer
 			style={{
-				backgroundSize: "cover",
-				backgroundPosition: "center",
+				background: "none",
+				// backgroundSize: "cover",
+				// backgroundPosition: "center",
+				// width: "100%",
 			}}
 			scrollTop={scrollTop}
 		>
@@ -74,10 +76,7 @@ const StyledContainer = styled.div<StyledProps>`
 	}
 
 	.wipeout {
-		/* color: rgba(255, 255, 255, 1); */
-		/* font-family: "Angel"; */
 		padding: 20px 20px;
-		/* margin: 0px; */
 		margin-top: 20px;
 		color: rgba(187, 187, 187, 0.6);
 	}
