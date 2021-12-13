@@ -62,10 +62,10 @@ const StyledContainer = styled.div<StyledProps>`
 	color: rgba(255, 255, 255, 0.5);
 	z-index: 1001;
 
-	h1 {
-		/* font-family: "Angel"; */
-		line-height: 0.8;
-	}
+	/* h1 { */
+	/* font-family: "Angel"; */
+	/* line-height: 0.8;
+	} */
 
 	.h1s {
 		display: flex;
