@@ -169,6 +169,9 @@ const StyledContainer = styled.div<StyledProps>`
 			overflow: wrap;
 			white-space: pre-wrap;
 			hyphens: manual;
+			&::after {
+				color: rgba(0, 0, 0, 0);
+			}
 		}
 		.headerTitle {
 			/* font-size: 5vh; */

@@ -66,11 +66,11 @@ body::-webkit-scrollbar {
     width:100%;
 }
 h1 {
-    font-family: "Angel", sans-serif;
+    font-family: "Angel", Helvetica, Arial, Sans-Serif;
     color: #fff;
 }
 p {
-    font-family: "Comfortaa", sans-serif;
+    font-family: "Comfortaa", Helvetica, Arial, Sans-Serif;
     color: #fff;
 }
 
