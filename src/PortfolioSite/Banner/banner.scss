@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Angel';
+    src:local("../../assets/fonts"),
+     url('../../assets/fonts/HelloAngel.woff2') format('woff2'),
+        url('../../assets/fonts/HelloAngel.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Angel';
+}
