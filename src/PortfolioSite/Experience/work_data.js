@@ -24,7 +24,7 @@ const WORK_DATA = [
 		product: "Chatwise",
 		positionTitle: "FullStack Engineer",
 		URL: "",
-		techStack: "",
+		techStack: "Javascript, NodeJS, SQLite, Facebook Messenger API",
 		projectDescription:
 			"Prototype a service, akin to Blinkist, within Facebook's Messenger, which offered summaries of popular non-fiction works.",
 		image: "",

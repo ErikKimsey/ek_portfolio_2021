@@ -63,7 +63,7 @@ const StyledContainer = styled.div<StyledProps>`
 	z-index: 1001;
 
 	h1 {
-		font-family: "Angel";
+		/* font-family: "Angel"; */
 		line-height: 0.8;
 	}
 

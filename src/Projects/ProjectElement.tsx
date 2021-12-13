@@ -117,6 +117,7 @@ const StyledContainer = styled.div<StyleProps>`
 		color: #fff;
 		padding: 0;
 		margin: 0;
+		line-height: 1;
 	}
 	.halvesContainer {
 		margin: 0px;
@@ -242,14 +243,18 @@ const StyledContainer = styled.div<StyleProps>`
 	}
 
 	/** BREAKPOINT: SM */
-	@media ${BreakPoint.sm} {
+	@media (max-width: 568px) {
+		height: max-height;
 		.halvesContainer {
 			width: 100vw;
-			padding-left: 50px;
+			/* padding-left: 50px; */
+			margin-top: 10px;
+			margin-bottom: 10px;
 		}
 		.projectText {
 			width: 90vw;
 			padding-left: 50px;
+			margin: 0;
 		}
 	}
 `;
