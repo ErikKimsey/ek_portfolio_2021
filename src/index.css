@@ -53,7 +53,7 @@ body {
     align-items: center;
     scrollbar-width: none;
     box-sizing: content-box;
-    font-family: "Comfortaa", Helvetica, Arial, Sans-Serif;
+    font-family: "Comfortaa", Helvetica, Arial, sans-serif;
 }
 
 body::-webkit-scrollbar {
