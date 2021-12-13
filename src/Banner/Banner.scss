@@ -1,18 +1,13 @@
 
-@font-face {
-    font-family: 'Angel';
-    src:local("../assets/fonts"),
-     url('../fonts/HelloAngel.woff2') format('woff2'),
-        url('../fonts/HelloAngel.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+// @font-face {
+//     font-family: 'Angel';
+//     src:local("../assets/fonts"),
+//      url('../fonts/HelloAngel.woff2') format('woff2'),
+//         url('../fonts/HelloAngel.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
-$angel:'Angel';
-
-h1 {
-    font-family: 'Angel';
-}
 
 // :root {
 //     --f-size: 15;
