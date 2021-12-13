@@ -163,6 +163,7 @@ const StyledContainer = styled.div<StyledProps>`
 			padding: 0;
 		}
 		h1 {
+			font-family: "Angel", Helvetica, Arial, Sans-Serif;
 			padding: 0;
 			margin: 0;
 			line-height: 1;
